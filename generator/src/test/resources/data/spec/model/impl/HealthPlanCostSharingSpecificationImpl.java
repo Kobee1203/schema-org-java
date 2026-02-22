@@ -5,24 +5,24 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Text;
-import spec.model.PriceSpecification;
-import spec.model.datatype.Number;
-import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
+import spec.model.Action;
+import spec.model.CreativeWork;
+import spec.model.Event;
 import spec.model.HealthPlanCostSharingSpecification;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PriceSpecification;
+import spec.model.PropertyValue;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Number;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A description of costs to the patient under a given network or formulary.
@@ -34,77 +34,147 @@ import spec.model.HealthPlanCostSharingSpecification;
 @JsonLdTypeName("HealthPlanCostSharingSpecification")
 public class HealthPlanCostSharingSpecificationImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements HealthPlanCostSharingSpecification {
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    private List<Text> alternateName;
+
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
     private List<Text> healthPlanCoinsuranceOption;
 
-    /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<Text> getHealthPlanCoinsuranceOptionList() {
         return healthPlanCoinsuranceOption;
     }
 
-    /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public Text getHealthPlanCoinsuranceOption() {
         return getFirst(healthPlanCoinsuranceOption);
     }
 
-    /**
-     * Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?
-     *
-     * @param healthPlanCoinsuranceOption Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanCoinsuranceOption(Text healthPlanCoinsuranceOption) {
         this.healthPlanCoinsuranceOption = add(this.healthPlanCoinsuranceOption, healthPlanCoinsuranceOption);
     }
 
+    private List<Number> healthPlanCoinsuranceRate;
+
+    @Override
+    public List<Number> getHealthPlanCoinsuranceRateList() {
+        return healthPlanCoinsuranceRate;
+    }
+
+    @Override
+    public Number getHealthPlanCoinsuranceRate() {
+        return getFirst(healthPlanCoinsuranceRate);
+    }
+
+    @Override
+    public void addHealthPlanCoinsuranceRate(Number healthPlanCoinsuranceRate) {
+        this.healthPlanCoinsuranceRate = add(this.healthPlanCoinsuranceRate, healthPlanCoinsuranceRate);
+    }
+
+    private List<PriceSpecification> healthPlanCopay;
+
+    @Override
+    public List<PriceSpecification> getHealthPlanCopayList() {
+        return healthPlanCopay;
+    }
+
+    @Override
+    public PriceSpecification getHealthPlanCopay() {
+        return getFirst(healthPlanCopay);
+    }
+
+    @Override
+    public void addHealthPlanCopay(PriceSpecification healthPlanCopay) {
+        this.healthPlanCopay = add(this.healthPlanCopay, healthPlanCopay);
+    }
+
     private List<Text> healthPlanCopayOption;
 
-    /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<Text> getHealthPlanCopayOptionList() {
         return healthPlanCopayOption;
     }
 
-    /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public Text getHealthPlanCopayOption() {
         return getFirst(healthPlanCopayOption);
     }
 
-    /**
-     * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
-     *
-     * @param healthPlanCopayOption Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanCopayOption(Text healthPlanCopayOption) {
         this.healthPlanCopayOption = add(this.healthPlanCopayOption, healthPlanCopayOption);
@@ -112,627 +182,200 @@ public class HealthPlanCostSharingSpecificationImpl extends com.weedow.schemaorg
 
     private List<Text> healthPlanPharmacyCategory;
 
-    /**
-     * The category or type of pharmacy associated with this cost sharing.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public List<Text> getHealthPlanPharmacyCategoryList() {
         return healthPlanPharmacyCategory;
     }
 
-    /**
-     * The category or type of pharmacy associated with this cost sharing.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public Text getHealthPlanPharmacyCategory() {
         return getFirst(healthPlanPharmacyCategory);
     }
 
-    /**
-     * The category or type of pharmacy associated with this cost sharing.
-     *
-     * @param healthPlanPharmacyCategory Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
     @Override
     public void addHealthPlanPharmacyCategory(Text healthPlanPharmacyCategory) {
         this.healthPlanPharmacyCategory = add(this.healthPlanPharmacyCategory, healthPlanPharmacyCategory);
     }
 
-    private List<PriceSpecification> healthPlanCopay;
-
-    /**
-     * The copay amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public List<PriceSpecification> getHealthPlanCopayList() {
-        return healthPlanCopay;
-    }
-
-    /**
-     * The copay amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public PriceSpecification getHealthPlanCopay() {
-        return getFirst(healthPlanCopay);
-    }
-
-    /**
-     * The copay amount.
-     *
-     * @param healthPlanCopay PriceSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public void addHealthPlanCopay(PriceSpecification healthPlanCopay) {
-        this.healthPlanCopay = add(this.healthPlanCopay, healthPlanCopay);
-    }
-
-    private List<Number> healthPlanCoinsuranceRate;
-
-    /**
-     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public List<Number> getHealthPlanCoinsuranceRateList() {
-        return healthPlanCoinsuranceRate;
-    }
-
-    /**
-     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public Number getHealthPlanCoinsuranceRate() {
-        return getFirst(healthPlanCoinsuranceRate);
-    }
-
-    /**
-     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-     *
-     * @param healthPlanCoinsuranceRate Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    @Override
-    public void addHealthPlanCoinsuranceRate(Number healthPlanCoinsuranceRate) {
-        this.healthPlanCoinsuranceRate = add(this.healthPlanCoinsuranceRate, healthPlanCoinsuranceRate);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> List<T> getIdentifierList() {
         return (List<T>) identifier;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
     public void addIdentifier(URL identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
     @Override
     public void addIdentifier(PropertyValue identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
     @Override
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
     private List<Object> image;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> List<T> getImageList() {
         return (List<T>) image;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> T getImage() {
         return (T) getFirst(image);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
     public void addImage(ImageObject image) {
         this.image = add(this.image, image);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
     public void addImage(URL image) {
         this.image = add(this.image, image);
     }
 
-    private List<Text> disambiguatingDescription;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 }

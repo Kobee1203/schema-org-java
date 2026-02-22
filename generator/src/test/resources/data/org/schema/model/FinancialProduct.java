@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Text;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.
@@ -18,6 +18,37 @@ import org.schema.model.datatype.Number;
  * @see <a href="https://schema.org/FinancialProduct">https://schema.org/FinancialProduct</a>
  */
 public interface FinancialProduct extends Service {
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    <T> List<T> getAnnualPercentageRateList();
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    <T> T getAnnualPercentageRate();
+
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param annualPercentageRate QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    void addAnnualPercentageRate(QuantitativeValue annualPercentageRate);
+    /**
+     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
+     *
+     * @param annualPercentageRate Number value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     */
+    void addAnnualPercentageRate(Number annualPercentageRate);
 
     /**
      * Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.
@@ -80,35 +111,4 @@ public interface FinancialProduct extends Service {
      * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
      */
     void addInterestRate(Number interestRate);
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    <T> List<T> getAnnualPercentageRateList();
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    <T> T getAnnualPercentageRate();
-
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @param annualPercentageRate QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    void addAnnualPercentageRate(QuantitativeValue annualPercentageRate);
-    /**
-     * The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.
-     *
-     * @param annualPercentageRate Number value to set.
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     */
-    void addAnnualPercentageRate(Number annualPercentageRate);
 }

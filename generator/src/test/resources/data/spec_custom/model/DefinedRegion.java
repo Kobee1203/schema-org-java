@@ -6,10 +6,10 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Country;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PostalCodeRangeSpecification;
 import spec_custom.model.AdministrativeArea;
+import spec_custom.model.Country;
+import spec_custom.model.PostalCodeRangeSpecification;
+import spec_custom.model.datatype.Text;
 
 /**
  * A DefinedRegion is a geographic area defined by potentially arbitrary (rather than political, administrative or natural geographical) criteria. Properties are provided for defining a region by reference to sets of postal codes.
@@ -61,30 +61,6 @@ public interface DefinedRegion extends Place, StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addAddressCountry(Text addressCountry);
-
-    /**
-     * A defined range of postal codes.
-     *
-     * @return {@link PostalCodeRangeSpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<PostalCodeRangeSpecification> getPostalCodeRangeList();
-
-    /**
-     * A defined range of postal codes.
-     *
-     * @return {@link PostalCodeRangeSpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    PostalCodeRangeSpecification getPostalCodeRange();
-
-    /**
-     * A defined range of postal codes.
-     *
-     * @param postalCodeRange PostalCodeRangeSpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addPostalCodeRange(PostalCodeRangeSpecification postalCodeRange);
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
@@ -164,4 +140,28 @@ public interface DefinedRegion extends Place, StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addPostalCodePrefix(Text postalCodePrefix);
+
+    /**
+     * A defined range of postal codes.
+     *
+     * @return {@link PostalCodeRangeSpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<PostalCodeRangeSpecification> getPostalCodeRangeList();
+
+    /**
+     * A defined range of postal codes.
+     *
+     * @return {@link PostalCodeRangeSpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    PostalCodeRangeSpecification getPostalCodeRange();
+
+    /**
+     * A defined range of postal codes.
+     *
+     * @param postalCodeRange PostalCodeRangeSpecification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addPostalCodeRange(PostalCodeRangeSpecification postalCodeRange);
 }

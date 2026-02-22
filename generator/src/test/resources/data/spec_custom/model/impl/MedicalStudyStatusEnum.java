@@ -5,26 +5,26 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Property;
-import spec_custom.model.Class;
-import spec_custom.model.Enumeration;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import spec_custom.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.Class;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Enumeration;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
 import spec_custom.model.MedicalEnumeration;
 import spec_custom.model.MedicalStudyStatus;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.Property;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * The status of a medical study. Enumerated type.
@@ -99,55 +99,6 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getSupersededByList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getSupersededBy() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSupersededBy(Property supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSupersededBy(Class supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSupersededBy(Enumeration supersededBy) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<URL> getSameAsList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public URL getSameAs() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSameAs(URL sameAs) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getNameList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getName() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addName(Text name) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
     public <T> List<T> getAdditionalTypeList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -163,6 +114,50 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     @Override
     public void addAdditionalType(Text additionalType) {
         throw new java.lang.IllegalAccessError("Unable to set property 'additionalType': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getAlternateNameList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getAlternateName() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(TextObject description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDescription(Text description) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getDisambiguatingDescription() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum MedicalStudyStatusEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -189,39 +184,21 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getOwnerList() { return null; }
+    public <T> List<T> getImageList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getOwner() { return null; }
+    public <T> T getImage() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addOwner(Person owner) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum MedicalStudyStatusEnum");
+    public void addImage(ImageObject image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalStudyStatusEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addOwner(Organization owner) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getSubjectOfList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getSubjectOf() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MedicalStudyStatusEnum");
+    public void addImage(URL image) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalStudyStatusEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -243,6 +220,37 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
+    public List<Text> getNameList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public Text getName() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addName(Text name) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'name': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getOwnerList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getOwner() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Person owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addOwner(Organization owner) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'owner': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
     public List<Action> getPotentialActionList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
@@ -256,34 +264,57 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> List<T> getDescriptionList() { return null; }
+    public List<URL> getSameAsList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public <T> T getDescription() { return null; }
+    public URL getSameAs() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDescription(TextObject description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalStudyStatusEnum");
+    public void addSameAs(URL sameAs) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'sameAs': method not allowed for enum MedicalStudyStatusEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addDescription(Text description) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'description': method not allowed for enum MedicalStudyStatusEnum");
+    public <T> List<T> getSubjectOfList() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> T getSubjectOf() { return null; }
+
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MedicalStudyStatusEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public List<Text> getAlternateNameList() { return null; }
+    public void addSubjectOf(CreativeWork subjectOf) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'subjectOf': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public <T> List<T> getSupersededByList() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public Text getAlternateName() { return null; }
+    public <T> T getSupersededBy() { return null; }
 
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
-    public void addAlternateName(Text alternateName) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'alternateName': method not allowed for enum MedicalStudyStatusEnum");
+    public void addSupersededBy(Property supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSupersededBy(Class supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalStudyStatusEnum");
+    }
+    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
+    @Override
+    public void addSupersededBy(Enumeration supersededBy) {
+        throw new java.lang.IllegalAccessError("Unable to set property 'supersededBy': method not allowed for enum MedicalStudyStatusEnum");
     }
     /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
     @Override
@@ -297,36 +328,5 @@ public enum MedicalStudyStatusEnum implements MedicalStudyStatus {
     @Override
     public void addUrl(URL url) {
         throw new java.lang.IllegalAccessError("Unable to set property 'url': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> List<T> getImageList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public <T> T getImage() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(ImageObject image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addImage(URL image) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'image': method not allowed for enum MedicalStudyStatusEnum");
-    }
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public Text getDisambiguatingDescription() { return null; }
-
-    /** {@inheritDoc} <br/><b>DO NOT USE THIS METHOD</b> */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        throw new java.lang.IllegalAccessError("Unable to set property 'disambiguatingDescription': method not allowed for enum MedicalStudyStatusEnum");
     }
 }

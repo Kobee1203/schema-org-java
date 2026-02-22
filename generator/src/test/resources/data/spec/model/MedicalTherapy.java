@@ -7,9 +7,9 @@ package spec.model;
 
 import java.util.List;
 import spec.model.MedicalContraindication;
-import spec.model.datatype.Text;
 import spec.model.MedicalEntity;
 import spec.model.MedicalTherapy;
+import spec.model.datatype.Text;
 
 /**
  * Any medical intervention designed to prevent, treat, and cure human diseases and medical conditions, including both curative and palliative therapies. Medical therapies are typically processes of care relying upon pharmacotherapy, behavioral therapy, supportive therapy (with fluid or nutrition for example), or detoxification (e.g. hemodialysis) aimed at improving or preventing a health condition.
@@ -51,30 +51,6 @@ public interface MedicalTherapy extends TherapeuticProcedure {
     void addContraindication(Text contraindication);
 
     /**
-     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalEntity> getSeriousAdverseOutcomeList();
-
-    /**
-     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalEntity getSeriousAdverseOutcome();
-
-    /**
-     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-     *
-     * @param seriousAdverseOutcome MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
-
-    /**
      * A therapy that duplicates or overlaps this one.
      *
      * @return {@link MedicalTherapy}
@@ -97,4 +73,28 @@ public interface MedicalTherapy extends TherapeuticProcedure {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addDuplicateTherapy(MedicalTherapy duplicateTherapy);
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getSeriousAdverseOutcomeList();
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalEntity getSeriousAdverseOutcome();
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @param seriousAdverseOutcome MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
 }

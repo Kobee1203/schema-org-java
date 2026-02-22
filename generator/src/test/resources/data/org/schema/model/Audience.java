@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.AdministrativeArea;
+import org.schema.model.datatype.Text;
 
 /**
  * Intended audience for an item, i.e. the group for whom the item was created.

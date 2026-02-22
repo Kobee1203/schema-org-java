@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.Place;
-import org.schema.model.datatype.Integer;
 import org.schema.model.QuantitativeValue;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
 
 /**
  * A reservation for a taxi.<br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, use [[Offer]].
@@ -17,48 +17,6 @@ import org.schema.model.QuantitativeValue;
  * @see <a href="https://schema.org/TaxiReservation">https://schema.org/TaxiReservation</a>
  */
 public interface TaxiReservation extends Reservation {
-
-    /**
-     * When a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getPickupTimeList();
-
-    /**
-     * When a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getPickupTime();
-
-    /**
-     * When a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @param pickupTime DateTime value to set.
-     */
-    void addPickupTime(DateTime pickupTime);
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getPickupLocationList();
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @return {@link Place}
-     */
-    Place getPickupLocation();
-
-    /**
-     * Where a taxi will pick up a passenger or a rental car can be picked up.
-     *
-     * @param pickupLocation Place value to set.
-     */
-    void addPickupLocation(Place pickupLocation);
 
     /**
      * Number of people the reservation should accommodate.
@@ -86,4 +44,46 @@ public interface TaxiReservation extends Reservation {
      * @param partySize QuantitativeValue value to set.
      */
     void addPartySize(QuantitativeValue partySize);
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getPickupLocationList();
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link Place}
+     */
+    Place getPickupLocation();
+
+    /**
+     * Where a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @param pickupLocation Place value to set.
+     */
+    void addPickupLocation(Place pickupLocation);
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getPickupTimeList();
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getPickupTime();
+
+    /**
+     * When a taxi will pick up a passenger or a rental car can be picked up.
+     *
+     * @param pickupTime DateTime value to set.
+     */
+    void addPickupTime(DateTime pickupTime);
 }

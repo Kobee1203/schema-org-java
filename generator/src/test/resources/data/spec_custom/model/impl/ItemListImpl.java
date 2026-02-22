@@ -5,25 +5,25 @@
  */
 package spec_custom.model.impl;
 
-import spec_custom.model.Thing;
-import spec_custom.model.ListItem;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.datatype.Integer;
-import spec_custom.model.ItemListOrderType;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
-import spec_custom.model.Action;
-import spec_custom.model.TextObject;
-import spec_custom.model.ImageObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import spec_custom.model.Action;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
+import spec_custom.model.ImageObject;
 import spec_custom.model.Intangible;
 import spec_custom.model.ItemList;
+import spec_custom.model.ItemListOrderType;
+import spec_custom.model.ListItem;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.Thing;
+import spec_custom.model.datatype.Integer;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * A list of items of any sort&#x2014;for example, Top 10 Movies About Weathermen, or Top 100 Party Songs. Not to be confused with HTML lists, which are often used only for formatting.
@@ -33,678 +33,345 @@ import spec_custom.model.ItemList;
 @JsonLdTypeName("ItemList")
 public class ItemListImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ItemList {
 
-    @JsonLdFieldTypes({ Thing.class, ListItem.class, Text.class })
-    private List<Object> itemListElement;
-
-    /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
-     *
-     * @return {@link Thing} or {@link ListItem} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getItemListElementList() {
-        return (List<T>) itemListElement;
-    }
-
-    /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
-     *
-     * @return {@link Thing} or {@link ListItem} or {@link Text}
-     */
-    @Override
-    public <T> T getItemListElement() {
-        return (T) getFirst(itemListElement);
-    }
-
-    /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
-     *
-     * @param itemListElement Thing value to set.
-     */
-    @Override
-    public void addItemListElement(Thing itemListElement) {
-        this.itemListElement = add(this.itemListElement, itemListElement);
-    }
-    /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
-     *
-     * @param itemListElement ListItem value to set.
-     */
-    @Override
-    public void addItemListElement(ListItem itemListElement) {
-        this.itemListElement = add(this.itemListElement, itemListElement);
-    }
-    /**
-     * For itemListElement values, you can use simple strings (e.g. "Peter", "Paul", "Mary"), existing entities, or use ListItem.<br/><br/>Text values are best if the elements in the list are plain strings. Existing entities are best for a simple, unordered list of existing things in your data. ListItem is used with ordered lists when you want to provide additional context about the element in that list or when the same item might be in different places in different lists.<br/><br/>Note: The order of elements in your mark-up is not sufficient for indicating the order or elements.  Use ListItem with a 'position' property in such cases.
-     *
-     * @param itemListElement Text value to set.
-     */
-    @Override
-    public void addItemListElement(Text itemListElement) {
-        this.itemListElement = add(this.itemListElement, itemListElement);
-    }
-
-    private List<Thing> aggregateElement;
-
-    /**
-     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
-     *
-     * @return {@link Thing}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
-     */
-    @Override
-    public List<Thing> getAggregateElementList() {
-        return aggregateElement;
-    }
-
-    /**
-     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
-     *
-     * @return {@link Thing}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
-     */
-    @Override
-    public Thing getAggregateElement() {
-        return getFirst(aggregateElement);
-    }
-
-    /**
-     * Indicates a prototype of the elements in the list that is used to hold aggregate information (ratings, offers, etc.).
-     *
-     * @param aggregateElement Thing value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4321">https://github.com/schemaorg/schemaorg/issues/4321</a>
-     */
-    @Override
-    public void addAggregateElement(Thing aggregateElement) {
-        this.aggregateElement = add(this.aggregateElement, aggregateElement);
-    }
-
-    private List<Integer> numberOfItems;
-
-    /**
-     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getNumberOfItemsList() {
-        return numberOfItems;
-    }
-
-    /**
-     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public Integer getNumberOfItems() {
-        return getFirst(numberOfItems);
-    }
-
-    /**
-     * The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.
-     *
-     * @param numberOfItems Integer value to set.
-     */
-    @Override
-    public void addNumberOfItems(Integer numberOfItems) {
-        this.numberOfItems = add(this.numberOfItems, numberOfItems);
-    }
-
-    @JsonLdFieldTypes({ ItemListOrderType.class, Text.class })
-    private List<Object> itemListOrder;
-
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @return {@link ItemListOrderType} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getItemListOrderList() {
-        return (List<T>) itemListOrder;
-    }
-
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @return {@link ItemListOrderType} or {@link Text}
-     */
-    @Override
-    public <T> T getItemListOrder() {
-        return (T) getFirst(itemListOrder);
-    }
-
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @param itemListOrder ItemListOrderType value to set.
-     */
-    @Override
-    public void addItemListOrder(ItemListOrderType itemListOrder) {
-        this.itemListOrder = add(this.itemListOrder, itemListOrder);
-    }
-    /**
-     * Type of ordering (e.g. Ascending, Descending, Unordered).
-     *
-     * @param itemListOrder Text value to set.
-     */
-    @Override
-    public void addItemListOrder(Text itemListOrder) {
-        this.itemListOrder = add(this.itemListOrder, itemListOrder);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
+    private List<Thing> aggregateElement;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
+    public List<Thing> getAggregateElementList() {
+        return aggregateElement;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
+    public Thing getAggregateElement() {
+        return getFirst(aggregateElement);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addAggregateElement(Thing aggregateElement) {
+        this.aggregateElement = add(this.aggregateElement, aggregateElement);
     }
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getDescription() {
+        return (T) getFirst(description);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
     }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ Thing.class, ListItem.class, Text.class })
+    private List<Object> itemListElement;
+
+    @Override
+    public <T> List<T> getItemListElementList() {
+        return (List<T>) itemListElement;
+    }
+
+    @Override
+    public <T> T getItemListElement() {
+        return (T) getFirst(itemListElement);
+    }
+
+    @Override
+    public void addItemListElement(Thing itemListElement) {
+        this.itemListElement = add(this.itemListElement, itemListElement);
+    }
+    @Override
+    public void addItemListElement(ListItem itemListElement) {
+        this.itemListElement = add(this.itemListElement, itemListElement);
+    }
+    @Override
+    public void addItemListElement(Text itemListElement) {
+        this.itemListElement = add(this.itemListElement, itemListElement);
+    }
+
+    @JsonLdFieldTypes({ ItemListOrderType.class, Text.class })
+    private List<Object> itemListOrder;
+
+    @Override
+    public <T> List<T> getItemListOrderList() {
+        return (List<T>) itemListOrder;
+    }
+
+    @Override
+    public <T> T getItemListOrder() {
+        return (T) getFirst(itemListOrder);
+    }
+
+    @Override
+    public void addItemListOrder(ItemListOrderType itemListOrder) {
+        this.itemListOrder = add(this.itemListOrder, itemListOrder);
+    }
+    @Override
+    public void addItemListOrder(Text itemListOrder) {
+        this.itemListOrder = add(this.itemListOrder, itemListOrder);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<Integer> numberOfItems;
+
+    @Override
+    public List<Integer> getNumberOfItemsList() {
+        return numberOfItems;
+    }
+
+    @Override
+    public Integer getNumberOfItems() {
+        return getFirst(numberOfItems);
+    }
+
+    @Override
+    public void addNumberOfItems(Integer numberOfItems) {
+        this.numberOfItems = add(this.numberOfItems, numberOfItems);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 }

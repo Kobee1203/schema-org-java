@@ -6,15 +6,15 @@
 package spec.model;
 
 import java.util.List;
+import spec.model.BioChemEntity;
+import spec.model.DefinedTerm;
+import spec.model.Gene;
 import spec.model.Grant;
+import spec.model.MedicalCondition;
+import spec.model.PropertyValue;
+import spec.model.Taxon;
 import spec.model.datatype.Text;
 import spec.model.datatype.URL;
-import spec.model.PropertyValue;
-import spec.model.DefinedTerm;
-import spec.model.MedicalCondition;
-import spec.model.BioChemEntity;
-import spec.model.Gene;
-import spec.model.Taxon;
 
 /**
  * Any biological, chemical, or biochemical thing. For example: a protein; a gene; a chemical; a synthetic chemical.
@@ -24,122 +24,6 @@ import spec.model.Taxon;
  * @see <a href="https://schema.org/BioChemEntity">https://schema.org/BioChemEntity</a>
  */
 public interface BioChemEntity extends Thing {
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    List<Grant> getFundingList();
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    Grant getFunding();
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addFunding(Grant funding);
-
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @return {@link Text} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    <T> List<T> getHasRepresentationList();
-
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @return {@link Text} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    <T> T getHasRepresentation();
-
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @param hasRepresentation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    void addHasRepresentation(Text hasRepresentation);
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @param hasRepresentation URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    void addHasRepresentation(URL hasRepresentation);
-    /**
-     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
-     *
-     * @param hasRepresentation PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    void addHasRepresentation(PropertyValue hasRepresentation);
-
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    <T> List<T> getHasMolecularFunctionList();
-
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    <T> T getHasMolecularFunction();
-
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @param hasMolecularFunction DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    void addHasMolecularFunction(DefinedTerm hasMolecularFunction);
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @param hasMolecularFunction URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    void addHasMolecularFunction(URL hasMolecularFunction);
-    /**
-     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
-     *
-     * @param hasMolecularFunction PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    void addHasMolecularFunction(PropertyValue hasMolecularFunction);
 
     /**
      * Disease associated to this BioChemEntity. Such disease can be a MedicalCondition or a URL. If you want to add an evidence supporting the association, please use PropertyValue.
@@ -185,6 +69,117 @@ public interface BioChemEntity extends Thing {
     void addAssociatedDisease(PropertyValue associatedDisease);
 
     /**
+     * A BioChemEntity that is known to interact with this item.
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    List<BioChemEntity> getBioChemInteractionList();
+
+    /**
+     * A BioChemEntity that is known to interact with this item.
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    BioChemEntity getBioChemInteraction();
+
+    /**
+     * A BioChemEntity that is known to interact with this item.
+     *
+     * @param bioChemInteraction BioChemEntity value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    void addBioChemInteraction(BioChemEntity bioChemInteraction);
+
+    /**
+     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    List<BioChemEntity> getBioChemSimilarityList();
+
+    /**
+     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     *
+     * @return {@link BioChemEntity}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    BioChemEntity getBioChemSimilarity();
+
+    /**
+     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
+     *
+     * @param bioChemSimilarity BioChemEntity value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    void addBioChemSimilarity(BioChemEntity bioChemSimilarity);
+
+    /**
+     * A role played by the BioChemEntity within a biological context.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    List<DefinedTerm> getBiologicalRoleList();
+
+    /**
+     * A role played by the BioChemEntity within a biological context.
+     *
+     * @return {@link DefinedTerm}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    DefinedTerm getBiologicalRole();
+
+    /**
+     * A role played by the BioChemEntity within a biological context.
+     *
+     * @param biologicalRole DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    void addBiologicalRole(DefinedTerm biologicalRole);
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    List<Grant> getFundingList();
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    Grant getFunding();
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @param funding Grant value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addFunding(Grant funding);
+
+    /**
      * Indicates a BioChemEntity that (in some sense) has this BioChemEntity as a part. 
      *
      * @return {@link BioChemEntity}
@@ -210,6 +205,119 @@ public interface BioChemEntity extends Thing {
      * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
      */
     void addHasBioChemEntityPart(BioChemEntity hasBioChemEntityPart);
+
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    <T> List<T> getHasMolecularFunctionList();
+
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    <T> T getHasMolecularFunction();
+
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param hasMolecularFunction DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    void addHasMolecularFunction(DefinedTerm hasMolecularFunction);
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param hasMolecularFunction URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    void addHasMolecularFunction(URL hasMolecularFunction);
+    /**
+     * Molecular function performed by this BioChemEntity; please use PropertyValue if you want to include any evidence.
+     *
+     * @param hasMolecularFunction PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    void addHasMolecularFunction(PropertyValue hasMolecularFunction);
+
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @return {@link Text} or {@link URL} or {@link PropertyValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    <T> List<T> getHasRepresentationList();
+
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @return {@link Text} or {@link URL} or {@link PropertyValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    <T> T getHasRepresentation();
+
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param hasRepresentation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    void addHasRepresentation(Text hasRepresentation);
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param hasRepresentation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    void addHasRepresentation(URL hasRepresentation);
+    /**
+     * A common representation such as a protein sequence or chemical structure for this entity. For images use schema.org/image.
+     *
+     * @param hasRepresentation PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     */
+    void addHasRepresentation(PropertyValue hasRepresentation);
+
+    /**
+     * Another BioChemEntity encoding by this one.
+     *
+     * @return {@link Gene}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
+     */
+    List<Gene> getIsEncodedByBioChemEntityList();
+
+    /**
+     * Another BioChemEntity encoding by this one.
+     *
+     * @return {@link Gene}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
+     */
+    Gene getIsEncodedByBioChemEntity();
+
+    /**
+     * Another BioChemEntity encoding by this one.
+     *
+     * @param isEncodedByBioChemEntity Gene value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
+     */
+    void addIsEncodedByBioChemEntity(Gene isEncodedByBioChemEntity);
 
     /**
      * Biological process this BioChemEntity is involved in; please use PropertyValue if you want to include any evidence.
@@ -255,31 +363,47 @@ public interface BioChemEntity extends Thing {
     void addIsInvolvedInBiologicalProcess(PropertyValue isInvolvedInBiologicalProcess);
 
     /**
-     * A BioChemEntity that is known to interact with this item.
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
      *
-     * @return {@link BioChemEntity}
+     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
      */
-    List<BioChemEntity> getBioChemInteractionList();
+    <T> List<T> getIsLocatedInSubcellularLocationList();
 
     /**
-     * A BioChemEntity that is known to interact with this item.
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
      *
-     * @return {@link BioChemEntity}
+     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
      */
-    BioChemEntity getBioChemInteraction();
+    <T> T getIsLocatedInSubcellularLocation();
 
     /**
-     * A BioChemEntity that is known to interact with this item.
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
      *
-     * @param bioChemInteraction BioChemEntity value to set.
+     * @param isLocatedInSubcellularLocation DefinedTerm value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
      */
-    void addBioChemInteraction(BioChemEntity bioChemInteraction);
+    void addIsLocatedInSubcellularLocation(DefinedTerm isLocatedInSubcellularLocation);
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param isLocatedInSubcellularLocation URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    void addIsLocatedInSubcellularLocation(URL isLocatedInSubcellularLocation);
+    /**
+     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
+     *
+     * @param isLocatedInSubcellularLocation PropertyValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
+     */
+    void addIsLocatedInSubcellularLocation(PropertyValue isLocatedInSubcellularLocation);
 
     /**
      * Indicates a BioChemEntity that is (in some sense) a part of this BioChemEntity. 
@@ -307,87 +431,6 @@ public interface BioChemEntity extends Thing {
      * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
      */
     void addIsPartOfBioChemEntity(BioChemEntity isPartOfBioChemEntity);
-
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    List<BioChemEntity> getBioChemSimilarityList();
-
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-     *
-     * @return {@link BioChemEntity}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    BioChemEntity getBioChemSimilarity();
-
-    /**
-     * A similar BioChemEntity, e.g., obtained by fingerprint similarity algorithms.
-     *
-     * @param bioChemSimilarity BioChemEntity value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    void addBioChemSimilarity(BioChemEntity bioChemSimilarity);
-
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
-    List<Gene> getIsEncodedByBioChemEntityList();
-
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @return {@link Gene}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
-    Gene getIsEncodedByBioChemEntity();
-
-    /**
-     * Another BioChemEntity encoding by this one.
-     *
-     * @param isEncodedByBioChemEntity Gene value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/Gene">http://www.bioschemas.org/Gene</a>
-     */
-    void addIsEncodedByBioChemEntity(Gene isEncodedByBioChemEntity);
-
-    /**
-     * A role played by the BioChemEntity within a biological context.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    List<DefinedTerm> getBiologicalRoleList();
-
-    /**
-     * A role played by the BioChemEntity within a biological context.
-     *
-     * @return {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    DefinedTerm getBiologicalRole();
-
-    /**
-     * A role played by the BioChemEntity within a biological context.
-     *
-     * @param biologicalRole DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
-     */
-    void addBiologicalRole(DefinedTerm biologicalRole);
 
     /**
      * The taxonomic grouping of the organism that expresses, encodes, or in some way related to the BioChemEntity.
@@ -439,47 +482,4 @@ public interface BioChemEntity extends Thing {
      * @see <a href="http://www.bioschemas.org">http://www.bioschemas.org</a>
      */
     void addTaxonomicRange(Text taxonomicRange);
-
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    <T> List<T> getIsLocatedInSubcellularLocationList();
-
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @return {@link DefinedTerm} or {@link URL} or {@link PropertyValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    <T> T getIsLocatedInSubcellularLocation();
-
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isLocatedInSubcellularLocation DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    void addIsLocatedInSubcellularLocation(DefinedTerm isLocatedInSubcellularLocation);
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isLocatedInSubcellularLocation URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    void addIsLocatedInSubcellularLocation(URL isLocatedInSubcellularLocation);
-    /**
-     * Subcellular location where this BioChemEntity is located; please use PropertyValue if you want to include any evidence.
-     *
-     * @param isLocatedInSubcellularLocation PropertyValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="http://www.bioschemas.org/BioChemEntity">http://www.bioschemas.org/BioChemEntity</a>
-     */
-    void addIsLocatedInSubcellularLocation(PropertyValue isLocatedInSubcellularLocation);
 }

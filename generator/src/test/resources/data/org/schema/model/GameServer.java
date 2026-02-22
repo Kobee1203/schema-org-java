@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Integer;
 import org.schema.model.GameServerStatus;
 import org.schema.model.VideoGame;
+import org.schema.model.datatype.Integer;
 
 /**
  * Server that provides game interaction in a multiplayer game.
@@ -16,6 +16,27 @@ import org.schema.model.VideoGame;
  * @see <a href="https://schema.org/GameServer">https://schema.org/GameServer</a>
  */
 public interface GameServer extends Intangible {
+
+    /**
+     * Video game which is played on this server.
+     *
+     * @return {@link VideoGame}
+     */
+    List<VideoGame> getGameList();
+
+    /**
+     * Video game which is played on this server.
+     *
+     * @return {@link VideoGame}
+     */
+    VideoGame getGame();
+
+    /**
+     * Video game which is played on this server.
+     *
+     * @param game VideoGame value to set.
+     */
+    void addGame(VideoGame game);
 
     /**
      * Number of players on the server.
@@ -58,25 +79,4 @@ public interface GameServer extends Intangible {
      * @param serverStatus GameServerStatus value to set.
      */
     void addServerStatus(GameServerStatus serverStatus);
-
-    /**
-     * Video game which is played on this server.
-     *
-     * @return {@link VideoGame}
-     */
-    List<VideoGame> getGameList();
-
-    /**
-     * Video game which is played on this server.
-     *
-     * @return {@link VideoGame}
-     */
-    VideoGame getGame();
-
-    /**
-     * Video game which is played on this server.
-     *
-     * @param game VideoGame value to set.
-     */
-    void addGame(VideoGame game);
 }

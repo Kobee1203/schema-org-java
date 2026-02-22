@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
+import org.schema.model.Thing;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Number;
-import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 
 /**
  * A Property value specification.
@@ -20,46 +20,31 @@ import org.schema.model.Thing;
 public interface PropertyValueSpecification extends Intangible {
 
     /**
-     * Specifies a regular expression for testing literal values according to the HTML spec.
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @return {@link Text}
+     * @return {@link Text} or {@link Thing}
      */
-    List<Text> getValuePatternList();
+    <T> List<T> getDefaultValueList();
 
     /**
-     * Specifies a regular expression for testing literal values according to the HTML spec.
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @return {@link Text}
+     * @return {@link Text} or {@link Thing}
      */
-    Text getValuePattern();
+    <T> T getDefaultValue();
 
     /**
-     * Specifies a regular expression for testing literal values according to the HTML spec.
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @param valuePattern Text value to set.
+     * @param defaultValue Text value to set.
      */
-    void addValuePattern(Text valuePattern);
-
+    void addDefaultValue(Text defaultValue);
     /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
+     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
      *
-     * @return {@link Boolean}
+     * @param defaultValue Thing value to set.
      */
-    List<Boolean> getReadonlyValueList();
-
-    /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getReadonlyValue();
-
-    /**
-     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
-     *
-     * @param readonlyValue Boolean value to set.
-     */
-    void addReadonlyValue(Boolean readonlyValue);
+    void addDefaultValue(Thing defaultValue);
 
     /**
      * The upper value of some characteristic or property.
@@ -86,25 +71,28 @@ public interface PropertyValueSpecification extends Intangible {
     void addMaxValue(Number maxValue);
 
     /**
-     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     * The lower value of some characteristic or property.
      *
-     * @return {@link Text}
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getValueNameList();
+    List<Number> getMinValueList();
 
     /**
-     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     * The lower value of some characteristic or property.
      *
-     * @return {@link Text}
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getValueName();
+    Number getMinValue();
 
     /**
-     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     * The lower value of some characteristic or property.
      *
-     * @param valueName Text value to set.
+     * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addValueName(Text valueName);
+    void addMinValue(Number minValue);
 
     /**
      * Whether multiple values are allowed for the property.  Default is false.
@@ -128,28 +116,25 @@ public interface PropertyValueSpecification extends Intangible {
     void addMultipleValues(Boolean multipleValues);
 
     /**
-     * The lower value of some characteristic or property.
+     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
      *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Boolean}
      */
-    List<Number> getMinValueList();
+    List<Boolean> getReadonlyValueList();
 
     /**
-     * The lower value of some characteristic or property.
+     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
      *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Boolean}
      */
-    Number getMinValue();
+    Boolean getReadonlyValue();
 
     /**
-     * The lower value of some characteristic or property.
+     * Whether or not a property is mutable.  Default is false. Specifying this for a property that also has a value makes it act similar to a "hidden" input in an HTML form.
      *
-     * @param minValue Number value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param readonlyValue Boolean value to set.
      */
-    void addMinValue(Number minValue);
+    void addReadonlyValue(Boolean readonlyValue);
 
     /**
      * The stepValue attribute indicates the granularity that is expected (and required) of the value in a PropertyValueSpecification.
@@ -215,6 +200,48 @@ public interface PropertyValueSpecification extends Intangible {
     void addValueMinLength(Number valueMinLength);
 
     /**
+     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getValueNameList();
+
+    /**
+     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     *
+     * @return {@link Text}
+     */
+    Text getValueName();
+
+    /**
+     * Indicates the name of the PropertyValueSpecification to be used in URL templates and form encoding in a manner analogous to HTML's input@name.
+     *
+     * @param valueName Text value to set.
+     */
+    void addValueName(Text valueName);
+
+    /**
+     * Specifies a regular expression for testing literal values according to the HTML spec.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getValuePatternList();
+
+    /**
+     * Specifies a regular expression for testing literal values according to the HTML spec.
+     *
+     * @return {@link Text}
+     */
+    Text getValuePattern();
+
+    /**
+     * Specifies a regular expression for testing literal values according to the HTML spec.
+     *
+     * @param valuePattern Text value to set.
+     */
+    void addValuePattern(Text valuePattern);
+
+    /**
      * Whether the property must be filled in to complete the action.  Default is false.
      *
      * @return {@link Boolean}
@@ -234,31 +261,4 @@ public interface PropertyValueSpecification extends Intangible {
      * @param valueRequired Boolean value to set.
      */
     void addValueRequired(Boolean valueRequired);
-
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @return {@link Text} or {@link Thing}
-     */
-    <T> List<T> getDefaultValueList();
-
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @return {@link Text} or {@link Thing}
-     */
-    <T> T getDefaultValue();
-
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @param defaultValue Text value to set.
-     */
-    void addDefaultValue(Text defaultValue);
-    /**
-     * The default value of the input.  For properties that expect a literal, the default is a literal value, for properties that expect an object, it's an ID reference to one of the current values.
-     *
-     * @param defaultValue Thing value to set.
-     */
-    void addDefaultValue(Thing defaultValue);
 }

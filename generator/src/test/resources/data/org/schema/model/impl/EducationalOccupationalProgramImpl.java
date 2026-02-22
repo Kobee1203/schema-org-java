@@ -5,37 +5,37 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.StructuredValue;
-import org.schema.model.datatype.Integer;
-import org.schema.model.datatype.Text;
-import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.Number;
-import org.schema.model.MonetaryAmountDistribution;
+import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.AlignmentObject;
+import org.schema.model.CategoryCode;
+import org.schema.model.Course;
+import org.schema.model.CreativeWork;
+import org.schema.model.DayOfWeek;
 import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Date;
-import org.schema.model.Offer;
 import org.schema.model.Demand;
 import org.schema.model.Duration;
-import org.schema.model.CategoryCode;
-import org.schema.model.DayOfWeek;
-import org.schema.model.Course;
-import org.schema.model.AlignmentObject;
-import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.CreativeWork;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import org.schema.model.ImageObject;
-import org.schema.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
-import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
-import java.util.List;
-import org.schema.model.Intangible;
+import org.schema.model.EducationalOccupationalCredential;
 import org.schema.model.EducationalOccupationalProgram;
+import org.schema.model.Event;
+import org.schema.model.ImageObject;
+import org.schema.model.Intangible;
+import org.schema.model.MonetaryAmountDistribution;
+import org.schema.model.Offer;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PropertyValue;
+import org.schema.model.StructuredValue;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Integer;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A program offered by an institution which determines the learning progress to achieve an outcome, usually a credential like a degree or certificate. This would define a discrete set of opportunities (e.g., job, courses) that together constitute a program with a clear start, end, set of requirements, and transition to a new occupational opportunity (e.g., a job), or sometimes a higher educational opportunity (e.g., an advanced degree).
@@ -47,375 +47,183 @@ import org.schema.model.EducationalOccupationalProgram;
 @JsonLdTypeName("EducationalOccupationalProgram")
 public class EducationalOccupationalProgramImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements EducationalOccupationalProgram {
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> provider;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
 
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
     }
 
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
     }
 
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ StructuredValue.class, Integer.class })
-    private List<Object> numberOfCredits;
+    private List<Text> alternateName;
 
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     *
-     * @return {@link StructuredValue} or {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public <T> List<T> getNumberOfCreditsList() {
-        return (List<T>) numberOfCredits;
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     *
-     * @return {@link StructuredValue} or {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public <T> T getNumberOfCredits() {
-        return (T) getFirst(numberOfCredits);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
     }
 
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     *
-     * @param numberOfCredits StructuredValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public void addNumberOfCredits(StructuredValue numberOfCredits) {
-        this.numberOfCredits = add(this.numberOfCredits, numberOfCredits);
-    }
-    /**
-     * The number of credits or units awarded by a Course or required to complete an EducationalOccupationalProgram.
-     *
-     * @param numberOfCredits Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addNumberOfCredits(Integer numberOfCredits) {
-        this.numberOfCredits = add(this.numberOfCredits, numberOfCredits);
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<Integer> maximumEnrollment;
+    @JsonLdFieldTypes({ Date.class, Text.class })
+    private List<Object> applicationDeadline;
 
-    /**
-     * The maximum number of students who may be enrolled in the program.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public List<Integer> getMaximumEnrollmentList() {
-        return maximumEnrollment;
+    public <T> List<T> getApplicationDeadlineList() {
+        return (List<T>) applicationDeadline;
     }
 
-    /**
-     * The maximum number of students who may be enrolled in the program.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public Integer getMaximumEnrollment() {
-        return getFirst(maximumEnrollment);
+    public <T> T getApplicationDeadline() {
+        return (T) getFirst(applicationDeadline);
     }
 
-    /**
-     * The maximum number of students who may be enrolled in the program.
-     *
-     * @param maximumEnrollment Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public void addMaximumEnrollment(Integer maximumEnrollment) {
-        this.maximumEnrollment = add(this.maximumEnrollment, maximumEnrollment);
+    public void addApplicationDeadline(Date applicationDeadline) {
+        this.applicationDeadline = add(this.applicationDeadline, applicationDeadline);
+    }
+    @Override
+    public void addApplicationDeadline(Text applicationDeadline) {
+        this.applicationDeadline = add(this.applicationDeadline, applicationDeadline);
+    }
+
+    private List<Date> applicationStartDate;
+
+    @Override
+    public List<Date> getApplicationStartDateList() {
+        return applicationStartDate;
+    }
+
+    @Override
+    public Date getApplicationStartDate() {
+        return getFirst(applicationStartDate);
+    }
+
+    @Override
+    public void addApplicationStartDate(Date applicationStartDate) {
+        this.applicationStartDate = add(this.applicationStartDate, applicationStartDate);
+    }
+
+    private List<DayOfWeek> dayOfWeek;
+
+    @Override
+    public List<DayOfWeek> getDayOfWeekList() {
+        return dayOfWeek;
+    }
+
+    @Override
+    public DayOfWeek getDayOfWeek() {
+        return getFirst(dayOfWeek);
+    }
+
+    @Override
+    public void addDayOfWeek(DayOfWeek dayOfWeek) {
+        this.dayOfWeek = add(this.dayOfWeek, dayOfWeek);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
     @JsonLdFieldTypes({ Text.class, EducationalOccupationalCredential.class, URL.class })
     private List<Object> educationalCredentialAwarded;
 
-    /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @return {@link Text} or {@link EducationalOccupationalCredential} or {@link URL}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public <T> List<T> getEducationalCredentialAwardedList() {
         return (List<T>) educationalCredentialAwarded;
     }
 
-    /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @return {@link Text} or {@link EducationalOccupationalCredential} or {@link URL}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public <T> T getEducationalCredentialAwarded() {
         return (T) getFirst(educationalCredentialAwarded);
     }
 
-    /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @param educationalCredentialAwarded Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public void addEducationalCredentialAwarded(Text educationalCredentialAwarded) {
         this.educationalCredentialAwarded = add(this.educationalCredentialAwarded, educationalCredentialAwarded);
     }
-    /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @param educationalCredentialAwarded EducationalOccupationalCredential value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public void addEducationalCredentialAwarded(EducationalOccupationalCredential educationalCredentialAwarded) {
         this.educationalCredentialAwarded = add(this.educationalCredentialAwarded, educationalCredentialAwarded);
     }
-    /**
-     * A description of the qualification, award, certificate, diploma or other educational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @param educationalCredentialAwarded URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
     public void addEducationalCredentialAwarded(URL educationalCredentialAwarded) {
         this.educationalCredentialAwarded = add(this.educationalCredentialAwarded, educationalCredentialAwarded);
     }
 
-    private List<Number> termsPerYear;
-
-    /**
-     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public List<Number> getTermsPerYearList() {
-        return termsPerYear;
-    }
-
-    /**
-     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public Number getTermsPerYear() {
-        return getFirst(termsPerYear);
-    }
-
-    /**
-     * The number of times terms of study are offered per year. Semesters and quarters are common units for term. For example, if the student can only take 2 semesters for the program in one year, then termsPerYear should be 2.
-     *
-     * @param termsPerYear Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addTermsPerYear(Number termsPerYear) {
-        this.termsPerYear = add(this.termsPerYear, termsPerYear);
-    }
-
-    private List<MonetaryAmountDistribution> salaryUponCompletion;
-
-    /**
-     * The expected salary upon completing the training.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public List<MonetaryAmountDistribution> getSalaryUponCompletionList() {
-        return salaryUponCompletion;
-    }
-
-    /**
-     * The expected salary upon completing the training.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public MonetaryAmountDistribution getSalaryUponCompletion() {
-        return getFirst(salaryUponCompletion);
-    }
-
-    /**
-     * The expected salary upon completing the training.
-     *
-     * @param salaryUponCompletion MonetaryAmountDistribution value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addSalaryUponCompletion(MonetaryAmountDistribution salaryUponCompletion) {
-        this.salaryUponCompletion = add(this.salaryUponCompletion, salaryUponCompletion);
-    }
-
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> financialAidEligible;
-
-    /**
-     * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
-     */
-    @Override
-    public <T> List<T> getFinancialAidEligibleList() {
-        return (List<T>) financialAidEligible;
-    }
-
-    /**
-     * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
-     *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
-     */
-    @Override
-    public <T> T getFinancialAidEligible() {
-        return (T) getFirst(financialAidEligible);
-    }
-
-    /**
-     * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
-     *
-     * @param financialAidEligible DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
-     */
-    @Override
-    public void addFinancialAidEligible(DefinedTerm financialAidEligible) {
-        this.financialAidEligible = add(this.financialAidEligible, financialAidEligible);
-    }
-    /**
-     * A financial aid type or program which students may use to pay for tuition or fees associated with the program.
-     *
-     * @param financialAidEligible Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2418">https://github.com/schemaorg/schemaorg/issues/2418</a>
-     */
-    @Override
-    public void addFinancialAidEligible(Text financialAidEligible) {
-        this.financialAidEligible = add(this.financialAidEligible, financialAidEligible);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> educationalProgramMode;
 
-    /**
-     * Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
     public <T> List<T> getEducationalProgramModeList() {
         return (List<T>) educationalProgramMode;
     }
 
-    /**
-     * Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
     public <T> T getEducationalProgramMode() {
         return (T) getFirst(educationalProgramMode);
     }
 
-    /**
-     * Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
-     *
-     * @param educationalProgramMode URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
     public void addEducationalProgramMode(URL educationalProgramMode) {
         this.educationalProgramMode = add(this.educationalProgramMode, educationalProgramMode);
     }
-    /**
-     * Similar to courseMode, the medium or means of delivery of the program as a whole. The value may either be a text label (e.g. "online", "onsite" or "blended"; "synchronous" or "asynchronous"; "full-time" or "part-time") or a URL reference to a term from a controlled vocabulary (e.g. https://ceds.ed.gov/element/001311#Asynchronous ).
-     *
-     * @param educationalProgramMode Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
     public void addEducationalProgramMode(Text educationalProgramMode) {
         this.educationalProgramMode = add(this.educationalProgramMode, educationalProgramMode);
@@ -424,1273 +232,572 @@ public class EducationalOccupationalProgramImpl extends com.weedow.schemaorg.com
     @JsonLdFieldTypes({ DateTime.class, Date.class })
     private List<Object> endDate;
 
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
     @Override
     public <T> List<T> getEndDateList() {
         return (List<T>) endDate;
     }
 
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
     @Override
     public <T> T getEndDate() {
         return (T) getFirst(endDate);
     }
 
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param endDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
     @Override
     public void addEndDate(DateTime endDate) {
         this.endDate = add(this.endDate, endDate);
     }
-    /**
-     * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param endDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
     @Override
     public void addEndDate(Date endDate) {
         this.endDate = add(this.endDate, endDate);
     }
 
-    private List<Date> applicationStartDate;
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> financialAidEligible;
 
-    /**
-     * The date at which the program begins collecting applications for the next enrollment cycle.
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public List<Date> getApplicationStartDateList() {
-        return applicationStartDate;
+    public <T> List<T> getFinancialAidEligibleList() {
+        return (List<T>) financialAidEligible;
     }
 
-    /**
-     * The date at which the program begins collecting applications for the next enrollment cycle.
-     *
-     * @return {@link Date}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public Date getApplicationStartDate() {
-        return getFirst(applicationStartDate);
+    public <T> T getFinancialAidEligible() {
+        return (T) getFirst(financialAidEligible);
     }
 
-    /**
-     * The date at which the program begins collecting applications for the next enrollment cycle.
-     *
-     * @param applicationStartDate Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
     @Override
-    public void addApplicationStartDate(Date applicationStartDate) {
-        this.applicationStartDate = add(this.applicationStartDate, applicationStartDate);
+    public void addFinancialAidEligible(DefinedTerm financialAidEligible) {
+        this.financialAidEligible = add(this.financialAidEligible, financialAidEligible);
     }
-
-    @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private List<Object> offers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
     @Override
-    public <T> List<T> getOffersList() {
-        return (List<T>) offers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) getFirst(offers);
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Offer offers) {
-        this.offers = add(this.offers, offers);
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Demand offers) {
-        this.offers = add(this.offers, offers);
-    }
-
-    private List<Duration> timeToComplete;
-
-    /**
-     * The expected length of time to complete the program if attending full-time.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public List<Duration> getTimeToCompleteList() {
-        return timeToComplete;
-    }
-
-    /**
-     * The expected length of time to complete the program if attending full-time.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public Duration getTimeToComplete() {
-        return getFirst(timeToComplete);
-    }
-
-    /**
-     * The expected length of time to complete the program if attending full-time.
-     *
-     * @param timeToComplete Duration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addTimeToComplete(Duration timeToComplete) {
-        this.timeToComplete = add(this.timeToComplete, timeToComplete);
-    }
-
-    @JsonLdFieldTypes({ Date.class, Text.class })
-    private List<Object> applicationDeadline;
-
-    /**
-     * The date on which the program stops collecting applications for the next enrollment cycle. Flexible application deadlines (for example, a program with rolling admissions) can be described in a textual string, rather than as a DateTime.
-     *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public <T> List<T> getApplicationDeadlineList() {
-        return (List<T>) applicationDeadline;
-    }
-
-    /**
-     * The date on which the program stops collecting applications for the next enrollment cycle. Flexible application deadlines (for example, a program with rolling admissions) can be described in a textual string, rather than as a DateTime.
-     *
-     * @return {@link Date} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public <T> T getApplicationDeadline() {
-        return (T) getFirst(applicationDeadline);
-    }
-
-    /**
-     * The date on which the program stops collecting applications for the next enrollment cycle. Flexible application deadlines (for example, a program with rolling admissions) can be described in a textual string, rather than as a DateTime.
-     *
-     * @param applicationDeadline Date value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addApplicationDeadline(Date applicationDeadline) {
-        this.applicationDeadline = add(this.applicationDeadline, applicationDeadline);
-    }
-    /**
-     * The date on which the program stops collecting applications for the next enrollment cycle. Flexible application deadlines (for example, a program with rolling admissions) can be described in a textual string, rather than as a DateTime.
-     *
-     * @param applicationDeadline Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addApplicationDeadline(Text applicationDeadline) {
-        this.applicationDeadline = add(this.applicationDeadline, applicationDeadline);
-    }
-
-    private List<MonetaryAmountDistribution> trainingSalary;
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public List<MonetaryAmountDistribution> getTrainingSalaryList() {
-        return trainingSalary;
-    }
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @return {@link MonetaryAmountDistribution}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public MonetaryAmountDistribution getTrainingSalary() {
-        return getFirst(trainingSalary);
-    }
-
-    /**
-     * The estimated salary earned while in the program.
-     *
-     * @param trainingSalary MonetaryAmountDistribution value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addTrainingSalary(MonetaryAmountDistribution trainingSalary) {
-        this.trainingSalary = add(this.trainingSalary, trainingSalary);
-    }
-
-    @JsonLdFieldTypes({ EducationalOccupationalCredential.class, URL.class, Text.class })
-    private List<Object> occupationalCredentialAwarded;
-
-    /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @return {@link EducationalOccupationalCredential} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getOccupationalCredentialAwardedList() {
-        return (List<T>) occupationalCredentialAwarded;
-    }
-
-    /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @return {@link EducationalOccupationalCredential} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOccupationalCredentialAwarded() {
-        return (T) getFirst(occupationalCredentialAwarded);
-    }
-
-    /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @param occupationalCredentialAwarded EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded) {
-        this.occupationalCredentialAwarded = add(this.occupationalCredentialAwarded, occupationalCredentialAwarded);
-    }
-    /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @param occupationalCredentialAwarded URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOccupationalCredentialAwarded(URL occupationalCredentialAwarded) {
-        this.occupationalCredentialAwarded = add(this.occupationalCredentialAwarded, occupationalCredentialAwarded);
-    }
-    /**
-     * A description of the qualification, award, certificate, diploma or other occupational credential awarded as a consequence of successful completion of this course or program.
-     *
-     * @param occupationalCredentialAwarded Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOccupationalCredentialAwarded(Text occupationalCredentialAwarded) {
-        this.occupationalCredentialAwarded = add(this.occupationalCredentialAwarded, occupationalCredentialAwarded);
-    }
-
-    @JsonLdFieldTypes({ StructuredValue.class, Integer.class })
-    private List<Object> typicalCreditsPerTerm;
-
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     *
-     * @return {@link StructuredValue} or {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public <T> List<T> getTypicalCreditsPerTermList() {
-        return (List<T>) typicalCreditsPerTerm;
-    }
-
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     *
-     * @return {@link StructuredValue} or {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public <T> T getTypicalCreditsPerTerm() {
-        return (T) getFirst(typicalCreditsPerTerm);
-    }
-
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     *
-     * @param typicalCreditsPerTerm StructuredValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addTypicalCreditsPerTerm(StructuredValue typicalCreditsPerTerm) {
-        this.typicalCreditsPerTerm = add(this.typicalCreditsPerTerm, typicalCreditsPerTerm);
-    }
-    /**
-     * The number of credits or units a full-time student would be expected to take in 1 term however 'term' is defined by the institution.
-     *
-     * @param typicalCreditsPerTerm Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addTypicalCreditsPerTerm(Integer typicalCreditsPerTerm) {
-        this.typicalCreditsPerTerm = add(this.typicalCreditsPerTerm, typicalCreditsPerTerm);
-    }
-
-    @JsonLdFieldTypes({ Text.class, CategoryCode.class })
-    private List<Object> occupationalCategory;
-
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @return {@link Text} or {@link CategoryCode}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
-     */
-    @Override
-    public <T> List<T> getOccupationalCategoryList() {
-        return (List<T>) occupationalCategory;
-    }
-
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @return {@link Text} or {@link CategoryCode}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
-     */
-    @Override
-    public <T> T getOccupationalCategory() {
-        return (T) getFirst(occupationalCategory);
-    }
-
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @param occupationalCategory Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
-     */
-    @Override
-    public void addOccupationalCategory(Text occupationalCategory) {
-        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
-    }
-    /**
-     * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
-     * Note: for historical reasons, any textual label and formal code provided as a literal may be assumed to be from O*NET-SOC.
-     *
-     * @param occupationalCategory CategoryCode value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3420">https://github.com/schemaorg/schemaorg/issues/3420</a>
-     */
-    @Override
-    public void addOccupationalCategory(CategoryCode occupationalCategory) {
-        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
-    }
-
-    private List<DayOfWeek> dayOfWeek;
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @return {@link DayOfWeek}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<DayOfWeek> getDayOfWeekList() {
-        return dayOfWeek;
-    }
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @return {@link DayOfWeek}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public DayOfWeek getDayOfWeek() {
-        return getFirst(dayOfWeek);
-    }
-
-    /**
-     * The day of the week for which these opening hours are valid.
-     *
-     * @param dayOfWeek DayOfWeek value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addDayOfWeek(DayOfWeek dayOfWeek) {
-        this.dayOfWeek = add(this.dayOfWeek, dayOfWeek);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> startDate;
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> List<T> getStartDateList() {
-        return (List<T>) startDate;
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> T getStartDate() {
-        return (T) getFirst(startDate);
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param startDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addStartDate(DateTime startDate) {
-        this.startDate = add(this.startDate, startDate);
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param startDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addStartDate(Date startDate) {
-        this.startDate = add(this.startDate, startDate);
-    }
-
-    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
-    private List<Object> programType;
-
-    /**
-     * The type of educational or occupational program. For example, classroom, internship, alternance, etc.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public <T> List<T> getProgramTypeList() {
-        return (List<T>) programType;
-    }
-
-    /**
-     * The type of educational or occupational program. For example, classroom, internship, alternance, etc.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public <T> T getProgramType() {
-        return (T) getFirst(programType);
-    }
-
-    /**
-     * The type of educational or occupational program. For example, classroom, internship, alternance, etc.
-     *
-     * @param programType Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public void addProgramType(Text programType) {
-        this.programType = add(this.programType, programType);
-    }
-    /**
-     * The type of educational or occupational program. For example, classroom, internship, alternance, etc.
-     *
-     * @param programType DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2460">https://github.com/schemaorg/schemaorg/issues/2460</a>
-     */
-    @Override
-    public void addProgramType(DefinedTerm programType) {
-        this.programType = add(this.programType, programType);
-    }
-
-    @JsonLdFieldTypes({ Course.class, EducationalOccupationalCredential.class, AlignmentObject.class, Text.class })
-    private List<Object> programPrerequisites;
-
-    /**
-     * Prerequisites for enrolling in the program.
-     *
-     * @return {@link Course} or {@link EducationalOccupationalCredential} or {@link AlignmentObject} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getProgramPrerequisitesList() {
-        return (List<T>) programPrerequisites;
-    }
-
-    /**
-     * Prerequisites for enrolling in the program.
-     *
-     * @return {@link Course} or {@link EducationalOccupationalCredential} or {@link AlignmentObject} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getProgramPrerequisites() {
-        return (T) getFirst(programPrerequisites);
-    }
-
-    /**
-     * Prerequisites for enrolling in the program.
-     *
-     * @param programPrerequisites Course value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProgramPrerequisites(Course programPrerequisites) {
-        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
-    }
-    /**
-     * Prerequisites for enrolling in the program.
-     *
-     * @param programPrerequisites EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProgramPrerequisites(EducationalOccupationalCredential programPrerequisites) {
-        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
-    }
-    /**
-     * Prerequisites for enrolling in the program.
-     *
-     * @param programPrerequisites AlignmentObject value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProgramPrerequisites(AlignmentObject programPrerequisites) {
-        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
-    }
-    /**
-     * Prerequisites for enrolling in the program.
-     *
-     * @param programPrerequisites Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProgramPrerequisites(Text programPrerequisites) {
-        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
-    }
-
-    private List<Text> timeOfDay;
-
-    /**
-     * The time of day the program normally runs. For example, "evenings".
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public List<Text> getTimeOfDayList() {
-        return timeOfDay;
-    }
-
-    /**
-     * The time of day the program normally runs. For example, "evenings".
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public Text getTimeOfDay() {
-        return getFirst(timeOfDay);
-    }
-
-    /**
-     * The time of day the program normally runs. For example, "evenings".
-     *
-     * @param timeOfDay Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addTimeOfDay(Text timeOfDay) {
-        this.timeOfDay = add(this.timeOfDay, timeOfDay);
+    public void addFinancialAidEligible(Text financialAidEligible) {
+        this.financialAidEligible = add(this.financialAidEligible, financialAidEligible);
     }
 
     private List<Course> hasCourse;
 
-    /**
-     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
-     *
-     * @return {@link Course}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
-     */
     @Override
     public List<Course> getHasCourseList() {
         return hasCourse;
     }
 
-    /**
-     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
-     *
-     * @return {@link Course}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
-     */
     @Override
     public Course getHasCourse() {
         return getFirst(hasCourse);
     }
 
-    /**
-     * A course or class that is one of the learning opportunities that constitute an educational / occupational program. No information is implied about whether the course is mandatory or optional; no guarantee is implied about whether the course will be available to everyone on the program.
-     *
-     * @param hasCourse Course value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2483">https://github.com/schemaorg/schemaorg/issues/2483</a>
-     */
     @Override
     public void addHasCourse(Course hasCourse) {
         this.hasCourse = add(this.hasCourse, hasCourse);
     }
 
-    private List<Duration> termDuration;
-
-    /**
-     * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public List<Duration> getTermDurationList() {
-        return termDuration;
-    }
-
-    /**
-     * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
-     *
-     * @return {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public Duration getTermDuration() {
-        return getFirst(termDuration);
-    }
-
-    /**
-     * The amount of time in a term as defined by the institution. A term is a length of time where students take one or more classes. Semesters and quarters are common units for term.
-     *
-     * @param termDuration Duration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2419">https://github.com/schemaorg/schemaorg/issues/2419</a>
-     */
-    @Override
-    public void addTermDuration(Duration termDuration) {
-        this.termDuration = add(this.termDuration, termDuration);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> List<T> getIdentifierList() {
         return (List<T>) identifier;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
     public <T> T getIdentifier() {
         return (T) getFirst(identifier);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
     public void addIdentifier(URL identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
     @Override
     public void addIdentifier(PropertyValue identifier) {
         this.identifier = add(this.identifier, identifier);
     }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
     @Override
     public void addIdentifier(Text identifier) {
         this.identifier = add(this.identifier, identifier);
     }
 
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
-    private List<URL> url;
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getUrlList() {
-        return url;
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getUrl() {
-        return getFirst(url);
-    }
-
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
-    @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
-    }
-
     @JsonLdFieldTypes({ ImageObject.class, URL.class })
     private List<Object> image;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> List<T> getImageList() {
         return (List<T>) image;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
     public <T> T getImage() {
         return (T) getFirst(image);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
     public void addImage(ImageObject image) {
         this.image = add(this.image, image);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
     public void addImage(URL image) {
         this.image = add(this.image, image);
     }
 
-    private List<Text> disambiguatingDescription;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Integer> maximumEnrollment;
+
+    @Override
+    public List<Integer> getMaximumEnrollmentList() {
+        return maximumEnrollment;
+    }
+
+    @Override
+    public Integer getMaximumEnrollment() {
+        return getFirst(maximumEnrollment);
+    }
+
+    @Override
+    public void addMaximumEnrollment(Integer maximumEnrollment) {
+        this.maximumEnrollment = add(this.maximumEnrollment, maximumEnrollment);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ StructuredValue.class, Integer.class })
+    private List<Object> numberOfCredits;
+
+    @Override
+    public <T> List<T> getNumberOfCreditsList() {
+        return (List<T>) numberOfCredits;
+    }
+
+    @Override
+    public <T> T getNumberOfCredits() {
+        return (T) getFirst(numberOfCredits);
+    }
+
+    @Override
+    public void addNumberOfCredits(StructuredValue numberOfCredits) {
+        this.numberOfCredits = add(this.numberOfCredits, numberOfCredits);
+    }
+    @Override
+    public void addNumberOfCredits(Integer numberOfCredits) {
+        this.numberOfCredits = add(this.numberOfCredits, numberOfCredits);
+    }
+
+    @JsonLdFieldTypes({ Text.class, CategoryCode.class })
+    private List<Object> occupationalCategory;
+
+    @Override
+    public <T> List<T> getOccupationalCategoryList() {
+        return (List<T>) occupationalCategory;
+    }
+
+    @Override
+    public <T> T getOccupationalCategory() {
+        return (T) getFirst(occupationalCategory);
+    }
+
+    @Override
+    public void addOccupationalCategory(Text occupationalCategory) {
+        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
+    }
+    @Override
+    public void addOccupationalCategory(CategoryCode occupationalCategory) {
+        this.occupationalCategory = add(this.occupationalCategory, occupationalCategory);
+    }
+
+    @JsonLdFieldTypes({ EducationalOccupationalCredential.class, URL.class, Text.class })
+    private List<Object> occupationalCredentialAwarded;
+
+    @Override
+    public <T> List<T> getOccupationalCredentialAwardedList() {
+        return (List<T>) occupationalCredentialAwarded;
+    }
+
+    @Override
+    public <T> T getOccupationalCredentialAwarded() {
+        return (T) getFirst(occupationalCredentialAwarded);
+    }
+
+    @Override
+    public void addOccupationalCredentialAwarded(EducationalOccupationalCredential occupationalCredentialAwarded) {
+        this.occupationalCredentialAwarded = add(this.occupationalCredentialAwarded, occupationalCredentialAwarded);
+    }
+    @Override
+    public void addOccupationalCredentialAwarded(URL occupationalCredentialAwarded) {
+        this.occupationalCredentialAwarded = add(this.occupationalCredentialAwarded, occupationalCredentialAwarded);
+    }
+    @Override
+    public void addOccupationalCredentialAwarded(Text occupationalCredentialAwarded) {
+        this.occupationalCredentialAwarded = add(this.occupationalCredentialAwarded, occupationalCredentialAwarded);
+    }
+
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
+
+    @Override
+    public <T> T getOffers() {
+        return (T) getFirst(offers);
+    }
+
+    @Override
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
+    }
+    @Override
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ Course.class, EducationalOccupationalCredential.class, AlignmentObject.class, Text.class })
+    private List<Object> programPrerequisites;
+
+    @Override
+    public <T> List<T> getProgramPrerequisitesList() {
+        return (List<T>) programPrerequisites;
+    }
+
+    @Override
+    public <T> T getProgramPrerequisites() {
+        return (T) getFirst(programPrerequisites);
+    }
+
+    @Override
+    public void addProgramPrerequisites(Course programPrerequisites) {
+        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
+    }
+    @Override
+    public void addProgramPrerequisites(EducationalOccupationalCredential programPrerequisites) {
+        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
+    }
+    @Override
+    public void addProgramPrerequisites(AlignmentObject programPrerequisites) {
+        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
+    }
+    @Override
+    public void addProgramPrerequisites(Text programPrerequisites) {
+        this.programPrerequisites = add(this.programPrerequisites, programPrerequisites);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> programType;
+
+    @Override
+    public <T> List<T> getProgramTypeList() {
+        return (List<T>) programType;
+    }
+
+    @Override
+    public <T> T getProgramType() {
+        return (T) getFirst(programType);
+    }
+
+    @Override
+    public void addProgramType(Text programType) {
+        this.programType = add(this.programType, programType);
+    }
+    @Override
+    public void addProgramType(DefinedTerm programType) {
+        this.programType = add(this.programType, programType);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> provider;
+
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    private List<MonetaryAmountDistribution> salaryUponCompletion;
+
+    @Override
+    public List<MonetaryAmountDistribution> getSalaryUponCompletionList() {
+        return salaryUponCompletion;
+    }
+
+    @Override
+    public MonetaryAmountDistribution getSalaryUponCompletion() {
+        return getFirst(salaryUponCompletion);
+    }
+
+    @Override
+    public void addSalaryUponCompletion(MonetaryAmountDistribution salaryUponCompletion) {
+        this.salaryUponCompletion = add(this.salaryUponCompletion, salaryUponCompletion);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> startDate;
+
+    @Override
+    public <T> List<T> getStartDateList() {
+        return (List<T>) startDate;
+    }
+
+    @Override
+    public <T> T getStartDate() {
+        return (T) getFirst(startDate);
+    }
+
+    @Override
+    public void addStartDate(DateTime startDate) {
+        this.startDate = add(this.startDate, startDate);
+    }
+    @Override
+    public void addStartDate(Date startDate) {
+        this.startDate = add(this.startDate, startDate);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<Duration> termDuration;
+
+    @Override
+    public List<Duration> getTermDurationList() {
+        return termDuration;
+    }
+
+    @Override
+    public Duration getTermDuration() {
+        return getFirst(termDuration);
+    }
+
+    @Override
+    public void addTermDuration(Duration termDuration) {
+        this.termDuration = add(this.termDuration, termDuration);
+    }
+
+    private List<Number> termsPerYear;
+
+    @Override
+    public List<Number> getTermsPerYearList() {
+        return termsPerYear;
+    }
+
+    @Override
+    public Number getTermsPerYear() {
+        return getFirst(termsPerYear);
+    }
+
+    @Override
+    public void addTermsPerYear(Number termsPerYear) {
+        this.termsPerYear = add(this.termsPerYear, termsPerYear);
+    }
+
+    private List<Text> timeOfDay;
+
+    @Override
+    public List<Text> getTimeOfDayList() {
+        return timeOfDay;
+    }
+
+    @Override
+    public Text getTimeOfDay() {
+        return getFirst(timeOfDay);
+    }
+
+    @Override
+    public void addTimeOfDay(Text timeOfDay) {
+        this.timeOfDay = add(this.timeOfDay, timeOfDay);
+    }
+
+    private List<Duration> timeToComplete;
+
+    @Override
+    public List<Duration> getTimeToCompleteList() {
+        return timeToComplete;
+    }
+
+    @Override
+    public Duration getTimeToComplete() {
+        return getFirst(timeToComplete);
+    }
+
+    @Override
+    public void addTimeToComplete(Duration timeToComplete) {
+        this.timeToComplete = add(this.timeToComplete, timeToComplete);
+    }
+
+    private List<MonetaryAmountDistribution> trainingSalary;
+
+    @Override
+    public List<MonetaryAmountDistribution> getTrainingSalaryList() {
+        return trainingSalary;
+    }
+
+    @Override
+    public MonetaryAmountDistribution getTrainingSalary() {
+        return getFirst(trainingSalary);
+    }
+
+    @Override
+    public void addTrainingSalary(MonetaryAmountDistribution trainingSalary) {
+        this.trainingSalary = add(this.trainingSalary, trainingSalary);
+    }
+
+    @JsonLdFieldTypes({ StructuredValue.class, Integer.class })
+    private List<Object> typicalCreditsPerTerm;
+
+    @Override
+    public <T> List<T> getTypicalCreditsPerTermList() {
+        return (List<T>) typicalCreditsPerTerm;
+    }
+
+    @Override
+    public <T> T getTypicalCreditsPerTerm() {
+        return (T) getFirst(typicalCreditsPerTerm);
+    }
+
+    @Override
+    public void addTypicalCreditsPerTerm(StructuredValue typicalCreditsPerTerm) {
+        this.typicalCreditsPerTerm = add(this.typicalCreditsPerTerm, typicalCreditsPerTerm);
+    }
+    @Override
+    public void addTypicalCreditsPerTerm(Integer typicalCreditsPerTerm) {
+        this.typicalCreditsPerTerm = add(this.typicalCreditsPerTerm, typicalCreditsPerTerm);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 }

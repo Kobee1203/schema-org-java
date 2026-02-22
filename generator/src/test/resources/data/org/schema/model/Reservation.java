@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Person;
 import org.schema.model.Organization;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.Thing;
-import org.schema.model.datatype.Text;
+import org.schema.model.Person;
+import org.schema.model.PriceSpecification;
 import org.schema.model.ProgramMembership;
 import org.schema.model.ReservationStatusType;
+import org.schema.model.Thing;
 import org.schema.model.Ticket;
+import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Number;
-import org.schema.model.PriceSpecification;
+import org.schema.model.datatype.Text;
 
 /**
  * Describes a reservation for travel, dining or an event. Some reservations require tickets. <br/><br/>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations. For offers of tickets, restaurant reservations, flights, or rental cars, use [[Offer]].
@@ -23,6 +23,144 @@ import org.schema.model.PriceSpecification;
  * @see <a href="https://schema.org/Reservation">https://schema.org/Reservation</a>
  */
 public interface Reservation extends Intangible {
+
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getBookingAgentList();
+
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getBookingAgent();
+
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @param bookingAgent Organization value to set.
+     */
+    void addBookingAgent(Organization bookingAgent);
+    /**
+     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
+     *
+     * @param bookingAgent Person value to set.
+     */
+    void addBookingAgent(Person bookingAgent);
+
+    /**
+     * The date and time the reservation was booked.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getBookingTimeList();
+
+    /**
+     * The date and time the reservation was booked.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getBookingTime();
+
+    /**
+     * The date and time the reservation was booked.
+     *
+     * @param bookingTime DateTime value to set.
+     */
+    void addBookingTime(DateTime bookingTime);
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getBrokerList();
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getBroker();
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param broker Person value to set.
+     */
+    void addBroker(Person broker);
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param broker Organization value to set.
+     */
+    void addBroker(Organization broker);
+
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getModifiedTimeList();
+
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getModifiedTime();
+
+    /**
+     * The date and time the reservation was modified.
+     *
+     * @param modifiedTime DateTime value to set.
+     */
+    void addModifiedTime(DateTime modifiedTime);
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    List<Text> getPriceCurrencyList();
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @return {@link Text}
+     */
+    Text getPriceCurrency();
+
+    /**
+     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
+     *
+     * @param priceCurrency Text value to set.
+     */
+    void addPriceCurrency(Text priceCurrency);
+
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     *
+     * @return {@link ProgramMembership}
+     */
+    List<ProgramMembership> getProgramMembershipUsedList();
+
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     *
+     * @return {@link ProgramMembership}
+     */
+    ProgramMembership getProgramMembershipUsed();
+
+    /**
+     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
+     *
+     * @param programMembershipUsed ProgramMembership value to set.
+     */
+    void addProgramMembershipUsed(ProgramMembership programMembershipUsed);
 
     /**
      * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
@@ -64,27 +202,6 @@ public interface Reservation extends Intangible {
     void addProvider(Organization provider);
 
     /**
-     * The date and time the reservation was modified.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getModifiedTimeList();
-
-    /**
-     * The date and time the reservation was modified.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getModifiedTime();
-
-    /**
-     * The date and time the reservation was modified.
-     *
-     * @param modifiedTime DateTime value to set.
-     */
-    void addModifiedTime(DateTime modifiedTime);
-
-    /**
      * The thing -- flight, event, restaurant, etc. being reserved.
      *
      * @return {@link Thing}
@@ -104,96 +221,6 @@ public interface Reservation extends Intangible {
      * @param reservationFor Thing value to set.
      */
     void addReservationFor(Thing reservationFor);
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getBrokerList();
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getBroker();
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @param broker Person value to set.
-     */
-    void addBroker(Person broker);
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @param broker Organization value to set.
-     */
-    void addBroker(Organization broker);
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPriceCurrencyList();
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @return {@link Text}
-     */
-    Text getPriceCurrency();
-
-    /**
-     * The currency of the price, or a price component when attached to [[PriceSpecification]] and its subtypes.<br/><br/>Use standard formats: [ISO 4217 currency format](http://en.wikipedia.org/wiki/ISO_4217), e.g. "USD"; [Ticker symbol](https://en.wikipedia.org/wiki/List_of_cryptocurrencies) for cryptocurrencies, e.g. "BTC"; well known names for [Local Exchange Trading Systems](https://en.wikipedia.org/wiki/Local_exchange_trading_system) (LETS) and other currency types, e.g. "Ithaca HOUR".
-     *
-     * @param priceCurrency Text value to set.
-     */
-    void addPriceCurrency(Text priceCurrency);
-
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getBookingTimeList();
-
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getBookingTime();
-
-    /**
-     * The date and time the reservation was booked.
-     *
-     * @param bookingTime DateTime value to set.
-     */
-    void addBookingTime(DateTime bookingTime);
-
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     *
-     * @return {@link ProgramMembership}
-     */
-    List<ProgramMembership> getProgramMembershipUsedList();
-
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     *
-     * @return {@link ProgramMembership}
-     */
-    ProgramMembership getProgramMembershipUsed();
-
-    /**
-     * Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
-     *
-     * @param programMembershipUsed ProgramMembership value to set.
-     */
-    void addProgramMembershipUsed(ProgramMembership programMembershipUsed);
 
     /**
      * A unique identifier for the reservation.
@@ -217,33 +244,6 @@ public interface Reservation extends Intangible {
     void addReservationId(Text reservationId);
 
     /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getUnderNameList();
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getUnderName();
-
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @param underName Person value to set.
-     */
-    void addUnderName(Person underName);
-    /**
-     * The person or organization the reservation or ticket is for.
-     *
-     * @param underName Organization value to set.
-     */
-    void addUnderName(Organization underName);
-
-    /**
      * The current status of the reservation.
      *
      * @return {@link ReservationStatusType}
@@ -263,33 +263,6 @@ public interface Reservation extends Intangible {
      * @param reservationStatus ReservationStatusType value to set.
      */
     void addReservationStatus(ReservationStatusType reservationStatus);
-
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getBookingAgentList();
-
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getBookingAgent();
-
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
-     * @param bookingAgent Organization value to set.
-     */
-    void addBookingAgent(Organization bookingAgent);
-    /**
-     * 'bookingAgent' is an out-dated term indicating a 'broker' that serves as a booking agent.
-     *
-     * @param bookingAgent Person value to set.
-     */
-    void addBookingAgent(Person bookingAgent);
 
     /**
      * A ticket associated with the reservation.
@@ -344,4 +317,31 @@ public interface Reservation extends Intangible {
      * @param totalPrice PriceSpecification value to set.
      */
     void addTotalPrice(PriceSpecification totalPrice);
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getUnderNameList();
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getUnderName();
+
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Person value to set.
+     */
+    void addUnderName(Person underName);
+    /**
+     * The person or organization the reservation or ticket is for.
+     *
+     * @param underName Organization value to set.
+     */
+    void addUnderName(Organization underName);
 }

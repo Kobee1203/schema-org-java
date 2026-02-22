@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AnatomicalStructure;
-import org.schema.model.Vessel;
 import org.schema.model.AnatomicalSystem;
+import org.schema.model.Vessel;
 
 /**
  * A type of blood vessel that specifically carries blood to the heart.
@@ -17,30 +17,6 @@ import org.schema.model.AnatomicalSystem;
  * @see <a href="https://schema.org/Vein">https://schema.org/Vein</a>
  */
 public interface Vein extends Vessel {
-
-    /**
-     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AnatomicalStructure> getTributaryList();
-
-    /**
-     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
-     *
-     * @return {@link AnatomicalStructure}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AnatomicalStructure getTributary();
-
-    /**
-     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
-     *
-     * @param tributary AnatomicalStructure value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addTributary(AnatomicalStructure tributary);
 
     /**
      * The vasculature that the vein drains into.
@@ -96,4 +72,28 @@ public interface Vein extends Vessel {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addRegionDrained(AnatomicalStructure regionDrained);
+
+    /**
+     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getTributaryList();
+
+    /**
+     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalStructure getTributary();
+
+    /**
+     * The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
+     *
+     * @param tributary AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addTributary(AnatomicalStructure tributary);
 }

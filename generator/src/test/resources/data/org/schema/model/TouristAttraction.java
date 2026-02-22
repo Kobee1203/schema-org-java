@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.Audience;
 import org.schema.model.Language;
+import org.schema.model.datatype.Text;
 
 /**
  * A tourist attraction.  In principle any Thing can be a [[TouristAttraction]], from a [[Mountain]] and [[LandmarksOrHistoricalBuildings]] to a [[LocalBusiness]].  This Type can be used on its own to describe a general [[TouristAttraction]], or be used as an [[additionalType]] to add tourist attraction properties to any other type.  (See examples below)
@@ -18,6 +18,33 @@ import org.schema.model.Language;
  * @see <a href="https://schema.org/TouristAttraction">https://schema.org/TouristAttraction</a>
  */
 public interface TouristAttraction extends Place {
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    <T> List<T> getAvailableLanguageList();
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    <T> T getAvailableLanguage();
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Language value to set.
+     */
+    void addAvailableLanguage(Language availableLanguage);
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Text value to set.
+     */
+    void addAvailableLanguage(Text availableLanguage);
 
     /**
      * Attraction suitable for type(s) of tourist. E.g. children, visitors from a particular country, etc. 
@@ -53,31 +80,4 @@ public interface TouristAttraction extends Place {
      * @see <a href="https://schema.org/docs/collab/IIT-CNR.it">https://schema.org/docs/collab/IIT-CNR.it</a>
      */
     void addTouristType(Audience touristType);
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     */
-    <T> List<T> getAvailableLanguageList();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     */
-    <T> T getAvailableLanguage();
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Language value to set.
-     */
-    void addAvailableLanguage(Language availableLanguage);
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Text value to set.
-     */
-    void addAvailableLanguage(Text availableLanguage);
 }

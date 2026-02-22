@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
 import org.schema.model.Comment;
 import org.schema.model.RsvpResponseType;
+import org.schema.model.datatype.Number;
 
 /**
  * The act of notifying an event organizer as to whether you expect to attend the event.

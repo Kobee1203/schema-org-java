@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.ComputerLanguage;
-import org.schema.model.datatype.URL;
-import org.schema.model.SoftwareApplication;
 import org.schema.model.RuntimePlatform;
+import org.schema.model.SoftwareApplication;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * Computer programming source code. Example: Full (compile ready) solutions, code snippet samples, scripts, templates.
@@ -18,75 +18,6 @@ import org.schema.model.RuntimePlatform;
  * @see <a href="https://schema.org/SoftwareSourceCode">https://schema.org/SoftwareSourceCode</a>
  */
 public interface SoftwareSourceCode extends CreativeWork {
-
-    /**
-     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRuntimeList();
-
-    /**
-     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
-     *
-     * @return {@link Text}
-     */
-    Text getRuntime();
-
-    /**
-     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
-     *
-     * @param runtime Text value to set.
-     */
-    void addRuntime(Text runtime);
-
-    /**
-     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSampleTypeList();
-
-    /**
-     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
-     *
-     * @return {@link Text}
-     */
-    Text getSampleType();
-
-    /**
-     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
-     *
-     * @param sampleType Text value to set.
-     */
-    void addSampleType(Text sampleType);
-
-    /**
-     * The computer programming language.
-     *
-     * @return {@link ComputerLanguage} or {@link Text}
-     */
-    <T> List<T> getProgrammingLanguageList();
-
-    /**
-     * The computer programming language.
-     *
-     * @return {@link ComputerLanguage} or {@link Text}
-     */
-    <T> T getProgrammingLanguage();
-
-    /**
-     * The computer programming language.
-     *
-     * @param programmingLanguage ComputerLanguage value to set.
-     */
-    void addProgrammingLanguage(ComputerLanguage programmingLanguage);
-    /**
-     * The computer programming language.
-     *
-     * @param programmingLanguage Text value to set.
-     */
-    void addProgrammingLanguage(Text programmingLanguage);
 
     /**
      * Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex).
@@ -131,25 +62,52 @@ public interface SoftwareSourceCode extends CreativeWork {
     void addCodeSampleType(Text codeSampleType);
 
     /**
-     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     * The computer programming language.
      *
-     * @return {@link SoftwareApplication}
+     * @return {@link ComputerLanguage} or {@link Text}
      */
-    List<SoftwareApplication> getTargetProductList();
+    <T> List<T> getProgrammingLanguageList();
 
     /**
-     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     * The computer programming language.
      *
-     * @return {@link SoftwareApplication}
+     * @return {@link ComputerLanguage} or {@link Text}
      */
-    SoftwareApplication getTargetProduct();
+    <T> T getProgrammingLanguage();
 
     /**
-     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     * The computer programming language.
      *
-     * @param targetProduct SoftwareApplication value to set.
+     * @param programmingLanguage ComputerLanguage value to set.
      */
-    void addTargetProduct(SoftwareApplication targetProduct);
+    void addProgrammingLanguage(ComputerLanguage programmingLanguage);
+    /**
+     * The computer programming language.
+     *
+     * @param programmingLanguage Text value to set.
+     */
+    void addProgrammingLanguage(Text programmingLanguage);
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRuntimeList();
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @return {@link Text}
+     */
+    Text getRuntime();
+
+    /**
+     * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
+     *
+     * @param runtime Text value to set.
+     */
+    void addRuntime(Text runtime);
 
     /**
      * Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).
@@ -177,4 +135,46 @@ public interface SoftwareSourceCode extends CreativeWork {
      * @param runtimePlatform RuntimePlatform value to set.
      */
     void addRuntimePlatform(RuntimePlatform runtimePlatform);
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSampleTypeList();
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @return {@link Text}
+     */
+    Text getSampleType();
+
+    /**
+     * What type of code sample: full (compile ready) solution, code snippet, inline code, scripts, template.
+     *
+     * @param sampleType Text value to set.
+     */
+    void addSampleType(Text sampleType);
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    List<SoftwareApplication> getTargetProductList();
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @return {@link SoftwareApplication}
+     */
+    SoftwareApplication getTargetProduct();
+
+    /**
+     * Target Operating System / Product to which the code applies.  If applies to several versions, just the product name can be used.
+     *
+     * @param targetProduct SoftwareApplication value to set.
+     */
+    void addTargetProduct(SoftwareApplication targetProduct);
 }

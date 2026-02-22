@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.CreativeWork;
-import org.schema.model.datatype.URL;
-import org.schema.model.Article;
 import org.schema.model.AboutPage;
+import org.schema.model.Article;
+import org.schema.model.CreativeWork;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A News/Media organization such as a newspaper or TV station.
@@ -21,123 +21,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/NewsMediaOrganization">https://schema.org/NewsMediaOrganization</a>
  */
 public interface NewsMediaOrganization extends Organization {
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getNoBylinesPolicyList();
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getNoBylinesPolicy();
-
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
-     *
-     * @param noBylinesPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addNoBylinesPolicy(CreativeWork noBylinesPolicy);
-    /**
-     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
-     *
-     * @param noBylinesPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addNoBylinesPolicy(URL noBylinesPolicy);
-
-    /**
-     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getMissionCoveragePrioritiesPolicyList();
-
-    /**
-     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getMissionCoveragePrioritiesPolicy();
-
-    /**
-     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-     *
-     * @param missionCoveragePrioritiesPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addMissionCoveragePrioritiesPolicy(CreativeWork missionCoveragePrioritiesPolicy);
-    /**
-     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
-     *
-     * @param missionCoveragePrioritiesPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addMissionCoveragePrioritiesPolicy(URL missionCoveragePrioritiesPolicy);
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link URL} or {@link Article}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getDiversityStaffingReportList();
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link URL} or {@link Article}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getDiversityStaffingReport();
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addDiversityStaffingReport(URL diversityStaffingReport);
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport Article value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addDiversityStaffingReport(Article diversityStaffingReport);
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -179,41 +62,6 @@ public interface NewsMediaOrganization extends Organization {
     void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
 
     /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    <T> List<T> getEthicsPolicyList();
-
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    <T> T getEthicsPolicy();
-
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @param ethicsPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    void addEthicsPolicy(CreativeWork ethicsPolicy);
-    /**
-     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
-     *
-     * @param ethicsPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     */
-    void addEthicsPolicy(URL ethicsPolicy);
-
-    /**
      * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
      *
      * @return {@link URL} or {@link CreativeWork}
@@ -251,6 +99,236 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addCorrectionsPolicy(CreativeWork correctionsPolicy);
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getDiversityPolicyList();
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getDiversityPolicy();
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityPolicy(CreativeWork diversityPolicy);
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityPolicy(URL diversityPolicy);
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getDiversityStaffingReportList();
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getDiversityStaffingReport();
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param diversityStaffingReport URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityStaffingReport(URL diversityStaffingReport);
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param diversityStaffingReport Article value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityStaffingReport(Article diversityStaffingReport);
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    <T> List<T> getEthicsPolicyList();
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    <T> T getEthicsPolicy();
+
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @param ethicsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void addEthicsPolicy(CreativeWork ethicsPolicy);
+    /**
+     * Statement about ethics policy, e.g. of a [[NewsMediaOrganization]] regarding journalistic and publishing practices, or of a [[Restaurant]], a page describing food source policies. In the case of a [[NewsMediaOrganization]], an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.
+     *
+     * @param ethicsPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     */
+    void addEthicsPolicy(URL ethicsPolicy);
+
+    /**
+     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getMastheadList();
+
+    /**
+     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getMasthead();
+
+    /**
+     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
+     *
+     * @param masthead CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addMasthead(CreativeWork masthead);
+    /**
+     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
+     *
+     * @param masthead URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addMasthead(URL masthead);
+
+    /**
+     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getMissionCoveragePrioritiesPolicyList();
+
+    /**
+     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getMissionCoveragePrioritiesPolicy();
+
+    /**
+     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
+     *
+     * @param missionCoveragePrioritiesPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addMissionCoveragePrioritiesPolicy(CreativeWork missionCoveragePrioritiesPolicy);
+    /**
+     * For a [[NewsMediaOrganization]], a statement on coverage priorities, including any public agenda or stance on issues.
+     *
+     * @param missionCoveragePrioritiesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addMissionCoveragePrioritiesPolicy(URL missionCoveragePrioritiesPolicy);
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getNoBylinesPolicyList();
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getNoBylinesPolicy();
+
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
+     *
+     * @param noBylinesPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addNoBylinesPolicy(CreativeWork noBylinesPolicy);
+    /**
+     * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement explaining when authors of articles are not named in bylines.
+     *
+     * @param noBylinesPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addNoBylinesPolicy(URL noBylinesPolicy);
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -310,82 +388,43 @@ public interface NewsMediaOrganization extends Organization {
     void addOwnershipFundingInfo(Text ownershipFundingInfo);
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> List<T> getDiversityPolicyList();
+    <T> List<T> getUnnamedSourcesPolicyList();
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
      * @return {@link CreativeWork} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> T getDiversityPolicy();
+    <T> T getUnnamedSourcesPolicy();
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
-     * @param diversityPolicy CreativeWork value to set.
+     * @param unnamedSourcesPolicy CreativeWork value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addDiversityPolicy(CreativeWork diversityPolicy);
+    void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
      *
-     * @param diversityPolicy URL value to set.
+     * @param unnamedSourcesPolicy URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addDiversityPolicy(URL diversityPolicy);
-
-    /**
-     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getMastheadList();
-
-    /**
-     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getMasthead();
-
-    /**
-     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-     *
-     * @param masthead CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addMasthead(CreativeWork masthead);
-    /**
-     * For a [[NewsMediaOrganization]], a link to the masthead page or a page listing top editorial management.
-     *
-     * @param masthead URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addMasthead(URL masthead);
+    void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 
     /**
      * Disclosure about verification and fact-checking processes for a [[NewsMediaOrganization]] or other fact-checking [[Organization]].
@@ -425,43 +464,4 @@ public interface NewsMediaOrganization extends Organization {
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
     void addVerificationFactCheckingPolicy(CreativeWork verificationFactCheckingPolicy);
-
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getUnnamedSourcesPolicyList();
-
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getUnnamedSourcesPolicy();
-
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @param unnamedSourcesPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addUnnamedSourcesPolicy(CreativeWork unnamedSourcesPolicy);
-    /**
-     * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
-     *
-     * @param unnamedSourcesPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 }

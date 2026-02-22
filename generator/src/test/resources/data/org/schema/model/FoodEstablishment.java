@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.datatype.Boolean;
-import org.schema.model.datatype.URL;
 import org.schema.model.Menu;
 import org.schema.model.Rating;
+import org.schema.model.datatype.Boolean;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A food-related business.
@@ -18,27 +18,6 @@ import org.schema.model.Rating;
  * @see <a href="https://schema.org/FoodEstablishment">https://schema.org/FoodEstablishment</a>
  */
 public interface FoodEstablishment extends LocalBusiness {
-
-    /**
-     * The cuisine of the restaurant.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getServesCuisineList();
-
-    /**
-     * The cuisine of the restaurant.
-     *
-     * @return {@link Text}
-     */
-    Text getServesCuisine();
-
-    /**
-     * The cuisine of the restaurant.
-     *
-     * @param servesCuisine Text value to set.
-     */
-    void addServesCuisine(Text servesCuisine);
 
     /**
      * Indicates whether a FoodEstablishment accepts reservations. Values can be Boolean, an URL at which reservations can be made or (for backwards compatibility) the strings ```Yes``` or ```No```.
@@ -76,6 +55,39 @@ public interface FoodEstablishment extends LocalBusiness {
     /**
      * Either the actual menu as a structured representation, as text, or a URL of the menu.
      *
+     * @return {@link Text} or {@link Menu} or {@link URL}
+     */
+    <T> List<T> getHasMenuList();
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @return {@link Text} or {@link Menu} or {@link URL}
+     */
+    <T> T getHasMenu();
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param hasMenu Text value to set.
+     */
+    void addHasMenu(Text hasMenu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param hasMenu Menu value to set.
+     */
+    void addHasMenu(Menu hasMenu);
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
+     * @param hasMenu URL value to set.
+     */
+    void addHasMenu(URL hasMenu);
+
+    /**
+     * Either the actual menu as a structured representation, as text, or a URL of the menu.
+     *
      * @return {@link Menu} or {@link URL} or {@link Text}
      */
     <T> List<T> getMenuList();
@@ -107,6 +119,27 @@ public interface FoodEstablishment extends LocalBusiness {
     void addMenu(Text menu);
 
     /**
+     * The cuisine of the restaurant.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getServesCuisineList();
+
+    /**
+     * The cuisine of the restaurant.
+     *
+     * @return {@link Text}
+     */
+    Text getServesCuisine();
+
+    /**
+     * The cuisine of the restaurant.
+     *
+     * @param servesCuisine Text value to set.
+     */
+    void addServesCuisine(Text servesCuisine);
+
+    /**
      * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
      * @return {@link Rating}
@@ -129,37 +162,4 @@ public interface FoodEstablishment extends LocalBusiness {
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addStarRating(Rating starRating);
-
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @return {@link Text} or {@link Menu} or {@link URL}
-     */
-    <T> List<T> getHasMenuList();
-
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @return {@link Text} or {@link Menu} or {@link URL}
-     */
-    <T> T getHasMenu();
-
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param hasMenu Text value to set.
-     */
-    void addHasMenu(Text hasMenu);
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param hasMenu Menu value to set.
-     */
-    void addHasMenu(Menu hasMenu);
-    /**
-     * Either the actual menu as a structured representation, as text, or a URL of the menu.
-     *
-     * @param hasMenu URL value to set.
-     */
-    void addHasMenu(URL hasMenu);
 }

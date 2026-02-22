@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.GameAvailabilityEnumeration;
+import org.schema.model.datatype.Text;
 
 /**
  * The act of playing a video game.

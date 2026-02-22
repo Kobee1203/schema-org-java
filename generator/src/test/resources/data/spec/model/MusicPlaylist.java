@@ -6,9 +6,9 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.datatype.Integer;
 import spec.model.ItemList;
 import spec.model.MusicRecording;
+import spec.model.datatype.Integer;
 
 /**
  * A collection of music tracks in playlist form.

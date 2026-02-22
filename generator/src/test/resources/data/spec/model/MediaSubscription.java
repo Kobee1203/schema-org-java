@@ -6,8 +6,8 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Organization;
 import spec.model.Offer;
+import spec.model.Organization;
 
 /**
  * A subscription which allows a user to access media including audio, video, books, etc.

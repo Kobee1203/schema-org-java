@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.MedicalAudienceType;
 import org.schema.model.MedicalAudience;
+import org.schema.model.MedicalAudienceType;
 import org.schema.model.datatype.Text;
 
 /**
@@ -17,6 +17,30 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/MedicalWebPage">https://schema.org/MedicalWebPage</a>
  */
 public interface MedicalWebPage extends WebPage {
+
+    /**
+     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Text> getAspectList();
+
+    /**
+     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+     *
+     * @return {@link Text}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Text getAspect();
+
+    /**
+     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
+     *
+     * @param aspect Text value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAspect(Text aspect);
 
     /**
      * Medical audience for page.
@@ -48,28 +72,4 @@ public interface MedicalWebPage extends WebPage {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addMedicalAudience(MedicalAudience medicalAudience);
-
-    /**
-     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Text> getAspectList();
-
-    /**
-     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
-     *
-     * @return {@link Text}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Text getAspect();
-
-    /**
-     * An aspect of medical practice that is considered on the page, such as 'diagnosis', 'treatment', 'causes', 'prognosis', 'etiology', 'epidemiology', etc.
-     *
-     * @param aspect Text value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAspect(Text aspect);
 }

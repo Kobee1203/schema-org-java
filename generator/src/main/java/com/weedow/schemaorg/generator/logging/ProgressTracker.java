@@ -1,6 +1,5 @@
 package com.weedow.schemaorg.generator.logging;
 
-import ch.qos.logback.core.pattern.color.ANSIConstants;
 import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
 
 import java.util.Optional;
@@ -12,25 +11,30 @@ public class ProgressTracker {
 
     private static final Logger LOG = LoggerFactory.getLogger("PROGRESS_BAR");
 
-    private static final Supplier<String> DEFAULT_INIT = () -> "Initializing...";
-    private static final Supplier<String> DEFAULT_COMPLETED = () -> "✔ Completed";
+    protected static final Supplier<String> DEFAULT_INIT = () -> "Initializing...";
+    protected static final Supplier<String> DEFAULT_COMPLETED = () -> "✔ Completed";
 
     private static final int BAR_SIZE = 40;
 
-    // \r: Return to beginning of line, \u001B[K: Erase to end of line
-    public static final String RESET = "\r\u001B[K";
+    // \r: Return to beginning of line, \u001B[2K: Erase the entire line
+    protected static final String RESET_LINE = "\r" + ESC_START +"2K";
 
-    private static final String PROGRESS_BAR_COLOR_FG = ESC_START + ANSIConstants.RESET + "38;5;39" + ESC_END;
-    private static final String PROGRESS_BAR_COLOR_BG = ESC_START + ANSIConstants.RESET + "38;5;244" + ESC_END;
-    private static final String PERCENT_INFO_COLOR = ESC_START + ANSIConstants.RESET + DEFAULT_FG + ESC_END;
-    private static final String INIT_COLOR = ESC_START + ANSIConstants.RESET + DEFAULT_FG + ESC_END;
-    private static final String COMPLETED_COLOR = ESC_START + ANSIConstants.RESET + "38;5;70" + ESC_END;
-    private static final String TASK_COLOR = ESC_START + ANSIConstants.RESET + WHITE_FG + ESC_END;
-    private static final String SEPARATOR_COLOR = ESC_START + ANSIConstants.RESET + WHITE_FG + ESC_END;
+    protected static final String SET_DEFAULT_COLOR = ESC_START + RESET + DEFAULT_FG + ESC_END;
+
+    protected static final String PROGRESS_BAR_COLOR_FG = "38;5;39";
+    protected static final String PROGRESS_BAR_COLOR_BG = "38;5;244";
+    protected static final String PERCENT_INFO_COLOR = DEFAULT_FG;
+    protected static final String INIT_COLOR = WHITE_FG;
+    protected static final String COMPLETED_COLOR = "38;5;70";
+    protected static final String TASK_COLOR = WHITE_FG;
+    protected static final String SEPARATOR_COLOR = WHITE_FG;
 
     private static final ProgressBarColors DEFAULT_PROGRESS_BAR_COLORS = new ProgressBarColors(PROGRESS_BAR_COLOR_FG, PROGRESS_BAR_COLOR_BG, PERCENT_INFO_COLOR, TASK_COLOR);
     private static final ProgressBarColors INIT_PROGRESS_BAR_COLORS = new ProgressBarColors(PROGRESS_BAR_COLOR_FG, PROGRESS_BAR_COLOR_BG, PERCENT_INFO_COLOR, INIT_COLOR);
     private static final ProgressBarColors COMPLETED_PROGRESS_BAR_COLORS = new ProgressBarColors(PROGRESS_BAR_COLOR_FG, PROGRESS_BAR_COLOR_BG, PERCENT_INFO_COLOR, COMPLETED_COLOR);
+
+    protected static final String HIDE_CURSOR = ESC_START + "?25l";
+    protected static final String SHOW_CURSOR = ESC_START + "?25h";
 
     private final int total;
     private final Supplier<String> init;
@@ -52,12 +56,13 @@ public class ProgressTracker {
     }
 
     private synchronized void init() {
+        LOG.info(HIDE_CURSOR + "\n");
         printBar(0, init.get(), INIT_PROGRESS_BAR_COLORS);
     }
 
     private synchronized void complete() {
         printBar(100, completed.get(), COMPLETED_PROGRESS_BAR_COLORS);
-        LOG.info("\n");
+        LOG.info(SHOW_CURSOR + "\n\n");
     }
 
     public synchronized void tick(String currentTask) {
@@ -82,22 +87,36 @@ public class ProgressTracker {
 
         int completedBars = (int) ((percent / 100.0) * BAR_SIZE);
 
-        StringBuilder sb = new StringBuilder(RESET);
-        sb.append(colors.fgColor);
+        StringBuilder sb = new StringBuilder(RESET_LINE);
 
-        for (int i = 0; i < BAR_SIZE; i++) {
-            if (i == completedBars) sb.append(colors.bgColor);
-            sb.append(i < completedBars ? "█" : "▒");
-        }
+        sb.append(msg(colors.fgColor, () -> {
+            StringBuilder bar = new StringBuilder();
+            for (int i = 0; i < BAR_SIZE; i++) {
+                if (i == completedBars) bar.append(applyColor(colors.bgColor));
+                bar.append(i < completedBars ? "█" : "▒");
+            }
+            return bar.toString();
+        }));
 
-        sb.append(colors.percentInfoColor).append(String.format(" %d%% (%d/%d)", percent, current, total));
+        sb.append(msg(colors.percentInfoColor, () -> String.format(" %d%% (%d/%d)", percent, current, total)));
 
         if (currentTask != null && !currentTask.isEmpty()) {
-            sb.append(SEPARATOR_COLOR).append(" > ");
-            sb.append(colors.taskColor).append(currentTask);
+            sb.append(msg(SEPARATOR_COLOR, () -> " > "));
+            sb.append(msg(colors.taskColor, () -> currentTask));
         }
 
+        // Final space required for stable rendering in some terminals
+        sb.append(" ");
+
         LOG.info(sb.toString());
+    }
+
+    private static String msg(String color, Supplier<String> msg) {
+        return applyColor(color) + msg.get() + SET_DEFAULT_COLOR;
+    }
+
+    private static String applyColor(String color) {
+        return ESC_START + RESET + color + ESC_END;
     }
 
     private record ProgressBarColors(String fgColor, String bgColor, String percentInfoColor, String taskColor) {

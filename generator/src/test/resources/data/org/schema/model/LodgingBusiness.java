@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
 import org.schema.model.Audience;
-import org.schema.model.datatype.DateTime;
-import org.schema.model.datatype.Time;
+import org.schema.model.Language;
+import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.Rating;
 import org.schema.model.datatype.Boolean;
-import org.schema.model.LocationFeatureSpecification;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.Time;
 
 /**
  * A lodging business, such as a motel, hotel, or inn.
@@ -25,39 +25,49 @@ import org.schema.model.LocationFeatureSpecification;
 public interface LodgingBusiness extends LocalBusiness {
 
     /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
-     * @return {@link QuantitativeValue} or {@link Number}
+     * @return {@link LocationFeatureSpecification}
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    <T> List<T> getNumberOfRoomsList();
+    List<LocationFeatureSpecification> getAmenityFeatureList();
 
     /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
-     * @return {@link QuantitativeValue} or {@link Number}
+     * @return {@link LocationFeatureSpecification}
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    <T> T getNumberOfRooms();
+    LocationFeatureSpecification getAmenityFeature();
 
     /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
      *
-     * @param numberOfRooms QuantitativeValue value to set.
+     * @param amenityFeature LocationFeatureSpecification value to set.
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    void addNumberOfRooms(QuantitativeValue numberOfRooms);
+    void addAmenityFeature(LocationFeatureSpecification amenityFeature);
+
     /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @param numberOfRooms Number value to set.
-     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
+     * @return {@link Audience}
      */
-    void addNumberOfRooms(Number numberOfRooms);
+    List<Audience> getAudienceList();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    Audience getAudience();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @param audience Audience value to set.
+     */
+    void addAudience(Audience audience);
 
     /**
      * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
@@ -85,27 +95,6 @@ public interface LodgingBusiness extends LocalBusiness {
      * @param availableLanguage Text value to set.
      */
     void addAvailableLanguage(Text availableLanguage);
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getAudienceList();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    Audience getAudience();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    void addAudience(Audience audience);
 
     /**
      * The earliest someone may check into a lodging establishment.
@@ -162,28 +151,39 @@ public interface LodgingBusiness extends LocalBusiness {
     void addCheckoutTime(Time checkoutTime);
 
     /**
-     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @return {@link Rating}
+     * @return {@link QuantitativeValue} or {@link Number}
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    List<Rating> getStarRatingList();
+    <T> List<T> getNumberOfRoomsList();
 
     /**
-     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @return {@link Rating}
+     * @return {@link QuantitativeValue} or {@link Number}
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    Rating getStarRating();
+    <T> T getNumberOfRooms();
 
     /**
-     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
      *
-     * @param starRating Rating value to set.
+     * @param numberOfRooms QuantitativeValue value to set.
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    void addStarRating(Rating starRating);
+    void addNumberOfRooms(QuantitativeValue numberOfRooms);
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
+     */
+    void addNumberOfRooms(Number numberOfRooms);
 
     /**
      * Indicates whether pets are allowed to enter the accommodation or lodging business. More detailed information can be put in a text value.
@@ -217,26 +217,26 @@ public interface LodgingBusiness extends LocalBusiness {
     void addPetsAllowed(Text petsAllowed);
 
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
-     * @return {@link LocationFeatureSpecification}
+     * @return {@link Rating}
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    List<LocationFeatureSpecification> getAmenityFeatureList();
+    List<Rating> getStarRatingList();
 
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
-     * @return {@link LocationFeatureSpecification}
+     * @return {@link Rating}
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    LocationFeatureSpecification getAmenityFeature();
+    Rating getStarRating();
 
     /**
-     * An amenity feature (e.g. a characteristic or service) of the Accommodation. This generic property does not make a statement about whether the feature is included in an offer for the main accommodation or available at extra costs.
+     * An official rating for a lodging business or food establishment, e.g. from national associations or standards bodies. Use the author property to indicate the rating organization, e.g. as an Organization with name such as (e.g. HOTREC, DEHOGA, WHR, or Hotelstars).
      *
-     * @param amenityFeature LocationFeatureSpecification value to set.
+     * @param starRating Rating value to set.
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
-    void addAmenityFeature(LocationFeatureSpecification amenityFeature);
+    void addStarRating(Rating starRating);
 }

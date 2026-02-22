@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Text;
 import org.schema.model.GenderType;
+import org.schema.model.QuantitativeValue;
 import org.schema.model.SizeGroupEnumeration;
 import org.schema.model.SizeSystemEnumeration;
+import org.schema.model.datatype.Text;
 
 /**
  * Size related properties of a product, typically a size code ([[name]]) and optionally a [[sizeSystem]], [[sizeGroup]], and product measurements ([[hasMeasurement]]). In addition, the intended audience can be defined through [[suggestedAge]], [[suggestedGender]], and suggested body measurements ([[suggestedMeasurement]]).
@@ -49,60 +49,6 @@ public interface SizeSpecification extends QualitativeValue {
     void addHasMeasurement(QuantitativeValue hasMeasurement);
 
     /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link Text} or {@link GenderType}
-     */
-    <T> List<T> getSuggestedGenderList();
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @return {@link Text} or {@link GenderType}
-     */
-    <T> T getSuggestedGender();
-
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param suggestedGender Text value to set.
-     */
-    void addSuggestedGender(Text suggestedGender);
-    /**
-     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
-     *
-     * @param suggestedGender GenderType value to set.
-     */
-    void addSuggestedGender(GenderType suggestedGender);
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    List<QuantitativeValue> getSuggestedAgeList();
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    QuantitativeValue getSuggestedAge();
-
-    /**
-     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
-     *
-     * @param suggestedAge QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    void addSuggestedAge(QuantitativeValue suggestedAge);
-
-    /**
      * The size group (also known as "size type") for a product's size. Size groups are common in the fashion industry to define size segments and suggested audiences for wearable products. Multiple values can be combined, for example "men's big and tall", "petite maternity" or "regular".
      *
      * @return {@link Text} or {@link SizeGroupEnumeration}
@@ -138,33 +84,6 @@ public interface SizeSpecification extends QualitativeValue {
     void addSizeGroup(SizeGroupEnumeration sizeGroup);
 
     /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    List<QuantitativeValue> getSuggestedMeasurementList();
-
-    /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    QuantitativeValue getSuggestedMeasurement();
-
-    /**
-     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
-     *
-     * @param suggestedMeasurement QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
-     */
-    void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
-
-    /**
      * The size system used to identify a product's size. Typically either a standard (for example, "GS1" or "ISO-EN13402"), country code (for example "US" or "JP"), or a measuring system (for example "Metric" or "Imperial").
      *
      * @return {@link SizeSystemEnumeration} or {@link Text}
@@ -198,4 +117,85 @@ public interface SizeSpecification extends QualitativeValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
      */
     void addSizeSystem(Text sizeSystem);
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    List<QuantitativeValue> getSuggestedAgeList();
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    QuantitativeValue getSuggestedAge();
+
+    /**
+     * The age or age range for the intended audience or person, for example 3-12 months for infants, 1-5 years for toddlers.
+     *
+     * @param suggestedAge QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    void addSuggestedAge(QuantitativeValue suggestedAge);
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link Text} or {@link GenderType}
+     */
+    <T> List<T> getSuggestedGenderList();
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @return {@link Text} or {@link GenderType}
+     */
+    <T> T getSuggestedGender();
+
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender Text value to set.
+     */
+    void addSuggestedGender(Text suggestedGender);
+    /**
+     * The suggested gender of the intended person or audience, for example "male", "female", or "unisex".
+     *
+     * @param suggestedGender GenderType value to set.
+     */
+    void addSuggestedGender(GenderType suggestedGender);
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    List<QuantitativeValue> getSuggestedMeasurementList();
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    QuantitativeValue getSuggestedMeasurement();
+
+    /**
+     * A suggested range of body measurements for the intended audience or person, for example inseam between 32 and 34 inches or height between 170 and 190 cm. Typically found on a size chart for wearable products.
+     *
+     * @param suggestedMeasurement QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    void addSuggestedMeasurement(QuantitativeValue suggestedMeasurement);
 }

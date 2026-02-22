@@ -6,16 +6,16 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.URL;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.PropertyValue;
-import spec_custom.model.Person;
-import spec_custom.model.Organization;
-import spec_custom.model.Event;
-import spec_custom.model.CreativeWork;
 import spec_custom.model.Action;
-import spec_custom.model.TextObject;
+import spec_custom.model.CreativeWork;
+import spec_custom.model.Event;
 import spec_custom.model.ImageObject;
+import spec_custom.model.Organization;
+import spec_custom.model.Person;
+import spec_custom.model.PropertyValue;
+import spec_custom.model.TextObject;
+import spec_custom.model.datatype.Text;
+import spec_custom.model.datatype.URL;
 
 /**
  * The most generic type of item.
@@ -23,48 +23,6 @@ import spec_custom.model.ImageObject;
  * @see <a href="https://schema.org/Thing">https://schema.org/Thing</a>
  */
 public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getSameAsList();
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    URL getSameAs();
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    void addSameAs(URL sameAs);
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getNameList();
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    Text getName();
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    void addName(Text name);
 
     /**
      * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
@@ -96,6 +54,75 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
      * @param additionalType Text value to set.
      */
     void addAdditionalType(Text additionalType);
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAlternateNameList();
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    Text getAlternateName();
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    void addAlternateName(Text alternateName);
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    <T> List<T> getDescriptionList();
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    <T> T getDescription();
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    void addDescription(TextObject description);
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    void addDescription(Text description);
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getDisambiguatingDescriptionList();
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    Text getDisambiguatingDescription();
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    void addDisambiguatingDescription(Text disambiguatingDescription);
 
     /**
      * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
@@ -136,6 +163,81 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     void addIdentifier(Text identifier);
 
     /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    <T> List<T> getImageList();
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    <T> T getImage();
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    void addImage(ImageObject image);
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    void addImage(URL image);
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    <T> List<T> getMainEntityOfPageList();
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    <T> T getMainEntityOfPage();
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage CreativeWork value to set.
+     */
+    void addMainEntityOfPage(CreativeWork mainEntityOfPage);
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    void addMainEntityOfPage(URL mainEntityOfPage);
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getNameList();
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    Text getName();
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    void addName(Text name);
+
+    /**
      * A person or organization who owns this Thing.
      *
      * @return {@link Person} or {@link Organization}
@@ -165,6 +267,48 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      */
     void addOwner(Organization owner);
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    List<Action> getPotentialActionList();
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    Action getPotentialAction();
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    void addPotentialAction(Action potentialAction);
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getSameAsList();
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    URL getSameAs();
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    void addSameAs(URL sameAs);
 
     /**
      * A CreativeWork or Event about this Thing.
@@ -198,102 +342,6 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
     void addSubjectOf(CreativeWork subjectOf);
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    <T> List<T> getMainEntityOfPageList();
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    <T> T getMainEntityOfPage();
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    void addMainEntityOfPage(CreativeWork mainEntityOfPage);
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    void addMainEntityOfPage(URL mainEntityOfPage);
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    List<Action> getPotentialActionList();
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    Action getPotentialAction();
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    void addPotentialAction(Action potentialAction);
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    <T> List<T> getDescriptionList();
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    <T> T getDescription();
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    void addDescription(TextObject description);
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    void addDescription(Text description);
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAlternateNameList();
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    Text getAlternateName();
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    void addAlternateName(Text alternateName);
-
-    /**
      * URL of the item.
      *
      * @return {@link URL}
@@ -313,52 +361,4 @@ public interface Thing extends com.weedow.schemaorg.commons.model.JsonLdNode {
      * @param url URL value to set.
      */
     void addUrl(URL url);
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    <T> List<T> getImageList();
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    <T> T getImage();
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    void addImage(ImageObject image);
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    void addImage(URL image);
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getDisambiguatingDescriptionList();
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    Text getDisambiguatingDescription();
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    void addDisambiguatingDescription(Text disambiguatingDescription);
 }

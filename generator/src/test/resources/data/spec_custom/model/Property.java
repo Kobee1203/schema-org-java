@@ -7,8 +7,8 @@ package spec_custom.model;
 
 import java.util.List;
 import spec_custom.model.Class;
-import spec_custom.model.Property;
 import spec_custom.model.Enumeration;
+import spec_custom.model.Property;
 
 /**
  * A property, used to indicate attributes and relationships of some Thing; equivalent to rdf:Property.
@@ -19,28 +19,28 @@ import spec_custom.model.Enumeration;
 public interface Property extends Intangible {
 
     /**
-     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
      *
      * @return {@link Class}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    List<Class> getRangeIncludesList();
+    List<Class> getDomainIncludesList();
 
     /**
-     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
      *
      * @return {@link Class}
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    Class getRangeIncludes();
+    Class getDomainIncludes();
 
     /**
-     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
      *
-     * @param rangeIncludes Class value to set.
+     * @param domainIncludes Class value to set.
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
-    void addRangeIncludes(Class rangeIncludes);
+    void addDomainIncludes(Class domainIncludes);
 
     /**
      * Relates a property to a property that is its inverse. Inverse properties relate the same pairs of items to each other, but in reversed direction. For example, the 'alumni' and 'alumniOf' properties are inverseOf each other. Some properties don't have explicit inverses; in these situations RDFa and JSON-LD syntax for reverse properties can be used.
@@ -65,6 +65,30 @@ public interface Property extends Intangible {
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void addInverseOf(Property inverseOf);
+
+    /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @return {@link Class}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    List<Class> getRangeIncludesList();
+
+    /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @return {@link Class}
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    Class getRangeIncludes();
+
+    /**
+     * Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @param rangeIncludes Class value to set.
+     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
+     */
+    void addRangeIncludes(Class rangeIncludes);
 
     /**
      * Relates a term (i.e. a property, class or enumeration) to one that supersedes it.
@@ -103,28 +127,4 @@ public interface Property extends Intangible {
      * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
      */
     void addSupersededBy(Enumeration supersededBy);
-
-    /**
-     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
-     *
-     * @return {@link Class}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    List<Class> getDomainIncludesList();
-
-    /**
-     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
-     *
-     * @return {@link Class}
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    Class getDomainIncludes();
-
-    /**
-     * Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
-     *
-     * @param domainIncludes Class value to set.
-     * @see <a href="https://meta.schema.org">https://meta.schema.org</a>
-     */
-    void addDomainIncludes(Class domainIncludes);
 }

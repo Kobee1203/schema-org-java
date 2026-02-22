@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.DataDownload;
 import org.schema.model.DataCatalog;
-import org.schema.model.datatype.Text;
-import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.DataDownload;
 import org.schema.model.DefinedTerm;
-import org.schema.model.datatype.URL;
-import org.schema.model.datatype.DateTime;
+import org.schema.model.MeasurementMethodEnum;
 import org.schema.model.Property;
 import org.schema.model.PropertyValue;
 import org.schema.model.StatisticalVariable;
+import org.schema.model.datatype.DateTime;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A body of structured information describing some topic(s) of interest.
@@ -24,6 +24,48 @@ import org.schema.model.StatisticalVariable;
  * @see <a href="https://schema.org/Dataset">https://schema.org/Dataset</a>
  */
 public interface Dataset extends CreativeWork {
+
+    /**
+     * A data catalog which contains this dataset.
+     *
+     * @return {@link DataCatalog}
+     */
+    List<DataCatalog> getCatalogList();
+
+    /**
+     * A data catalog which contains this dataset.
+     *
+     * @return {@link DataCatalog}
+     */
+    DataCatalog getCatalog();
+
+    /**
+     * A data catalog which contains this dataset.
+     *
+     * @param catalog DataCatalog value to set.
+     */
+    void addCatalog(DataCatalog catalog);
+
+    /**
+     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
+     *
+     * @return {@link DateTime}
+     */
+    List<DateTime> getDatasetTimeIntervalList();
+
+    /**
+     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
+     *
+     * @return {@link DateTime}
+     */
+    DateTime getDatasetTimeInterval();
+
+    /**
+     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
+     *
+     * @param datasetTimeInterval DateTime value to set.
+     */
+    void addDatasetTimeInterval(DateTime datasetTimeInterval);
 
     /**
      * A downloadable form of this dataset, at a specific location, in a specific format. This property can be repeated if different variations are available. There is no expectation that different downloadable distributions must contain exactly equivalent information (see also [DCAT](https://www.w3.org/TR/vocab-dcat-3/#Class:Distribution) on this point). Different distributions might include or exclude different subsets of the entire dataset, for example.
@@ -47,25 +89,46 @@ public interface Dataset extends CreativeWork {
     void addDistribution(DataDownload distribution);
 
     /**
-     * A data catalog which contains this dataset.
+     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
      *
      * @return {@link DataCatalog}
      */
-    List<DataCatalog> getCatalogList();
+    List<DataCatalog> getIncludedDataCatalogList();
+
+    /**
+     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
+     *
+     * @return {@link DataCatalog}
+     */
+    DataCatalog getIncludedDataCatalog();
+
+    /**
+     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
+     *
+     * @param includedDataCatalog DataCatalog value to set.
+     */
+    void addIncludedDataCatalog(DataCatalog includedDataCatalog);
 
     /**
      * A data catalog which contains this dataset.
      *
      * @return {@link DataCatalog}
      */
-    DataCatalog getCatalog();
+    List<DataCatalog> getIncludedInDataCatalogList();
 
     /**
      * A data catalog which contains this dataset.
      *
-     * @param catalog DataCatalog value to set.
+     * @return {@link DataCatalog}
      */
-    void addCatalog(DataCatalog catalog);
+    DataCatalog getIncludedInDataCatalog();
+
+    /**
+     * A data catalog which contains this dataset.
+     *
+     * @param includedInDataCatalog DataCatalog value to set.
+     */
+    void addIncludedInDataCatalog(DataCatalog includedInDataCatalog);
 
     /**
      * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
@@ -90,6 +153,57 @@ public interface Dataset extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
      */
     void addIssn(Text issn);
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> List<T> getMeasurementMethodList();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> T getMeasurementMethod();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(Text measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod MeasurementMethodEnum value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(DefinedTerm measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(URL measurementMethod);
 
     /**
      * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
@@ -179,78 +293,6 @@ public interface Dataset extends CreativeWork {
     void addMeasurementTechnique(Text measurementTechnique);
 
     /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> List<T> getMeasurementMethodList();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> T getMeasurementMethod();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(Text measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod MeasurementMethodEnum value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(DefinedTerm measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(URL measurementMethod);
-
-    /**
-     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
-     *
-     * @return {@link DateTime}
-     */
-    List<DateTime> getDatasetTimeIntervalList();
-
-    /**
-     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
-     *
-     * @return {@link DateTime}
-     */
-    DateTime getDatasetTimeInterval();
-
-    /**
-     * The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
-     *
-     * @param datasetTimeInterval DateTime value to set.
-     */
-    void addDatasetTimeInterval(DateTime datasetTimeInterval);
-
-    /**
      * The variableMeasured property can indicate (repeated as necessary) the  variables that are measured in some dataset, either described as text or as pairs of identifier and description using PropertyValue, or more explicitly as a [[StatisticalVariable]].
      *
      * @return {@link Property} or {@link PropertyValue} or {@link Text} or {@link StatisticalVariable}
@@ -300,46 +342,4 @@ public interface Dataset extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1083">https://github.com/schemaorg/schemaorg/issues/1083</a>
      */
     void addVariableMeasured(StatisticalVariable variableMeasured);
-
-    /**
-     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
-     *
-     * @return {@link DataCatalog}
-     */
-    List<DataCatalog> getIncludedDataCatalogList();
-
-    /**
-     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
-     *
-     * @return {@link DataCatalog}
-     */
-    DataCatalog getIncludedDataCatalog();
-
-    /**
-     * A data catalog which contains this dataset (this property was previously 'catalog', preferred name is now 'includedInDataCatalog').
-     *
-     * @param includedDataCatalog DataCatalog value to set.
-     */
-    void addIncludedDataCatalog(DataCatalog includedDataCatalog);
-
-    /**
-     * A data catalog which contains this dataset.
-     *
-     * @return {@link DataCatalog}
-     */
-    List<DataCatalog> getIncludedInDataCatalogList();
-
-    /**
-     * A data catalog which contains this dataset.
-     *
-     * @return {@link DataCatalog}
-     */
-    DataCatalog getIncludedInDataCatalog();
-
-    /**
-     * A data catalog which contains this dataset.
-     *
-     * @param includedInDataCatalog DataCatalog value to set.
-     */
-    void addIncludedInDataCatalog(DataCatalog includedInDataCatalog);
 }

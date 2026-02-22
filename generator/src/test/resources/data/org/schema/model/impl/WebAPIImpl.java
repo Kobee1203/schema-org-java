@@ -5,40 +5,40 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.datatype.URL;
-import org.schema.model.CreativeWork;
-import org.schema.model.Person;
-import org.schema.model.Organization;
-import org.schema.model.OpeningHoursSpecification;
-import org.schema.model.Audience;
-import org.schema.model.ImageObject;
-import org.schema.model.datatype.Text;
-import org.schema.model.Service;
-import org.schema.model.Product;
-import org.schema.model.AggregateRating;
-import org.schema.model.Thing;
-import org.schema.model.Brand;
-import org.schema.model.Place;
-import org.schema.model.AdministrativeArea;
-import org.schema.model.GeoShape;
-import org.schema.model.Review;
-import org.schema.model.PhysicalActivityCategory;
-import org.schema.model.CategoryCode;
-import org.schema.model.Offer;
-import org.schema.model.Demand;
-import org.schema.model.Certification;
-import org.schema.model.GovernmentBenefitsType;
-import org.schema.model.ServiceChannel;
-import org.schema.model.OfferCatalog;
-import org.schema.model.PropertyValue;
-import org.schema.model.Event;
-import org.schema.model.Action;
-import org.schema.model.TextObject;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Action;
+import org.schema.model.AdministrativeArea;
+import org.schema.model.AggregateRating;
+import org.schema.model.Audience;
+import org.schema.model.Brand;
+import org.schema.model.CategoryCode;
+import org.schema.model.Certification;
+import org.schema.model.CreativeWork;
+import org.schema.model.Demand;
+import org.schema.model.Event;
+import org.schema.model.GeoShape;
+import org.schema.model.GovernmentBenefitsType;
+import org.schema.model.ImageObject;
 import org.schema.model.Intangible;
+import org.schema.model.Offer;
+import org.schema.model.OfferCatalog;
+import org.schema.model.OpeningHoursSpecification;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.PhysicalActivityCategory;
+import org.schema.model.Place;
+import org.schema.model.Product;
+import org.schema.model.PropertyValue;
+import org.schema.model.Review;
+import org.schema.model.Service;
+import org.schema.model.ServiceChannel;
+import org.schema.model.TextObject;
+import org.schema.model.Thing;
 import org.schema.model.WebAPI;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An application programming interface accessible over Web/Internet technologies.
@@ -50,1596 +50,794 @@ import org.schema.model.WebAPI;
 @JsonLdTypeName("WebAPI")
 public class WebAPIImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements WebAPI {
 
-    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
-    private List<Object> documentation;
-
-    /**
-     * Further documentation describing the Web API in more detail.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public <T> List<T> getDocumentationList() {
-        return (List<T>) documentation;
-    }
-
-    /**
-     * Further documentation describing the Web API in more detail.
-     *
-     * @return {@link URL} or {@link CreativeWork}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public <T> T getDocumentation() {
-        return (T) getFirst(documentation);
-    }
-
-    /**
-     * Further documentation describing the Web API in more detail.
-     *
-     * @param documentation URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void addDocumentation(URL documentation) {
-        this.documentation = add(this.documentation, documentation);
-    }
-    /**
-     * Further documentation describing the Web API in more detail.
-     *
-     * @param documentation CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void addDocumentation(CreativeWork documentation) {
-        this.documentation = add(this.documentation, documentation);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> provider;
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getProviderList() {
-        return (List<T>) provider;
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getProvider() {
-        return (T) getFirst(provider);
-    }
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProvider(Person provider) {
-        this.provider = add(this.provider, provider);
-    }
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addProvider(Organization provider) {
-        this.provider = add(this.provider, provider);
-    }
-
-    private List<OpeningHoursSpecification> hoursAvailable;
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public List<OpeningHoursSpecification> getHoursAvailableList() {
-        return hoursAvailable;
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public OpeningHoursSpecification getHoursAvailable() {
-        return getFirst(hoursAvailable);
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    @Override
-    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
-        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
-    }
-
-    private List<Audience> serviceAudience;
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public List<Audience> getServiceAudienceList() {
-        return serviceAudience;
-    }
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getServiceAudience() {
-        return getFirst(serviceAudience);
-    }
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @param serviceAudience Audience value to set.
-     */
-    @Override
-    public void addServiceAudience(Audience serviceAudience) {
-        this.serviceAudience = add(this.serviceAudience, serviceAudience);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> broker;
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getBrokerList() {
-        return (List<T>) broker;
-    }
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getBroker() {
-        return (T) getFirst(broker);
-    }
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @param broker Person value to set.
-     */
-    @Override
-    public void addBroker(Person broker) {
-        this.broker = add(this.broker, broker);
-    }
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @param broker Organization value to set.
-     */
-    @Override
-    public void addBroker(Organization broker) {
-        this.broker = add(this.broker, broker);
-    }
-
-    @JsonLdFieldTypes({ URL.class, ImageObject.class })
-    private List<Object> logo;
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getLogoList() {
-        return (List<T>) logo;
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getLogo() {
-        return (T) getFirst(logo);
-    }
-
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(URL logo) {
-        this.logo = add(this.logo, logo);
-    }
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addLogo(ImageObject logo) {
-        this.logo = add(this.logo, logo);
-    }
-
-    private List<Text> providerMobility;
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getProviderMobilityList() {
-        return providerMobility;
-    }
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getProviderMobility() {
-        return getFirst(providerMobility);
-    }
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @param providerMobility Text value to set.
-     */
-    @Override
-    public void addProviderMobility(Text providerMobility) {
-        this.providerMobility = add(this.providerMobility, providerMobility);
-    }
-
-    @JsonLdFieldTypes({ Service.class, Product.class })
-    private List<Object> isRelatedTo;
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getIsRelatedToList() {
-        return (List<T>) isRelatedTo;
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsRelatedTo() {
-        return (T) getFirst(isRelatedTo);
-    }
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Service value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsRelatedTo(Service isRelatedTo) {
-        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
-    }
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsRelatedTo(Product isRelatedTo) {
-        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
-    }
-
-    private List<Text> slogan;
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getSloganList() {
-        return slogan;
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getSlogan() {
-        return getFirst(slogan);
-    }
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
-    @Override
-    public void addSlogan(Text slogan) {
-        this.slogan = add(this.slogan, slogan);
-    }
-
-    private List<AggregateRating> aggregateRating;
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public List<AggregateRating> getAggregateRatingList() {
-        return aggregateRating;
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    @Override
-    public AggregateRating getAggregateRating() {
-        return getFirst(aggregateRating);
-    }
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    @Override
-    public void addAggregateRating(AggregateRating aggregateRating) {
-        this.aggregateRating = add(this.aggregateRating, aggregateRating);
-    }
-
-    private List<Thing> serviceOutput;
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getServiceOutputList() {
-        return serviceOutput;
-    }
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getServiceOutput() {
-        return getFirst(serviceOutput);
-    }
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @param serviceOutput Thing value to set.
-     */
-    @Override
-    public void addServiceOutput(Thing serviceOutput) {
-        this.serviceOutput = add(this.serviceOutput, serviceOutput);
-    }
-
-    @JsonLdFieldTypes({ Brand.class, Organization.class })
-    private List<Object> brand;
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getBrandList() {
-        return (List<T>) brand;
-    }
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    @Override
-    public <T> T getBrand() {
-        return (T) getFirst(brand);
-    }
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Brand value to set.
-     */
-    @Override
-    public void addBrand(Brand brand) {
-        this.brand = add(this.brand, brand);
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    @Override
-    public void addBrand(Organization brand) {
-        this.brand = add(this.brand, brand);
-    }
-
-    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
-    private List<Object> areaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAreaServedList() {
-        return (List<T>) areaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) getFirst(areaServed);
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
-    @Override
-    public void addAreaServed(Place areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
-    @Override
-    public void addAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
-    @Override
-    public void addAreaServed(GeoShape areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    @Override
-    public void addAreaServed(Text areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-
-    private List<Review> review;
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public List<Review> getReviewList() {
-        return review;
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    @Override
-    public Review getReview() {
-        return getFirst(review);
-    }
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    @Override
-    public void addReview(Review review) {
-        this.review = add(this.review, review);
-    }
-
-    @JsonLdFieldTypes({ Text.class, PhysicalActivityCategory.class, CategoryCode.class, Thing.class, URL.class })
-    private List<Object> category;
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public <T> List<T> getCategoryList() {
-        return (List<T>) category;
-    }
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @return {@link Text} or {@link PhysicalActivityCategory} or {@link CategoryCode} or {@link Thing} or {@link URL}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public <T> T getCategory() {
-        return (T) getFirst(category);
-    }
-
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(Text category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category PhysicalActivityCategory value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(PhysicalActivityCategory category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category CategoryCode value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(CategoryCode category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(Thing category) {
-        this.category = add(this.category, category);
-    }
-    /**
-     * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-     *
-     * @param category URL value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2490">https://github.com/schemaorg/schemaorg/issues/2490</a>
-     */
-    @Override
-    public void addCategory(URL category) {
-        this.category = add(this.category, category);
-    }
-
-    @JsonLdFieldTypes({ Offer.class, Demand.class })
-    private List<Object> offers;
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> List<T> getOffersList() {
-        return (List<T>) offers;
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @return {@link Offer} or {@link Demand}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public <T> T getOffers() {
-        return (T) getFirst(offers);
-    }
-
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Offer value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Offer offers) {
-        this.offers = add(this.offers, offers);
-    }
-    /**
-     * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
-     *       
-     *
-     * @param offers Demand value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addOffers(Demand offers) {
-        this.offers = add(this.offers, offers);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> termsOfService;
-
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public <T> List<T> getTermsOfServiceList() {
-        return (List<T>) termsOfService;
-    }
-
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public <T> T getTermsOfService() {
-        return (T) getFirst(termsOfService);
-    }
-
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @param termsOfService URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void addTermsOfService(URL termsOfService) {
-        this.termsOfService = add(this.termsOfService, termsOfService);
-    }
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @param termsOfService Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    @Override
-    public void addTermsOfService(Text termsOfService) {
-        this.termsOfService = add(this.termsOfService, termsOfService);
-    }
-
-    private List<Thing> produces;
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public List<Thing> getProducesList() {
-        return produces;
-    }
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    @Override
-    public Thing getProduces() {
-        return getFirst(produces);
-    }
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @param produces Thing value to set.
-     */
-    @Override
-    public void addProduces(Thing produces) {
-        this.produces = add(this.produces, produces);
-    }
-
-    private List<Certification> hasCertification;
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public List<Certification> getHasCertificationList() {
-        return hasCertification;
-    }
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public Certification getHasCertification() {
-        return getFirst(hasCertification);
-    }
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @param hasCertification Certification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public void addHasCertification(Certification hasCertification) {
-        this.hasCertification = add(this.hasCertification, hasCertification);
-    }
-
-    @JsonLdFieldTypes({ Text.class, GovernmentBenefitsType.class })
-    private List<Object> serviceType;
-
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @return {@link Text} or {@link GovernmentBenefitsType}
-     */
-    @Override
-    public <T> List<T> getServiceTypeList() {
-        return (List<T>) serviceType;
-    }
-
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @return {@link Text} or {@link GovernmentBenefitsType}
-     */
-    @Override
-    public <T> T getServiceType() {
-        return (T) getFirst(serviceType);
-    }
-
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @param serviceType Text value to set.
-     */
-    @Override
-    public void addServiceType(Text serviceType) {
-        this.serviceType = add(this.serviceType, serviceType);
-    }
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @param serviceType GovernmentBenefitsType value to set.
-     */
-    @Override
-    public void addServiceType(GovernmentBenefitsType serviceType) {
-        this.serviceType = add(this.serviceType, serviceType);
-    }
-
-    private List<Audience> audience;
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public List<Audience> getAudienceList() {
-        return audience;
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    @Override
-    public Audience getAudience() {
-        return getFirst(audience);
-    }
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    @Override
-    public void addAudience(Audience audience) {
-        this.audience = add(this.audience, audience);
-    }
-
-    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
-    private List<Object> serviceArea;
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getServiceAreaList() {
-        return (List<T>) serviceArea;
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
-     */
-    @Override
-    public <T> T getServiceArea() {
-        return (T) getFirst(serviceArea);
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea AdministrativeArea value to set.
-     */
-    @Override
-    public void addServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea GeoShape value to set.
-     */
-    @Override
-    public void addServiceArea(GeoShape serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea Place value to set.
-     */
-    @Override
-    public void addServiceArea(Place serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-
-    private List<ServiceChannel> availableChannel;
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @return {@link ServiceChannel}
-     */
-    @Override
-    public List<ServiceChannel> getAvailableChannelList() {
-        return availableChannel;
-    }
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @return {@link ServiceChannel}
-     */
-    @Override
-    public ServiceChannel getAvailableChannel() {
-        return getFirst(availableChannel);
-    }
-
-    /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
-     *
-     * @param availableChannel ServiceChannel value to set.
-     */
-    @Override
-    public void addAvailableChannel(ServiceChannel availableChannel) {
-        this.availableChannel = add(this.availableChannel, availableChannel);
-    }
-
-    @JsonLdFieldTypes({ Service.class, Product.class })
-    private List<Object> isSimilarTo;
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getIsSimilarToList() {
-        return (List<T>) isSimilarTo;
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getIsSimilarTo() {
-        return (T) getFirst(isSimilarTo);
-    }
-
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Service value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsSimilarTo(Service isSimilarTo) {
-        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
-    }
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsSimilarTo(Product isSimilarTo) {
-        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
-    }
-
-    private List<Text> award;
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardList() {
-        return award;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return getFirst(award);
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    @Override
-    public void addAward(Text award) {
-        this.award = add(this.award, award);
-    }
-
-    private List<OfferCatalog> hasOfferCatalog;
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public List<OfferCatalog> getHasOfferCatalogList() {
-        return hasOfferCatalog;
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public OfferCatalog getHasOfferCatalog() {
-        return getFirst(hasOfferCatalog);
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @param hasOfferCatalog OfferCatalog value to set.
-     */
-    @Override
-    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
+    private List<AggregateRating> aggregateRating;
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
+    public List<AggregateRating> getAggregateRatingList() {
+        return aggregateRating;
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
     @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
+    public AggregateRating getAggregateRating() {
+        return getFirst(aggregateRating);
     }
 
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
     @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
+    public void addAggregateRating(AggregateRating aggregateRating) {
+        this.aggregateRating = add(this.aggregateRating, aggregateRating);
     }
 
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
+    private List<Object> areaServed;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getAreaServed() {
+        return (T) getFirst(areaServed);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    @Override
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    @Override
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    @Override
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    private List<Audience> audience;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public List<Audience> getAudienceList() {
+        return audience;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public Audience getAudience() {
+        return getFirst(audience);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addAudience(Audience audience) {
+        this.audience = add(this.audience, audience);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
+
+    private List<ServiceChannel> availableChannel;
+
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public List<ServiceChannel> getAvailableChannelList() {
+        return availableChannel;
+    }
+
+    @Override
+    public ServiceChannel getAvailableChannel() {
+        return getFirst(availableChannel);
+    }
+
+    @Override
+    public void addAvailableChannel(ServiceChannel availableChannel) {
+        this.availableChannel = add(this.availableChannel, availableChannel);
+    }
+
+    private List<Text> award;
+
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
+
+    @Override
+    public Text getAward() {
+        return getFirst(award);
+    }
+
+    @Override
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
+    }
+
+    @JsonLdFieldTypes({ Brand.class, Organization.class })
+    private List<Object> brand;
+
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
+
+    @Override
+    public <T> T getBrand() {
+        return (T) getFirst(brand);
+    }
+
+    @Override
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
+    }
+    @Override
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> broker;
+
+    @Override
+    public <T> List<T> getBrokerList() {
+        return (List<T>) broker;
+    }
+
+    @Override
+    public <T> T getBroker() {
+        return (T) getFirst(broker);
+    }
+
+    @Override
+    public void addBroker(Person broker) {
+        this.broker = add(this.broker, broker);
+    }
+    @Override
+    public void addBroker(Organization broker) {
+        this.broker = add(this.broker, broker);
+    }
+
+    @JsonLdFieldTypes({ Text.class, PhysicalActivityCategory.class, CategoryCode.class, Thing.class, URL.class })
+    private List<Object> category;
+
+    @Override
+    public <T> List<T> getCategoryList() {
+        return (List<T>) category;
+    }
+
+    @Override
+    public <T> T getCategory() {
+        return (T) getFirst(category);
+    }
+
+    @Override
+    public void addCategory(Text category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(PhysicalActivityCategory category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(CategoryCode category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(Thing category) {
+        this.category = add(this.category, category);
+    }
+    @Override
+    public void addCategory(URL category) {
+        this.category = add(this.category, category);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ URL.class, CreativeWork.class })
+    private List<Object> documentation;
+
+    @Override
+    public <T> List<T> getDocumentationList() {
+        return (List<T>) documentation;
+    }
+
+    @Override
+    public <T> T getDocumentation() {
+        return (T) getFirst(documentation);
+    }
+
+    @Override
+    public void addDocumentation(URL documentation) {
+        this.documentation = add(this.documentation, documentation);
+    }
+    @Override
+    public void addDocumentation(CreativeWork documentation) {
+        this.documentation = add(this.documentation, documentation);
+    }
+
+    private List<Certification> hasCertification;
+
+    @Override
+    public List<Certification> getHasCertificationList() {
+        return hasCertification;
+    }
+
+    @Override
+    public Certification getHasCertification() {
+        return getFirst(hasCertification);
+    }
+
+    @Override
+    public void addHasCertification(Certification hasCertification) {
+        this.hasCertification = add(this.hasCertification, hasCertification);
+    }
+
+    private List<OfferCatalog> hasOfferCatalog;
+
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() {
+        return hasOfferCatalog;
+    }
+
+    @Override
+    public OfferCatalog getHasOfferCatalog() {
+        return getFirst(hasOfferCatalog);
+    }
+
+    @Override
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
+    }
+
+    private List<OpeningHoursSpecification> hoursAvailable;
+
+    @Override
+    public List<OpeningHoursSpecification> getHoursAvailableList() {
+        return hoursAvailable;
+    }
+
+    @Override
+    public OpeningHoursSpecification getHoursAvailable() {
+        return getFirst(hoursAvailable);
+    }
+
+    @Override
+    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isRelatedTo;
+
+    @Override
+    public <T> List<T> getIsRelatedToList() {
+        return (List<T>) isRelatedTo;
+    }
+
+    @Override
+    public <T> T getIsRelatedTo() {
+        return (T) getFirst(isRelatedTo);
+    }
+
+    @Override
+    public void addIsRelatedTo(Service isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
+    }
+    @Override
+    public void addIsRelatedTo(Product isRelatedTo) {
+        this.isRelatedTo = add(this.isRelatedTo, isRelatedTo);
+    }
+
+    @JsonLdFieldTypes({ Service.class, Product.class })
+    private List<Object> isSimilarTo;
+
+    @Override
+    public <T> List<T> getIsSimilarToList() {
+        return (List<T>) isSimilarTo;
+    }
+
+    @Override
+    public <T> T getIsSimilarTo() {
+        return (T) getFirst(isSimilarTo);
+    }
+
+    @Override
+    public void addIsSimilarTo(Service isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
+    }
+    @Override
+    public void addIsSimilarTo(Product isSimilarTo) {
+        this.isSimilarTo = add(this.isSimilarTo, isSimilarTo);
+    }
+
+    @JsonLdFieldTypes({ URL.class, ImageObject.class })
+    private List<Object> logo;
+
+    @Override
+    public <T> List<T> getLogoList() {
+        return (List<T>) logo;
+    }
+
+    @Override
+    public <T> T getLogo() {
+        return (T) getFirst(logo);
+    }
+
+    @Override
+    public void addLogo(URL logo) {
+        this.logo = add(this.logo, logo);
+    }
+    @Override
+    public void addLogo(ImageObject logo) {
+        this.logo = add(this.logo, logo);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ Offer.class, Demand.class })
+    private List<Object> offers;
+
+    @Override
+    public <T> List<T> getOffersList() {
+        return (List<T>) offers;
+    }
+
+    @Override
+    public <T> T getOffers() {
+        return (T) getFirst(offers);
+    }
+
+    @Override
+    public void addOffers(Offer offers) {
+        this.offers = add(this.offers, offers);
+    }
+    @Override
+    public void addOffers(Demand offers) {
+        this.offers = add(this.offers, offers);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<Thing> produces;
+
+    @Override
+    public List<Thing> getProducesList() {
+        return produces;
+    }
+
+    @Override
+    public Thing getProduces() {
+        return getFirst(produces);
+    }
+
+    @Override
+    public void addProduces(Thing produces) {
+        this.produces = add(this.produces, produces);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> provider;
+
+    @Override
+    public <T> List<T> getProviderList() {
+        return (List<T>) provider;
+    }
+
+    @Override
+    public <T> T getProvider() {
+        return (T) getFirst(provider);
+    }
+
+    @Override
+    public void addProvider(Person provider) {
+        this.provider = add(this.provider, provider);
+    }
+    @Override
+    public void addProvider(Organization provider) {
+        this.provider = add(this.provider, provider);
+    }
+
+    private List<Text> providerMobility;
+
+    @Override
+    public List<Text> getProviderMobilityList() {
+        return providerMobility;
+    }
+
+    @Override
+    public Text getProviderMobility() {
+        return getFirst(providerMobility);
+    }
+
+    @Override
+    public void addProviderMobility(Text providerMobility) {
+        this.providerMobility = add(this.providerMobility, providerMobility);
+    }
+
+    private List<Review> review;
+
+    @Override
+    public List<Review> getReviewList() {
+        return review;
+    }
+
+    @Override
+    public Review getReview() {
+        return getFirst(review);
+    }
+
+    @Override
+    public void addReview(Review review) {
+        this.review = add(this.review, review);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
+    private List<Object> serviceArea;
+
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
+    }
+
+    @Override
+    public <T> T getServiceArea() {
+        return (T) getFirst(serviceArea);
+    }
+
+    @Override
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    @Override
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    @Override
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+
+    private List<Audience> serviceAudience;
+
+    @Override
+    public List<Audience> getServiceAudienceList() {
+        return serviceAudience;
+    }
+
+    @Override
+    public Audience getServiceAudience() {
+        return getFirst(serviceAudience);
+    }
+
+    @Override
+    public void addServiceAudience(Audience serviceAudience) {
+        this.serviceAudience = add(this.serviceAudience, serviceAudience);
+    }
+
+    private List<Thing> serviceOutput;
+
+    @Override
+    public List<Thing> getServiceOutputList() {
+        return serviceOutput;
+    }
+
+    @Override
+    public Thing getServiceOutput() {
+        return getFirst(serviceOutput);
+    }
+
+    @Override
+    public void addServiceOutput(Thing serviceOutput) {
+        this.serviceOutput = add(this.serviceOutput, serviceOutput);
+    }
+
+    @JsonLdFieldTypes({ Text.class, GovernmentBenefitsType.class })
+    private List<Object> serviceType;
+
+    @Override
+    public <T> List<T> getServiceTypeList() {
+        return (List<T>) serviceType;
+    }
+
+    @Override
+    public <T> T getServiceType() {
+        return (T) getFirst(serviceType);
+    }
+
+    @Override
+    public void addServiceType(Text serviceType) {
+        this.serviceType = add(this.serviceType, serviceType);
+    }
+    @Override
+    public void addServiceType(GovernmentBenefitsType serviceType) {
+        this.serviceType = add(this.serviceType, serviceType);
+    }
+
+    private List<Text> slogan;
+
+    @Override
+    public List<Text> getSloganList() {
+        return slogan;
+    }
+
+    @Override
+    public Text getSlogan() {
+        return getFirst(slogan);
+    }
+
+    @Override
+    public void addSlogan(Text slogan) {
+        this.slogan = add(this.slogan, slogan);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> termsOfService;
+
+    @Override
+    public <T> List<T> getTermsOfServiceList() {
+        return (List<T>) termsOfService;
+    }
+
+    @Override
+    public <T> T getTermsOfService() {
+        return (T) getFirst(termsOfService);
+    }
+
+    @Override
+    public void addTermsOfService(URL termsOfService) {
+        this.termsOfService = add(this.termsOfService, termsOfService);
+    }
+    @Override
+    public void addTermsOfService(Text termsOfService) {
+        this.termsOfService = add(this.termsOfService, termsOfService);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 }

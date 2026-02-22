@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * The act of transferring ownership of an object to a destination. Reciprocal of TakeAction.<br/><br/>Related actions:<br/><br/>* [[TakeAction]]: Reciprocal of GiveAction.<br/>* [[SendAction]]: Unlike SendAction, GiveAction implies that ownership is being transferred (e.g. I may send my laptop to you, but that doesn't mean I'm giving it to you).

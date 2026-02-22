@@ -13,6 +13,8 @@ import java.util.stream.Stream;
 @Accessors(chain = true)
 public final class Type {
 
+    private static final Comparator<Property> PROPERTY_COMPARATOR = Comparator.comparing(Property::getId);
+
     private final String id;
 
     private String javaType;
@@ -26,7 +28,7 @@ public final class Type {
     private String description;
 
     @Setter(AccessLevel.NONE)
-    private final Set<Property> properties = new LinkedHashSet<>();
+    private final Set<Property> properties = new TreeSet<>(PROPERTY_COMPARATOR);
 
     @Setter(AccessLevel.NONE)
     @EqualsAndHashCode.Exclude
@@ -72,7 +74,7 @@ public final class Type {
                                     .stream()
                                     .flatMap(type -> type.getAllProperties().stream()).filter(prop -> !properties.contains(prop))
                     )
-                    .collect(Collectors.toCollection(LinkedHashSet::new));
+                    .collect(Collectors.toCollection(() -> new TreeSet<>(PROPERTY_COMPARATOR)));
         }
         return this.allProperties;
     }

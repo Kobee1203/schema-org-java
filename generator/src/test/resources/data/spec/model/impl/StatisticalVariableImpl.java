@@ -5,29 +5,29 @@
  */
 package spec.model.impl;
 
-import spec.model.datatype.Text;
-import spec.model.Property;
-import spec.model.datatype.URL;
-import spec.model.MeasurementMethodEnum;
-import spec.model.DefinedTerm;
-import spec.model.Class;
-import spec.model.StatisticalVariable;
-import spec.model.Enumeration;
-import spec.model.datatype.Integer;
-import spec.model.PropertyValue;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.Event;
-import spec.model.CreativeWork;
-import spec.model.Action;
-import spec.model.TextObject;
-import spec.model.ImageObject;
-import spec.model.Thing;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import spec.model.Intangible;
+import spec.model.Action;
+import spec.model.Class;
 import spec.model.ConstraintNode;
+import spec.model.CreativeWork;
+import spec.model.DefinedTerm;
+import spec.model.Enumeration;
+import spec.model.Event;
+import spec.model.ImageObject;
+import spec.model.Intangible;
+import spec.model.MeasurementMethodEnum;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.Property;
+import spec.model.PropertyValue;
+import spec.model.StatisticalVariable;
+import spec.model.TextObject;
+import spec.model.Thing;
+import spec.model.datatype.Integer;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * [[StatisticalVariable]] represents any type of statistical metric that can be measured at a place and time. The usage pattern for [[StatisticalVariable]] is typically expressed using [[Observation]] with an explicit [[populationType]], which is a type, typically drawn from Schema.org. Each [[StatisticalVariable]] is marked as a [[ConstraintNode]], meaning that some properties (those listed using [[constraintProperty]]) serve in this setting solely to define the statistical variable rather than literally describe a specific person, place or thing. For example, a [[StatisticalVariable]] Median_Height_Person_Female representing the median height of women, could be written as follows: the population type is [[Person]]; the measuredProperty [[height]]; the [[statType]] [[median]]; the [[gender]] [[Female]]. It is important to note that there are many kinds of scientific quantitative observation which are not fully, perfectly or unambiguously described following this pattern, or with solely Schema.org terminology. The approach taken here is designed to allow partial, incremental or minimal description of [[StatisticalVariable]]s, and the use of detailed sets of entity and property IDs from external repositories. The [[measurementMethod]], [[unitCode]] and [[unitText]] properties can also be used to clarify the specific nature and notation of an observed measurement. 
@@ -39,996 +39,456 @@ import spec.model.ConstraintNode;
 @JsonLdTypeName("StatisticalVariable")
 public class StatisticalVariableImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements StatisticalVariable {
 
-    @JsonLdFieldTypes({ Text.class, Property.class, URL.class })
-    private List<Object> statType;
-
-    /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @return {@link Text} or {@link Property} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public <T> List<T> getStatTypeList() {
-        return (List<T>) statType;
-    }
-
-    /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @return {@link Text} or {@link Property} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public <T> T getStatType() {
-        return (T) getFirst(statType);
-    }
-
-    /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @param statType Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public void addStatType(Text statType) {
-        this.statType = add(this.statType, statType);
-    }
-    /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @param statType Property value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public void addStatType(Property statType) {
-        this.statType = add(this.statType, statType);
-    }
-    /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @param statType URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public void addStatType(URL statType) {
-        this.statType = add(this.statType, statType);
-    }
-
-    @JsonLdFieldTypes({ MeasurementMethodEnum.class, DefinedTerm.class, URL.class, Text.class })
-    private List<Object> measurementTechnique;
-
-    /**
-     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
-     *     
-     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
-     *
-     * @return {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public <T> List<T> getMeasurementTechniqueList() {
-        return (List<T>) measurementTechnique;
-    }
-
-    /**
-     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
-     *     
-     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
-     *
-     * @return {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public <T> T getMeasurementTechnique() {
-        return (T) getFirst(measurementTechnique);
-    }
-
-    /**
-     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
-     *     
-     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
-     *
-     * @param measurementTechnique MeasurementMethodEnum value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementTechnique(MeasurementMethodEnum measurementTechnique) {
-        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
-    }
-    /**
-     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
-     *     
-     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
-     *
-     * @param measurementTechnique DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementTechnique(DefinedTerm measurementTechnique) {
-        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
-    }
-    /**
-     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
-     *     
-     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
-     *
-     * @param measurementTechnique URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementTechnique(URL measurementTechnique) {
-        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
-    }
-    /**
-     * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
-     *     
-     * The [[measurementTechnique]] property helps when extra clarification is needed about how a [[measuredProperty]] was measured. This is oriented towards scientific and scholarly dataset publication but may have broader applicability; it is not intended as a full representation of measurement, but can often serve as a high level summary for dataset discovery. 
-     * 
-     * For example, if [[variableMeasured]] is: molecule concentration, [[measurementTechnique]] could be: "mass spectrometry" or "nmr spectroscopy" or "colorimetry" or "immunofluorescence". If the [[variableMeasured]] is "depression rating", the [[measurementTechnique]] could be "Zung Scale" or "HAM-D" or "Beck Depression Inventory". 
-     * 
-     * If there are several [[variableMeasured]] properties recorded for some given data object, use a [[PropertyValue]] for each [[variableMeasured]] and attach the corresponding [[measurementTechnique]]. The value can also be from an enumeration, organized as a [[MeasurementMetholdEnumeration]].
-     *
-     * @param measurementTechnique Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementTechnique(Text measurementTechnique) {
-        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
-    }
-
-    private List<Class> populationType;
-
-    /**
-     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
-     *
-     * @return {@link Class}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public List<Class> getPopulationTypeList() {
-        return populationType;
-    }
-
-    /**
-     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
-     *
-     * @return {@link Class}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public Class getPopulationType() {
-        return getFirst(populationType);
-    }
-
-    /**
-     * Indicates the populationType common to all members of a [[StatisticalPopulation]] or all cases within the scope of a [[StatisticalVariable]].
-     *
-     * @param populationType Class value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public void addPopulationType(Class populationType) {
-        this.populationType = add(this.populationType, populationType);
-    }
-
-    @JsonLdFieldTypes({ Text.class, MeasurementMethodEnum.class, DefinedTerm.class, URL.class })
-    private List<Object> measurementMethod;
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public <T> List<T> getMeasurementMethodList() {
-        return (List<T>) measurementMethod;
-    }
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public <T> T getMeasurementMethod() {
-        return (T) getFirst(measurementMethod);
-    }
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementMethod(Text measurementMethod) {
-        this.measurementMethod = add(this.measurementMethod, measurementMethod);
-    }
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod MeasurementMethodEnum value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementMethod(MeasurementMethodEnum measurementMethod) {
-        this.measurementMethod = add(this.measurementMethod, measurementMethod);
-    }
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementMethod(DefinedTerm measurementMethod) {
-        this.measurementMethod = add(this.measurementMethod, measurementMethod);
-    }
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    @Override
-    public void addMeasurementMethod(URL measurementMethod) {
-        this.measurementMethod = add(this.measurementMethod, measurementMethod);
-    }
-
-    private List<StatisticalVariable> measurementDenominator;
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @return {@link StatisticalVariable}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public List<StatisticalVariable> getMeasurementDenominatorList() {
-        return measurementDenominator;
-    }
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @return {@link StatisticalVariable}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public StatisticalVariable getMeasurementDenominator() {
-        return getFirst(measurementDenominator);
-    }
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @param measurementDenominator StatisticalVariable value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public void addMeasurementDenominator(StatisticalVariable measurementDenominator) {
-        this.measurementDenominator = add(this.measurementDenominator, measurementDenominator);
-    }
-
-    private List<Enumeration> measurementQualifier;
-
-    /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
-     *
-     * @return {@link Enumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public List<Enumeration> getMeasurementQualifierList() {
-        return measurementQualifier;
-    }
-
-    /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
-     *
-     * @return {@link Enumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public Enumeration getMeasurementQualifier() {
-        return getFirst(measurementQualifier);
-    }
-
-    /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
-     *
-     * @param measurementQualifier Enumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    @Override
-    public void addMeasurementQualifier(Enumeration measurementQualifier) {
-        this.measurementQualifier = add(this.measurementQualifier, measurementQualifier);
-    }
-
-    private List<Property> measuredProperty;
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @return {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public List<Property> getMeasuredPropertyList() {
-        return measuredProperty;
-    }
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @return {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public Property getMeasuredProperty() {
-        return getFirst(measuredProperty);
-    }
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @param measuredProperty Property value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public void addMeasuredProperty(Property measuredProperty) {
-        this.measuredProperty = add(this.measuredProperty, measuredProperty);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Property.class })
-    private List<Object> constraintProperty;
-
-    /**
-     * Indicates a property used as a constraint. For example, in the definition of a [[StatisticalVariable]]. The value is a property, either from within Schema.org or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @return {@link URL} or {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public <T> List<T> getConstraintPropertyList() {
-        return (List<T>) constraintProperty;
-    }
-
-    /**
-     * Indicates a property used as a constraint. For example, in the definition of a [[StatisticalVariable]]. The value is a property, either from within Schema.org or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @return {@link URL} or {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public <T> T getConstraintProperty() {
-        return (T) getFirst(constraintProperty);
-    }
-
-    /**
-     * Indicates a property used as a constraint. For example, in the definition of a [[StatisticalVariable]]. The value is a property, either from within Schema.org or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @param constraintProperty URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public void addConstraintProperty(URL constraintProperty) {
-        this.constraintProperty = add(this.constraintProperty, constraintProperty);
-    }
-    /**
-     * Indicates a property used as a constraint. For example, in the definition of a [[StatisticalVariable]]. The value is a property, either from within Schema.org or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
-     *
-     * @param constraintProperty Property value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public void addConstraintProperty(Property constraintProperty) {
-        this.constraintProperty = add(this.constraintProperty, constraintProperty);
-    }
-
-    private List<Integer> numConstraints;
-
-    /**
-     * Indicates the number of constraints property values defined for a particular [[ConstraintNode]] such as [[StatisticalVariable]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalVariable]] or other construct that is defined using properties on template-style nodes.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public List<Integer> getNumConstraintsList() {
-        return numConstraints;
-    }
-
-    /**
-     * Indicates the number of constraints property values defined for a particular [[ConstraintNode]] such as [[StatisticalVariable]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalVariable]] or other construct that is defined using properties on template-style nodes.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public Integer getNumConstraints() {
-        return getFirst(numConstraints);
-    }
-
-    /**
-     * Indicates the number of constraints property values defined for a particular [[ConstraintNode]] such as [[StatisticalVariable]]. This helps applications understand if they have access to a sufficiently complete description of a [[StatisticalVariable]] or other construct that is defined using properties on template-style nodes.
-     *
-     * @param numConstraints Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    @Override
-    public void addNumConstraints(Integer numConstraints) {
-        this.numConstraints = add(this.numConstraints, numConstraints);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
     @JsonLdFieldTypes({ URL.class, Text.class })
     private List<Object> additionalType;
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> List<T> getAdditionalTypeList() {
         return (List<T>) additionalType;
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
     @Override
     public <T> T getAdditionalType() {
         return (T) getFirst(additionalType);
     }
 
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
     @Override
     public void addAdditionalType(URL additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
     @Override
     public void addAdditionalType(Text additionalType) {
         this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
-    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
-    private List<Object> subjectOf;
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> List<T> getSubjectOfList() {
-        return (List<T>) subjectOf;
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @return {@link Event} or {@link CreativeWork}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public <T> T getSubjectOf() {
-        return (T) getFirst(subjectOf);
-    }
-
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf Event value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(Event subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-    /**
-     * A CreativeWork or Event about this Thing.
-     *
-     * @param subjectOf CreativeWork value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    @Override
-    public void addSubjectOf(CreativeWork subjectOf) {
-        this.subjectOf = add(this.subjectOf, subjectOf);
-    }
-
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
     private List<Text> alternateName;
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getAlternateNameList() {
         return alternateName;
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getAlternateName() {
         return getFirst(alternateName);
     }
 
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
     @Override
     public void addAlternateName(Text alternateName) {
         this.alternateName = add(this.alternateName, alternateName);
     }
 
-    private List<URL> url;
+    @JsonLdFieldTypes({ URL.class, Property.class })
+    private List<Object> constraintProperty;
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public List<URL> getUrlList() {
-        return url;
+    public <T> List<T> getConstraintPropertyList() {
+        return (List<T>) constraintProperty;
     }
 
-    /**
-     * URL of the item.
-     *
-     * @return {@link URL}
-     */
     @Override
-    public URL getUrl() {
-        return getFirst(url);
+    public <T> T getConstraintProperty() {
+        return (T) getFirst(constraintProperty);
     }
 
-    /**
-     * URL of the item.
-     *
-     * @param url URL value to set.
-     */
     @Override
-    public void addUrl(URL url) {
-        this.url = add(this.url, url);
+    public void addConstraintProperty(URL constraintProperty) {
+        this.constraintProperty = add(this.constraintProperty, constraintProperty);
+    }
+    @Override
+    public void addConstraintProperty(Property constraintProperty) {
+        this.constraintProperty = add(this.constraintProperty, constraintProperty);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getDescription() {
+        return (T) getFirst(description);
     }
 
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
     }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
     }
 
     private List<Text> disambiguatingDescription;
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public List<Text> getDisambiguatingDescriptionList() {
         return disambiguatingDescription;
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
     @Override
     public Text getDisambiguatingDescription() {
         return getFirst(disambiguatingDescription);
     }
 
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
     @Override
     public void addDisambiguatingDescription(Text disambiguatingDescription) {
         this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Property> measuredProperty;
+
+    @Override
+    public List<Property> getMeasuredPropertyList() {
+        return measuredProperty;
+    }
+
+    @Override
+    public Property getMeasuredProperty() {
+        return getFirst(measuredProperty);
+    }
+
+    @Override
+    public void addMeasuredProperty(Property measuredProperty) {
+        this.measuredProperty = add(this.measuredProperty, measuredProperty);
+    }
+
+    private List<StatisticalVariable> measurementDenominator;
+
+    @Override
+    public List<StatisticalVariable> getMeasurementDenominatorList() {
+        return measurementDenominator;
+    }
+
+    @Override
+    public StatisticalVariable getMeasurementDenominator() {
+        return getFirst(measurementDenominator);
+    }
+
+    @Override
+    public void addMeasurementDenominator(StatisticalVariable measurementDenominator) {
+        this.measurementDenominator = add(this.measurementDenominator, measurementDenominator);
+    }
+
+    @JsonLdFieldTypes({ Text.class, MeasurementMethodEnum.class, DefinedTerm.class, URL.class })
+    private List<Object> measurementMethod;
+
+    @Override
+    public <T> List<T> getMeasurementMethodList() {
+        return (List<T>) measurementMethod;
+    }
+
+    @Override
+    public <T> T getMeasurementMethod() {
+        return (T) getFirst(measurementMethod);
+    }
+
+    @Override
+    public void addMeasurementMethod(Text measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+    @Override
+    public void addMeasurementMethod(MeasurementMethodEnum measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+    @Override
+    public void addMeasurementMethod(DefinedTerm measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+    @Override
+    public void addMeasurementMethod(URL measurementMethod) {
+        this.measurementMethod = add(this.measurementMethod, measurementMethod);
+    }
+
+    private List<Enumeration> measurementQualifier;
+
+    @Override
+    public List<Enumeration> getMeasurementQualifierList() {
+        return measurementQualifier;
+    }
+
+    @Override
+    public Enumeration getMeasurementQualifier() {
+        return getFirst(measurementQualifier);
+    }
+
+    @Override
+    public void addMeasurementQualifier(Enumeration measurementQualifier) {
+        this.measurementQualifier = add(this.measurementQualifier, measurementQualifier);
+    }
+
+    @JsonLdFieldTypes({ MeasurementMethodEnum.class, DefinedTerm.class, URL.class, Text.class })
+    private List<Object> measurementTechnique;
+
+    @Override
+    public <T> List<T> getMeasurementTechniqueList() {
+        return (List<T>) measurementTechnique;
+    }
+
+    @Override
+    public <T> T getMeasurementTechnique() {
+        return (T) getFirst(measurementTechnique);
+    }
+
+    @Override
+    public void addMeasurementTechnique(MeasurementMethodEnum measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+    @Override
+    public void addMeasurementTechnique(DefinedTerm measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+    @Override
+    public void addMeasurementTechnique(URL measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+    @Override
+    public void addMeasurementTechnique(Text measurementTechnique) {
+        this.measurementTechnique = add(this.measurementTechnique, measurementTechnique);
+    }
+
+    private List<Text> name;
+
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<Integer> numConstraints;
+
+    @Override
+    public List<Integer> getNumConstraintsList() {
+        return numConstraints;
+    }
+
+    @Override
+    public Integer getNumConstraints() {
+        return getFirst(numConstraints);
+    }
+
+    @Override
+    public void addNumConstraints(Integer numConstraints) {
+        this.numConstraints = add(this.numConstraints, numConstraints);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Class> populationType;
+
+    @Override
+    public List<Class> getPopulationTypeList() {
+        return populationType;
+    }
+
+    @Override
+    public Class getPopulationType() {
+        return getFirst(populationType);
+    }
+
+    @Override
+    public void addPopulationType(Class populationType) {
+        this.populationType = add(this.populationType, populationType);
+    }
+
+    private List<Action> potentialAction;
+
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<URL> sameAs;
+
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Text.class, Property.class, URL.class })
+    private List<Object> statType;
+
+    @Override
+    public <T> List<T> getStatTypeList() {
+        return (List<T>) statType;
+    }
+
+    @Override
+    public <T> T getStatType() {
+        return (T) getFirst(statType);
+    }
+
+    @Override
+    public void addStatType(Text statType) {
+        this.statType = add(this.statType, statType);
+    }
+    @Override
+    public void addStatType(Property statType) {
+        this.statType = add(this.statType, statType);
+    }
+    @Override
+    public void addStatType(URL statType) {
+        this.statType = add(this.statType, statType);
+    }
+
+    @JsonLdFieldTypes({ Event.class, CreativeWork.class })
+    private List<Object> subjectOf;
+
+    @Override
+    public <T> List<T> getSubjectOfList() {
+        return (List<T>) subjectOf;
+    }
+
+    @Override
+    public <T> T getSubjectOf() {
+        return (T) getFirst(subjectOf);
+    }
+
+    @Override
+    public void addSubjectOf(Event subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+    @Override
+    public void addSubjectOf(CreativeWork subjectOf) {
+        this.subjectOf = add(this.subjectOf, subjectOf);
+    }
+
+    private List<URL> url;
+
+    @Override
+    public List<URL> getUrlList() {
+        return url;
+    }
+
+    @Override
+    public URL getUrl() {
+        return getFirst(url);
+    }
+
+    @Override
+    public void addUrl(URL url) {
+        this.url = add(this.url, url);
     }
 }

@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Boolean;
 import org.schema.model.MonetaryAmount;
+import org.schema.model.datatype.Boolean;
 
 /**
  * A loan in which property or real estate is used as collateral. (A loan securitized against some real estate.)

@@ -6,13 +6,13 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Language;
-import org.schema.model.datatype.Text;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
+import org.schema.model.Language;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 import org.schema.model.Thing;
+import org.schema.model.datatype.Text;
 
 /**
  * The act of conveying information to another person via a communication medium (instrument) such as speech, email, or telephone conversation.
@@ -22,25 +22,31 @@ import org.schema.model.Thing;
 public interface CommunicateAction extends InteractAction {
 
     /**
-     * A sub property of instrument. The language used on this action.
+     * The subject matter of an object.
      *
-     * @return {@link Language}
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    List<Language> getLanguageList();
+    List<Thing> getAboutList();
 
     /**
-     * A sub property of instrument. The language used on this action.
+     * The subject matter of an object.
      *
-     * @return {@link Language}
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    Language getLanguage();
+    Thing getAbout();
 
     /**
-     * A sub property of instrument. The language used on this action.
+     * The subject matter of an object.
      *
-     * @param language Language value to set.
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void addLanguage(Language language);
+    void addAbout(Thing about);
 
     /**
      * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
@@ -72,6 +78,27 @@ public interface CommunicateAction extends InteractAction {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
      */
     void addInLanguage(Text inLanguage);
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @return {@link Language}
+     */
+    List<Language> getLanguageList();
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @return {@link Language}
+     */
+    Language getLanguage();
+
+    /**
+     * A sub property of instrument. The language used on this action.
+     *
+     * @param language Language value to set.
+     */
+    void addLanguage(Language language);
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -111,31 +138,4 @@ public interface CommunicateAction extends InteractAction {
      * @param recipient Audience value to set.
      */
     void addRecipient(Audience recipient);
-
-    /**
-     * The subject matter of an object.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    List<Thing> getAboutList();
-
-    /**
-     * The subject matter of an object.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    Thing getAbout();
-
-    /**
-     * The subject matter of an object.
-     *
-     * @param about Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    void addAbout(Thing about);
 }

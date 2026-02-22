@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.PriceTypeEnumeration;
 import org.schema.model.PriceSpecification;
+import org.schema.model.PriceTypeEnumeration;
+import org.schema.model.datatype.Text;
 
 /**
  * A compound price specification is one that bundles multiple prices that all apply in combination for different dimensions of consumption. Use the name property of the attached unit price specification for indicating the dimension of a price component (e.g. "electricity" or "final cleaning").
@@ -17,6 +17,30 @@ import org.schema.model.PriceSpecification;
  * @see <a href="https://schema.org/CompoundPriceSpecification">https://schema.org/CompoundPriceSpecification</a>
  */
 public interface CompoundPriceSpecification extends PriceSpecification {
+
+    /**
+     * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<PriceSpecification> getPriceComponentList();
+
+    /**
+     * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    PriceSpecification getPriceComponent();
+
+    /**
+     * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
+     *
+     * @param priceComponent PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addPriceComponent(PriceSpecification priceComponent);
 
     /**
      * Defines the type of a price specified for an offered product, for example a list price, a (temporary) sale price or a manufacturer suggested retail price. If multiple prices are specified for an offer the [[priceType]] property can be used to identify the type of each such specified price. The value of priceType can be specified as a value from enumeration PriceTypeEnumeration or, a UN/EDIFACT 5387 code, or as a free form text string for price types that are not already predefined in PriceTypeEnumeration.
@@ -48,28 +72,4 @@ public interface CompoundPriceSpecification extends PriceSpecification {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addPriceType(PriceTypeEnumeration priceType);
-
-    /**
-     * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<PriceSpecification> getPriceComponentList();
-
-    /**
-     * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    PriceSpecification getPriceComponent();
-
-    /**
-     * This property links to all [[UnitPriceSpecification]] nodes that apply in parallel for the [[CompoundPriceSpecification]] node.
-     *
-     * @param priceComponent PriceSpecification value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addPriceComponent(PriceSpecification priceComponent);
 }

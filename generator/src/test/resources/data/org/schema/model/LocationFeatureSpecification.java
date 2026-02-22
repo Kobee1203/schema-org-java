@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.OpeningHoursSpecification;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 
 /**
  * Specifies a location feature by providing a structured value representing a feature of an accommodation as a property-value pair of varying degrees of formality.

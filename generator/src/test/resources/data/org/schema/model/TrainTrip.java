@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
 import org.schema.model.TrainStation;
+import org.schema.model.datatype.Text;
 
 /**
  * A trip on a commercial train line.
@@ -15,27 +15,6 @@ import org.schema.model.TrainStation;
  * @see <a href="https://schema.org/TrainTrip">https://schema.org/TrainTrip</a>
  */
 public interface TrainTrip extends Trip {
-
-    /**
-     * The unique identifier for the train.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTrainNumberList();
-
-    /**
-     * The unique identifier for the train.
-     *
-     * @return {@link Text}
-     */
-    Text getTrainNumber();
-
-    /**
-     * The unique identifier for the train.
-     *
-     * @param trainNumber Text value to set.
-     */
-    void addTrainNumber(Text trainNumber);
 
     /**
      * The platform where the train arrives.
@@ -57,27 +36,6 @@ public interface TrainTrip extends Trip {
      * @param arrivalPlatform Text value to set.
      */
     void addArrivalPlatform(Text arrivalPlatform);
-
-    /**
-     * The name of the train (e.g. The Orient Express).
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTrainNameList();
-
-    /**
-     * The name of the train (e.g. The Orient Express).
-     *
-     * @return {@link Text}
-     */
-    Text getTrainName();
-
-    /**
-     * The name of the train (e.g. The Orient Express).
-     *
-     * @param trainName Text value to set.
-     */
-    void addTrainName(Text trainName);
 
     /**
      * The station where the train trip ends.
@@ -141,4 +99,46 @@ public interface TrainTrip extends Trip {
      * @param departureStation TrainStation value to set.
      */
     void addDepartureStation(TrainStation departureStation);
+
+    /**
+     * The name of the train (e.g. The Orient Express).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTrainNameList();
+
+    /**
+     * The name of the train (e.g. The Orient Express).
+     *
+     * @return {@link Text}
+     */
+    Text getTrainName();
+
+    /**
+     * The name of the train (e.g. The Orient Express).
+     *
+     * @param trainName Text value to set.
+     */
+    void addTrainName(Text trainName);
+
+    /**
+     * The unique identifier for the train.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTrainNumberList();
+
+    /**
+     * The unique identifier for the train.
+     *
+     * @return {@link Text}
+     */
+    Text getTrainNumber();
+
+    /**
+     * The unique identifier for the train.
+     *
+     * @param trainNumber Text value to set.
+     */
+    void addTrainNumber(Text trainNumber);
 }

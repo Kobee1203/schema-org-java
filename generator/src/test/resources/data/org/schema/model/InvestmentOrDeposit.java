@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
+import org.schema.model.datatype.Number;
 
 /**
  * A type of financial product that typically requires the client to transfer funds to a financial service in return for potential beneficial financial return.

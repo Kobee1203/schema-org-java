@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ContactPoint;
-import org.schema.model.Person;
-import org.schema.model.Organization;
 import org.schema.model.Audience;
+import org.schema.model.ContactPoint;
 import org.schema.model.DeliveryMethod;
+import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * The act of physically/electronically dispatching an object for transfer from an origin to a destination. Related actions:<br/><br/>* [[ReceiveAction]]: The reciprocal of SendAction.<br/>* [[GiveAction]]: Unlike GiveAction, SendAction does not imply the transfer of ownership (e.g. I can send you my laptop, but I'm not necessarily giving it to you).
@@ -18,6 +18,27 @@ import org.schema.model.DeliveryMethod;
  * @see <a href="https://schema.org/SendAction">https://schema.org/SendAction</a>
  */
 public interface SendAction extends TransferAction {
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    List<DeliveryMethod> getDeliveryMethodList();
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @return {@link DeliveryMethod}
+     */
+    DeliveryMethod getDeliveryMethod();
+
+    /**
+     * A sub property of instrument. The method of delivery.
+     *
+     * @param deliveryMethod DeliveryMethod value to set.
+     */
+    void addDeliveryMethod(DeliveryMethod deliveryMethod);
 
     /**
      * A sub property of participant. The participant who is at the receiving end of the action.
@@ -57,25 +78,4 @@ public interface SendAction extends TransferAction {
      * @param recipient Audience value to set.
      */
     void addRecipient(Audience recipient);
-
-    /**
-     * A sub property of instrument. The method of delivery.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    List<DeliveryMethod> getDeliveryMethodList();
-
-    /**
-     * A sub property of instrument. The method of delivery.
-     *
-     * @return {@link DeliveryMethod}
-     */
-    DeliveryMethod getDeliveryMethod();
-
-    /**
-     * A sub property of instrument. The method of delivery.
-     *
-     * @param deliveryMethod DeliveryMethod value to set.
-     */
-    void addDeliveryMethod(DeliveryMethod deliveryMethod);
 }

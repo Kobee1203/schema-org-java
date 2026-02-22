@@ -7,8 +7,8 @@ package spec.model;
 
 import java.util.List;
 import spec.model.MedicalContraindication;
-import spec.model.datatype.Text;
 import spec.model.MedicalEntity;
+import spec.model.datatype.Text;
 
 /**
  * Any object used in a medical capacity, such as to diagnose or treat a patient.
@@ -17,6 +17,30 @@ import spec.model.MedicalEntity;
  * @see <a href="https://schema.org/MedicalDevice">https://schema.org/MedicalDevice</a>
  */
 public interface MedicalDevice extends MedicalEntity {
+
+    /**
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getAdverseOutcomeList();
+
+    /**
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalEntity getAdverseOutcome();
+
+    /**
+     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
+     *
+     * @param adverseOutcome MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAdverseOutcome(MedicalEntity adverseOutcome);
 
     /**
      * A contraindication for this therapy.
@@ -74,30 +98,6 @@ public interface MedicalDevice extends MedicalEntity {
     void addPostOp(Text postOp);
 
     /**
-     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalEntity> getSeriousAdverseOutcomeList();
-
-    /**
-     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalEntity getSeriousAdverseOutcome();
-
-    /**
-     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
-     *
-     * @param seriousAdverseOutcome MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
-
-    /**
      * A description of the workup, testing, and other preparations required before implanting this device.
      *
      * @return {@link Text}
@@ -122,30 +122,6 @@ public interface MedicalDevice extends MedicalEntity {
     void addPreOp(Text preOp);
 
     /**
-     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalEntity> getAdverseOutcomeList();
-
-    /**
-     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalEntity getAdverseOutcome();
-
-    /**
-     * A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or otherwise life-threatening or requiring immediate medical attention), tag it as a seriousAdverseOutcome instead.
-     *
-     * @param adverseOutcome MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAdverseOutcome(MedicalEntity adverseOutcome);
-
-    /**
      * A description of the procedure involved in setting up, using, and/or installing the device.
      *
      * @return {@link Text}
@@ -168,4 +144,28 @@ public interface MedicalDevice extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addProcedure(Text procedure);
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getSeriousAdverseOutcomeList();
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalEntity getSeriousAdverseOutcome();
+
+    /**
+     * A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
+     *
+     * @param seriousAdverseOutcome MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addSeriousAdverseOutcome(MedicalEntity seriousAdverseOutcome);
 }

@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.Thing;
-import org.schema.model.datatype.DateTime;
 import org.schema.model.datatype.Date;
+import org.schema.model.datatype.DateTime;
 
 /**
  * A single item within a larger data feed.
@@ -16,27 +16,6 @@ import org.schema.model.datatype.Date;
  * @see <a href="https://schema.org/DataFeedItem">https://schema.org/DataFeedItem</a>
  */
 public interface DataFeedItem extends Intangible {
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getItemList();
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
-     *
-     * @return {@link Thing}
-     */
-    Thing getItem();
-
-    /**
-     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
-     *
-     * @param item Thing value to set.
-     */
-    void addItem(Thing item);
 
     /**
      * The date on which the CreativeWork was created or the item was added to a DataFeed.
@@ -118,4 +97,25 @@ public interface DataFeedItem extends Intangible {
      * @param dateModified DateTime value to set.
      */
     void addDateModified(DateTime dateModified);
+
+    /**
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getItemList();
+
+    /**
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
+     *
+     * @return {@link Thing}
+     */
+    Thing getItem();
+
+    /**
+     * An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists').
+     *
+     * @param item Thing value to set.
+     */
+    void addItem(Thing item);
 }

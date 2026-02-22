@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AnatomicalStructure;
+import org.schema.model.Muscle;
 import org.schema.model.Nerve;
 import org.schema.model.Vessel;
 import org.schema.model.datatype.Text;
-import org.schema.model.Muscle;
 
 /**
  * A muscle is an anatomical structure consisting of a contractile form of tissue that animals use to effect movement.
@@ -21,52 +21,28 @@ import org.schema.model.Muscle;
 public interface Muscle extends AnatomicalStructure {
 
     /**
-     * The place of attachment of a muscle, or what the muscle moves.
+     * The muscle whose action counteracts the specified muscle.
      *
-     * @return {@link AnatomicalStructure}
+     * @return {@link Muscle}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<AnatomicalStructure> getInsertionList();
+    List<Muscle> getAntagonistList();
 
     /**
-     * The place of attachment of a muscle, or what the muscle moves.
+     * The muscle whose action counteracts the specified muscle.
      *
-     * @return {@link AnatomicalStructure}
+     * @return {@link Muscle}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    AnatomicalStructure getInsertion();
+    Muscle getAntagonist();
 
     /**
-     * The place of attachment of a muscle, or what the muscle moves.
+     * The muscle whose action counteracts the specified muscle.
      *
-     * @param insertion AnatomicalStructure value to set.
+     * @param antagonist Muscle value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addInsertion(AnatomicalStructure insertion);
-
-    /**
-     * The underlying innervation associated with the muscle.
-     *
-     * @return {@link Nerve}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Nerve> getNerveList();
-
-    /**
-     * The underlying innervation associated with the muscle.
-     *
-     * @return {@link Nerve}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Nerve getNerve();
-
-    /**
-     * The underlying innervation associated with the muscle.
-     *
-     * @param nerve Nerve value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addNerve(Nerve nerve);
+    void addAntagonist(Muscle antagonist);
 
     /**
      * The blood vessel that carries blood from the heart to the muscle.
@@ -93,6 +69,30 @@ public interface Muscle extends AnatomicalStructure {
     void addBloodSupply(Vessel bloodSupply);
 
     /**
+     * The place of attachment of a muscle, or what the muscle moves.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AnatomicalStructure> getInsertionList();
+
+    /**
+     * The place of attachment of a muscle, or what the muscle moves.
+     *
+     * @return {@link AnatomicalStructure}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AnatomicalStructure getInsertion();
+
+    /**
+     * The place of attachment of a muscle, or what the muscle moves.
+     *
+     * @param insertion AnatomicalStructure value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addInsertion(AnatomicalStructure insertion);
+
+    /**
      * The movement the muscle generates.
      *
      * @return {@link Text}
@@ -117,26 +117,26 @@ public interface Muscle extends AnatomicalStructure {
     void addMuscleAction(Text muscleAction);
 
     /**
-     * The muscle whose action counteracts the specified muscle.
+     * The underlying innervation associated with the muscle.
      *
-     * @return {@link Muscle}
+     * @return {@link Nerve}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Muscle> getAntagonistList();
+    List<Nerve> getNerveList();
 
     /**
-     * The muscle whose action counteracts the specified muscle.
+     * The underlying innervation associated with the muscle.
      *
-     * @return {@link Muscle}
+     * @return {@link Nerve}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Muscle getAntagonist();
+    Nerve getNerve();
 
     /**
-     * The muscle whose action counteracts the specified muscle.
+     * The underlying innervation associated with the muscle.
      *
-     * @param antagonist Muscle value to set.
+     * @param nerve Nerve value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addAntagonist(Muscle antagonist);
+    void addNerve(Nerve nerve);
 }

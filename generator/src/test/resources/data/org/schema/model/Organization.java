@@ -6,44 +6,44 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Grant;
-import org.schema.model.datatype.Text;
-import org.schema.model.Thing;
-import org.schema.model.datatype.URL;
-import org.schema.model.Person;
-import org.schema.model.Review;
-import org.schema.model.ImageObject;
-import org.schema.model.datatype.Date;
-import org.schema.model.Article;
-import org.schema.model.DefinedTerm;
-import org.schema.model.Organization;
-import org.schema.model.AggregateRating;
-import org.schema.model.Language;
-import org.schema.model.Brand;
-import org.schema.model.MerchantReturnPolicy;
-import org.schema.model.Place;
+import org.schema.model.AboutPage;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.GeoShape;
+import org.schema.model.AggregateRating;
+import org.schema.model.Article;
+import org.schema.model.Brand;
+import org.schema.model.Certification;
+import org.schema.model.ContactPoint;
+import org.schema.model.CreativeWork;
+import org.schema.model.DefinedTerm;
+import org.schema.model.Demand;
+import org.schema.model.EducationalOccupationalCredential;
 import org.schema.model.Event;
+import org.schema.model.GeoShape;
+import org.schema.model.Grant;
+import org.schema.model.ImageObject;
 import org.schema.model.InteractionCounter;
+import org.schema.model.Language;
+import org.schema.model.LoanOrCredit;
+import org.schema.model.MemberProgram;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.MerchantReturnPolicy;
+import org.schema.model.NonprofitType;
+import org.schema.model.Offer;
+import org.schema.model.OfferCatalog;
+import org.schema.model.Organization;
+import org.schema.model.PaymentMethod;
+import org.schema.model.Person;
+import org.schema.model.Place;
 import org.schema.model.PostalAddress;
 import org.schema.model.ProgramMembership;
-import org.schema.model.MemberProgramTier;
-import org.schema.model.CreativeWork;
-import org.schema.model.ContactPoint;
-import org.schema.model.Certification;
 import org.schema.model.QuantitativeValue;
-import org.schema.model.LoanOrCredit;
-import org.schema.model.PaymentMethod;
-import org.schema.model.MemberProgram;
-import org.schema.model.AboutPage;
-import org.schema.model.EducationalOccupationalCredential;
-import org.schema.model.VirtualLocation;
-import org.schema.model.Demand;
-import org.schema.model.Offer;
+import org.schema.model.Review;
 import org.schema.model.ShippingService;
-import org.schema.model.OfferCatalog;
-import org.schema.model.NonprofitType;
+import org.schema.model.Thing;
+import org.schema.model.VirtualLocation;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An organization such as a school, NGO, corporation, club, etc.
@@ -53,778 +53,47 @@ import org.schema.model.NonprofitType;
 public interface Organization extends Thing {
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
      *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    List<Grant> getFundingList();
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    Grant getFunding();
-
-    /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
-     *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addFunding(Grant funding);
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAwardsList();
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    Text getAwards();
-
-    /**
-     * Awards won by or for this item.
-     *
-     * @param awards Text value to set.
-     */
-    void addAwards(Text awards);
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @return {@link Text} or {@link Thing} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getKnowsAboutList();
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @return {@link Text} or {@link Thing} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getKnowsAbout();
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addKnowsAbout(Text knowsAbout);
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout Thing value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addKnowsAbout(Thing knowsAbout);
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
-     *
-     * @param knowsAbout URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addKnowsAbout(URL knowsAbout);
-
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getEmployeeList();
-
-    /**
-     * Someone working for this organization.
-     *
-     * @return {@link Person}
-     */
-    Person getEmployee();
-
-    /**
-     * Someone working for this organization.
-     *
-     * @param employee Person value to set.
-     */
-    void addEmployee(Person employee);
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewsList();
-
-    /**
-     * Review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReviews();
-
-    /**
-     * Review of the item.
-     *
-     * @param reviews Review value to set.
-     */
-    void addReviews(Review reviews);
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> List<T> getLogoList();
+    <T> List<T> getAcceptedPaymentMethodList();
 
     /**
-     * An associated logo.
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
      *
-     * @return {@link URL} or {@link ImageObject}
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> T getLogo();
+    <T> T getAcceptedPaymentMethod();
 
     /**
-     * An associated logo.
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
      *
-     * @param logo URL value to set.
+     * @param acceptedPaymentMethod Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addLogo(URL logo);
+    void addAcceptedPaymentMethod(Text acceptedPaymentMethod);
     /**
-     * An associated logo.
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
      *
-     * @param logo ImageObject value to set.
+     * @param acceptedPaymentMethod LoanOrCredit value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addLogo(ImageObject logo);
-
+    void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
     /**
-     * The date that this organization was founded.
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
      *
-     * @return {@link Date}
-     */
-    List<Date> getFoundingDateList();
-
-    /**
-     * The date that this organization was founded.
-     *
-     * @return {@link Date}
-     */
-    Date getFoundingDate();
-
-    /**
-     * The date that this organization was founded.
-     *
-     * @param foundingDate Date value to set.
-     */
-    void addFoundingDate(Date foundingDate);
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link URL} or {@link Article}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getDiversityStaffingReportList();
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @return {@link URL} or {@link Article}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getDiversityStaffingReport();
-
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addDiversityStaffingReport(URL diversityStaffingReport);
-    /**
-     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
-     *
-     * @param diversityStaffingReport Article value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addDiversityStaffingReport(Article diversityStaffingReport);
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
-    <T> List<T> getKeywordsList();
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
-    <T> T getKeywords();
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    void addKeywords(Text keywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    void addKeywords(DefinedTerm keywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    void addKeywords(URL keywords);
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSloganList();
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    Text getSlogan();
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
-    void addSlogan(Text slogan);
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getFunderList();
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getFunder();
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
-    void addFunder(Organization funder);
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
-    void addFunder(Person funder);
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    List<AggregateRating> getAggregateRatingList();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    AggregateRating getAggregateRating();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    void addAggregateRating(AggregateRating aggregateRating);
-
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
-     */
-    List<Text> getLeiCodeList();
-
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
-     */
-    Text getLeiCode();
-
-    /**
-     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
-     *
-     * @param leiCode Text value to set.
-     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
-     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
-     */
-    void addLeiCode(Text leiCode);
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> List<T> getKnowsLanguageList();
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    <T> T getKnowsLanguage();
-
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @param knowsLanguage Language value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addKnowsLanguage(Language knowsLanguage);
-    /**
-     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
-     *
-     * @param knowsLanguage Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
-     */
-    void addKnowsLanguage(Text knowsLanguage);
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    <T> List<T> getBrandList();
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    <T> T getBrand();
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Brand value to set.
-     */
-    void addBrand(Brand brand);
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    void addBrand(Organization brand);
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> List<T> getSkillsList();
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> T getSkills();
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addSkills(Text skills);
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addSkills(DefinedTerm skills);
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @return {@link Text}
+     * @param acceptedPaymentMethod PaymentMethod value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getNaicsList();
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Text getNaics();
-
-    /**
-     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
-     *
-     * @param naics Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addNaics(Text naics);
-
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getFounderList();
-
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getFounder();
-
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @param founder Organization value to set.
-     */
-    void addFounder(Organization founder);
-    /**
-     * A person or organization who founded this organization.
-     *
-     * @param founder Person value to set.
-     */
-    void addFounder(Person founder);
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    List<MerchantReturnPolicy> getHasMerchantReturnPolicyList();
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @return {@link MerchantReturnPolicy}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    MerchantReturnPolicy getHasMerchantReturnPolicy();
-
-    /**
-     * Specifies a MerchantReturnPolicy that may be applicable.
-     *
-     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy);
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getParentOrganizationList();
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @return {@link Organization}
-     */
-    Organization getParentOrganization();
-
-    /**
-     * The larger organization that this organization is a [[subOrganization]] of, if any.
-     *
-     * @param parentOrganization Organization value to set.
-     */
-    void addParentOrganization(Organization parentOrganization);
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    <T> List<T> getAreaServedList();
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    <T> T getAreaServed();
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
-    void addAreaServed(Place areaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
-    void addAreaServed(AdministrativeArea areaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
-    void addAreaServed(GeoShape areaServed);
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    void addAreaServed(Text areaServed);
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Text> getGlobalLocationNumberList();
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Text getGlobalLocationNumber();
-
-    /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
-     *
-     * @param globalLocationNumber Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addGlobalLocationNumber(Text globalLocationNumber);
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewList();
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReview();
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    void addReview(Review review);
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    List<Event> getEventList();
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @return {@link Event}
-     */
-    Event getEvent();
-
-    /**
-     * Upcoming or past event associated with this place, organization, or action.
-     *
-     * @param event Event value to set.
-     */
-    void addEvent(Event event);
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    List<InteractionCounter> getInteractionStatisticList();
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    InteractionCounter getInteractionStatistic();
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    void addInteractionStatistic(InteractionCounter interactionStatistic);
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Text> getLegalNameList();
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Text getLegalName();
-
-    /**
-     * The official name of the organization, e.g. the registered company name.
-     *
-     * @param legalName Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addLegalName(Text legalName);
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
-    <T> List<T> getAddressList();
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
-    <T> T getAddress();
-
-    /**
-     * Physical address of the item.
-     *
-     * @param address PostalAddress value to set.
-     */
-    void addAddress(PostalAddress address);
-    /**
-     * Physical address of the item.
-     *
-     * @param address Text value to set.
-     */
-    void addAddress(Text address);
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
-    <T> List<T> getMemberOfList();
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
-    <T> T getMemberOf();
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf ProgramMembership value to set.
-     */
-    void addMemberOf(ProgramMembership memberOf);
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf Organization value to set.
-     */
-    void addMemberOf(Organization memberOf);
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf MemberProgramTier value to set.
-     */
-    void addMemberOf(MemberProgramTier memberOf);
+    void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
 
     /**
      * For a [[NewsMediaOrganization]] or other news-related [[Organization]], a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.
@@ -866,25 +135,229 @@ public interface Organization extends Thing {
     void addActionableFeedbackPolicy(URL actionableFeedbackPolicy);
 
     /**
-     * Upcoming or past events associated with this place or organization.
+     * Physical address of the item.
      *
-     * @return {@link Event}
+     * @return {@link PostalAddress} or {@link Text}
      */
-    List<Event> getEventsList();
+    <T> List<T> getAddressList();
 
     /**
-     * Upcoming or past events associated with this place or organization.
+     * Physical address of the item.
      *
-     * @return {@link Event}
+     * @return {@link PostalAddress} or {@link Text}
      */
-    Event getEvents();
+    <T> T getAddress();
 
     /**
-     * Upcoming or past events associated with this place or organization.
+     * Physical address of the item.
      *
-     * @param events Event value to set.
+     * @param address PostalAddress value to set.
      */
-    void addEvents(Event events);
+    void addAddress(PostalAddress address);
+    /**
+     * Physical address of the item.
+     *
+     * @param address Text value to set.
+     */
+    void addAddress(Text address);
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    List<InteractionCounter> getAgentInteractionStatisticList();
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    InteractionCounter getAgentInteractionStatistic();
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @param agentInteractionStatistic InteractionCounter value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    AggregateRating getAggregateRating();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getAlumniList();
+
+    /**
+     * Alumni of an organization.
+     *
+     * @return {@link Person}
+     */
+    Person getAlumni();
+
+    /**
+     * Alumni of an organization.
+     *
+     * @param alumni Person value to set.
+     */
+    void addAlumni(Person alumni);
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    <T> List<T> getAreaServedList();
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    <T> T getAreaServed();
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    void addAreaServed(Place areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed AdministrativeArea value to set.
+     */
+    void addAreaServed(AdministrativeArea areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    void addAreaServed(GeoShape areaServed);
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    void addAreaServed(Text areaServed);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAward();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    void addAward(Text award);
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardsList();
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAwards();
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @param awards Text value to set.
+     */
+    void addAwards(Text awards);
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> List<T> getBrandList();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> T getBrand();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    void addBrand(Brand brand);
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Organization value to set.
+     */
+    void addBrand(Organization brand);
+
+    /**
+     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     *
+     * @return {@link Certification}
+     */
+    List<Certification> getCompanyRegistrationList();
+
+    /**
+     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     *
+     * @return {@link Certification}
+     */
+    Certification getCompanyRegistration();
+
+    /**
+     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     *
+     * @param companyRegistration Certification value to set.
+     */
+    void addCompanyRegistration(Certification companyRegistration);
 
     /**
      * A contact point for a person or organization.
@@ -906,6 +379,252 @@ public interface Organization extends Thing {
      * @param contactPoint ContactPoint value to set.
      */
     void addContactPoint(ContactPoint contactPoint);
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getContactPointsList();
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    ContactPoint getContactPoints();
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoints ContactPoint value to set.
+     */
+    void addContactPoints(ContactPoint contactPoints);
+
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getCorrectionsPolicyList();
+
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @return {@link URL} or {@link CreativeWork}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getCorrectionsPolicy();
+
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @param correctionsPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addCorrectionsPolicy(URL correctionsPolicy);
+    /**
+     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     *
+     * @param correctionsPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addCorrectionsPolicy(CreativeWork correctionsPolicy);
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getDepartmentList();
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @return {@link Organization}
+     */
+    Organization getDepartment();
+
+    /**
+     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
+     *
+     * @param department Organization value to set.
+     */
+    void addDepartment(Organization department);
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getDissolutionDateList();
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @return {@link Date}
+     */
+    Date getDissolutionDate();
+
+    /**
+     * The date that this organization was dissolved.
+     *
+     * @param dissolutionDate Date value to set.
+     */
+    void addDissolutionDate(Date dissolutionDate);
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getDiversityPolicyList();
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getDiversityPolicy();
+
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy CreativeWork value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityPolicy(CreativeWork diversityPolicy);
+    /**
+     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     *
+     * @param diversityPolicy URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityPolicy(URL diversityPolicy);
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> List<T> getDiversityStaffingReportList();
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @return {@link URL} or {@link Article}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    <T> T getDiversityStaffingReport();
+
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param diversityStaffingReport URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityStaffingReport(URL diversityStaffingReport);
+    /**
+     * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a report on staffing diversity issues. In a news context this might be for example ASNE or RTDNA (US) reports, or self-reported.
+     *
+     * @param diversityStaffingReport Article value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addDiversityStaffingReport(Article diversityStaffingReport);
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Text> getDunsList();
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Text getDuns();
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addDuns(Text duns);
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEmailList();
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    Text getEmail();
+
+    /**
+     * Email address.
+     *
+     * @param email Text value to set.
+     */
+    void addEmail(Text email);
+
+    /**
+     * Someone working for this organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getEmployeeList();
+
+    /**
+     * Someone working for this organization.
+     *
+     * @return {@link Person}
+     */
+    Person getEmployee();
+
+    /**
+     * Someone working for this organization.
+     *
+     * @param employee Person value to set.
+     */
+    void addEmployee(Person employee);
 
     /**
      * People working for this organization.
@@ -964,6 +683,240 @@ public interface Organization extends Thing {
     void addEthicsPolicy(URL ethicsPolicy);
 
     /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventList();
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @return {@link Event}
+     */
+    Event getEvent();
+
+    /**
+     * Upcoming or past event associated with this place, organization, or action.
+     *
+     * @param event Event value to set.
+     */
+    void addEvent(Event event);
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getEventsList();
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @return {@link Event}
+     */
+    Event getEvents();
+
+    /**
+     * Upcoming or past events associated with this place or organization.
+     *
+     * @param events Event value to set.
+     */
+    void addEvents(Event events);
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFaxNumberList();
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    Text getFaxNumber();
+
+    /**
+     * The fax number.
+     *
+     * @param faxNumber Text value to set.
+     */
+    void addFaxNumber(Text faxNumber);
+
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getFounderList();
+
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getFounder();
+
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @param founder Organization value to set.
+     */
+    void addFounder(Organization founder);
+    /**
+     * A person or organization who founded this organization.
+     *
+     * @param founder Person value to set.
+     */
+    void addFounder(Person founder);
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getFoundersList();
+
+    /**
+     * A person who founded this organization.
+     *
+     * @return {@link Person}
+     */
+    Person getFounders();
+
+    /**
+     * A person who founded this organization.
+     *
+     * @param founders Person value to set.
+     */
+    void addFounders(Person founders);
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getFoundingDateList();
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @return {@link Date}
+     */
+    Date getFoundingDate();
+
+    /**
+     * The date that this organization was founded.
+     *
+     * @param foundingDate Date value to set.
+     */
+    void addFoundingDate(Date foundingDate);
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getFoundingLocationList();
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @return {@link Place}
+     */
+    Place getFoundingLocation();
+
+    /**
+     * The place where the Organization was founded.
+     *
+     * @param foundingLocation Place value to set.
+     */
+    void addFoundingLocation(Place foundingLocation);
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getFunderList();
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getFunder();
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Organization value to set.
+     */
+    void addFunder(Organization funder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    void addFunder(Person funder);
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    List<Grant> getFundingList();
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    Grant getFunding();
+
+    /**
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     *
+     * @param funding Grant value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addFunding(Grant funding);
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Text> getGlobalLocationNumberList();
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Text getGlobalLocationNumber();
+
+    /**
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     *
+     * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addGlobalLocationNumber(Text globalLocationNumber);
+
+    /**
      * Certification information about a product, organization, service, place, or person.
      *
      * @return {@link Certification}
@@ -988,25 +941,229 @@ public interface Organization extends Thing {
     void addHasCertification(Certification hasCertification);
 
     /**
-     * The number of employees in an organization, e.g. business.
+     * A credential awarded to the Person or Organization.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    List<QuantitativeValue> getNumberOfEmployeesList();
+    List<EducationalOccupationalCredential> getHasCredentialList();
 
     /**
-     * The number of employees in an organization, e.g. business.
+     * A credential awarded to the Person or Organization.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    QuantitativeValue getNumberOfEmployees();
+    EducationalOccupationalCredential getHasCredential();
 
     /**
-     * The number of employees in an organization, e.g. business.
+     * A credential awarded to the Person or Organization.
      *
-     * @param numberOfEmployees QuantitativeValue value to set.
+     * @param hasCredential EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addNumberOfEmployees(QuantitativeValue numberOfEmployees);
+    void addHasCredential(EducationalOccupationalCredential hasCredential);
+
+    /**
+     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
+     */
+    List<URL> getHasGS1DigitalLinkList();
+
+    /**
+     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
+     *
+     * @return {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
+     */
+    URL getHasGS1DigitalLink();
+
+    /**
+     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
+     *
+     * @param hasGS1DigitalLink URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
+     */
+    void addHasGS1DigitalLink(URL hasGS1DigitalLink);
+
+    /**
+     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     *
+     * @return {@link MemberProgram}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    List<MemberProgram> getHasMemberProgramList();
+
+    /**
+     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     *
+     * @return {@link MemberProgram}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    MemberProgram getHasMemberProgram();
+
+    /**
+     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     *
+     * @param hasMemberProgram MemberProgram value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     */
+    void addHasMemberProgram(MemberProgram hasMemberProgram);
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    List<MerchantReturnPolicy> getHasMerchantReturnPolicyList();
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @return {@link MerchantReturnPolicy}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    MerchantReturnPolicy getHasMerchantReturnPolicy();
+
+    /**
+     * Specifies a MerchantReturnPolicy that may be applicable.
+     *
+     * @param hasMerchantReturnPolicy MerchantReturnPolicy value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addHasMerchantReturnPolicy(MerchantReturnPolicy hasMerchantReturnPolicy);
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    List<OfferCatalog> getHasOfferCatalogList();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    OfferCatalog getHasOfferCatalog();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @param hasOfferCatalog OfferCatalog value to set.
+     */
+    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Place> getHasPOSList();
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Place getHasPOS();
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addHasPOS(Place hasPOS);
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    List<ShippingService> getHasShippingServiceList();
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @return {@link ShippingService}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    ShippingService getHasShippingService();
+
+    /**
+     * Specification of a shipping service offered by the organization.
+     *
+     * @param hasShippingService ShippingService value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addHasShippingService(ShippingService hasShippingService);
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    List<InteractionCounter> getInteractionStatisticList();
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    InteractionCounter getInteractionStatistic();
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @param interactionStatistic InteractionCounter value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    void addInteractionStatistic(InteractionCounter interactionStatistic);
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Text> getIsicV4List();
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Text getIsicV4();
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addIsicV4(Text isicV4);
 
     /**
      * An organization identifier as defined in [ISO 6523(-1)](https://en.wikipedia.org/wiki/ISO/IEC_6523). The identifier should be in the `XXXX:YYYYYY:ZZZ` or `XXXX:YYYYYY`format. Where `XXXX` is a 4 digit _ICD_ (International Code Designator), `YYYYYY` is an _OID_ (Organization Identifier) with all formatting characters (dots, dashes, spaces) removed with a maximal length of 35 characters, and `ZZZ` is an optional OPI (Organization Part Identifier) with a maximum length of 35 characters. The various components (ICD, OID, OPI) are joined with a colon character (ASCII `0x3a`). Note that many existing organization identifiers defined as attributes like [leiCode](https://schema.org/leiCode) (`0199`), [duns](https://schema.org/duns) (`0060`) or [GLN](https://schema.org/globalLocationNumber) (`0088`) can be expressed using ISO-6523. If possible, ISO-6523 codes should be preferred to populating [vatID](https://schema.org/vatID) or [taxID](https://schema.org/taxID), as ISO identifiers are less ambiguous.
@@ -1036,164 +1193,169 @@ public interface Organization extends Thing {
     void addIso6523Code(Text iso6523Code);
 
     /**
-     * The geographic area where the service is provided.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
      */
-    <T> List<T> getServiceAreaList();
+    <T> List<T> getKeywordsList();
 
     /**
-     * The geographic area where the service is provided.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
      */
-    <T> T getServiceArea();
+    <T> T getKeywords();
 
     /**
-     * The geographic area where the service is provided.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param serviceArea AdministrativeArea value to set.
+     * @param keywords Text value to set.
      */
-    void addServiceArea(AdministrativeArea serviceArea);
+    void addKeywords(Text keywords);
     /**
-     * The geographic area where the service is provided.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param serviceArea GeoShape value to set.
+     * @param keywords DefinedTerm value to set.
      */
-    void addServiceArea(GeoShape serviceArea);
+    void addKeywords(DefinedTerm keywords);
     /**
-     * The geographic area where the service is provided.
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
      *
-     * @param serviceArea Place value to set.
+     * @param keywords URL value to set.
      */
-    void addServiceArea(Place serviceArea);
+    void addKeywords(URL keywords);
 
     /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> List<T> getCorrectionsPolicyList();
+    <T> List<T> getKnowsAboutList();
 
     /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @return {@link URL} or {@link CreativeWork}
+     * @return {@link Text} or {@link Thing} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> T getCorrectionsPolicy();
+    <T> T getKnowsAbout();
 
     /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @param correctionsPolicy URL value to set.
+     * @param knowsAbout Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addCorrectionsPolicy(URL correctionsPolicy);
+    void addKnowsAbout(Text knowsAbout);
     /**
-     * For an [[Organization]] (e.g. [[NewsMediaOrganization]]), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
      *
-     * @param correctionsPolicy CreativeWork value to set.
+     * @param knowsAbout Thing value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
      * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addCorrectionsPolicy(CreativeWork correctionsPolicy);
+    void addKnowsAbout(Thing knowsAbout);
+    /**
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
+     *
+     * @param knowsAbout URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     */
+    void addKnowsAbout(URL knowsAbout);
 
     /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> List<T> getAcceptedPaymentMethodList();
+    <T> List<T> getKnowsLanguageList();
 
     /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> T getAcceptedPaymentMethod();
+    <T> T getKnowsLanguage();
 
     /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @param acceptedPaymentMethod Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param knowsLanguage Language value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addAcceptedPaymentMethod(Text acceptedPaymentMethod);
+    void addKnowsLanguage(Language knowsLanguage);
     /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
-     * @param acceptedPaymentMethod LoanOrCredit value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param knowsLanguage Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1688">https://github.com/schemaorg/schemaorg/issues/1688</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod);
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod PaymentMethod value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod);
+    void addKnowsLanguage(Text knowsLanguage);
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
+     *
+     * @return {@link PostalAddress}
+     */
+    List<PostalAddress> getLegalAddressList();
+
+    /**
+     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
+     *
+     * @return {@link PostalAddress}
+     */
+    PostalAddress getLegalAddress();
+
+    /**
+     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
+     *
+     * @param legalAddress PostalAddress value to set.
+     */
+    void addLegalAddress(PostalAddress legalAddress);
+
+    /**
+     * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getIsicV4List();
+    List<Text> getLegalNameList();
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * The official name of the organization, e.g. the registered company name.
      *
      * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getIsicV4();
+    Text getLegalName();
 
     /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     * The official name of the organization, e.g. the registered company name.
      *
-     * @param isicV4 Text value to set.
+     * @param legalName Text value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addIsicV4(Text isicV4);
-
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getDepartmentList();
-
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @return {@link Organization}
-     */
-    Organization getDepartment();
-
-    /**
-     * A relationship between an organization and a department of that organization, also described as an organization (allowing different urls, logos, opening hours). For example: a store with a pharmacy, or a bakery with a cafe.
-     *
-     * @param department Organization value to set.
-     */
-    void addDepartment(Organization department);
+    void addLegalName(Text legalName);
 
     /**
      * One or multiple persons who represent this organization legally such as CEO or sole administrator.
@@ -1217,70 +1379,125 @@ public interface Organization extends Thing {
     void addLegalRepresentative(Person legalRepresentative);
 
     /**
-     * The place where the Organization was founded.
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
-     * @return {@link Place}
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
-    List<Place> getFoundingLocationList();
+    List<Text> getLeiCodeList();
 
     /**
-     * The place where the Organization was founded.
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
-     * @return {@link Place}
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
-    Place getFoundingLocation();
+    Text getLeiCode();
 
     /**
-     * The place where the Organization was founded.
+     * An organization identifier that uniquely identifies a legal entity as defined in ISO 17442.
      *
-     * @param foundingLocation Place value to set.
+     * @param leiCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/FIBO">https://schema.org/docs/collab/FIBO</a>
+     * @see <a href="https://schema.org/docs/collab/GLEIF">https://schema.org/docs/collab/GLEIF</a>
      */
-    void addFoundingLocation(Place foundingLocation);
+    void addLeiCode(Text leiCode);
 
     /**
-     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Certification}
+     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
      */
-    List<Certification> getCompanyRegistrationList();
+    <T> List<T> getLocationList();
 
     /**
-     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @return {@link Certification}
+     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
      */
-    Certification getCompanyRegistration();
+    <T> T getLocation();
 
     /**
-     * The official registration number of a business including the organization that issued it such as Company House or Chamber of Commerce.
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
      *
-     * @param companyRegistration Certification value to set.
+     * @param location Text value to set.
      */
-    void addCompanyRegistration(Certification companyRegistration);
+    void addLocation(Text location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    void addLocation(VirtualLocation location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    void addLocation(Place location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    void addLocation(PostalAddress location);
 
     /**
-     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     * An associated logo.
      *
-     * @return {@link MemberProgram}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<MemberProgram> getHasMemberProgramList();
+    <T> List<T> getLogoList();
 
     /**
-     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     * An associated logo.
      *
-     * @return {@link MemberProgram}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    MemberProgram getHasMemberProgram();
+    <T> T getLogo();
 
     /**
-     * MemberProgram offered by an Organization, for example an eCommerce merchant or an airline.
+     * An associated logo.
      *
-     * @param hasMemberProgram MemberProgram value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
+     * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addHasMemberProgram(MemberProgram hasMemberProgram);
+    void addLogo(URL logo);
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addLogo(ImageObject logo);
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Offer> getMakesOfferList();
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Offer getMakesOffer();
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addMakesOffer(Offer makesOffer);
 
     /**
      * A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals.
@@ -1310,165 +1527,136 @@ public interface Organization extends Thing {
     void addMember(Person member);
 
     /**
-     * Alumni of an organization.
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
-     * @return {@link Person}
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
      */
-    List<Person> getAlumniList();
+    <T> List<T> getMemberOfList();
 
     /**
-     * Alumni of an organization.
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
-     * @return {@link Person}
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
      */
-    Person getAlumni();
+    <T> T getMemberOf();
 
     /**
-     * Alumni of an organization.
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
-     * @param alumni Person value to set.
+     * @param memberOf ProgramMembership value to set.
      */
-    void addAlumni(Person alumni);
+    void addMemberOf(ProgramMembership memberOf);
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf Organization value to set.
+     */
+    void addMemberOf(Organization memberOf);
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf MemberProgramTier value to set.
+     */
+    void addMemberOf(MemberProgramTier memberOf);
 
     /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     * A member of this organization.
      *
-     * @return {@link Organization}
+     * @return {@link Person} or {@link Organization}
      */
-    List<Organization> getSubOrganizationList();
+    <T> List<T> getMembersList();
 
     /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     * A member of this organization.
      *
-     * @return {@link Organization}
+     * @return {@link Person} or {@link Organization}
      */
-    Organization getSubOrganization();
+    <T> T getMembers();
 
     /**
-     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
+     * A member of this organization.
      *
-     * @param subOrganization Organization value to set.
+     * @param members Person value to set.
      */
-    void addSubOrganization(Organization subOrganization);
+    void addMembers(Person members);
+    /**
+     * A member of this organization.
+     *
+     * @param members Organization value to set.
+     */
+    void addMembers(Organization members);
 
     /**
-     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
-     *
-     * @return {@link PostalAddress}
-     */
-    List<PostalAddress> getLegalAddressList();
-
-    /**
-     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
-     *
-     * @return {@link PostalAddress}
-     */
-    PostalAddress getLegalAddress();
-
-    /**
-     * The legal address of an organization which acts as the officially registered address used for legal and tax purposes. The legal address can be different from the place of operations of a business and other addresses can be part of an organization.
-     *
-     * @param legalAddress PostalAddress value to set.
-     */
-    void addLegalAddress(PostalAddress legalAddress);
-
-    /**
-     * The telephone number.
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getTelephoneList();
+    List<Text> getNaicsList();
 
     /**
-     * The telephone number.
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getTelephone();
+    Text getNaics();
 
     /**
-     * The telephone number.
+     * The North American Industry Classification System (NAICS) code for a particular organization or business person.
      *
-     * @param telephone Text value to set.
+     * @param naics Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addTelephone(Text telephone);
+    void addNaics(Text naics);
 
     /**
-     * A contact point for a person or organization.
+     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
      *
-     * @return {@link ContactPoint}
+     * @return {@link NonprofitType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
-    List<ContactPoint> getContactPointsList();
+    List<NonprofitType> getNonprofitStatusList();
 
     /**
-     * A contact point for a person or organization.
+     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
      *
-     * @return {@link ContactPoint}
+     * @return {@link NonprofitType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
-    ContactPoint getContactPoints();
+    NonprofitType getNonprofitStatus();
 
     /**
-     * A contact point for a person or organization.
+     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
      *
-     * @param contactPoints ContactPoint value to set.
+     * @param nonprofitStatus NonprofitType value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
      */
-    void addContactPoints(ContactPoint contactPoints);
+    void addNonprofitStatus(NonprofitType nonprofitStatus);
 
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * The number of employees in an organization, e.g. business.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link QuantitativeValue}
      */
-    <T> List<T> getPublishingPrinciplesList();
+    List<QuantitativeValue> getNumberOfEmployeesList();
 
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * The number of employees in an organization, e.g. business.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link QuantitativeValue}
      */
-    <T> T getPublishingPrinciples();
+    QuantitativeValue getNumberOfEmployees();
 
     /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
+     * The number of employees in an organization, e.g. business.
      *
-     * @param publishingPrinciples CreativeWork value to set.
+     * @param numberOfEmployees QuantitativeValue value to set.
      */
-    void addPublishingPrinciples(CreativeWork publishingPrinciples);
-    /**
-     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
-     * 
-     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
-     *
-     * @param publishingPrinciples URL value to set.
-     */
-    void addPublishingPrinciples(URL publishingPrinciples);
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAwardList();
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    Text getAward();
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    void addAward(Text award);
+    void addNumberOfEmployees(QuantitativeValue numberOfEmployees);
 
     /**
      * For an [[Organization]] (often but not necessarily a [[NewsMediaOrganization]]), a description of organizational ownership structure; funding and grants. In a news/media setting, this is with particular reference to editorial independence.   Note that the [[funder]] is also available and can be used to make basic funder information machine-readable.
@@ -1528,94 +1716,242 @@ public interface Organization extends Thing {
     void addOwnershipFundingInfo(Text ownershipFundingInfo);
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * Things owned by the organization or person.
      *
-     * @return {@link Text}
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getTaxIDList();
+    List<Thing> getOwnsList();
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * Things owned by the organization or person.
      *
-     * @return {@link Text}
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getTaxID();
+    Thing getOwns();
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * Things owned by the organization or person.
      *
-     * @param taxID Text value to set.
+     * @param owns Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addTaxID(Text taxID);
+    void addOwns(Thing owns);
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getParentOrganizationList();
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @return {@link Organization}
+     */
+    Organization getParentOrganization();
+
+    /**
+     * The larger organization that this organization is a [[subOrganization]] of, if any.
+     *
+     * @param parentOrganization Organization value to set.
+     */
+    void addParentOrganization(Organization parentOrganization);
+
+    /**
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
      * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> List<T> getDiversityPolicyList();
+    <T> List<T> getPublishingPrinciplesList();
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
      * @return {@link CreativeWork} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> T getDiversityPolicy();
+    <T> T getPublishingPrinciples();
 
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param diversityPolicy CreativeWork value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     * @param publishingPrinciples CreativeWork value to set.
      */
-    void addDiversityPolicy(CreativeWork diversityPolicy);
+    void addPublishingPrinciples(CreativeWork publishingPrinciples);
     /**
-     * Statement on diversity policy by an [[Organization]] e.g. a [[NewsMediaOrganization]]. For a [[NewsMediaOrganization]], a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.
+     * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
+     * 
+     * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
      *
-     * @param diversityPolicy URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1525">https://github.com/schemaorg/schemaorg/issues/1525</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     * @param publishingPrinciples URL value to set.
      */
-    void addDiversityPolicy(URL diversityPolicy);
+    void addPublishingPrinciples(URL publishingPrinciples);
 
     /**
-     * A credential awarded to the Person or Organization.
+     * A review of the item.
      *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Review}
      */
-    List<EducationalOccupationalCredential> getHasCredentialList();
+    List<Review> getReviewList();
 
     /**
-     * A credential awarded to the Person or Organization.
+     * A review of the item.
      *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @return {@link Review}
      */
-    EducationalOccupationalCredential getHasCredential();
+    Review getReview();
 
     /**
-     * A credential awarded to the Person or Organization.
+     * A review of the item.
      *
-     * @param hasCredential EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     * @param review Review value to set.
      */
-    void addHasCredential(EducationalOccupationalCredential hasCredential);
+    void addReview(Review review);
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    List<Review> getReviewsList();
+
+    /**
+     * Review of the item.
+     *
+     * @return {@link Review}
+     */
+    Review getReviews();
+
+    /**
+     * Review of the item.
+     *
+     * @param reviews Review value to set.
+     */
+    void addReviews(Review reviews);
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Demand> getSeeksList();
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Demand getSeeks();
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addSeeks(Demand seeks);
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    <T> List<T> getServiceAreaList();
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    <T> T getServiceArea();
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    void addServiceArea(AdministrativeArea serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea GeoShape value to set.
+     */
+    void addServiceArea(GeoShape serviceArea);
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    void addServiceArea(Place serviceArea);
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getSkillsList();
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> T getSkills();
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @param skills Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addSkills(Text skills);
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @param skills DefinedTerm value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addSkills(DefinedTerm skills);
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getSloganList();
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @return {@link Text}
+     */
+    Text getSlogan();
+
+    /**
+     * A slogan or motto associated with the item.
+     *
+     * @param slogan Text value to set.
+     */
+    void addSlogan(Text slogan);
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1645,403 +1981,70 @@ public interface Organization extends Thing {
     void addSponsor(Organization sponsor);
 
     /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     * @return {@link Organization}
      */
-    List<InteractionCounter> getAgentInteractionStatisticList();
+    List<Organization> getSubOrganizationList();
 
     /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     * @return {@link Organization}
      */
-    InteractionCounter getAgentInteractionStatistic();
+    Organization getSubOrganization();
 
     /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     * A relationship between two organizations where the first includes the second, e.g., as a subsidiary. See also: the more specific 'department' property.
      *
-     * @param agentInteractionStatistic InteractionCounter value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     * @param subOrganization Organization value to set.
      */
-    void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic);
+    void addSubOrganization(Organization subOrganization);
 
     /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
-     */
-    <T> List<T> getLocationList();
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
-     */
-    <T> T getLocation();
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    void addLocation(Text location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    void addLocation(VirtualLocation location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    void addLocation(Place location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    void addLocation(PostalAddress location);
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Demand> getSeeksList();
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Demand getSeeks();
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @param seeks Demand value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addSeeks(Demand seeks);
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Offer> getMakesOfferList();
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Offer getMakesOffer();
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @param makesOffer Offer value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addMakesOffer(Offer makesOffer);
-
-    /**
-     * The Value-added Tax ID of the organization or person.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getVatIDList();
+    List<Text> getTaxIDList();
 
     /**
-     * The Value-added Tax ID of the organization or person.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
      * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getVatID();
+    Text getTaxID();
 
     /**
-     * The Value-added Tax ID of the organization or person.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @param vatID Text value to set.
+     * @param taxID Text value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addVatID(Text vatID);
+    void addTaxID(Text taxID);
 
     /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getMembersList();
-
-    /**
-     * A member of this organization.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getMembers();
-
-    /**
-     * A member of this organization.
-     *
-     * @param members Person value to set.
-     */
-    void addMembers(Person members);
-    /**
-     * A member of this organization.
-     *
-     * @param members Organization value to set.
-     */
-    void addMembers(Organization members);
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Text> getDunsList();
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Text getDuns();
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @param duns Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addDuns(Text duns);
-
-    /**
-     * Specification of a shipping service offered by the organization.
-     *
-     * @return {@link ShippingService}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    List<ShippingService> getHasShippingServiceList();
-
-    /**
-     * Specification of a shipping service offered by the organization.
-     *
-     * @return {@link ShippingService}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    ShippingService getHasShippingService();
-
-    /**
-     * Specification of a shipping service offered by the organization.
-     *
-     * @param hasShippingService ShippingService value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    void addHasShippingService(ShippingService hasShippingService);
-
-    /**
-     * The fax number.
+     * The telephone number.
      *
      * @return {@link Text}
      */
-    List<Text> getFaxNumberList();
+    List<Text> getTelephoneList();
 
     /**
-     * The fax number.
+     * The telephone number.
      *
      * @return {@link Text}
      */
-    Text getFaxNumber();
+    Text getTelephone();
 
     /**
-     * The fax number.
+     * The telephone number.
      *
-     * @param faxNumber Text value to set.
+     * @param telephone Text value to set.
      */
-    void addFaxNumber(Text faxNumber);
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Place> getHasPOSList();
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Place getHasPOS();
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @param hasPOS Place value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addHasPOS(Place hasPOS);
-
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
-    List<URL> getHasGS1DigitalLinkList();
-
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @return {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
-    URL getHasGS1DigitalLink();
-
-    /**
-     * The <a href="https://www.gs1.org/standards/gs1-digital-link">GS1 digital link</a> associated with the object. This URL should conform to the particular requirements of digital links. The link should only contain the Application Identifiers (AIs) that are relevant for the entity being annotated, for instance a [[Product]] or an [[Organization]], and for the correct granularity. In particular, for products:<ul><li>A Digital Link that contains a serial number (AI <code>21</code>) should only be present on instances of [[IndividualProduct]]</li><li>A Digital Link that contains a lot number (AI <code>10</code>) should be annotated as [[SomeProduct]] if only products from that lot are sold, or [[IndividualProduct]] if there is only a specific product.</li><li>A Digital Link that contains a global model number (AI <code>8013</code>)  should be attached to a [[Product]] or a [[ProductModel]].</li></ul> Other item types should be adapted similarly.
-     *
-     * @param hasGS1DigitalLink URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3475">https://github.com/schemaorg/schemaorg/issues/3475</a>
-     */
-    void addHasGS1DigitalLink(URL hasGS1DigitalLink);
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getEmailList();
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    Text getEmail();
-
-    /**
-     * Email address.
-     *
-     * @param email Text value to set.
-     */
-    void addEmail(Text email);
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    List<OfferCatalog> getHasOfferCatalogList();
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    OfferCatalog getHasOfferCatalog();
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @param hasOfferCatalog OfferCatalog value to set.
-     */
-    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
-
-    /**
-     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @return {@link NonprofitType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
-    List<NonprofitType> getNonprofitStatusList();
-
-    /**
-     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @return {@link NonprofitType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
-    NonprofitType getNonprofitStatus();
-
-    /**
-     * nonprofitStatus indicates the legal status of a non-profit organization in its primary place of business.
-     *
-     * @param nonprofitStatus NonprofitType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2543">https://github.com/schemaorg/schemaorg/issues/2543</a>
-     */
-    void addNonprofitStatus(NonprofitType nonprofitStatus);
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getFoundersList();
-
-    /**
-     * A person who founded this organization.
-     *
-     * @return {@link Person}
-     */
-    Person getFounders();
-
-    /**
-     * A person who founded this organization.
-     *
-     * @param founders Person value to set.
-     */
-    void addFounders(Person founders);
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getDissolutionDateList();
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @return {@link Date}
-     */
-    Date getDissolutionDate();
-
-    /**
-     * The date that this organization was dissolved.
-     *
-     * @param dissolutionDate Date value to set.
-     */
-    void addDissolutionDate(Date dissolutionDate);
+    void addTelephone(Text telephone);
 
     /**
      * For an [[Organization]] (typically a [[NewsMediaOrganization]]), a statement about policy on use of unnamed sources and the decision process required.
@@ -2083,29 +2086,26 @@ public interface Organization extends Thing {
     void addUnnamedSourcesPolicy(URL unnamedSourcesPolicy);
 
     /**
-     * Things owned by the organization or person.
+     * The Value-added Tax ID of the organization or person.
      *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Thing> getOwnsList();
+    List<Text> getVatIDList();
 
     /**
-     * Things owned by the organization or person.
+     * The Value-added Tax ID of the organization or person.
      *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Thing getOwns();
+    Text getVatID();
 
     /**
-     * Things owned by the organization or person.
+     * The Value-added Tax ID of the organization or person.
      *
-     * @param owns Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @param vatID Text value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addOwns(Thing owns);
+    void addVatID(Text vatID);
 }

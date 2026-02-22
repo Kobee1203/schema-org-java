@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
+import org.schema.model.BedDetails;
+import org.schema.model.BedType;
 import org.schema.model.QuantitativeValue;
 import org.schema.model.datatype.Number;
-import org.schema.model.BedType;
 import org.schema.model.datatype.Text;
-import org.schema.model.BedDetails;
 
 /**
  * A suite in a hotel or other public accommodation, denotes a class of luxury accommodations, the key feature of which is multiple rooms (source: Wikipedia, the free encyclopedia, see <a href="http://en.wikipedia.org/wiki/Suite_(hotel)">http://en.wikipedia.org/wiki/Suite_(hotel)</a>).
@@ -21,41 +21,6 @@ import org.schema.model.BedDetails;
  * @see <a href="https://schema.org/Suite">https://schema.org/Suite</a>
  */
 public interface Suite extends Accommodation {
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
-     */
-    <T> List<T> getNumberOfRoomsList();
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
-     */
-    <T> T getNumberOfRooms();
-
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param numberOfRooms QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
-     */
-    void addNumberOfRooms(QuantitativeValue numberOfRooms);
-    /**
-     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
-     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
-     *
-     * @param numberOfRooms Number value to set.
-     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
-     */
-    void addNumberOfRooms(Number numberOfRooms);
 
     /**
      * The type of bed or beds included in the accommodation. For the single case of just one bed of a certain type, you use bed directly with a text.
@@ -99,6 +64,41 @@ public interface Suite extends Accommodation {
      * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
      */
     void addBed(BedDetails bed);
+
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
+     */
+    <T> List<T> getNumberOfRoomsList();
+
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
+     */
+    <T> T getNumberOfRooms();
+
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @param numberOfRooms QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
+     */
+    void addNumberOfRooms(QuantitativeValue numberOfRooms);
+    /**
+     * The number of rooms (excluding bathrooms and closets) of the accommodation or lodging business.
+     * Typical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.
+     *
+     * @param numberOfRooms Number value to set.
+     * @see <a href="https://schema.org/docs/collab/STI_Accommodation_Ontology">https://schema.org/docs/collab/STI_Accommodation_Ontology</a>
+     */
+    void addNumberOfRooms(Number numberOfRooms);
 
     /**
      * The allowed total occupancy for the accommodation in persons (including infants etc). For individual accommodations, this is not necessarily the legal maximum but defines the permitted usage as per the contractual agreement (e.g. a double room used by a single person).

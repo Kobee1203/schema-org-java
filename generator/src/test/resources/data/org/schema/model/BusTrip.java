@@ -6,9 +6,9 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.BusStop;
 import org.schema.model.BusStation;
+import org.schema.model.BusStop;
+import org.schema.model.datatype.Text;
 
 /**
  * A trip on a commercial bus line.
@@ -16,27 +16,6 @@ import org.schema.model.BusStation;
  * @see <a href="https://schema.org/BusTrip">https://schema.org/BusTrip</a>
  */
 public interface BusTrip extends Trip {
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBusNumberList();
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @return {@link Text}
-     */
-    Text getBusNumber();
-
-    /**
-     * The unique identifier for the bus.
-     *
-     * @param busNumber Text value to set.
-     */
-    void addBusNumber(Text busNumber);
 
     /**
      * The stop or station from which the bus arrives.
@@ -85,6 +64,27 @@ public interface BusTrip extends Trip {
      * @param busName Text value to set.
      */
     void addBusName(Text busName);
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBusNumberList();
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @return {@link Text}
+     */
+    Text getBusNumber();
+
+    /**
+     * The unique identifier for the bus.
+     *
+     * @param busNumber Text value to set.
+     */
+    void addBusNumber(Text busNumber);
 
     /**
      * The stop or station from which the bus departs.

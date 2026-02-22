@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Organization;
 import org.schema.model.Offer;
+import org.schema.model.Organization;
 
 /**
  * A subscription which allows a user to access media including audio, video, books, etc.

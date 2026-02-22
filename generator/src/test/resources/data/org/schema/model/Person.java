@@ -6,39 +6,39 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.Grant;
-import org.schema.model.datatype.Text;
-import org.schema.model.Mass;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.Distance;
-import org.schema.model.Thing;
-import org.schema.model.datatype.URL;
-import org.schema.model.GenderType;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.Language;
 import org.schema.model.Brand;
-import org.schema.model.DefinedTerm;
-import org.schema.model.StructuredValue;
-import org.schema.model.datatype.Date;
-import org.schema.model.InteractionCounter;
-import org.schema.model.PostalAddress;
-import org.schema.model.Country;
-import org.schema.model.ProgramMembership;
-import org.schema.model.MemberProgramTier;
-import org.schema.model.ContactPoint;
 import org.schema.model.Certification;
-import org.schema.model.Place;
-import org.schema.model.Occupation;
-import org.schema.model.Event;
-import org.schema.model.PriceSpecification;
-import org.schema.model.MonetaryAmount;
-import org.schema.model.EducationalOrganization;
+import org.schema.model.ContactPoint;
+import org.schema.model.Country;
 import org.schema.model.CreativeWork;
-import org.schema.model.EducationalOccupationalCredential;
+import org.schema.model.DefinedTerm;
 import org.schema.model.Demand;
+import org.schema.model.Distance;
+import org.schema.model.EducationalOccupationalCredential;
+import org.schema.model.EducationalOrganization;
+import org.schema.model.Event;
+import org.schema.model.GenderType;
+import org.schema.model.Grant;
+import org.schema.model.InteractionCounter;
+import org.schema.model.Language;
+import org.schema.model.Mass;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.MonetaryAmount;
+import org.schema.model.Occupation;
 import org.schema.model.Offer;
 import org.schema.model.OfferCatalog;
+import org.schema.model.Organization;
+import org.schema.model.Person;
+import org.schema.model.Place;
+import org.schema.model.PostalAddress;
+import org.schema.model.PriceSpecification;
+import org.schema.model.ProgramMembership;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.StructuredValue;
+import org.schema.model.Thing;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A person (alive, dead, undead, or fictional).
@@ -47,6 +47,555 @@ import org.schema.model.OfferCatalog;
  * @see <a href="https://schema.org/Person">https://schema.org/Person</a>
  */
 public interface Person extends Thing {
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAdditionalNameList();
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @return {@link Text}
+     */
+    Text getAdditionalName();
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @param additionalName Text value to set.
+     */
+    void addAdditionalName(Text additionalName);
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link PostalAddress} or {@link Text}
+     */
+    <T> List<T> getAddressList();
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link PostalAddress} or {@link Text}
+     */
+    <T> T getAddress();
+
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    void addAddress(PostalAddress address);
+    /**
+     * Physical address of the item.
+     *
+     * @param address Text value to set.
+     */
+    void addAddress(Text address);
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getAffiliationList();
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @return {@link Organization}
+     */
+    Organization getAffiliation();
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @param affiliation Organization value to set.
+     */
+    void addAffiliation(Organization affiliation);
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    List<InteractionCounter> getAgentInteractionStatisticList();
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    InteractionCounter getAgentInteractionStatistic();
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @param agentInteractionStatistic InteractionCounter value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic);
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @return {@link EducationalOrganization} or {@link Organization}
+     */
+    <T> List<T> getAlumniOfList();
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @return {@link EducationalOrganization} or {@link Organization}
+     */
+    <T> T getAlumniOf();
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @param alumniOf EducationalOrganization value to set.
+     */
+    void addAlumniOf(EducationalOrganization alumniOf);
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @param alumniOf Organization value to set.
+     */
+    void addAlumniOf(Organization alumniOf);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAward();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    void addAward(Text award);
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardsList();
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAwards();
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @param awards Text value to set.
+     */
+    void addAwards(Text awards);
+
+    /**
+     * Date of birth.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getBirthDateList();
+
+    /**
+     * Date of birth.
+     *
+     * @return {@link Date}
+     */
+    Date getBirthDate();
+
+    /**
+     * Date of birth.
+     *
+     * @param birthDate Date value to set.
+     */
+    void addBirthDate(Date birthDate);
+
+    /**
+     * The place where the person was born.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getBirthPlaceList();
+
+    /**
+     * The place where the person was born.
+     *
+     * @return {@link Place}
+     */
+    Place getBirthPlace();
+
+    /**
+     * The place where the person was born.
+     *
+     * @param birthPlace Place value to set.
+     */
+    void addBirthPlace(Place birthPlace);
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> List<T> getBrandList();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> T getBrand();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    void addBrand(Brand brand);
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Organization value to set.
+     */
+    void addBrand(Organization brand);
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    List<Text> getCallSignList();
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    Text getCallSign();
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @param callSign Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    void addCallSign(Text callSign);
+
+    /**
+     * A child of the person.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getChildrenList();
+
+    /**
+     * A child of the person.
+     *
+     * @return {@link Person}
+     */
+    Person getChildren();
+
+    /**
+     * A child of the person.
+     *
+     * @param children Person value to set.
+     */
+    void addChildren(Person children);
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person} or {@link URL}
+     */
+    <T> List<T> getColleagueList();
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person} or {@link URL}
+     */
+    <T> T getColleague();
+
+    /**
+     * A colleague of the person.
+     *
+     * @param colleague Person value to set.
+     */
+    void addColleague(Person colleague);
+    /**
+     * A colleague of the person.
+     *
+     * @param colleague URL value to set.
+     */
+    void addColleague(URL colleague);
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getColleaguesList();
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person}
+     */
+    Person getColleagues();
+
+    /**
+     * A colleague of the person.
+     *
+     * @param colleagues Person value to set.
+     */
+    void addColleagues(Person colleagues);
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getContactPointList();
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    ContactPoint getContactPoint();
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoint ContactPoint value to set.
+     */
+    void addContactPoint(ContactPoint contactPoint);
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    List<ContactPoint> getContactPointsList();
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    ContactPoint getContactPoints();
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoints ContactPoint value to set.
+     */
+    void addContactPoints(ContactPoint contactPoints);
+
+    /**
+     * Date of death.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getDeathDateList();
+
+    /**
+     * Date of death.
+     *
+     * @return {@link Date}
+     */
+    Date getDeathDate();
+
+    /**
+     * Date of death.
+     *
+     * @param deathDate Date value to set.
+     */
+    void addDeathDate(Date deathDate);
+
+    /**
+     * The place where the person died.
+     *
+     * @return {@link Place}
+     */
+    List<Place> getDeathPlaceList();
+
+    /**
+     * The place where the person died.
+     *
+     * @return {@link Place}
+     */
+    Place getDeathPlace();
+
+    /**
+     * The place where the person died.
+     *
+     * @param deathPlace Place value to set.
+     */
+    void addDeathPlace(Place deathPlace);
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Text> getDunsList();
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Text getDuns();
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addDuns(Text duns);
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getEmailList();
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    Text getEmail();
+
+    /**
+     * Email address.
+     *
+     * @param email Text value to set.
+     */
+    void addEmail(Text email);
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFamilyNameList();
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @return {@link Text}
+     */
+    Text getFamilyName();
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @param familyName Text value to set.
+     */
+    void addFamilyName(Text familyName);
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getFaxNumberList();
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    Text getFaxNumber();
+
+    /**
+     * The fax number.
+     *
+     * @param faxNumber Text value to set.
+     */
+    void addFaxNumber(Text faxNumber);
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getFollowsList();
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @return {@link Person}
+     */
+    Person getFollows();
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @param follows Person value to set.
+     */
+    void addFollows(Person follows);
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getFunderList();
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getFunder();
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Organization value to set.
+     */
+    void addFunder(Organization funder);
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    void addFunder(Person funder);
 
     /**
      * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
@@ -79,81 +628,204 @@ public interface Person extends Thing {
     void addFunding(Grant funding);
 
     /**
-     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @return {@link Text} or {@link GenderType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    <T> List<T> getGenderList();
+
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @return {@link Text} or {@link GenderType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    <T> T getGender();
+
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param gender Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    void addGender(Text gender);
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param gender GenderType value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    void addGender(GenderType gender);
+
+    /**
+     * Given name. In the U.S., the first name of a Person.
      *
      * @return {@link Text}
      */
-    List<Text> getHonorificPrefixList();
+    List<Text> getGivenNameList();
 
     /**
-     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     * Given name. In the U.S., the first name of a Person.
      *
      * @return {@link Text}
      */
-    Text getHonorificPrefix();
+    Text getGivenName();
 
     /**
-     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     * Given name. In the U.S., the first name of a Person.
      *
-     * @param honorificPrefix Text value to set.
+     * @param givenName Text value to set.
      */
-    void addHonorificPrefix(Text honorificPrefix);
+    void addGivenName(Text givenName);
 
     /**
-     * The weight of the product or person.
-     *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getWeightList();
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getWeight();
-
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight Mass value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addWeight(Mass weight);
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addWeight(QuantitativeValue weight);
-
-    /**
-     * Awards won by or for this item.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getAwardsList();
+    List<Text> getGlobalLocationNumberList();
 
     /**
-     * Awards won by or for this item.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getAwards();
+    Text getGlobalLocationNumber();
 
     /**
-     * Awards won by or for this item.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
-     * @param awards Text value to set.
+     * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addAwards(Text awards);
+    void addGlobalLocationNumber(Text globalLocationNumber);
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    List<Certification> getHasCertificationList();
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    Certification getHasCertification();
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @param hasCertification Certification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    void addHasCertification(Certification hasCertification);
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    List<EducationalOccupationalCredential> getHasCredentialList();
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    EducationalOccupationalCredential getHasCredential();
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @param hasCredential EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addHasCredential(EducationalOccupationalCredential hasCredential);
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Occupation> getHasOccupationList();
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    Occupation getHasOccupation();
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @param hasOccupation Occupation value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addHasOccupation(Occupation hasOccupation);
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    List<OfferCatalog> getHasOfferCatalogList();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    OfferCatalog getHasOfferCatalog();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @param hasOfferCatalog OfferCatalog value to set.
+     */
+    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Place> getHasPOSList();
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Place getHasPOS();
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addHasPOS(Place hasPOS);
 
     /**
      * The height of the item.
@@ -185,6 +857,179 @@ public interface Person extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addHeight(Distance height);
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    <T> List<T> getHomeLocationList();
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    <T> T getHomeLocation();
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @param homeLocation Place value to set.
+     */
+    void addHomeLocation(Place homeLocation);
+    /**
+     * A contact location for a person's residence.
+     *
+     * @param homeLocation ContactPoint value to set.
+     */
+    void addHomeLocation(ContactPoint homeLocation);
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getHonorificPrefixList();
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @return {@link Text}
+     */
+    Text getHonorificPrefix();
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @param honorificPrefix Text value to set.
+     */
+    void addHonorificPrefix(Text honorificPrefix);
+
+    /**
+     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getHonorificSuffixList();
+
+    /**
+     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+     *
+     * @return {@link Text}
+     */
+    Text getHonorificSuffix();
+
+    /**
+     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+     *
+     * @param honorificSuffix Text value to set.
+     */
+    void addHonorificSuffix(Text honorificSuffix);
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    List<InteractionCounter> getInteractionStatisticList();
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    InteractionCounter getInteractionStatistic();
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @param interactionStatistic InteractionCounter value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    void addInteractionStatistic(InteractionCounter interactionStatistic);
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Text> getIsicV4List();
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Text getIsicV4();
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addIsicV4(Text isicV4);
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    <T> List<T> getJobTitleList();
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    <T> T getJobTitle();
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param jobTitle DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    void addJobTitle(DefinedTerm jobTitle);
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param jobTitle Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    void addJobTitle(Text jobTitle);
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getKnowsList();
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @return {@link Person}
+     */
+    Person getKnows();
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @param knows Person value to set.
+     */
+    void addKnows(Person knows);
 
     /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a topic that is known about - suggesting possible expertise but not implying it. We do not distinguish skill levels here, or relate this to educational content, events, objectives or [[JobPosting]] descriptions.
@@ -235,68 +1080,6 @@ public interface Person extends Thing {
     void addKnowsAbout(URL knowsAbout);
 
     /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @return {@link Text} or {@link GenderType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    <T> List<T> getGenderList();
-
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @return {@link Text} or {@link GenderType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    <T> T getGender();
-
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @param gender Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    void addGender(Text gender);
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @param gender GenderType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    void addGender(GenderType gender);
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getFunderList();
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getFunder();
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
-    void addFunder(Organization funder);
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
-    void addFunder(Person funder);
-
-    /**
      * Of a [[Person]], and less typically of an [[Organization]], to indicate a known language. We do not distinguish skill levels or reading/writing/speaking/signing here. Use language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47).
      *
      * @return {@link Language} or {@link Text}
@@ -336,66 +1119,88 @@ public interface Person extends Thing {
     void addKnowsLanguage(Text knowsLanguage);
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
      *
-     * @return {@link Brand} or {@link Organization}
+     * @return {@link Event}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
      */
-    <T> List<T> getBrandList();
+    List<Event> getLifeEventList();
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
      *
-     * @return {@link Brand} or {@link Organization}
+     * @return {@link Event}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
      */
-    <T> T getBrand();
+    Event getLifeEvent();
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
      *
-     * @param brand Brand value to set.
+     * @param lifeEvent Event value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
      */
-    void addBrand(Brand brand);
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    void addBrand(Organization brand);
+    void addLifeEvent(Event lifeEvent);
 
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * A pointer to products or services offered by the organization or person.
      *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> List<T> getSkillsList();
+    List<Offer> getMakesOfferList();
 
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * A pointer to products or services offered by the organization or person.
      *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> T getSkills();
+    Offer getMakesOffer();
 
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * A pointer to products or services offered by the organization or person.
      *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addSkills(Text skills);
+    void addMakesOffer(Offer makesOffer);
+
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
      *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
      */
-    void addSkills(DefinedTerm skills);
+    <T> List<T> getMemberOfList();
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
+     */
+    <T> T getMemberOf();
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf ProgramMembership value to set.
+     */
+    void addMemberOf(ProgramMembership memberOf);
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf Organization value to set.
+     */
+    void addMemberOf(Organization memberOf);
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf MemberProgramTier value to set.
+     */
+    void addMemberOf(MemberProgramTier memberOf);
 
     /**
      * The North American Industry Classification System (NAICS) code for a particular organization or business person.
@@ -422,28 +1227,142 @@ public interface Person extends Thing {
     void addNaics(Text naics);
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * Nationality of the person.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Country}
      */
-    List<Text> getGlobalLocationNumberList();
+    List<Country> getNationalityList();
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * Nationality of the person.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Country}
      */
-    Text getGlobalLocationNumber();
+    Country getNationality();
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * Nationality of the person.
      *
-     * @param globalLocationNumber Text value to set.
+     * @param nationality Country value to set.
+     */
+    void addNationality(Country nationality);
+
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    <T> List<T> getNetWorthList();
+
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    <T> T getNetWorth();
+
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @param netWorth PriceSpecification value to set.
+     */
+    void addNetWorth(PriceSpecification netWorth);
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @param netWorth MonetaryAmount value to set.
+     */
+    void addNetWorth(MonetaryAmount netWorth);
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addGlobalLocationNumber(Text globalLocationNumber);
+    List<Thing> getOwnsList();
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Thing getOwns();
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @param owns Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addOwns(Thing owns);
+
+    /**
+     * A parent of this person.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getParentList();
+
+    /**
+     * A parent of this person.
+     *
+     * @return {@link Person}
+     */
+    Person getParent();
+
+    /**
+     * A parent of this person.
+     *
+     * @param parent Person value to set.
+     */
+    void addParent(Person parent);
+
+    /**
+     * A parents of the person.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getParentsList();
+
+    /**
+     * A parents of the person.
+     *
+     * @return {@link Person}
+     */
+    Person getParents();
+
+    /**
+     * A parents of the person.
+     *
+     * @param parents Person value to set.
+     */
+    void addParents(Person parents);
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getPerformerInList();
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @return {@link Event}
+     */
+    Event getPerformerIn();
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @param performerIn Event value to set.
+     */
+    void addPerformerIn(Event performerIn);
 
     /**
      * A short string listing or describing pronouns for a person. Typically the person concerned is the best authority as pronouns are a critical part of personal identity and expression. Publishers and consumers of this information are reminded to treat this data responsibly, take country-specific laws related to gender expression into account, and be wary of out-of-date data and drawing unwarranted inferences about the person being described.
@@ -499,591 +1418,6 @@ public interface Person extends Thing {
     void addPronouns(DefinedTerm pronouns);
 
     /**
-     * Date of death.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getDeathDateList();
-
-    /**
-     * Date of death.
-     *
-     * @return {@link Date}
-     */
-    Date getDeathDate();
-
-    /**
-     * Date of death.
-     *
-     * @param deathDate Date value to set.
-     */
-    void addDeathDate(Date deathDate);
-
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getAffiliationList();
-
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     *
-     * @return {@link Organization}
-     */
-    Organization getAffiliation();
-
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     *
-     * @param affiliation Organization value to set.
-     */
-    void addAffiliation(Organization affiliation);
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    List<InteractionCounter> getInteractionStatisticList();
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    InteractionCounter getInteractionStatistic();
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    void addInteractionStatistic(InteractionCounter interactionStatistic);
-
-    /**
-     * A child of the person.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getChildrenList();
-
-    /**
-     * A child of the person.
-     *
-     * @return {@link Person}
-     */
-    Person getChildren();
-
-    /**
-     * A child of the person.
-     *
-     * @param children Person value to set.
-     */
-    void addChildren(Person children);
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
-    <T> List<T> getAddressList();
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
-    <T> T getAddress();
-
-    /**
-     * Physical address of the item.
-     *
-     * @param address PostalAddress value to set.
-     */
-    void addAddress(PostalAddress address);
-    /**
-     * Physical address of the item.
-     *
-     * @param address Text value to set.
-     */
-    void addAddress(Text address);
-
-    /**
-     * The most generic uni-directional social relation.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getFollowsList();
-
-    /**
-     * The most generic uni-directional social relation.
-     *
-     * @return {@link Person}
-     */
-    Person getFollows();
-
-    /**
-     * The most generic uni-directional social relation.
-     *
-     * @param follows Person value to set.
-     */
-    void addFollows(Person follows);
-
-    /**
-     * The most generic familial relation.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getRelatedToList();
-
-    /**
-     * The most generic familial relation.
-     *
-     * @return {@link Person}
-     */
-    Person getRelatedTo();
-
-    /**
-     * The most generic familial relation.
-     *
-     * @param relatedTo Person value to set.
-     */
-    void addRelatedTo(Person relatedTo);
-
-    /**
-     * Nationality of the person.
-     *
-     * @return {@link Country}
-     */
-    List<Country> getNationalityList();
-
-    /**
-     * Nationality of the person.
-     *
-     * @return {@link Country}
-     */
-    Country getNationality();
-
-    /**
-     * Nationality of the person.
-     *
-     * @param nationality Country value to set.
-     */
-    void addNationality(Country nationality);
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
-    <T> List<T> getMemberOfList();
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
-    <T> T getMemberOf();
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf ProgramMembership value to set.
-     */
-    void addMemberOf(ProgramMembership memberOf);
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf Organization value to set.
-     */
-    void addMemberOf(Organization memberOf);
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf MemberProgramTier value to set.
-     */
-    void addMemberOf(MemberProgramTier memberOf);
-
-    /**
-     * Date of birth.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getBirthDateList();
-
-    /**
-     * Date of birth.
-     *
-     * @return {@link Date}
-     */
-    Date getBirthDate();
-
-    /**
-     * Date of birth.
-     *
-     * @param birthDate Date value to set.
-     */
-    void addBirthDate(Date birthDate);
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    List<ContactPoint> getContactPointList();
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    ContactPoint getContactPoint();
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoint ContactPoint value to set.
-     */
-    void addContactPoint(ContactPoint contactPoint);
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    List<Certification> getHasCertificationList();
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    Certification getHasCertification();
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @param hasCertification Certification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    void addHasCertification(Certification hasCertification);
-
-    /**
-     * The place where the person was born.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getBirthPlaceList();
-
-    /**
-     * The place where the person was born.
-     *
-     * @return {@link Place}
-     */
-    Place getBirthPlace();
-
-    /**
-     * The place where the person was born.
-     *
-     * @param birthPlace Place value to set.
-     */
-    void addBirthPlace(Place birthPlace);
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Text> getIsicV4List();
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Text getIsicV4();
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @param isicV4 Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addIsicV4(Text isicV4);
-
-    /**
-     * The Person's occupation. For past professions, use Role for expressing dates.
-     *
-     * @return {@link Occupation}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Occupation> getHasOccupationList();
-
-    /**
-     * The Person's occupation. For past professions, use Role for expressing dates.
-     *
-     * @return {@link Occupation}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    Occupation getHasOccupation();
-
-    /**
-     * The Person's occupation. For past professions, use Role for expressing dates.
-     *
-     * @param hasOccupation Occupation value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addHasOccupation(Occupation hasOccupation);
-
-    /**
-     * A colleague of the person.
-     *
-     * @return {@link Person} or {@link URL}
-     */
-    <T> List<T> getColleagueList();
-
-    /**
-     * A colleague of the person.
-     *
-     * @return {@link Person} or {@link URL}
-     */
-    <T> T getColleague();
-
-    /**
-     * A colleague of the person.
-     *
-     * @param colleague Person value to set.
-     */
-    void addColleague(Person colleague);
-    /**
-     * A colleague of the person.
-     *
-     * @param colleague URL value to set.
-     */
-    void addColleague(URL colleague);
-
-    /**
-     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
-     *
-     * @return {@link Event}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
-     */
-    List<Event> getLifeEventList();
-
-    /**
-     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
-     *
-     * @return {@link Event}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
-     */
-    Event getLifeEvent();
-
-    /**
-     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
-     *
-     * @param lifeEvent Event value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
-     */
-    void addLifeEvent(Event lifeEvent);
-
-    /**
-     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getHonorificSuffixList();
-
-    /**
-     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-     *
-     * @return {@link Text}
-     */
-    Text getHonorificSuffix();
-
-    /**
-     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-     *
-     * @param honorificSuffix Text value to set.
-     */
-    void addHonorificSuffix(Text honorificSuffix);
-
-    /**
-     * The most generic bi-directional social/work relation.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getKnowsList();
-
-    /**
-     * The most generic bi-directional social/work relation.
-     *
-     * @return {@link Person}
-     */
-    Person getKnows();
-
-    /**
-     * The most generic bi-directional social/work relation.
-     *
-     * @param knows Person value to set.
-     */
-    void addKnows(Person knows);
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTelephoneList();
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    Text getTelephone();
-
-    /**
-     * The telephone number.
-     *
-     * @param telephone Text value to set.
-     */
-    void addTelephone(Text telephone);
-
-    /**
-     * A sibling of the person.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getSiblingList();
-
-    /**
-     * A sibling of the person.
-     *
-     * @return {@link Person}
-     */
-    Person getSibling();
-
-    /**
-     * A sibling of the person.
-     *
-     * @param sibling Person value to set.
-     */
-    void addSibling(Person sibling);
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    List<ContactPoint> getContactPointsList();
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    ContactPoint getContactPoints();
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoints ContactPoint value to set.
-     */
-    void addContactPoints(ContactPoint contactPoints);
-
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @return {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    <T> List<T> getNetWorthList();
-
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @return {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    <T> T getNetWorth();
-
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @param netWorth PriceSpecification value to set.
-     */
-    void addNetWorth(PriceSpecification netWorth);
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @param netWorth MonetaryAmount value to set.
-     */
-    void addNetWorth(MonetaryAmount netWorth);
-
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @return {@link Place} or {@link ContactPoint}
-     */
-    <T> List<T> getWorkLocationList();
-
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @return {@link Place} or {@link ContactPoint}
-     */
-    <T> T getWorkLocation();
-
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @param workLocation Place value to set.
-     */
-    void addWorkLocation(Place workLocation);
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @param workLocation ContactPoint value to set.
-     */
-    void addWorkLocation(ContactPoint workLocation);
-
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @return {@link EducationalOrganization} or {@link Organization}
-     */
-    <T> List<T> getAlumniOfList();
-
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @return {@link EducationalOrganization} or {@link Organization}
-     */
-    <T> T getAlumniOf();
-
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @param alumniOf EducationalOrganization value to set.
-     */
-    void addAlumniOf(EducationalOrganization alumniOf);
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @param alumniOf Organization value to set.
-     */
-    void addAlumniOf(Organization alumniOf);
-
-    /**
      * The publishingPrinciples property indicates (typically via [[URL]]) a document describing the editorial principles of an [[Organization]] (or individual, e.g. a [[Person]] writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a [[CreativeWork]] (e.g. [[NewsArticle]]) the principles are those of the party primarily responsible for the creation of the [[CreativeWork]].
      * 
      * While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a [[funder]]) can be expressed using schema.org terminology.
@@ -1119,81 +1453,70 @@ public interface Person extends Thing {
     void addPublishingPrinciples(URL publishingPrinciples);
 
     /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAwardList();
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    Text getAward();
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    void addAward(Text award);
-
-    /**
-     * A parents of the person.
+     * The most generic familial relation.
      *
      * @return {@link Person}
      */
-    List<Person> getParentsList();
+    List<Person> getRelatedToList();
 
     /**
-     * A parents of the person.
+     * The most generic familial relation.
      *
      * @return {@link Person}
      */
-    Person getParents();
+    Person getRelatedTo();
 
     /**
-     * A parents of the person.
+     * The most generic familial relation.
      *
-     * @param parents Person value to set.
+     * @param relatedTo Person value to set.
      */
-    void addParents(Person parents);
+    void addRelatedTo(Person relatedTo);
 
     /**
-     * The job title of the person (for example, Financial Manager).
+     * A pointer to products or services sought by the organization or person (demand).
      *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> List<T> getJobTitleList();
+    List<Demand> getSeeksList();
 
     /**
-     * The job title of the person (for example, Financial Manager).
+     * A pointer to products or services sought by the organization or person (demand).
      *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> T getJobTitle();
+    Demand getSeeks();
 
     /**
-     * The job title of the person (for example, Financial Manager).
+     * A pointer to products or services sought by the organization or person (demand).
      *
-     * @param jobTitle DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addJobTitle(DefinedTerm jobTitle);
+    void addSeeks(Demand seeks);
+
     /**
-     * The job title of the person (for example, Financial Manager).
+     * A sibling of the person.
      *
-     * @param jobTitle Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link Person}
      */
-    void addJobTitle(Text jobTitle);
+    List<Person> getSiblingList();
+
+    /**
+     * A sibling of the person.
+     *
+     * @return {@link Person}
+     */
+    Person getSibling();
+
+    /**
+     * A sibling of the person.
+     *
+     * @param sibling Person value to set.
+     */
+    void addSibling(Person sibling);
 
     /**
      * A sibling of the person.
@@ -1217,97 +1540,39 @@ public interface Person extends Thing {
     void addSiblings(Person siblings);
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    List<Text> getTaxIDList();
+    <T> List<T> getSkillsList();
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    Text getTaxID();
+    <T> T getSkills();
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @param taxID Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param skills Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    void addTaxID(Text taxID);
-
+    void addSkills(Text skills);
     /**
-     * A colleague of the person.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @return {@link Person}
+     * @param skills DefinedTerm value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
-    List<Person> getColleaguesList();
-
-    /**
-     * A colleague of the person.
-     *
-     * @return {@link Person}
-     */
-    Person getColleagues();
-
-    /**
-     * A colleague of the person.
-     *
-     * @param colleagues Person value to set.
-     */
-    void addColleagues(Person colleagues);
-
-    /**
-     * Family name. In the U.S., the last name of a Person.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getFamilyNameList();
-
-    /**
-     * Family name. In the U.S., the last name of a Person.
-     *
-     * @return {@link Text}
-     */
-    Text getFamilyName();
-
-    /**
-     * Family name. In the U.S., the last name of a Person.
-     *
-     * @param familyName Text value to set.
-     */
-    void addFamilyName(Text familyName);
-
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    List<EducationalOccupationalCredential> getHasCredentialList();
-
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    EducationalOccupationalCredential getHasCredential();
-
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @param hasCredential EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addHasCredential(EducationalOccupationalCredential hasCredential);
+    void addSkills(DefinedTerm skills);
 
     /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
@@ -1337,142 +1602,70 @@ public interface Person extends Thing {
     void addSponsor(Organization sponsor);
 
     /**
-     * Event that this person is a performer or participant in.
+     * The person's spouse.
      *
-     * @return {@link Event}
+     * @return {@link Person}
      */
-    List<Event> getPerformerInList();
+    List<Person> getSpouseList();
 
     /**
-     * Event that this person is a performer or participant in.
+     * The person's spouse.
      *
-     * @return {@link Event}
+     * @return {@link Person}
      */
-    Event getPerformerIn();
+    Person getSpouse();
 
     /**
-     * Event that this person is a performer or participant in.
+     * The person's spouse.
      *
-     * @param performerIn Event value to set.
+     * @param spouse Person value to set.
      */
-    void addPerformerIn(Event performerIn);
+    void addSpouse(Person spouse);
 
     /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<InteractionCounter> getAgentInteractionStatisticList();
+    List<Text> getTaxIDList();
 
     /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    InteractionCounter getAgentInteractionStatistic();
+    Text getTaxID();
 
     /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @param agentInteractionStatistic InteractionCounter value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     * @param taxID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic);
+    void addTaxID(Text taxID);
 
     /**
-     * Given name. In the U.S., the first name of a Person.
+     * The telephone number.
      *
      * @return {@link Text}
      */
-    List<Text> getGivenNameList();
+    List<Text> getTelephoneList();
 
     /**
-     * Given name. In the U.S., the first name of a Person.
+     * The telephone number.
      *
      * @return {@link Text}
      */
-    Text getGivenName();
+    Text getTelephone();
 
     /**
-     * Given name. In the U.S., the first name of a Person.
+     * The telephone number.
      *
-     * @param givenName Text value to set.
+     * @param telephone Text value to set.
      */
-    void addGivenName(Text givenName);
-
-    /**
-     * Organizations that the person works for.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getWorksForList();
-
-    /**
-     * Organizations that the person works for.
-     *
-     * @return {@link Organization}
-     */
-    Organization getWorksFor();
-
-    /**
-     * Organizations that the person works for.
-     *
-     * @param worksFor Organization value to set.
-     */
-    void addWorksFor(Organization worksFor);
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Demand> getSeeksList();
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Demand getSeeks();
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @param seeks Demand value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addSeeks(Demand seeks);
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Offer> getMakesOfferList();
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Offer getMakesOffer();
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @param makesOffer Offer value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addMakesOffer(Offer makesOffer);
+    void addTelephone(Text telephone);
 
     /**
      * The Value-added Tax ID of the organization or person.
@@ -1499,278 +1692,85 @@ public interface Person extends Thing {
     void addVatID(Text vatID);
 
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The weight of the product or person.
      *
-     * @return {@link Text}
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    List<Text> getDunsList();
+    <T> List<T> getWeightList();
 
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The weight of the product or person.
      *
-     * @return {@link Text}
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    Text getDuns();
+    <T> T getWeight();
 
     /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     * The weight of the product or person.
      *
-     * @param duns Text value to set.
+     * @param weight Mass value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addDuns(Text duns);
+    void addWeight(Mass weight);
+    /**
+     * The weight of the product or person.
+     *
+     * @param weight QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addWeight(QuantitativeValue weight);
 
     /**
-     * A contact location for a person's residence.
+     * A contact location for a person's place of work.
      *
      * @return {@link Place} or {@link ContactPoint}
      */
-    <T> List<T> getHomeLocationList();
+    <T> List<T> getWorkLocationList();
 
     /**
-     * A contact location for a person's residence.
+     * A contact location for a person's place of work.
      *
      * @return {@link Place} or {@link ContactPoint}
      */
-    <T> T getHomeLocation();
+    <T> T getWorkLocation();
 
     /**
-     * A contact location for a person's residence.
+     * A contact location for a person's place of work.
      *
-     * @param homeLocation Place value to set.
+     * @param workLocation Place value to set.
      */
-    void addHomeLocation(Place homeLocation);
+    void addWorkLocation(Place workLocation);
     /**
-     * A contact location for a person's residence.
+     * A contact location for a person's place of work.
      *
-     * @param homeLocation ContactPoint value to set.
+     * @param workLocation ContactPoint value to set.
      */
-    void addHomeLocation(ContactPoint homeLocation);
+    void addWorkLocation(ContactPoint workLocation);
 
     /**
-     * The fax number.
+     * Organizations that the person works for.
      *
-     * @return {@link Text}
+     * @return {@link Organization}
      */
-    List<Text> getFaxNumberList();
+    List<Organization> getWorksForList();
 
     /**
-     * The fax number.
+     * Organizations that the person works for.
      *
-     * @return {@link Text}
+     * @return {@link Organization}
      */
-    Text getFaxNumber();
+    Organization getWorksFor();
 
     /**
-     * The fax number.
+     * Organizations that the person works for.
      *
-     * @param faxNumber Text value to set.
+     * @param worksFor Organization value to set.
      */
-    void addFaxNumber(Text faxNumber);
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Place> getHasPOSList();
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Place getHasPOS();
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @param hasPOS Place value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addHasPOS(Place hasPOS);
-
-    /**
-     * A parent of this person.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getParentList();
-
-    /**
-     * A parent of this person.
-     *
-     * @return {@link Person}
-     */
-    Person getParent();
-
-    /**
-     * A parent of this person.
-     *
-     * @param parent Person value to set.
-     */
-    void addParent(Person parent);
-
-    /**
-     * An additional name for a Person, can be used for a middle name.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getAdditionalNameList();
-
-    /**
-     * An additional name for a Person, can be used for a middle name.
-     *
-     * @return {@link Text}
-     */
-    Text getAdditionalName();
-
-    /**
-     * An additional name for a Person, can be used for a middle name.
-     *
-     * @param additionalName Text value to set.
-     */
-    void addAdditionalName(Text additionalName);
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getEmailList();
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    Text getEmail();
-
-    /**
-     * Email address.
-     *
-     * @param email Text value to set.
-     */
-    void addEmail(Text email);
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    List<Text> getCallSignList();
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    Text getCallSign();
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @param callSign Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    void addCallSign(Text callSign);
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    List<OfferCatalog> getHasOfferCatalogList();
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    OfferCatalog getHasOfferCatalog();
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @param hasOfferCatalog OfferCatalog value to set.
-     */
-    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
-
-    /**
-     * The place where the person died.
-     *
-     * @return {@link Place}
-     */
-    List<Place> getDeathPlaceList();
-
-    /**
-     * The place where the person died.
-     *
-     * @return {@link Place}
-     */
-    Place getDeathPlace();
-
-    /**
-     * The place where the person died.
-     *
-     * @param deathPlace Place value to set.
-     */
-    void addDeathPlace(Place deathPlace);
-
-    /**
-     * The person's spouse.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getSpouseList();
-
-    /**
-     * The person's spouse.
-     *
-     * @return {@link Person}
-     */
-    Person getSpouse();
-
-    /**
-     * The person's spouse.
-     *
-     * @param spouse Person value to set.
-     */
-    void addSpouse(Person spouse);
-
-    /**
-     * Things owned by the organization or person.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Thing> getOwnsList();
-
-    /**
-     * Things owned by the organization or person.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Thing getOwns();
-
-    /**
-     * Things owned by the organization or person.
-     *
-     * @param owns Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addOwns(Thing owns);
+    void addWorksFor(Organization worksFor);
 }

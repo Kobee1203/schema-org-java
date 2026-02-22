@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.DigitalDocumentPermissionType;
 import org.schema.model.Audience;
 import org.schema.model.ContactPoint;
-import org.schema.model.Person;
+import org.schema.model.DigitalDocumentPermissionType;
 import org.schema.model.Organization;
+import org.schema.model.Person;
 
 /**
  * A permission for a particular person or group to access a particular file.
@@ -18,27 +18,6 @@ import org.schema.model.Organization;
  * @see <a href="https://schema.org/DigitalDocumentPermission">https://schema.org/DigitalDocumentPermission</a>
  */
 public interface DigitalDocumentPermission extends Intangible {
-
-    /**
-     * The type of permission granted the person, organization, or audience.
-     *
-     * @return {@link DigitalDocumentPermissionType}
-     */
-    List<DigitalDocumentPermissionType> getPermissionTypeList();
-
-    /**
-     * The type of permission granted the person, organization, or audience.
-     *
-     * @return {@link DigitalDocumentPermissionType}
-     */
-    DigitalDocumentPermissionType getPermissionType();
-
-    /**
-     * The type of permission granted the person, organization, or audience.
-     *
-     * @param permissionType DigitalDocumentPermissionType value to set.
-     */
-    void addPermissionType(DigitalDocumentPermissionType permissionType);
 
     /**
      * The person, organization, contact point, or audience that has been granted this permission.
@@ -78,4 +57,25 @@ public interface DigitalDocumentPermission extends Intangible {
      * @param grantee Organization value to set.
      */
     void addGrantee(Organization grantee);
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @return {@link DigitalDocumentPermissionType}
+     */
+    List<DigitalDocumentPermissionType> getPermissionTypeList();
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @return {@link DigitalDocumentPermissionType}
+     */
+    DigitalDocumentPermissionType getPermissionType();
+
+    /**
+     * The type of permission granted the person, organization, or audience.
+     *
+     * @param permissionType DigitalDocumentPermissionType value to set.
+     */
+    void addPermissionType(DigitalDocumentPermissionType permissionType);
 }

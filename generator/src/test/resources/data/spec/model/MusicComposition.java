@@ -6,12 +6,12 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.MusicRecording;
-import spec.model.Event;
 import spec.model.CreativeWork;
+import spec.model.Event;
 import spec.model.MusicComposition;
-import spec.model.Person;
+import spec.model.MusicRecording;
 import spec.model.Organization;
+import spec.model.Person;
 import spec.model.datatype.Text;
 
 /**
@@ -23,28 +23,35 @@ import spec.model.datatype.Text;
 public interface MusicComposition extends CreativeWork {
 
     /**
-     * An audio recording of the work.
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @return {@link MusicRecording}
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
-    List<MusicRecording> getRecordedAsList();
+    <T> List<T> getComposerList();
 
     /**
-     * An audio recording of the work.
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @return {@link MusicRecording}
+     * @return {@link Person} or {@link Organization}
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
-    MusicRecording getRecordedAs();
+    <T> T getComposer();
 
     /**
-     * An audio recording of the work.
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
      *
-     * @param recordedAs MusicRecording value to set.
+     * @param composer Person value to set.
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
-    void addRecordedAs(MusicRecording recordedAs);
+    void addComposer(Person composer);
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addComposer(Organization composer);
 
     /**
      * The date and place the work was first performed.
@@ -69,6 +76,78 @@ public interface MusicComposition extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addFirstPerformance(Event firstPerformance);
+
+    /**
+     * Smaller compositions included in this work (e.g. a movement in a symphony).
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    List<MusicComposition> getIncludedCompositionList();
+
+    /**
+     * Smaller compositions included in this work (e.g. a movement in a symphony).
+     *
+     * @return {@link MusicComposition}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    MusicComposition getIncludedComposition();
+
+    /**
+     * Smaller compositions included in this work (e.g. a movement in a symphony).
+     *
+     * @param includedComposition MusicComposition value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addIncludedComposition(MusicComposition includedComposition);
+
+    /**
+     * The International Standard Musical Work Code for the composition.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    List<Text> getIswcCodeList();
+
+    /**
+     * The International Standard Musical Work Code for the composition.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    Text getIswcCode();
+
+    /**
+     * The International Standard Musical Work Code for the composition.
+     *
+     * @param iswcCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addIswcCode(Text iswcCode);
+
+    /**
+     * The person who wrote the words.
+     *
+     * @return {@link Person}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    List<Person> getLyricistList();
+
+    /**
+     * The person who wrote the words.
+     *
+     * @return {@link Person}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    Person getLyricist();
+
+    /**
+     * The person who wrote the words.
+     *
+     * @param lyricist Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addLyricist(Person lyricist);
 
     /**
      * The words in the song.
@@ -119,85 +198,6 @@ public interface MusicComposition extends CreativeWork {
     void addMusicArrangement(MusicComposition musicArrangement);
 
     /**
-     * The person who wrote the words.
-     *
-     * @return {@link Person}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    List<Person> getLyricistList();
-
-    /**
-     * The person who wrote the words.
-     *
-     * @return {@link Person}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    Person getLyricist();
-
-    /**
-     * The person who wrote the words.
-     *
-     * @param lyricist Person value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addLyricist(Person lyricist);
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    <T> List<T> getComposerList();
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    <T> T getComposer();
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @param composer Person value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addComposer(Person composer);
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @param composer Organization value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addComposer(Organization composer);
-
-    /**
-     * The International Standard Musical Work Code for the composition.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    List<Text> getIswcCodeList();
-
-    /**
-     * The International Standard Musical Work Code for the composition.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    Text getIswcCode();
-
-    /**
-     * The International Standard Musical Work Code for the composition.
-     *
-     * @param iswcCode Text value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addIswcCode(Text iswcCode);
-
-    /**
      * The type of composition (e.g. overture, sonata, symphony, etc.).
      *
      * @return {@link Text}
@@ -222,30 +222,6 @@ public interface MusicComposition extends CreativeWork {
     void addMusicCompositionForm(Text musicCompositionForm);
 
     /**
-     * Smaller compositions included in this work (e.g. a movement in a symphony).
-     *
-     * @return {@link MusicComposition}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    List<MusicComposition> getIncludedCompositionList();
-
-    /**
-     * Smaller compositions included in this work (e.g. a movement in a symphony).
-     *
-     * @return {@link MusicComposition}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    MusicComposition getIncludedComposition();
-
-    /**
-     * Smaller compositions included in this work (e.g. a movement in a symphony).
-     *
-     * @param includedComposition MusicComposition value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addIncludedComposition(MusicComposition includedComposition);
-
-    /**
      * The key, mode, or scale this composition uses.
      *
      * @return {@link Text}
@@ -268,4 +244,28 @@ public interface MusicComposition extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addMusicalKey(Text musicalKey);
+
+    /**
+     * An audio recording of the work.
+     *
+     * @return {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    List<MusicRecording> getRecordedAsList();
+
+    /**
+     * An audio recording of the work.
+     *
+     * @return {@link MusicRecording}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    MusicRecording getRecordedAs();
+
+    /**
+     * An audio recording of the work.
+     *
+     * @param recordedAs MusicRecording value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addRecordedAs(MusicRecording recordedAs);
 }

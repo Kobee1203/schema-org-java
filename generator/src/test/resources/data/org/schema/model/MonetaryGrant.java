@@ -6,10 +6,10 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Number;
 import org.schema.model.MonetaryAmount;
 import org.schema.model.Organization;
 import org.schema.model.Person;
+import org.schema.model.datatype.Number;
 
 /**
  * A monetary grant.

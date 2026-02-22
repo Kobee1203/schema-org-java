@@ -6,14 +6,14 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.Thing;
-import spec_custom.model.Review;
-import spec_custom.model.ListItem;
-import spec_custom.model.datatype.Text;
-import spec_custom.model.WebContent;
 import spec_custom.model.ItemList;
-import spec_custom.model.StructuredValue;
+import spec_custom.model.ListItem;
 import spec_custom.model.Rating;
+import spec_custom.model.Review;
+import spec_custom.model.StructuredValue;
+import spec_custom.model.Thing;
+import spec_custom.model.WebContent;
+import spec_custom.model.datatype.Text;
 
 /**
  * A review of an item - for example, of a restaurant, movie, or store.
@@ -21,27 +21,6 @@ import spec_custom.model.Rating;
  * @see <a href="https://schema.org/Review">https://schema.org/Review</a>
  */
 public interface Review extends CreativeWork {
-
-    /**
-     * The item that is being reviewed/rated.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getItemReviewedList();
-
-    /**
-     * The item that is being reviewed/rated.
-     *
-     * @return {@link Thing}
-     */
-    Thing getItemReviewed();
-
-    /**
-     * The item that is being reviewed/rated.
-     *
-     * @param itemReviewed Thing value to set.
-     */
-    void addItemReviewed(Thing itemReviewed);
 
     /**
      * An associated [[ClaimReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
@@ -69,6 +48,162 @@ public interface Review extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void addAssociatedClaimReview(Review associatedClaimReview);
+
+    /**
+     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<Review> getAssociatedMediaReviewList();
+
+    /**
+     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    Review getAssociatedMediaReview();
+
+    /**
+     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
+     *
+     * @param associatedMediaReview Review value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addAssociatedMediaReview(Review associatedMediaReview);
+
+    /**
+     * An associated [[Review]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    List<Review> getAssociatedReviewList();
+
+    /**
+     * An associated [[Review]].
+     *
+     * @return {@link Review}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    Review getAssociatedReview();
+
+    /**
+     * An associated [[Review]].
+     *
+     * @param associatedReview Review value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
+     */
+    void addAssociatedReview(Review associatedReview);
+
+    /**
+     * The item that is being reviewed/rated.
+     *
+     * @return {@link Thing}
+     */
+    List<Thing> getItemReviewedList();
+
+    /**
+     * The item that is being reviewed/rated.
+     *
+     * @return {@link Thing}
+     */
+    Thing getItemReviewed();
+
+    /**
+     * The item that is being reviewed/rated.
+     *
+     * @param itemReviewed Thing value to set.
+     */
+    void addItemReviewed(Thing itemReviewed);
+
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     * 
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     * 
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     *
+     * @return {@link ItemList} or {@link ListItem} or {@link Text} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    <T> List<T> getNegativeNotesList();
+
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     * 
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     * 
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     *
+     * @return {@link ItemList} or {@link ListItem} or {@link Text} or {@link WebContent}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    <T> T getNegativeNotes();
+
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     * 
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     * 
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     *
+     * @param negativeNotes ItemList value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void addNegativeNotes(ItemList negativeNotes);
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     * 
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     * 
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     *
+     * @param negativeNotes ListItem value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void addNegativeNotes(ListItem negativeNotes);
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     * 
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     * 
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     *
+     * @param negativeNotes Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void addNegativeNotes(Text negativeNotes);
+    /**
+     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
+     * 
+     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
+     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
+     * 
+     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     *
+     * @param negativeNotes WebContent value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     */
+    void addNegativeNotes(WebContent negativeNotes);
 
     /**
      * Provides positive considerations regarding something, for example product highlights or (alongside [[negativeNotes]]) pro/con lists for reviews.
@@ -177,112 +312,25 @@ public interface Review extends CreativeWork {
     void addReviewAspect(StructuredValue reviewAspect);
 
     /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     * The actual body of the review.
      *
-     * @return {@link ItemList} or {@link ListItem} or {@link Text} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     * @return {@link Text}
      */
-    <T> List<T> getNegativeNotesList();
+    List<Text> getReviewBodyList();
 
     /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     * The actual body of the review.
      *
-     * @return {@link ItemList} or {@link ListItem} or {@link Text} or {@link WebContent}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     * @return {@link Text}
      */
-    <T> T getNegativeNotes();
+    Text getReviewBody();
 
     /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
+     * The actual body of the review.
      *
-     * @param negativeNotes ItemList value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
+     * @param reviewBody Text value to set.
      */
-    void addNegativeNotes(ItemList negativeNotes);
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes ListItem value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    void addNegativeNotes(ListItem negativeNotes);
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    void addNegativeNotes(Text negativeNotes);
-    /**
-     * Provides negative considerations regarding something, most typically in pro/con lists for reviews (alongside [[positiveNotes]]). For symmetry 
-     * 
-     * In the case of a [[Review]], the property describes the [[itemReviewed]] from the perspective of the review; in the case of a [[Product]], the product itself is being described. Since product descriptions 
-     * tend to emphasise positive claims, it may be relatively unusual to find [[negativeNotes]] used in this way. Nevertheless for the sake of symmetry, [[negativeNotes]] can be used on [[Product]].
-     * 
-     * The property values can be expressed either as unstructured text (repeated as necessary), or if ordered, as a list (in which case the most negative is at the beginning of the list).
-     *
-     * @param negativeNotes WebContent value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2832">https://github.com/schemaorg/schemaorg/issues/2832</a>
-     */
-    void addNegativeNotes(WebContent negativeNotes);
-
-    /**
-     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
-     *
-     * @return {@link Review}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    List<Review> getAssociatedMediaReviewList();
-
-    /**
-     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
-     *
-     * @return {@link Review}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    Review getAssociatedMediaReview();
-
-    /**
-     * An associated [[MediaReview]], related by specific common content, topic or claim. The expectation is that this property would be most typically used in cases where a single activity is conducting both claim reviews and media reviews, in which case [[relatedMediaReview]] would commonly be used on a [[ClaimReview]], while [[relatedClaimReview]] would be used on [[MediaReview]].
-     *
-     * @param associatedMediaReview Review value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addAssociatedMediaReview(Review associatedMediaReview);
+    void addReviewBody(Text reviewBody);
 
     /**
      * The rating given in this review. Note that reviews can themselves be rated. The ```reviewRating``` applies to rating given by the review. The [[aggregateRating]] property applies to the review itself, as a creative work.
@@ -304,52 +352,4 @@ public interface Review extends CreativeWork {
      * @param reviewRating Rating value to set.
      */
     void addReviewRating(Rating reviewRating);
-
-    /**
-     * An associated [[Review]].
-     *
-     * @return {@link Review}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    List<Review> getAssociatedReviewList();
-
-    /**
-     * An associated [[Review]].
-     *
-     * @return {@link Review}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    Review getAssociatedReview();
-
-    /**
-     * An associated [[Review]].
-     *
-     * @param associatedReview Review value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addAssociatedReview(Review associatedReview);
-
-    /**
-     * The actual body of the review.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getReviewBodyList();
-
-    /**
-     * The actual body of the review.
-     *
-     * @return {@link Text}
-     */
-    Text getReviewBody();
-
-    /**
-     * The actual body of the review.
-     *
-     * @param reviewBody Text value to set.
-     */
-    void addReviewBody(Text reviewBody);
 }

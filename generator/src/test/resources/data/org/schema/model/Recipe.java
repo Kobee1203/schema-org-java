@@ -7,13 +7,13 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.CreativeWork;
+import org.schema.model.Duration;
 import org.schema.model.ItemList;
-import org.schema.model.datatype.Text;
 import org.schema.model.NutritionInformation;
 import org.schema.model.PropertyValue;
-import org.schema.model.RestrictedDiet;
 import org.schema.model.QuantitativeValue;
-import org.schema.model.Duration;
+import org.schema.model.RestrictedDiet;
+import org.schema.model.datatype.Text;
 
 /**
  * A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via [[suitableForDiet]]. The [[keywords]] property can also be used to add more detail.
@@ -23,37 +23,67 @@ import org.schema.model.Duration;
 public interface Recipe extends HowTo {
 
     /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
+     * @return {@link Duration}
      */
-    <T> List<T> getRecipeInstructionsList();
+    List<Duration> getCookTimeList();
 
     /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
+     * @return {@link Duration}
      */
-    <T> T getRecipeInstructions();
+    Duration getCookTime();
 
     /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
-     * @param recipeInstructions CreativeWork value to set.
+     * @param cookTime Duration value to set.
      */
-    void addRecipeInstructions(CreativeWork recipeInstructions);
+    void addCookTime(Duration cookTime);
+
     /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     * The method of cooking, such as Frying, Steaming, ...
      *
-     * @param recipeInstructions ItemList value to set.
+     * @return {@link Text}
      */
-    void addRecipeInstructions(ItemList recipeInstructions);
+    List<Text> getCookingMethodList();
+
     /**
-     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
+     * The method of cooking, such as Frying, Steaming, ...
      *
-     * @param recipeInstructions Text value to set.
+     * @return {@link Text}
      */
-    void addRecipeInstructions(Text recipeInstructions);
+    Text getCookingMethod();
+
+    /**
+     * The method of cooking, such as Frying, Steaming, ...
+     *
+     * @param cookingMethod Text value to set.
+     */
+    void addCookingMethod(Text cookingMethod);
+
+    /**
+     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getIngredientsList();
+
+    /**
+     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+     *
+     * @return {@link Text}
+     */
+    Text getIngredients();
+
+    /**
+     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
+     *
+     * @param ingredients Text value to set.
+     */
+    void addIngredients(Text ingredients);
 
     /**
      * Nutrition information about the recipe or menu item.
@@ -75,6 +105,48 @@ public interface Recipe extends HowTo {
      * @param nutrition NutritionInformation value to set.
      */
     void addNutrition(NutritionInformation nutrition);
+
+    /**
+     * The category of the recipe—for example, appetizer, entree, etc.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRecipeCategoryList();
+
+    /**
+     * The category of the recipe—for example, appetizer, entree, etc.
+     *
+     * @return {@link Text}
+     */
+    Text getRecipeCategory();
+
+    /**
+     * The category of the recipe—for example, appetizer, entree, etc.
+     *
+     * @param recipeCategory Text value to set.
+     */
+    void addRecipeCategory(Text recipeCategory);
+
+    /**
+     * The cuisine of the recipe (for example, French or Ethiopian).
+     *
+     * @return {@link Text}
+     */
+    List<Text> getRecipeCuisineList();
+
+    /**
+     * The cuisine of the recipe (for example, French or Ethiopian).
+     *
+     * @return {@link Text}
+     */
+    Text getRecipeCuisine();
+
+    /**
+     * The cuisine of the recipe (for example, French or Ethiopian).
+     *
+     * @param recipeCuisine Text value to set.
+     */
+    void addRecipeCuisine(Text recipeCuisine);
 
     /**
      * An ingredient or ordered list of ingredients and potentially quantities used in the recipe, e.g. 1 cup of sugar, flour or garlic.  The ingredients can be represented as free text or more structured values.
@@ -110,67 +182,37 @@ public interface Recipe extends HowTo {
     void addRecipeIngredient(Text recipeIngredient);
 
     /**
-     * The method of cooking, such as Frying, Steaming, ...
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
      */
-    List<Text> getCookingMethodList();
+    <T> List<T> getRecipeInstructionsList();
 
     /**
-     * The method of cooking, such as Frying, Steaming, ...
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @return {@link Text}
+     * @return {@link CreativeWork} or {@link ItemList} or {@link Text}
      */
-    Text getCookingMethod();
+    <T> T getRecipeInstructions();
 
     /**
-     * The method of cooking, such as Frying, Steaming, ...
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @param cookingMethod Text value to set.
+     * @param recipeInstructions CreativeWork value to set.
      */
-    void addCookingMethod(Text cookingMethod);
-
+    void addRecipeInstructions(CreativeWork recipeInstructions);
     /**
-     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @return {@link RestrictedDiet}
+     * @param recipeInstructions ItemList value to set.
      */
-    List<RestrictedDiet> getSuitableForDietList();
-
+    void addRecipeInstructions(ItemList recipeInstructions);
     /**
-     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
+     * A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.
      *
-     * @return {@link RestrictedDiet}
+     * @param recipeInstructions Text value to set.
      */
-    RestrictedDiet getSuitableForDiet();
-
-    /**
-     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
-     *
-     * @param suitableForDiet RestrictedDiet value to set.
-     */
-    void addSuitableForDiet(RestrictedDiet suitableForDiet);
-
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getIngredientsList();
-
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @return {@link Text}
-     */
-    Text getIngredients();
-
-    /**
-     * A single ingredient used in the recipe, e.g. sugar, flour or garlic.
-     *
-     * @param ingredients Text value to set.
-     */
-    void addIngredients(Text ingredients);
+    void addRecipeInstructions(Text recipeInstructions);
 
     /**
      * The quantity produced by the recipe (for example, number of people served, number of servings, etc).
@@ -200,65 +242,23 @@ public interface Recipe extends HowTo {
     void addRecipeYield(Text recipeYield);
 
     /**
-     * The cuisine of the recipe (for example, French or Ethiopian).
+     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
-     * @return {@link Text}
+     * @return {@link RestrictedDiet}
      */
-    List<Text> getRecipeCuisineList();
+    List<RestrictedDiet> getSuitableForDietList();
 
     /**
-     * The cuisine of the recipe (for example, French or Ethiopian).
+     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
-     * @return {@link Text}
+     * @return {@link RestrictedDiet}
      */
-    Text getRecipeCuisine();
+    RestrictedDiet getSuitableForDiet();
 
     /**
-     * The cuisine of the recipe (for example, French or Ethiopian).
+     * Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.
      *
-     * @param recipeCuisine Text value to set.
+     * @param suitableForDiet RestrictedDiet value to set.
      */
-    void addRecipeCuisine(Text recipeCuisine);
-
-    /**
-     * The category of the recipe—for example, appetizer, entree, etc.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getRecipeCategoryList();
-
-    /**
-     * The category of the recipe—for example, appetizer, entree, etc.
-     *
-     * @return {@link Text}
-     */
-    Text getRecipeCategory();
-
-    /**
-     * The category of the recipe—for example, appetizer, entree, etc.
-     *
-     * @param recipeCategory Text value to set.
-     */
-    void addRecipeCategory(Text recipeCategory);
-
-    /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     */
-    List<Duration> getCookTimeList();
-
-    /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration}
-     */
-    Duration getCookTime();
-
-    /**
-     * The time it takes to actually cook the dish, in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param cookTime Duration value to set.
-     */
-    void addCookTime(Duration cookTime);
+    void addSuitableForDiet(RestrictedDiet suitableForDiet);
 }

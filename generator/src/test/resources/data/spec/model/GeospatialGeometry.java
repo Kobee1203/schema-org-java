@@ -19,60 +19,6 @@ import spec.model.Place;
 public interface GeospatialGeometry extends Intangible {
 
     /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> List<T> getGeoCoversList();
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> T getGeoCovers();
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoCovers GeospatialGeometry value to set.
-     */
-    void addGeoCovers(GeospatialGeometry geoCovers);
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoCovers Place value to set.
-     */
-    void addGeoCovers(Place geoCovers);
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> List<T> getGeoOverlapsList();
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> T getGeoOverlaps();
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoOverlaps GeospatialGeometry value to set.
-     */
-    void addGeoOverlaps(GeospatialGeometry geoOverlaps);
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoOverlaps Place value to set.
-     */
-    void addGeoOverlaps(Place geoOverlaps);
-
-    /**
      * Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. "a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
      * @return {@link Place} or {@link GeospatialGeometry}
@@ -98,114 +44,6 @@ public interface GeospatialGeometry extends Intangible {
      * @param geoContains GeospatialGeometry value to set.
      */
     void addGeoContains(GeospatialGeometry geoContains);
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> List<T> getGeoEqualsList();
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> T getGeoEquals();
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
-     *
-     * @param geoEquals GeospatialGeometry value to set.
-     */
-    void addGeoEquals(GeospatialGeometry geoEquals);
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
-     *
-     * @param geoEquals Place value to set.
-     */
-    void addGeoEquals(Place geoEquals);
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    <T> List<T> getGeoDisjointList();
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    <T> T getGeoDisjoint();
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @param geoDisjoint Place value to set.
-     */
-    void addGeoDisjoint(Place geoDisjoint);
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
-     *
-     * @param geoDisjoint GeospatialGeometry value to set.
-     */
-    void addGeoDisjoint(GeospatialGeometry geoDisjoint);
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    <T> List<T> getGeoIntersectsList();
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link Place} or {@link GeospatialGeometry}
-     */
-    <T> T getGeoIntersects();
-
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoIntersects Place value to set.
-     */
-    void addGeoIntersects(Place geoIntersects);
-    /**
-     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoIntersects GeospatialGeometry value to set.
-     */
-    void addGeoIntersects(GeospatialGeometry geoIntersects);
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> List<T> getGeoWithinList();
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @return {@link GeospatialGeometry} or {@link Place}
-     */
-    <T> T getGeoWithin();
-
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoWithin GeospatialGeometry value to set.
-     */
-    void addGeoWithin(GeospatialGeometry geoWithin);
-    /**
-     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
-     *
-     * @param geoWithin Place value to set.
-     */
-    void addGeoWithin(Place geoWithin);
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -235,31 +73,31 @@ public interface GeospatialGeometry extends Intangible {
     void addGeoCoveredBy(Place geoCoveredBy);
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Place} or {@link GeospatialGeometry}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
-    <T> List<T> getGeoTouchesList();
+    <T> List<T> getGeoCoversList();
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @return {@link Place} or {@link GeospatialGeometry}
+     * @return {@link GeospatialGeometry} or {@link Place}
      */
-    <T> T getGeoTouches();
+    <T> T getGeoCovers();
 
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoTouches Place value to set.
+     * @param geoCovers GeospatialGeometry value to set.
      */
-    void addGeoTouches(Place geoTouches);
+    void addGeoCovers(GeospatialGeometry geoCovers);
     /**
-     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     * Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. "Every point of b is a point of (the interior or boundary of) a". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
      *
-     * @param geoTouches GeospatialGeometry value to set.
+     * @param geoCovers Place value to set.
      */
-    void addGeoTouches(GeospatialGeometry geoTouches);
+    void addGeoCovers(Place geoCovers);
 
     /**
      * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: "a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them". As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
@@ -287,4 +125,166 @@ public interface GeospatialGeometry extends Intangible {
      * @param geoCrosses GeospatialGeometry value to set.
      */
     void addGeoCrosses(GeospatialGeometry geoCrosses);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoDisjointList();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> T getGeoDisjoint();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoDisjoint Place value to set.
+     */
+    void addGeoDisjoint(Place geoDisjoint);
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: "they have no point in common. They form a set of disconnected geometries." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoDisjoint GeospatialGeometry value to set.
+     */
+    void addGeoDisjoint(GeospatialGeometry geoDisjoint);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoEqualsList();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> T getGeoEquals();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @param geoEquals GeospatialGeometry value to set.
+     */
+    void addGeoEquals(GeospatialGeometry geoEquals);
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM). "Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other" (a symmetric relationship).
+     *
+     * @param geoEquals Place value to set.
+     */
+    void addGeoEquals(Place geoEquals);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoIntersectsList();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> T getGeoIntersects();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects Place value to set.
+     */
+    void addGeoIntersects(Place geoIntersects);
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoIntersects GeospatialGeometry value to set.
+     */
+    void addGeoIntersects(GeospatialGeometry geoIntersects);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoOverlapsList();
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> T getGeoOverlaps();
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoOverlaps GeospatialGeometry value to set.
+     */
+    void addGeoOverlaps(GeospatialGeometry geoOverlaps);
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoOverlaps Place value to set.
+     */
+    void addGeoOverlaps(Place geoOverlaps);
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> List<T> getGeoTouchesList();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @return {@link Place} or {@link GeospatialGeometry}
+     */
+    <T> T getGeoTouches();
+
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoTouches Place value to set.
+     */
+    void addGeoTouches(Place geoTouches);
+    /**
+     * Represents spatial relations in which two geometries (or the places they represent) touch: "they have at least one boundary point in common, but no interior points." (A symmetric relationship, as defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).)
+     *
+     * @param geoTouches GeospatialGeometry value to set.
+     */
+    void addGeoTouches(GeospatialGeometry geoTouches);
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> List<T> getGeoWithinList();
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @return {@link GeospatialGeometry} or {@link Place}
+     */
+    <T> T getGeoWithin();
+
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoWithin GeospatialGeometry value to set.
+     */
+    void addGeoWithin(GeospatialGeometry geoWithin);
+    /**
+     * Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in [DE-9IM](https://en.wikipedia.org/wiki/DE-9IM).
+     *
+     * @param geoWithin Place value to set.
+     */
+    void addGeoWithin(Place geoWithin);
 }

@@ -6,30 +6,30 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Person;
-import spec.model.Organization;
-import spec.model.OpeningHoursSpecification;
-import spec.model.Audience;
-import spec.model.datatype.URL;
-import spec.model.ImageObject;
-import spec.model.datatype.Text;
-import spec.model.Service;
-import spec.model.Product;
-import spec.model.AggregateRating;
-import spec.model.Thing;
-import spec.model.Brand;
-import spec.model.Place;
 import spec.model.AdministrativeArea;
-import spec.model.GeoShape;
-import spec.model.Review;
-import spec.model.PhysicalActivityCategory;
+import spec.model.AggregateRating;
+import spec.model.Audience;
+import spec.model.Brand;
 import spec.model.CategoryCode;
-import spec.model.Offer;
-import spec.model.Demand;
 import spec.model.Certification;
+import spec.model.Demand;
+import spec.model.GeoShape;
 import spec.model.GovernmentBenefitsType;
-import spec.model.ServiceChannel;
+import spec.model.ImageObject;
+import spec.model.Offer;
 import spec.model.OfferCatalog;
+import spec.model.OpeningHoursSpecification;
+import spec.model.Organization;
+import spec.model.Person;
+import spec.model.PhysicalActivityCategory;
+import spec.model.Place;
+import spec.model.Product;
+import spec.model.Review;
+import spec.model.Service;
+import spec.model.ServiceChannel;
+import spec.model.Thing;
+import spec.model.datatype.Text;
+import spec.model.datatype.URL;
 
 /**
  * A service provided by an organization, e.g. delivery service, print services, etc.
@@ -37,218 +37,6 @@ import spec.model.OfferCatalog;
  * @see <a href="https://schema.org/Service">https://schema.org/Service</a>
  */
 public interface Service extends Intangible {
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    <T> List<T> getProviderList();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    <T> T getProvider();
-
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Person value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Person provider);
-    /**
-     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
-     *
-     * @param provider Organization value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    void addProvider(Organization provider);
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    List<OpeningHoursSpecification> getHoursAvailableList();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    OpeningHoursSpecification getHoursAvailable();
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getServiceAudienceList();
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @return {@link Audience}
-     */
-    Audience getServiceAudience();
-
-    /**
-     * The audience eligible for this service.
-     *
-     * @param serviceAudience Audience value to set.
-     */
-    void addServiceAudience(Audience serviceAudience);
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getBrokerList();
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getBroker();
-
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @param broker Person value to set.
-     */
-    void addBroker(Person broker);
-    /**
-     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
-     *
-     * @param broker Organization value to set.
-     */
-    void addBroker(Organization broker);
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getLogoList();
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getLogo();
-
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addLogo(URL logo);
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addLogo(ImageObject logo);
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    List<Text> getProviderMobilityList();
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @return {@link Text}
-     */
-    Text getProviderMobility();
-
-    /**
-     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
-     *
-     * @param providerMobility Text value to set.
-     */
-    void addProviderMobility(Text providerMobility);
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getIsRelatedToList();
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getIsRelatedTo();
-
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Service value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addIsRelatedTo(Service isRelatedTo);
-    /**
-     * A pointer to another, somehow related product (or multiple products).
-     *
-     * @param isRelatedTo Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addIsRelatedTo(Product isRelatedTo);
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getSloganList();
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @return {@link Text}
-     */
-    Text getSlogan();
-
-    /**
-     * A slogan or motto associated with the item.
-     *
-     * @param slogan Text value to set.
-     */
-    void addSlogan(Text slogan);
 
     /**
      * The overall rating, based on a collection of reviews or ratings, of the item.
@@ -270,54 +58,6 @@ public interface Service extends Intangible {
      * @param aggregateRating AggregateRating value to set.
      */
     void addAggregateRating(AggregateRating aggregateRating);
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    List<Thing> getServiceOutputList();
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @return {@link Thing}
-     */
-    Thing getServiceOutput();
-
-    /**
-     * The tangible thing generated by the service, e.g. a passport, permit, etc.
-     *
-     * @param serviceOutput Thing value to set.
-     */
-    void addServiceOutput(Thing serviceOutput);
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    <T> List<T> getBrandList();
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @return {@link Brand} or {@link Organization}
-     */
-    <T> T getBrand();
-
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Brand value to set.
-     */
-    void addBrand(Brand brand);
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    void addBrand(Organization brand);
 
     /**
      * The geographic area where a service or offered item is provided.
@@ -359,25 +99,121 @@ public interface Service extends Intangible {
     void addAreaServed(Text areaServed);
 
     /**
-     * A review of the item.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Review}
+     * @return {@link Audience}
      */
-    List<Review> getReviewList();
+    List<Audience> getAudienceList();
 
     /**
-     * A review of the item.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @return {@link Review}
+     * @return {@link Audience}
      */
-    Review getReview();
+    Audience getAudience();
 
     /**
-     * A review of the item.
+     * An intended audience, i.e. a group for whom something was created.
      *
-     * @param review Review value to set.
+     * @param audience Audience value to set.
      */
-    void addReview(Review review);
+    void addAudience(Audience audience);
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    List<ServiceChannel> getAvailableChannelList();
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @return {@link ServiceChannel}
+     */
+    ServiceChannel getAvailableChannel();
+
+    /**
+     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     *
+     * @param availableChannel ServiceChannel value to set.
+     */
+    void addAvailableChannel(ServiceChannel availableChannel);
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getAwardList();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    Text getAward();
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    void addAward(Text award);
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> List<T> getBrandList();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    <T> T getBrand();
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    void addBrand(Brand brand);
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Organization value to set.
+     */
+    void addBrand(Organization brand);
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getBrokerList();
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getBroker();
+
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param broker Person value to set.
+     */
+    void addBroker(Person broker);
+    /**
+     * An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.
+     *
+     * @param broker Organization value to set.
+     */
+    void addBroker(Organization broker);
 
     /**
      * A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
@@ -439,6 +275,165 @@ public interface Service extends Intangible {
     void addCategory(URL category);
 
     /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    List<Certification> getHasCertificationList();
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    Certification getHasCertification();
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @param hasCertification Certification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    void addHasCertification(Certification hasCertification);
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    List<OfferCatalog> getHasOfferCatalogList();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    OfferCatalog getHasOfferCatalog();
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @param hasOfferCatalog OfferCatalog value to set.
+     */
+    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    List<OpeningHoursSpecification> getHoursAvailableList();
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    OpeningHoursSpecification getHoursAvailable();
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @param hoursAvailable OpeningHoursSpecification value to set.
+     */
+    void addHoursAvailable(OpeningHoursSpecification hoursAvailable);
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getIsRelatedToList();
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getIsRelatedTo();
+
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param isRelatedTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addIsRelatedTo(Service isRelatedTo);
+    /**
+     * A pointer to another, somehow related product (or multiple products).
+     *
+     * @param isRelatedTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addIsRelatedTo(Product isRelatedTo);
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getIsSimilarToList();
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @return {@link Service} or {@link Product}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getIsSimilarTo();
+
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param isSimilarTo Service value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addIsSimilarTo(Service isSimilarTo);
+    /**
+     * A pointer to another, functionally similar product (or multiple products).
+     *
+     * @param isSimilarTo Product value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addIsSimilarTo(Product isSimilarTo);
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getLogoList();
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getLogo();
+
+    /**
+     * An associated logo.
+     *
+     * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addLogo(URL logo);
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addLogo(ImageObject logo);
+
+    /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
      *       
      *
@@ -474,41 +469,6 @@ public interface Service extends Intangible {
     void addOffers(Demand offers);
 
     /**
-     * Human-readable terms of service documentation.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    <T> List<T> getTermsOfServiceList();
-
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    <T> T getTermsOfService();
-
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @param termsOfService URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    void addTermsOfService(URL termsOfService);
-    /**
-     * Human-readable terms of service documentation.
-     *
-     * @param termsOfService Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
-     */
-    void addTermsOfService(Text termsOfService);
-
-    /**
      * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
      * @return {@link Thing}
@@ -530,76 +490,85 @@ public interface Service extends Intangible {
     void addProduces(Thing produces);
 
     /**
-     * Certification information about a product, organization, service, place, or person.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    List<Certification> getHasCertificationList();
+    <T> List<T> getProviderList();
 
     /**
-     * Certification information about a product, organization, service, place, or person.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    Certification getHasCertification();
+    <T> T getProvider();
 
     /**
-     * Certification information about a product, organization, service, place, or person.
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
      *
-     * @param hasCertification Certification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     * @param provider Person value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
-    void addHasCertification(Certification hasCertification);
+    void addProvider(Person provider);
+    /**
+     * The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.
+     *
+     * @param provider Organization value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2927">https://github.com/schemaorg/schemaorg/issues/2927</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    void addProvider(Organization provider);
 
     /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @return {@link Text} or {@link GovernmentBenefitsType}
+     * @return {@link Text}
      */
-    <T> List<T> getServiceTypeList();
+    List<Text> getProviderMobilityList();
 
     /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @return {@link Text} or {@link GovernmentBenefitsType}
+     * @return {@link Text}
      */
-    <T> T getServiceType();
+    Text getProviderMobility();
 
     /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     * Indicates the mobility of a provided service (e.g. 'static', 'dynamic').
      *
-     * @param serviceType Text value to set.
+     * @param providerMobility Text value to set.
      */
-    void addServiceType(Text serviceType);
-    /**
-     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
-     *
-     * @param serviceType GovernmentBenefitsType value to set.
-     */
-    void addServiceType(GovernmentBenefitsType serviceType);
+    void addProviderMobility(Text providerMobility);
 
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A review of the item.
      *
-     * @return {@link Audience}
+     * @return {@link Review}
      */
-    List<Audience> getAudienceList();
+    List<Review> getReviewList();
 
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A review of the item.
      *
-     * @return {@link Audience}
+     * @return {@link Review}
      */
-    Audience getAudience();
+    Review getReview();
 
     /**
-     * An intended audience, i.e. a group for whom something was created.
+     * A review of the item.
      *
-     * @param audience Audience value to set.
+     * @param review Review value to set.
      */
-    void addAudience(Audience audience);
+    void addReview(Review review);
 
     /**
      * The geographic area where the service is provided.
@@ -635,96 +604,127 @@ public interface Service extends Intangible {
     void addServiceArea(Place serviceArea);
 
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * The audience eligible for this service.
      *
-     * @return {@link ServiceChannel}
+     * @return {@link Audience}
      */
-    List<ServiceChannel> getAvailableChannelList();
+    List<Audience> getServiceAudienceList();
 
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * The audience eligible for this service.
      *
-     * @return {@link ServiceChannel}
+     * @return {@link Audience}
      */
-    ServiceChannel getAvailableChannel();
+    Audience getServiceAudience();
 
     /**
-     * A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).
+     * The audience eligible for this service.
      *
-     * @param availableChannel ServiceChannel value to set.
+     * @param serviceAudience Audience value to set.
      */
-    void addAvailableChannel(ServiceChannel availableChannel);
+    void addServiceAudience(Audience serviceAudience);
 
     /**
-     * A pointer to another, functionally similar product (or multiple products).
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Thing}
      */
-    <T> List<T> getIsSimilarToList();
+    List<Thing> getServiceOutputList();
 
     /**
-     * A pointer to another, functionally similar product (or multiple products).
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
-     * @return {@link Service} or {@link Product}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Thing}
      */
-    <T> T getIsSimilarTo();
+    Thing getServiceOutput();
 
     /**
-     * A pointer to another, functionally similar product (or multiple products).
+     * The tangible thing generated by the service, e.g. a passport, permit, etc.
      *
-     * @param isSimilarTo Service value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param serviceOutput Thing value to set.
      */
-    void addIsSimilarTo(Service isSimilarTo);
-    /**
-     * A pointer to another, functionally similar product (or multiple products).
-     *
-     * @param isSimilarTo Product value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addIsSimilarTo(Product isSimilarTo);
+    void addServiceOutput(Thing serviceOutput);
 
     /**
-     * An award won by or for this item.
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @return {@link Text} or {@link GovernmentBenefitsType}
+     */
+    <T> List<T> getServiceTypeList();
+
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @return {@link Text} or {@link GovernmentBenefitsType}
+     */
+    <T> T getServiceType();
+
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param serviceType Text value to set.
+     */
+    void addServiceType(Text serviceType);
+    /**
+     * The type of service being offered, e.g. veterans' benefits, emergency relief, etc.
+     *
+     * @param serviceType GovernmentBenefitsType value to set.
+     */
+    void addServiceType(GovernmentBenefitsType serviceType);
+
+    /**
+     * A slogan or motto associated with the item.
      *
      * @return {@link Text}
      */
-    List<Text> getAwardList();
+    List<Text> getSloganList();
 
     /**
-     * An award won by or for this item.
+     * A slogan or motto associated with the item.
      *
      * @return {@link Text}
      */
-    Text getAward();
+    Text getSlogan();
 
     /**
-     * An award won by or for this item.
+     * A slogan or motto associated with the item.
      *
-     * @param award Text value to set.
+     * @param slogan Text value to set.
      */
-    void addAward(Text award);
+    void addSlogan(Text slogan);
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * Human-readable terms of service documentation.
      *
-     * @return {@link OfferCatalog}
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    List<OfferCatalog> getHasOfferCatalogList();
+    <T> List<T> getTermsOfServiceList();
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * Human-readable terms of service documentation.
      *
-     * @return {@link OfferCatalog}
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    OfferCatalog getHasOfferCatalog();
+    <T> T getTermsOfService();
 
     /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     * Human-readable terms of service documentation.
      *
-     * @param hasOfferCatalog OfferCatalog value to set.
+     * @param termsOfService URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
      */
-    void addHasOfferCatalog(OfferCatalog hasOfferCatalog);
+    void addTermsOfService(URL termsOfService);
+    /**
+     * Human-readable terms of service documentation.
+     *
+     * @param termsOfService Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1423">https://github.com/schemaorg/schemaorg/issues/1423</a>
+     */
+    void addTermsOfService(Text termsOfService);
 }

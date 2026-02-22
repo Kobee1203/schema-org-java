@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
+import spec_custom.model.AdministrativeArea;
 import spec_custom.model.Country;
 import spec_custom.model.datatype.Text;
-import spec_custom.model.AdministrativeArea;
 
 /**
  * The mailing address.
@@ -49,46 +49,25 @@ public interface PostalAddress extends ContactPoint {
     void addAddressCountry(Text addressCountry);
 
     /**
-     * An address extension such as an apartment number, C/O or alternative name.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
      * @return {@link Text}
      */
-    List<Text> getExtendedAddressList();
+    List<Text> getAddressLocalityList();
 
     /**
-     * An address extension such as an apartment number, C/O or alternative name.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
      * @return {@link Text}
      */
-    Text getExtendedAddress();
+    Text getAddressLocality();
 
     /**
-     * An address extension such as an apartment number, C/O or alternative name.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
-     * @param extendedAddress Text value to set.
+     * @param addressLocality Text value to set.
      */
-    void addExtendedAddress(Text extendedAddress);
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getStreetAddressList();
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    Text getStreetAddress();
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @param streetAddress Text value to set.
-     */
-    void addStreetAddress(Text streetAddress);
+    void addAddressLocality(Text addressLocality);
 
     /**
      * The region in which the locality is, and which is in the country. For example, California or another appropriate first-level [Administrative division](https://en.wikipedia.org/wiki/List_of_administrative_divisions_by_country).
@@ -122,25 +101,25 @@ public interface PostalAddress extends ContactPoint {
     void addAddressRegion(Text addressRegion);
 
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     * An address extension such as an apartment number, C/O or alternative name.
      *
      * @return {@link Text}
      */
-    List<Text> getAddressLocalityList();
+    List<Text> getExtendedAddressList();
 
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     * An address extension such as an apartment number, C/O or alternative name.
      *
      * @return {@link Text}
      */
-    Text getAddressLocality();
+    Text getExtendedAddress();
 
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     * An address extension such as an apartment number, C/O or alternative name.
      *
-     * @param addressLocality Text value to set.
+     * @param extendedAddress Text value to set.
      */
-    void addAddressLocality(Text addressLocality);
+    void addExtendedAddress(Text extendedAddress);
 
     /**
      * The post office box number for PO box addresses.
@@ -186,4 +165,25 @@ public interface PostalAddress extends ContactPoint {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addPostalCode(Text postalCode);
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getStreetAddressList();
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    Text getStreetAddress();
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @param streetAddress Text value to set.
+     */
+    void addStreetAddress(Text streetAddress);
 }

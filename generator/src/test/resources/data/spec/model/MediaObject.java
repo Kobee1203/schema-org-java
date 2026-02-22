@@ -6,22 +6,22 @@
 package spec.model;
 
 import java.util.List;
-import spec.model.Duration;
-import spec.model.QuantitativeValue;
-import spec.model.NewsArticle;
-import spec.model.Distance;
-import spec.model.datatype.DateTime;
-import spec.model.datatype.Time;
-import spec.model.datatype.Text;
-import spec.model.datatype.Date;
-import spec.model.GeoShape;
-import spec.model.Place;
-import spec.model.datatype.URL;
-import spec.model.datatype.Boolean;
-import spec.model.MediaSubscription;
-import spec.model.Organization;
-import spec.model.CreativeWork;
 import spec.model.Claim;
+import spec.model.CreativeWork;
+import spec.model.Distance;
+import spec.model.Duration;
+import spec.model.GeoShape;
+import spec.model.MediaSubscription;
+import spec.model.NewsArticle;
+import spec.model.Organization;
+import spec.model.Place;
+import spec.model.QuantitativeValue;
+import spec.model.datatype.Boolean;
+import spec.model.datatype.Date;
+import spec.model.datatype.DateTime;
+import spec.model.datatype.Text;
+import spec.model.datatype.Time;
+import spec.model.datatype.URL;
 
 /**
  * A media object, such as an image, video, audio, or text object embedded in a web page or a downloadable dataset i.e. DataDownload. Note that a creative work may have many media objects associated with it on the same web page. For example, a page about a single song (MusicRecording) may have a music video (VideoObject), and a high and low bandwidth audio stream (2 AudioObject's).
@@ -29,6 +29,90 @@ import spec.model.Claim;
  * @see <a href="https://schema.org/MediaObject">https://schema.org/MediaObject</a>
  */
 public interface MediaObject extends CreativeWork {
+
+    /**
+     * A NewsArticle associated with the Media Object.
+     *
+     * @return {@link NewsArticle}
+     */
+    List<NewsArticle> getAssociatedArticleList();
+
+    /**
+     * A NewsArticle associated with the Media Object.
+     *
+     * @return {@link NewsArticle}
+     */
+    NewsArticle getAssociatedArticle();
+
+    /**
+     * A NewsArticle associated with the Media Object.
+     *
+     * @param associatedArticle NewsArticle value to set.
+     */
+    void addAssociatedArticle(NewsArticle associatedArticle);
+
+    /**
+     * The bitrate of the media object.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getBitrateList();
+
+    /**
+     * The bitrate of the media object.
+     *
+     * @return {@link Text}
+     */
+    Text getBitrate();
+
+    /**
+     * The bitrate of the media object.
+     *
+     * @param bitrate Text value to set.
+     */
+    void addBitrate(Text bitrate);
+
+    /**
+     * File size in (mega/kilo)bytes.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getContentSizeList();
+
+    /**
+     * File size in (mega/kilo)bytes.
+     *
+     * @return {@link Text}
+     */
+    Text getContentSize();
+
+    /**
+     * File size in (mega/kilo)bytes.
+     *
+     * @param contentSize Text value to set.
+     */
+    void addContentSize(Text contentSize);
+
+    /**
+     * Actual bytes of the media object, for example the image file or video file.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getContentUrlList();
+
+    /**
+     * Actual bytes of the media object, for example the image file or video file.
+     *
+     * @return {@link URL}
+     */
+    URL getContentUrl();
+
+    /**
+     * Actual bytes of the media object, for example the image file or video file.
+     *
+     * @param contentUrl URL value to set.
+     */
+    void addContentUrl(URL contentUrl);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -70,25 +154,120 @@ public interface MediaObject extends CreativeWork {
     void addDuration(QuantitativeValue duration);
 
     /**
-     * A NewsArticle associated with the Media Object.
+     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
      *
-     * @return {@link NewsArticle}
+     * @return {@link URL}
      */
-    List<NewsArticle> getAssociatedArticleList();
+    List<URL> getEmbedUrlList();
 
     /**
-     * A NewsArticle associated with the Media Object.
+     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
      *
-     * @return {@link NewsArticle}
+     * @return {@link URL}
      */
-    NewsArticle getAssociatedArticle();
+    URL getEmbedUrl();
 
     /**
-     * A NewsArticle associated with the Media Object.
+     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
      *
-     * @param associatedArticle NewsArticle value to set.
+     * @param embedUrl URL value to set.
      */
-    void addAssociatedArticle(NewsArticle associatedArticle);
+    void addEmbedUrl(URL embedUrl);
+
+    /**
+     * The CreativeWork encoded by this media object.
+     *
+     * @return {@link CreativeWork}
+     */
+    List<CreativeWork> getEncodesCreativeWorkList();
+
+    /**
+     * The CreativeWork encoded by this media object.
+     *
+     * @return {@link CreativeWork}
+     */
+    CreativeWork getEncodesCreativeWork();
+
+    /**
+     * The CreativeWork encoded by this media object.
+     *
+     * @param encodesCreativeWork CreativeWork value to set.
+     */
+    void addEncodesCreativeWork(CreativeWork encodesCreativeWork);
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> List<T> getEncodingFormatList();
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    <T> T getEncodingFormat();
+
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param encodingFormat URL value to set.
+     */
+    void addEncodingFormat(URL encodingFormat);
+    /**
+     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
+     * 
+     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
+     * 
+     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     *
+     * @param encodingFormat Text value to set.
+     */
+    void addEncodingFormat(Text encodingFormat);
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> List<T> getEndTimeList();
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    <T> T getEndTime();
+
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addEndTime(DateTime endTime);
+    /**
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    void addEndTime(Time endTime);
 
     /**
      * The height of the item.
@@ -120,112 +299,6 @@ public interface MediaObject extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addHeight(Distance height);
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    <T> List<T> getStartTimeList();
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    <T> T getStartTime();
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addStartTime(DateTime startTime);
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    void addStartTime(Time startTime);
-
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getPlayerTypeList();
-
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @return {@link Text}
-     */
-    Text getPlayerType();
-
-    /**
-     * Player type required&#x2014;for example, Flash or Silverlight.
-     *
-     * @param playerType Text value to set.
-     */
-    void addPlayerType(Text playerType);
-
-    /**
-     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    List<Text> getSha256List();
-
-    /**
-     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    Text getSha256();
-
-    /**
-     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
-     *
-     * @param sha256 Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addSha256(Text sha256);
-
-    /**
-     * Date (including time if available) when this media object was uploaded to this site.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getUploadDateList();
-
-    /**
-     * Date (including time if available) when this media object was uploaded to this site.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getUploadDate();
-
-    /**
-     * Date (including time if available) when this media object was uploaded to this site.
-     *
-     * @param uploadDate DateTime value to set.
-     */
-    void addUploadDate(DateTime uploadDate);
-    /**
-     * Date (including time if available) when this media object was uploaded to this site.
-     *
-     * @param uploadDate Date value to set.
-     */
-    void addUploadDate(Date uploadDate);
 
     /**
      * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.<br/><br/>See also [[eligibleRegion]].
@@ -276,89 +349,73 @@ public interface MediaObject extends CreativeWork {
     void addIneligibleRegion(Place ineligibleRegion);
 
     /**
-     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @return {@link URL}
+     * @return {@link Claim}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    List<URL> getEmbedUrlList();
+    List<Claim> getInterpretedAsClaimList();
 
     /**
-     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @return {@link URL}
+     * @return {@link Claim}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    URL getEmbedUrl();
+    Claim getInterpretedAsClaim();
 
     /**
-     * A URL pointing to a player for a specific video. In general, this is the information in the ```src``` element of an ```embed``` tag and should not be the same as the content of the ```loc``` tag.
+     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
      *
-     * @param embedUrl URL value to set.
+     * @param interpretedAsClaim Claim value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void addEmbedUrl(URL embedUrl);
+    void addInterpretedAsClaim(Claim interpretedAsClaim);
 
     /**
-     * File size in (mega/kilo)bytes.
+     * Player type required&#x2014;for example, Flash or Silverlight.
      *
      * @return {@link Text}
      */
-    List<Text> getContentSizeList();
+    List<Text> getPlayerTypeList();
 
     /**
-     * File size in (mega/kilo)bytes.
+     * Player type required&#x2014;for example, Flash or Silverlight.
      *
      * @return {@link Text}
      */
-    Text getContentSize();
+    Text getPlayerType();
 
     /**
-     * File size in (mega/kilo)bytes.
+     * Player type required&#x2014;for example, Flash or Silverlight.
      *
-     * @param contentSize Text value to set.
+     * @param playerType Text value to set.
      */
-    void addContentSize(Text contentSize);
+    void addPlayerType(Text playerType);
 
     /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Organization}
      */
-    <T> List<T> getEncodingFormatList();
+    List<Organization> getProductionCompanyList();
 
     /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Organization}
      */
-    <T> T getEncodingFormat();
+    Organization getProductionCompany();
 
     /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
      *
-     * @param encodingFormat URL value to set.
+     * @param productionCompany Organization value to set.
      */
-    void addEncodingFormat(URL encodingFormat);
-    /**
-     * Media type typically expressed using a MIME format (see [IANA site](http://www.iana.org/assignments/media-types/media-types.xhtml) and [MDN reference](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types)), e.g. application/zip for a SoftwareApplication binary, audio/mpeg for .mp3 etc.
-     * 
-     * In cases where a [[CreativeWork]] has several media type representations, [[encoding]] can be used to indicate each [[MediaObject]] alongside particular [[encodingFormat]] information.
-     * 
-     * Unregistered or niche encoding and file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia/Wikidata entry.
-     *
-     * @param encodingFormat Text value to set.
-     */
-    void addEncodingFormat(Text encodingFormat);
+    void addProductionCompany(Organization productionCompany);
 
     /**
      * The regions where the media is allowed. If not specified, then it's assumed to be allowed everywhere. Specify the countries in [ISO 3166 format](http://en.wikipedia.org/wiki/ISO_3166).
@@ -413,77 +470,89 @@ public interface MediaObject extends CreativeWork {
     void addRequiresSubscription(MediaSubscription requiresSubscription);
 
     /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
      *
-     * @return {@link Organization}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    List<Organization> getProductionCompanyList();
+    List<Text> getSha256List();
 
     /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
      *
-     * @return {@link Organization}
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    Organization getProductionCompany();
+    Text getSha256();
 
     /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     * The [SHA-2](https://en.wikipedia.org/wiki/SHA-2) SHA256 hash of the content of the item. For example, a zero-length input has value 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'.
      *
-     * @param productionCompany Organization value to set.
+     * @param sha256 Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
-    void addProductionCompany(Organization productionCompany);
+    void addSha256(Text sha256);
 
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @return {@link DateTime} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    <T> List<T> getEndTimeList();
+    <T> List<T> getStartTimeList();
 
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
      * @return {@link DateTime} or {@link Time}
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    <T> T getEndTime();
+    <T> T getStartTime();
 
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param endTime DateTime value to set.
+     * @param startTime DateTime value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void addEndTime(DateTime endTime);
+    void addStartTime(DateTime startTime);
     /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param endTime Time value to set.
+     * @param startTime Time value to set.
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
-    void addEndTime(Time endTime);
+    void addStartTime(Time startTime);
 
     /**
-     * The CreativeWork encoded by this media object.
+     * Date (including time if available) when this media object was uploaded to this site.
      *
-     * @return {@link CreativeWork}
+     * @return {@link DateTime} or {@link Date}
      */
-    List<CreativeWork> getEncodesCreativeWorkList();
+    <T> List<T> getUploadDateList();
 
     /**
-     * The CreativeWork encoded by this media object.
+     * Date (including time if available) when this media object was uploaded to this site.
      *
-     * @return {@link CreativeWork}
+     * @return {@link DateTime} or {@link Date}
      */
-    CreativeWork getEncodesCreativeWork();
+    <T> T getUploadDate();
 
     /**
-     * The CreativeWork encoded by this media object.
+     * Date (including time if available) when this media object was uploaded to this site.
      *
-     * @param encodesCreativeWork CreativeWork value to set.
+     * @param uploadDate DateTime value to set.
      */
-    void addEncodesCreativeWork(CreativeWork encodesCreativeWork);
+    void addUploadDate(DateTime uploadDate);
+    /**
+     * Date (including time if available) when this media object was uploaded to this site.
+     *
+     * @param uploadDate Date value to set.
+     */
+    void addUploadDate(Date uploadDate);
 
     /**
      * The width of the item.
@@ -515,73 +584,4 @@ public interface MediaObject extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addWidth(Distance width);
-
-    /**
-     * The bitrate of the media object.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getBitrateList();
-
-    /**
-     * The bitrate of the media object.
-     *
-     * @return {@link Text}
-     */
-    Text getBitrate();
-
-    /**
-     * The bitrate of the media object.
-     *
-     * @param bitrate Text value to set.
-     */
-    void addBitrate(Text bitrate);
-
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getContentUrlList();
-
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @return {@link URL}
-     */
-    URL getContentUrl();
-
-    /**
-     * Actual bytes of the media object, for example the image file or video file.
-     *
-     * @param contentUrl URL value to set.
-     */
-    void addContentUrl(URL contentUrl);
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    List<Claim> getInterpretedAsClaimList();
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @return {@link Claim}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    Claim getInterpretedAsClaim();
-
-    /**
-     * Used to indicate a specific claim contained, implied, translated or refined from the content of a [[MediaObject]] or other [[CreativeWork]]. The interpreting party can be indicated using [[claimInterpreter]].
-     *
-     * @param interpretedAsClaim Claim value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
-     */
-    void addInterpretedAsClaim(Claim interpretedAsClaim);
 }

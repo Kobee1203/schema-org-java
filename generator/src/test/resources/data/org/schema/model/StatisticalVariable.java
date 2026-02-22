@@ -6,14 +6,14 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.Property;
-import org.schema.model.datatype.URL;
-import org.schema.model.MeasurementMethodEnum;
-import org.schema.model.DefinedTerm;
 import org.schema.model.Class;
-import org.schema.model.StatisticalVariable;
+import org.schema.model.DefinedTerm;
 import org.schema.model.Enumeration;
+import org.schema.model.MeasurementMethodEnum;
+import org.schema.model.Property;
+import org.schema.model.StatisticalVariable;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * [[StatisticalVariable]] represents any type of statistical metric that can be measured at a place and time. The usage pattern for [[StatisticalVariable]] is typically expressed using [[Observation]] with an explicit [[populationType]], which is a type, typically drawn from Schema.org. Each [[StatisticalVariable]] is marked as a [[ConstraintNode]], meaning that some properties (those listed using [[constraintProperty]]) serve in this setting solely to define the statistical variable rather than literally describe a specific person, place or thing. For example, a [[StatisticalVariable]] Median_Height_Person_Female representing the median height of women, could be written as follows: the population type is [[Person]]; the measuredProperty [[height]]; the [[statType]] [[median]]; the [[gender]] [[Female]]. It is important to note that there are many kinds of scientific quantitative observation which are not fully, perfectly or unambiguously described following this pattern, or with solely Schema.org terminology. The approach taken here is designed to allow partial, incremental or minimal description of [[StatisticalVariable]]s, and the use of detailed sets of entity and property IDs from external repositories. The [[measurementMethod]], [[unitCode]] and [[unitText]] properties can also be used to clarify the specific nature and notation of an observed measurement. 
@@ -25,47 +25,136 @@ import org.schema.model.Enumeration;
 public interface StatisticalVariable extends ConstraintNode {
 
     /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
-     * @return {@link Text} or {@link Property} or {@link URL}
+     * @return {@link Property}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    <T> List<T> getStatTypeList();
+    List<Property> getMeasuredPropertyList();
 
     /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
-     * @return {@link Text} or {@link Property} or {@link URL}
+     * @return {@link Property}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    <T> T getStatType();
+    Property getMeasuredProperty();
 
     /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
+     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
      *
-     * @param statType Text value to set.
+     * @param measuredProperty Property value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
      */
-    void addStatType(Text statType);
+    void addMeasuredProperty(Property measuredProperty);
+
     /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
      *
-     * @param statType Property value to set.
+     * @return {@link StatisticalVariable}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    void addStatType(Property statType);
+    List<StatisticalVariable> getMeasurementDenominatorList();
+
     /**
-     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
      *
-     * @param statType URL value to set.
+     * @return {@link StatisticalVariable}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    void addStatType(URL statType);
+    StatisticalVariable getMeasurementDenominator();
+
+    /**
+     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     *
+     * @param measurementDenominator StatisticalVariable value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    void addMeasurementDenominator(StatisticalVariable measurementDenominator);
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> List<T> getMeasurementMethodList();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> T getMeasurementMethod();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(Text measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod MeasurementMethodEnum value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(DefinedTerm measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(URL measurementMethod);
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @return {@link Enumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    List<Enumeration> getMeasurementQualifierList();
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @return {@link Enumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    Enumeration getMeasurementQualifier();
+
+    /**
+     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     *
+     * @param measurementQualifier Enumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
+     */
+    void addMeasurementQualifier(Enumeration measurementQualifier);
 
     /**
      * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
@@ -182,134 +271,45 @@ public interface StatisticalVariable extends ConstraintNode {
     void addPopulationType(Class populationType);
 
     /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
      *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> List<T> getMeasurementMethodList();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> T getMeasurementMethod();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(Text measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod MeasurementMethodEnum value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(DefinedTerm measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(URL measurementMethod);
-
-    /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
-     *
-     * @return {@link StatisticalVariable}
+     * @return {@link Text} or {@link Property} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    List<StatisticalVariable> getMeasurementDenominatorList();
+    <T> List<T> getStatTypeList();
 
     /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
      *
-     * @return {@link StatisticalVariable}
+     * @return {@link Text} or {@link Property} or {@link URL}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    StatisticalVariable getMeasurementDenominator();
+    <T> T getStatType();
 
     /**
-     * Identifies the denominator variable when an observation represents a ratio or percentage.
+     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
      *
-     * @param measurementDenominator StatisticalVariable value to set.
+     * @param statType Text value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    void addMeasurementDenominator(StatisticalVariable measurementDenominator);
-
+    void addStatType(Text statType);
     /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
      *
-     * @return {@link Enumeration}
+     * @param statType Property value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    List<Enumeration> getMeasurementQualifierList();
-
+    void addStatType(Property statType);
     /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
+     * Indicates the kind of statistic represented by a [[StatisticalVariable]], e.g. mean, count etc. The value of statType is a property, either from within Schema.org (e.g. [[median]], [[marginOfError]], [[maxValue]], [[minValue]]) or from other compatible (e.g. RDF) systems such as DataCommons.org or Wikidata.org. 
      *
-     * @return {@link Enumeration}
+     * @param statType URL value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
      */
-    Enumeration getMeasurementQualifier();
-
-    /**
-     * Provides additional qualification to an observation. For example, a GDP observation measures the Nominal value.
-     *
-     * @param measurementQualifier Enumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2564">https://github.com/schemaorg/schemaorg/issues/2564</a>
-     */
-    void addMeasurementQualifier(Enumeration measurementQualifier);
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @return {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    List<Property> getMeasuredPropertyList();
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @return {@link Property}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    Property getMeasuredProperty();
-
-    /**
-     * The measuredProperty of an [[Observation]], typically via its [[StatisticalVariable]]. There are various kinds of applicable [[Property]]: a schema.org property, a property from other RDF-compatible systems, e.g. W3C RDF Data Cube, Data Commons, Wikidata, or schema.org extensions such as [GS1's](https://www.gs1.org/voc/?show=properties).
-     *
-     * @param measuredProperty Property value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2291">https://github.com/schemaorg/schemaorg/issues/2291</a>
-     */
-    void addMeasuredProperty(Property measuredProperty);
+    void addStatType(URL statType);
 }

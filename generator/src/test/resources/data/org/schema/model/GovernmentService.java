@@ -7,8 +7,8 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.AdministrativeArea;
-import org.schema.model.datatype.Text;
 import org.schema.model.Organization;
+import org.schema.model.datatype.Text;
 
 /**
  * A service provided by a government organization, e.g. food stamps, veterans benefits, etc.

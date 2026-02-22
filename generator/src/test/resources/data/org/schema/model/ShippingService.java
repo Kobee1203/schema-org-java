@@ -6,11 +6,11 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.ServicePeriod;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.ShippingConditions;
-import org.schema.model.MemberProgramTier;
 import org.schema.model.FulfillmentTypeEnumeration;
+import org.schema.model.MemberProgramTier;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.ServicePeriod;
+import org.schema.model.ShippingConditions;
 
 /**
  * ShippingService represents the criteria used to determine if and how an offer could be shipped to a customer.
@@ -20,6 +20,33 @@ import org.schema.model.FulfillmentTypeEnumeration;
  * @see <a href="https://schema.org/ShippingService">https://schema.org/ShippingService</a>
  */
 public interface ShippingService extends StructuredValue {
+
+    /**
+     * Type of fulfillment applicable to the [[ShippingService]].
+     *
+     * @return {@link FulfillmentTypeEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    List<FulfillmentTypeEnumeration> getFulfillmentTypeList();
+
+    /**
+     * Type of fulfillment applicable to the [[ShippingService]].
+     *
+     * @return {@link FulfillmentTypeEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    FulfillmentTypeEnumeration getFulfillmentType();
+
+    /**
+     * Type of fulfillment applicable to the [[ShippingService]].
+     *
+     * @param fulfillmentType FulfillmentTypeEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addFulfillmentType(FulfillmentTypeEnumeration fulfillmentType);
 
     /**
      * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
@@ -128,31 +155,4 @@ public interface ShippingService extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3563">https://github.com/schemaorg/schemaorg/issues/3563</a>
      */
     void addValidForMemberTier(MemberProgramTier validForMemberTier);
-
-    /**
-     * Type of fulfillment applicable to the [[ShippingService]].
-     *
-     * @return {@link FulfillmentTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    List<FulfillmentTypeEnumeration> getFulfillmentTypeList();
-
-    /**
-     * Type of fulfillment applicable to the [[ShippingService]].
-     *
-     * @return {@link FulfillmentTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    FulfillmentTypeEnumeration getFulfillmentType();
-
-    /**
-     * Type of fulfillment applicable to the [[ShippingService]].
-     *
-     * @param fulfillmentType FulfillmentTypeEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    void addFulfillmentType(FulfillmentTypeEnumeration fulfillmentType);
 }

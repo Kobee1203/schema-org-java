@@ -18,33 +18,6 @@ import org.schema.model.datatype.Text;
 public interface Car extends Vehicle {
 
     /**
-     * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getRoofLoadList();
-
-    /**
-     * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getRoofLoad();
-
-    /**
-     * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param roofLoad QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addRoofLoad(QuantitativeValue roofLoad);
-
-    /**
      * The ACRISS Car Classification Code is a code used by many car rental companies, for classifying vehicles. ACRISS stands for Association of Car Rental Industry Systems and Standards.
      *
      * @return {@link Text}
@@ -70,4 +43,31 @@ public interface Car extends Vehicle {
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addAcrissCode(Text acrissCode);
+
+    /**
+     * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getRoofLoadList();
+
+    /**
+     * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getRoofLoad();
+
+    /**
+     * The permitted total weight of cargo and installations (e.g. a roof rack) on top of the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]]<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @param roofLoad QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addRoofLoad(QuantitativeValue roofLoad);
 }

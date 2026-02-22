@@ -6,16 +6,16 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.Text;
-import org.schema.model.QuantitativeValue;
-import org.schema.model.datatype.Number;
-import org.schema.model.QualitativeValue;
-import org.schema.model.datatype.URL;
-import org.schema.model.SteeringPositionValue;
 import org.schema.model.CarUsageType;
-import org.schema.model.datatype.Date;
-import org.schema.model.EngineSpecification;
 import org.schema.model.DriveWheelConfigurationValue;
+import org.schema.model.EngineSpecification;
+import org.schema.model.QualitativeValue;
+import org.schema.model.QuantitativeValue;
+import org.schema.model.SteeringPositionValue;
+import org.schema.model.datatype.Date;
+import org.schema.model.datatype.Number;
+import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.
@@ -23,252 +23,6 @@ import org.schema.model.DriveWheelConfigurationValue;
  * @see <a href="https://schema.org/Vehicle">https://schema.org/Vehicle</a>
  */
 public interface Vehicle extends Product {
-
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Text> getVehicleConfigurationList();
-
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Text getVehicleConfiguration();
-
-    /**
-     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
-     *
-     * @param vehicleConfiguration Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleConfiguration(Text vehicleConfiguration);
-
-    /**
-     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getWeightTotalList();
-
-    /**
-     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getWeightTotal();
-
-    /**
-     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param weightTotal QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addWeightTotal(QuantitativeValue weightTotal);
-
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getNumberOfForwardGearsList();
-
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link Number} or {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getNumberOfForwardGears();
-
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfForwardGears Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfForwardGears(Number numberOfForwardGears);
-    /**
-     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfForwardGears QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears);
-
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getVehicleTransmissionList();
-
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getVehicleTransmission();
-
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param vehicleTransmission Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleTransmission(Text vehicleTransmission);
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param vehicleTransmission QualitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleTransmission(QualitativeValue vehicleTransmission);
-    /**
-     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
-     *
-     * @param vehicleTransmission URL value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleTransmission(URL vehicleTransmission);
-
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Text> getKnownVehicleDamagesList();
-
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Text getKnownVehicleDamages();
-
-    /**
-     * A textual description of known damages, both repaired and unrepaired.
-     *
-     * @param knownVehicleDamages Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addKnownVehicleDamages(Text knownVehicleDamages);
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @return {@link SteeringPositionValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<SteeringPositionValue> getSteeringPositionList();
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @return {@link SteeringPositionValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    SteeringPositionValue getSteeringPosition();
-
-    /**
-     * The position of the steering wheel or similar device (mostly for cars).
-     *
-     * @param steeringPosition SteeringPositionValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addSteeringPosition(SteeringPositionValue steeringPosition);
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @return {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Number> getEmissionsCO2List();
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @return {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Number getEmissionsCO2();
-
-    /**
-     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
-     *
-     * @param emissionsCO2 Number value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addEmissionsCO2(Number emissionsCO2);
-
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Text> getVehicleInteriorTypeList();
-
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Text getVehicleInteriorType();
-
-    /**
-     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
-     *
-     * @param vehicleInteriorType Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleInteriorType(Text vehicleInteriorType);
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getPayloadList();
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getPayload();
-
-    /**
-     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param payload QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addPayload(QuantitativeValue payload);
 
     /**
      * The time needed to accelerate the vehicle from a given start velocity to a given target velocity.<br/><br/>Typical unit code(s): SEC for seconds<br/><br/>* Note: There are unfortunately no standard unit codes for seconds/0..100 km/h or seconds/0..60 mph. Simply use "SEC" for seconds and indicate the velocities in the [[name]] of the [[QuantitativeValue]], or use [[valueReference]] with a [[QuantitativeValue]] of 0..60 mph or 0..100 km/h to specify the reference speeds.
@@ -296,443 +50,6 @@ public interface Vehicle extends Product {
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addAccelerationTime(QuantitativeValue accelerationTime);
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getMeetsEmissionStandardList();
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getMeetsEmissionStandard();
-
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param meetsEmissionStandard Text value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addMeetsEmissionStandard(Text meetsEmissionStandard);
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param meetsEmissionStandard QualitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard);
-    /**
-     * Indicates that the vehicle meets the respective emission standard.
-     *
-     * @param meetsEmissionStandard URL value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addMeetsEmissionStandard(URL meetsEmissionStandard);
-
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getSeatingCapacityList();
-
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getSeatingCapacity();
-
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param seatingCapacity QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addSeatingCapacity(QuantitativeValue seatingCapacity);
-    /**
-     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param seatingCapacity Number value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addSeatingCapacity(Number seatingCapacity);
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getNumberOfDoorsList();
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getNumberOfDoors();
-
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfDoors QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfDoors(QuantitativeValue numberOfDoors);
-    /**
-     * The number of doors.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfDoors Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfDoors(Number numberOfDoors);
-
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @return {@link Text} or {@link CarUsageType}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getVehicleSpecialUsageList();
-
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @return {@link Text} or {@link CarUsageType}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getVehicleSpecialUsage();
-
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @param vehicleSpecialUsage Text value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleSpecialUsage(Text vehicleSpecialUsage);
-    /**
-     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
-     *
-     * @param vehicleSpecialUsage CarUsageType value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage);
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getVehicleSeatingCapacityList();
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getVehicleSeatingCapacity();
-
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param vehicleSeatingCapacity QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity);
-    /**
-     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
-     *
-     * @param vehicleSeatingCapacity Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleSeatingCapacity(Number vehicleSeatingCapacity);
-
-    /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getMileageFromOdometerList();
-
-    /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getMileageFromOdometer();
-
-    /**
-     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
-     *
-     * @param mileageFromOdometer QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addMileageFromOdometer(QuantitativeValue mileageFromOdometer);
-
-    /**
-     * The date the item, e.g. vehicle, was purchased by the current owner.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Date> getPurchaseDateList();
-
-    /**
-     * The date the item, e.g. vehicle, was purchased by the current owner.
-     *
-     * @return {@link Date}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Date getPurchaseDate();
-
-    /**
-     * The date the item, e.g. vehicle, was purchased by the current owner.
-     *
-     * @param purchaseDate Date value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addPurchaseDate(Date purchaseDate);
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getFuelCapacityList();
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getFuelCapacity();
-
-    /**
-     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
-     *
-     * @param fuelCapacity QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addFuelCapacity(QuantitativeValue fuelCapacity);
-
-    /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getTrailerWeightList();
-
-    /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getTrailerWeight();
-
-    /**
-     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param trailerWeight QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addTrailerWeight(QuantitativeValue trailerWeight);
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Date> getModelDateList();
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @return {@link Date}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Date getModelDate();
-
-    /**
-     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
-     *
-     * @param modelDate Date value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addModelDate(Date modelDate);
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getTongueWeightList();
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getTongueWeight();
-
-    /**
-     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
-     *
-     * @param tongueWeight QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addTongueWeight(QuantitativeValue tongueWeight);
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<Text> getVehicleIdentificationNumberList();
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    Text getVehicleIdentificationNumber();
-
-    /**
-     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
-     *
-     * @param vehicleIdentificationNumber Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleIdentificationNumber(Text vehicleIdentificationNumber);
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> List<T> getNumberOfPreviousOwnersList();
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @return {@link QuantitativeValue} or {@link Number}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    <T> T getNumberOfPreviousOwners();
-
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfPreviousOwners QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners);
-    /**
-     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
-     *
-     * @param numberOfPreviousOwners Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfPreviousOwners(Number numberOfPreviousOwners);
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getWheelbaseList();
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getWheelbase();
-
-    /**
-     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
-     *
-     * @param wheelbase QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addWheelbase(QuantitativeValue wheelbase);
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @return {@link EngineSpecification}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<EngineSpecification> getVehicleEngineList();
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @return {@link EngineSpecification}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    EngineSpecification getVehicleEngine();
-
-    /**
-     * Information about the engine or engines of the vehicle.
-     *
-     * @param vehicleEngine EngineSpecification value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addVehicleEngine(EngineSpecification vehicleEngine);
 
     /**
      * Indicates the design and body style of the vehicle (e.g. station wagon, hatchback, etc.).
@@ -778,35 +95,31 @@ public interface Vehicle extends Product {
     void addBodyType(URL bodyType);
 
     /**
-     * The number or type of airbags in the vehicle.
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
-     * @return {@link Number} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
-    <T> List<T> getNumberOfAirbagsList();
+    List<Text> getCallSignList();
 
     /**
-     * The number or type of airbags in the vehicle.
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
-     * @return {@link Number} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
-    <T> T getNumberOfAirbags();
+    Text getCallSign();
 
     /**
-     * The number or type of airbags in the vehicle.
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
      *
-     * @param numberOfAirbags Number value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     * @param callSign Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
      */
-    void addNumberOfAirbags(Number numberOfAirbags);
-    /**
-     * The number or type of airbags in the vehicle.
-     *
-     * @param numberOfAirbags Text value to set.
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addNumberOfAirbags(Text numberOfAirbags);
+    void addCallSign(Text callSign);
 
     /**
      * The available volume for cargo or luggage. For automobiles, this is usually the trunk volume.<br/><br/>Typical unit code(s): LTR for liters, FTQ for cubic foot/feet<br/><br/>Note: You can use [[minValue]] and [[maxValue]] to indicate ranges.
@@ -833,28 +146,113 @@ public interface Vehicle extends Product {
     void addCargoVolume(QuantitativeValue cargoVolume);
 
     /**
-     * The date of production of the item, e.g. vehicle.
+     * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @return {@link Date}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    List<Date> getProductionDateList();
+    List<Date> getDateVehicleFirstRegisteredList();
 
     /**
-     * The date of production of the item, e.g. vehicle.
+     * The date of the first registration of the vehicle with the respective public authorities.
      *
      * @return {@link Date}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    Date getProductionDate();
+    Date getDateVehicleFirstRegistered();
 
     /**
-     * The date of production of the item, e.g. vehicle.
+     * The date of the first registration of the vehicle with the respective public authorities.
      *
-     * @param productionDate Date value to set.
+     * @param dateVehicleFirstRegistered Date value to set.
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addProductionDate(Date productionDate);
+    void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered);
+
+    /**
+     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     *
+     * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getDriveWheelConfigurationList();
+
+    /**
+     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     *
+     * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getDriveWheelConfiguration();
+
+    /**
+     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     *
+     * @param driveWheelConfiguration Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addDriveWheelConfiguration(Text driveWheelConfiguration);
+    /**
+     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     *
+     * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration);
+
+    /**
+     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+     *
+     * @return {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Number> getEmissionsCO2List();
+
+    /**
+     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+     *
+     * @return {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Number getEmissionsCO2();
+
+    /**
+     * The CO2 emissions in g/km. When used in combination with a QuantitativeValue, put "g/km" into the unitText property of that value, since there is no UN/CEFACT Common Code for "g/km".
+     *
+     * @param emissionsCO2 Number value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addEmissionsCO2(Number emissionsCO2);
+
+    /**
+     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getFuelCapacityList();
+
+    /**
+     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getFuelCapacity();
+
+    /**
+     * The capacity of the fuel tank or in the case of electric cars, the battery. If there are multiple components for storage, this should indicate the total of all storage of the same type.<br/><br/>Typical unit code(s): LTR for liters, GLL of US gallons, GLI for UK / imperial gallons, AMH for ampere-hours (for electrical vehicles).
+     *
+     * @param fuelCapacity QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addFuelCapacity(QuantitativeValue fuelCapacity);
 
     /**
      * The amount of fuel consumed for traveling a particular distance or temporal duration with the given vehicle (e.g. liters per 100 km).<br/><br/>* Note 1: There are unfortunately no standard unit codes for liters per 100 km.  Use [[unitText]] to indicate the unit of measurement, e.g. L/100 km.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel consumption to another value.
@@ -881,28 +279,28 @@ public interface Vehicle extends Product {
     void addFuelConsumption(QuantitativeValue fuelConsumption);
 
     /**
-     * The date of the first registration of the vehicle with the respective public authorities.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
-     * @return {@link Date}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    List<Date> getDateVehicleFirstRegisteredList();
+    List<QuantitativeValue> getFuelEfficiencyList();
 
     /**
-     * The date of the first registration of the vehicle with the respective public authorities.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
-     * @return {@link Date}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    Date getDateVehicleFirstRegistered();
+    QuantitativeValue getFuelEfficiency();
 
     /**
-     * The date of the first registration of the vehicle with the respective public authorities.
+     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
      *
-     * @param dateVehicleFirstRegistered Date value to set.
+     * @param fuelEfficiency QuantitativeValue value to set.
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addDateVehicleFirstRegistered(Date dateVehicleFirstRegistered);
+    void addFuelEfficiency(QuantitativeValue fuelEfficiency);
 
     /**
      * The type of fuel suitable for the engine or engines of the vehicle. If the vehicle has only one engine, this property can be attached directly to the vehicle.
@@ -943,161 +341,153 @@ public interface Vehicle extends Product {
     void addFuelType(QualitativeValue fuelType);
 
     /**
-     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    List<QuantitativeValue> getSpeedList();
-
-    /**
-     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    QuantitativeValue getSpeed();
-
-    /**
-     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
-     *
-     * @param speed QuantitativeValue value to set.
-     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
-     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
-     */
-    void addSpeed(QuantitativeValue speed);
-
-    /**
-     * The color or color combination of the interior of the vehicle.
+     * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    List<Text> getVehicleInteriorColorList();
+    List<Text> getKnownVehicleDamagesList();
 
     /**
-     * The color or color combination of the interior of the vehicle.
+     * A textual description of known damages, both repaired and unrepaired.
      *
      * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    Text getVehicleInteriorColor();
+    Text getKnownVehicleDamages();
 
     /**
-     * The color or color combination of the interior of the vehicle.
+     * A textual description of known damages, both repaired and unrepaired.
      *
-     * @param vehicleInteriorColor Text value to set.
+     * @param knownVehicleDamages Text value to set.
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addVehicleInteriorColor(Text vehicleInteriorColor);
+    void addKnownVehicleDamages(Text knownVehicleDamages);
 
     /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getMeetsEmissionStandardList();
+
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getMeetsEmissionStandard();
+
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @param meetsEmissionStandard Text value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addMeetsEmissionStandard(Text meetsEmissionStandard);
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @param meetsEmissionStandard QualitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addMeetsEmissionStandard(QualitativeValue meetsEmissionStandard);
+    /**
+     * Indicates that the vehicle meets the respective emission standard.
+     *
+     * @param meetsEmissionStandard URL value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addMeetsEmissionStandard(URL meetsEmissionStandard);
+
+    /**
+     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    List<QuantitativeValue> getFuelEfficiencyList();
+    List<QuantitativeValue> getMileageFromOdometerList();
 
     /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
      * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    QuantitativeValue getFuelEfficiency();
+    QuantitativeValue getMileageFromOdometer();
 
     /**
-     * The distance traveled per unit of fuel used; most commonly miles per gallon (mpg) or kilometers per liter (km/L).<br/><br/>* Note 1: There are unfortunately no standard unit codes for miles per gallon or kilometers per liter. Use [[unitText]] to indicate the unit of measurement, e.g. mpg or km/L.<br/>* Note 2: There are two ways of indicating the fuel consumption, [[fuelConsumption]] (e.g. 8 liters per 100 km) and [[fuelEfficiency]] (e.g. 30 miles per gallon). They are reciprocal.<br/>* Note 3: Often, the absolute value is useful only when related to driving speed ("at 80 km/h") or usage pattern ("city traffic"). You can use [[valueReference]] to link the value for the fuel economy to another value.
+     * The total distance travelled by the particular vehicle since its initial production, as read from its odometer.<br/><br/>Typical unit code(s): KMT for kilometers, SMI for statute miles.
      *
-     * @param fuelEfficiency QuantitativeValue value to set.
+     * @param mileageFromOdometer QuantitativeValue value to set.
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addFuelEfficiency(QuantitativeValue fuelEfficiency);
+    void addMileageFromOdometer(QuantitativeValue mileageFromOdometer);
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @return {@link Date}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    List<Date> getVehicleModelDateList();
+    List<Date> getModelDateList();
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
      * @return {@link Date}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    Date getVehicleModelDate();
+    Date getModelDate();
 
     /**
      * The release date of a vehicle model (often used to differentiate versions of the same make and model).
      *
-     * @param vehicleModelDate Date value to set.
+     * @param modelDate Date value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addVehicleModelDate(Date vehicleModelDate);
+    void addModelDate(Date modelDate);
 
     /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     * The number or type of airbags in the vehicle.
      *
-     * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @return {@link Number} or {@link Text}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    <T> List<T> getDriveWheelConfigurationList();
+    <T> List<T> getNumberOfAirbagsList();
 
     /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     * The number or type of airbags in the vehicle.
      *
-     * @return {@link Text} or {@link DriveWheelConfigurationValue}
+     * @return {@link Number} or {@link Text}
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    <T> T getDriveWheelConfiguration();
+    <T> T getNumberOfAirbags();
 
     /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     * The number or type of airbags in the vehicle.
      *
-     * @param driveWheelConfiguration Text value to set.
+     * @param numberOfAirbags Number value to set.
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addDriveWheelConfiguration(Text driveWheelConfiguration);
+    void addNumberOfAirbags(Number numberOfAirbags);
     /**
-     * The drive wheel configuration, i.e. which roadwheels will receive torque from the vehicle's engine via the drivetrain.
+     * The number or type of airbags in the vehicle.
      *
-     * @param driveWheelConfiguration DriveWheelConfigurationValue value to set.
+     * @param numberOfAirbags Text value to set.
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
-    void addDriveWheelConfiguration(DriveWheelConfigurationValue driveWheelConfiguration);
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    List<Text> getCallSignList();
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    Text getCallSign();
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @param callSign Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    void addCallSign(Text callSign);
+    void addNumberOfAirbags(Text numberOfAirbags);
 
     /**
      * The number of axles.<br/><br/>Typical unit code(s): C62.
@@ -1129,4 +519,614 @@ public interface Vehicle extends Product {
      * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
      */
     void addNumberOfAxles(Number numberOfAxles);
+
+    /**
+     * The number of doors.<br/><br/>Typical unit code(s): C62.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getNumberOfDoorsList();
+
+    /**
+     * The number of doors.<br/><br/>Typical unit code(s): C62.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getNumberOfDoors();
+
+    /**
+     * The number of doors.<br/><br/>Typical unit code(s): C62.
+     *
+     * @param numberOfDoors QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addNumberOfDoors(QuantitativeValue numberOfDoors);
+    /**
+     * The number of doors.<br/><br/>Typical unit code(s): C62.
+     *
+     * @param numberOfDoors Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addNumberOfDoors(Number numberOfDoors);
+
+    /**
+     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getNumberOfForwardGearsList();
+
+    /**
+     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
+     *
+     * @return {@link Number} or {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getNumberOfForwardGears();
+
+    /**
+     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
+     *
+     * @param numberOfForwardGears Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addNumberOfForwardGears(Number numberOfForwardGears);
+    /**
+     * The total number of forward gears available for the transmission system of the vehicle.<br/><br/>Typical unit code(s): C62.
+     *
+     * @param numberOfForwardGears QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addNumberOfForwardGears(QuantitativeValue numberOfForwardGears);
+
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getNumberOfPreviousOwnersList();
+
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getNumberOfPreviousOwners();
+
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
+     *
+     * @param numberOfPreviousOwners QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addNumberOfPreviousOwners(QuantitativeValue numberOfPreviousOwners);
+    /**
+     * The number of owners of the vehicle, including the current one.<br/><br/>Typical unit code(s): C62.
+     *
+     * @param numberOfPreviousOwners Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addNumberOfPreviousOwners(Number numberOfPreviousOwners);
+
+    /**
+     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getPayloadList();
+
+    /**
+     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getPayload();
+
+    /**
+     * The permitted weight of passengers and cargo, EXCLUDING the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: Many databases specify the permitted TOTAL weight instead, which is the sum of [[weight]] and [[payload]]<br/>* Note 2: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 3: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 4: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @param payload QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addPayload(QuantitativeValue payload);
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Date> getProductionDateList();
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Date getProductionDate();
+
+    /**
+     * The date of production of the item, e.g. vehicle.
+     *
+     * @param productionDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addProductionDate(Date productionDate);
+
+    /**
+     * The date the item, e.g. vehicle, was purchased by the current owner.
+     *
+     * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Date> getPurchaseDateList();
+
+    /**
+     * The date the item, e.g. vehicle, was purchased by the current owner.
+     *
+     * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Date getPurchaseDate();
+
+    /**
+     * The date the item, e.g. vehicle, was purchased by the current owner.
+     *
+     * @param purchaseDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addPurchaseDate(Date purchaseDate);
+
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getSeatingCapacityList();
+
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getSeatingCapacity();
+
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @param seatingCapacity QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addSeatingCapacity(QuantitativeValue seatingCapacity);
+    /**
+     * The number of persons that can be seated (e.g. in a vehicle), both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @param seatingCapacity Number value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addSeatingCapacity(Number seatingCapacity);
+
+    /**
+     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getSpeedList();
+
+    /**
+     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getSpeed();
+
+    /**
+     * The speed range of the vehicle. If the vehicle is powered by an engine, the upper limit of the speed range (indicated by [[maxValue]]) should be the maximum speed achievable under regular conditions.<br/><br/>Typical unit code(s): KMH for km/h, HM for mile per hour (0.447 04 m/s), KNT for knot<br/><br/>*Note 1: Use [[minValue]] and [[maxValue]] to indicate the range. Typically, the minimal value is zero.<br/>* Note 2: There are many different ways of measuring the speed range. You can link to information about how the given value has been determined using the [[valueReference]] property.
+     *
+     * @param speed QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addSpeed(QuantitativeValue speed);
+
+    /**
+     * The position of the steering wheel or similar device (mostly for cars).
+     *
+     * @return {@link SteeringPositionValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<SteeringPositionValue> getSteeringPositionList();
+
+    /**
+     * The position of the steering wheel or similar device (mostly for cars).
+     *
+     * @return {@link SteeringPositionValue}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    SteeringPositionValue getSteeringPosition();
+
+    /**
+     * The position of the steering wheel or similar device (mostly for cars).
+     *
+     * @param steeringPosition SteeringPositionValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addSteeringPosition(SteeringPositionValue steeringPosition);
+
+    /**
+     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getTongueWeightList();
+
+    /**
+     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getTongueWeight();
+
+    /**
+     * The permitted vertical load (TWR) of a trailer attached to the vehicle. Also referred to as Tongue Load Rating (TLR) or Vertical Load Rating (VLR).<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @param tongueWeight QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addTongueWeight(QuantitativeValue tongueWeight);
+
+    /**
+     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getTrailerWeightList();
+
+    /**
+     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getTrailerWeight();
+
+    /**
+     * The permitted weight of a trailer attached to the vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @param trailerWeight QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addTrailerWeight(QuantitativeValue trailerWeight);
+
+    /**
+     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Text> getVehicleConfigurationList();
+
+    /**
+     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Text getVehicleConfiguration();
+
+    /**
+     * A short text indicating the configuration of the vehicle, e.g. '5dr hatchback ST 2.5 MT 225 hp' or 'limited edition'.
+     *
+     * @param vehicleConfiguration Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleConfiguration(Text vehicleConfiguration);
+
+    /**
+     * Information about the engine or engines of the vehicle.
+     *
+     * @return {@link EngineSpecification}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<EngineSpecification> getVehicleEngineList();
+
+    /**
+     * Information about the engine or engines of the vehicle.
+     *
+     * @return {@link EngineSpecification}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    EngineSpecification getVehicleEngine();
+
+    /**
+     * Information about the engine or engines of the vehicle.
+     *
+     * @param vehicleEngine EngineSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleEngine(EngineSpecification vehicleEngine);
+
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Text> getVehicleIdentificationNumberList();
+
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Text getVehicleIdentificationNumber();
+
+    /**
+     * The Vehicle Identification Number (VIN) is a unique serial number used by the automotive industry to identify individual motor vehicles.
+     *
+     * @param vehicleIdentificationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleIdentificationNumber(Text vehicleIdentificationNumber);
+
+    /**
+     * The color or color combination of the interior of the vehicle.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Text> getVehicleInteriorColorList();
+
+    /**
+     * The color or color combination of the interior of the vehicle.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Text getVehicleInteriorColor();
+
+    /**
+     * The color or color combination of the interior of the vehicle.
+     *
+     * @param vehicleInteriorColor Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleInteriorColor(Text vehicleInteriorColor);
+
+    /**
+     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Text> getVehicleInteriorTypeList();
+
+    /**
+     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Text getVehicleInteriorType();
+
+    /**
+     * The type or material of the interior of the vehicle (e.g. synthetic fabric, leather, wood, etc.). While most interior types are characterized by the material used, an interior type can also be based on vehicle usage or target audience.
+     *
+     * @param vehicleInteriorType Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleInteriorType(Text vehicleInteriorType);
+
+    /**
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<Date> getVehicleModelDateList();
+
+    /**
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @return {@link Date}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    Date getVehicleModelDate();
+
+    /**
+     * The release date of a vehicle model (often used to differentiate versions of the same make and model).
+     *
+     * @param vehicleModelDate Date value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleModelDate(Date vehicleModelDate);
+
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getVehicleSeatingCapacityList();
+
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @return {@link QuantitativeValue} or {@link Number}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getVehicleSeatingCapacity();
+
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @param vehicleSeatingCapacity QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleSeatingCapacity(QuantitativeValue vehicleSeatingCapacity);
+    /**
+     * The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.<br/><br/>Typical unit code(s): C62 for persons.
+     *
+     * @param vehicleSeatingCapacity Number value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleSeatingCapacity(Number vehicleSeatingCapacity);
+
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @return {@link Text} or {@link CarUsageType}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getVehicleSpecialUsageList();
+
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @return {@link Text} or {@link CarUsageType}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getVehicleSpecialUsage();
+
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @param vehicleSpecialUsage Text value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleSpecialUsage(Text vehicleSpecialUsage);
+    /**
+     * Indicates whether the vehicle has been used for special purposes, like commercial rental, driving school, or as a taxi. The legislation in many countries requires this information to be revealed when offering a car for sale.
+     *
+     * @param vehicleSpecialUsage CarUsageType value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleSpecialUsage(CarUsageType vehicleSpecialUsage);
+
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> List<T> getVehicleTransmissionList();
+
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @return {@link Text} or {@link QualitativeValue} or {@link URL}
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    <T> T getVehicleTransmission();
+
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @param vehicleTransmission Text value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleTransmission(Text vehicleTransmission);
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @param vehicleTransmission QualitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleTransmission(QualitativeValue vehicleTransmission);
+    /**
+     * The type of component used for transmitting the power from a rotating power source to the wheels or other relevant component(s) ("gearbox" for cars).
+     *
+     * @param vehicleTransmission URL value to set.
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addVehicleTransmission(URL vehicleTransmission);
+
+    /**
+     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getWeightTotalList();
+
+    /**
+     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getWeightTotal();
+
+    /**
+     * The permitted total weight of the loaded vehicle, including passengers and cargo and the weight of the empty vehicle.<br/><br/>Typical unit code(s): KGM for kilogram, LBR for pound<br/><br/>* Note 1: You can indicate additional information in the [[name]] of the [[QuantitativeValue]] node.<br/>* Note 2: You may also link to a [[QualitativeValue]] node that provides additional information using [[valueReference]].<br/>* Note 3: Note that you can use [[minValue]] and [[maxValue]] to indicate ranges.
+     *
+     * @param weightTotal QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addWeightTotal(QuantitativeValue weightTotal);
+
+    /**
+     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    List<QuantitativeValue> getWheelbaseList();
+
+    /**
+     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    QuantitativeValue getWheelbase();
+
+    /**
+     * The distance between the centers of the front and rear wheels.<br/><br/>Typical unit code(s): CMT for centimeters, MTR for meters, INH for inches, FOT for foot/feet.
+     *
+     * @param wheelbase QuantitativeValue value to set.
+     * @see <a href="https://auto.schema.org">https://auto.schema.org</a>
+     * @see <a href="https://schema.org/docs/collab/Automotive_Ontology_Working_Group">https://schema.org/docs/collab/Automotive_Ontology_Working_Group</a>
+     */
+    void addWheelbase(QuantitativeValue wheelbase);
 }

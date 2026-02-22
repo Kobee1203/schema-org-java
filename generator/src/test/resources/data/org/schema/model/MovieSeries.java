@@ -7,10 +7,10 @@ package org.schema.model;
 
 import java.util.List;
 import org.schema.model.MusicGroup;
-import org.schema.model.Person;
-import org.schema.model.PerformingGroup;
-import org.schema.model.VideoObject;
 import org.schema.model.Organization;
+import org.schema.model.PerformingGroup;
+import org.schema.model.Person;
+import org.schema.model.VideoObject;
 
 /**
  * A series of movies. Included movies can be indicated with the hasPart property.
@@ -18,33 +18,6 @@ import org.schema.model.Organization;
  * @see <a href="https://schema.org/MovieSeries">https://schema.org/MovieSeries</a>
  */
 public interface MovieSeries extends CreativeWorkSeries {
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link MusicGroup} or {@link Person}
-     */
-    <T> List<T> getMusicByList();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @return {@link MusicGroup} or {@link Person}
-     */
-    <T> T getMusicBy();
-
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy MusicGroup value to set.
-     */
-    void addMusicBy(MusicGroup musicBy);
-    /**
-     * The composer of the soundtrack.
-     *
-     * @param musicBy Person value to set.
-     */
-    void addMusicBy(Person musicBy);
 
     /**
      * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
@@ -72,69 +45,6 @@ public interface MovieSeries extends CreativeWorkSeries {
      * @param actor Person value to set.
      */
     void addActor(Person actor);
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    List<VideoObject> getTrailerList();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @return {@link VideoObject}
-     */
-    VideoObject getTrailer();
-
-    /**
-     * The trailer of a movie or TV/radio series, season, episode, etc.
-     *
-     * @param trailer VideoObject value to set.
-     */
-    void addTrailer(VideoObject trailer);
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    List<Organization> getProductionCompanyList();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @return {@link Organization}
-     */
-    Organization getProductionCompany();
-
-    /**
-     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
-     *
-     * @param productionCompany Organization value to set.
-     */
-    void addProductionCompany(Organization productionCompany);
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorsList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirectors();
-
-    /**
-     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param directors Person value to set.
-     */
-    void addDirectors(Person directors);
 
     /**
      * An actor, e.g. in TV, radio, movie, video games etc. Actors can be associated with individual items or with a series, episode, clip.
@@ -177,4 +87,94 @@ public interface MovieSeries extends CreativeWorkSeries {
      * @param director Person value to set.
      */
     void addDirector(Person director);
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorsList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirectors();
+
+    /**
+     * A director of e.g. TV, radio, movie, video games etc. content. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param directors Person value to set.
+     */
+    void addDirectors(Person directors);
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> List<T> getMusicByList();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @return {@link MusicGroup} or {@link Person}
+     */
+    <T> T getMusicBy();
+
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy MusicGroup value to set.
+     */
+    void addMusicBy(MusicGroup musicBy);
+    /**
+     * The composer of the soundtrack.
+     *
+     * @param musicBy Person value to set.
+     */
+    void addMusicBy(Person musicBy);
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    List<Organization> getProductionCompanyList();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @return {@link Organization}
+     */
+    Organization getProductionCompany();
+
+    /**
+     * The production company or studio responsible for the item, e.g. series, video game, episode etc.
+     *
+     * @param productionCompany Organization value to set.
+     */
+    void addProductionCompany(Organization productionCompany);
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    List<VideoObject> getTrailerList();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @return {@link VideoObject}
+     */
+    VideoObject getTrailer();
+
+    /**
+     * The trailer of a movie or TV/radio series, season, episode, etc.
+     *
+     * @param trailer VideoObject value to set.
+     */
+    void addTrailer(VideoObject trailer);
 }

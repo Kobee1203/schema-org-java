@@ -6,8 +6,8 @@
 package org.schema.model;
 
 import java.util.List;
-import org.schema.model.datatype.URL;
 import org.schema.model.datatype.Text;
+import org.schema.model.datatype.URL;
 
 /**
  * An intangible item that describes an alignment between a learning resource and a node in an educational framework.
@@ -17,27 +17,6 @@ import org.schema.model.datatype.Text;
  * @see <a href="https://schema.org/AlignmentObject">https://schema.org/AlignmentObject</a>
  */
 public interface AlignmentObject extends Intangible {
-
-    /**
-     * The URL of a node in an established educational framework.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getTargetUrlList();
-
-    /**
-     * The URL of a node in an established educational framework.
-     *
-     * @return {@link URL}
-     */
-    URL getTargetUrl();
-
-    /**
-     * The URL of a node in an established educational framework.
-     *
-     * @param targetUrl URL value to set.
-     */
-    void addTargetUrl(URL targetUrl);
 
     /**
      * A category of alignment between the learning resource and the framework node. Recommended values include: 'requires', 'textComplexity', 'readingLevel', and 'educationalSubject'.
@@ -122,4 +101,25 @@ public interface AlignmentObject extends Intangible {
      * @param targetName Text value to set.
      */
     void addTargetName(Text targetName);
+
+    /**
+     * The URL of a node in an established educational framework.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getTargetUrlList();
+
+    /**
+     * The URL of a node in an established educational framework.
+     *
+     * @return {@link URL}
+     */
+    URL getTargetUrl();
+
+    /**
+     * The URL of a node in an established educational framework.
+     *
+     * @param targetUrl URL value to set.
+     */
+    void addTargetUrl(URL targetUrl);
 }

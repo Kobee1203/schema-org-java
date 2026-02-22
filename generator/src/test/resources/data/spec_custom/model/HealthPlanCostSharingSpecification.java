@@ -6,9 +6,9 @@
 package spec_custom.model;
 
 import java.util.List;
-import spec_custom.model.datatype.Text;
 import spec_custom.model.PriceSpecification;
 import spec_custom.model.datatype.Number;
+import spec_custom.model.datatype.Text;
 
 /**
  * A description of costs to the patient under a given network or formulary.
@@ -45,6 +45,60 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanCoinsuranceOption(Text healthPlanCoinsuranceOption);
+
+    /**
+     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Number> getHealthPlanCoinsuranceRateList();
+
+    /**
+     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    Number getHealthPlanCoinsuranceRate();
+
+    /**
+     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
+     *
+     * @param healthPlanCoinsuranceRate Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanCoinsuranceRate(Number healthPlanCoinsuranceRate);
+
+    /**
+     * The copay amount.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<PriceSpecification> getHealthPlanCopayList();
+
+    /**
+     * The copay amount.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    PriceSpecification getHealthPlanCopay();
+
+    /**
+     * The copay amount.
+     *
+     * @param healthPlanCopay PriceSpecification value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanCopay(PriceSpecification healthPlanCopay);
 
     /**
      * Whether the copay is before or after deductible, etc. TODO: Is this a closed set?
@@ -99,58 +153,4 @@ public interface HealthPlanCostSharingSpecification extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanPharmacyCategory(Text healthPlanPharmacyCategory);
-
-    /**
-     * The copay amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<PriceSpecification> getHealthPlanCopayList();
-
-    /**
-     * The copay amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    PriceSpecification getHealthPlanCopay();
-
-    /**
-     * The copay amount.
-     *
-     * @param healthPlanCopay PriceSpecification value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addHealthPlanCopay(PriceSpecification healthPlanCopay);
-
-    /**
-     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<Number> getHealthPlanCoinsuranceRateList();
-
-    /**
-     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    Number getHealthPlanCoinsuranceRate();
-
-    /**
-     * The rate of coinsurance expressed as a number between 0.0 and 1.0.
-     *
-     * @param healthPlanCoinsuranceRate Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addHealthPlanCoinsuranceRate(Number healthPlanCoinsuranceRate);
 }
