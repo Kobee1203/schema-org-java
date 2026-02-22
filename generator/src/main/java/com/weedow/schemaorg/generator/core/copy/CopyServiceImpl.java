@@ -9,20 +9,22 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
+import static com.weedow.schemaorg.generator.logging.LoggingConstants.COPY_ERROR;
+
 public class CopyServiceImpl implements CopyService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CopyServiceImpl.class);
 
     /**
      * {@inheritDoc}
-     * <p>Thsi implementation copies the Java file present in the same package as the given Class.</p>
+     * <p>This implementation copies the Java file present in the same package as the given Class.</p>
      *
      * @param clazz           Class to copy
      * @param targetDirectory Target directory where the java class file is written
      */
     @Override
     public void copy(Class<?> clazz, Path targetDirectory) {
-        LOG.info("Copying '{}'", clazz.getName());
+        LOG.verbose("Copying '{}'", clazz.getName());
 
         String resource = clazz.getSimpleName() + ".java";
         try (InputStream in = clazz.getResourceAsStream(resource)) {
@@ -31,7 +33,7 @@ public class CopyServiceImpl implements CopyService {
             Files.createDirectories(targetDirectory);
             Files.copy(Objects.requireNonNull(in), targetFile, StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception e) {
-            LOG.warn("Could not read the resource '" + resource + "': " + e.getMessage(), e);
+            LOG.warn(COPY_ERROR + " '" + resource + "': " + e.getMessage(), e);
         }
     }
 }

@@ -39,7 +39,7 @@ public class JsonLdCollectionDeserializer extends StdDeserializer<List<?>> {
         if (p.isExpectedStartArrayToken()) {
             return deserializeWithType(p);
         } else if (singleValueDeserializer != null) {
-            ClassNameIdResolver typeIdResolver = ClassNameIdResolver.construct(contentType, config, config.getPolymorphicTypeValidator());
+            ClassNameIdResolver typeIdResolver = ClassNameIdResolver.construct(contentType, config, null, config.getPolymorphicTypeValidator());
             TypeDeserializer asPropertyTypeDeserializer = new AsPropertyTypeDeserializer(
                     contentType,
                     typeIdResolver,

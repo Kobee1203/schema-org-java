@@ -40,7 +40,7 @@ public class JsonLdSerializerImpl implements JsonLdSerializer {
                 .visibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE)
                 .visibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
                 .addMixIn(JsonLdNodeImpl.class, JsonLdNodeMixIn.class)
-                .serializationInclusion(JsonInclude.Include.NON_NULL)
+                .defaultPropertyInclusion(JsonInclude.Value.construct(JsonInclude.Include.NON_NULL, JsonInclude.Include.NON_NULL))
                 .enable(SerializationFeature.WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED)
                 .enable(SerializationFeature.WRITE_ENUMS_USING_TO_STRING)
                 .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);

@@ -16,6 +16,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static com.weedow.schemaorg.generator.logging.LoggingConstants.*;
+
 public class SchemaModelParserImpl implements SchemaModelParser {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelParserImpl.class);
@@ -40,7 +42,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
             String v = options.getCustomDataTypes().entrySet().stream()
                     .map(entry -> entry.getKey() + "=" + entry.getValue())
                     .collect(Collectors.joining(", "));
-            LOG.info("Custom data Types configured: {}", v);
+            LOG.info(CUSTOM_DATA_TYPES_CONFIGURED + ": {}", v);
 
             options.setCustomDataTypes(
                     options.getCustomDataTypes()
@@ -57,13 +59,13 @@ public class SchemaModelParserImpl implements SchemaModelParser {
         }
 
         if (options.isUsedJavaTypes()) {
-            LOG.info("Java types are used instead of Schema.org Data Types");
+            LOG.info(JAVA_TYPES_USED);
         }
 
         final String schemaResource = options.getSchemaResource();
         final String schemaVersion = options.getSchemaVersion();
         try (InputStream in = getInputStream(schemaResource, schemaVersion)) {
-            LOG.info("Parsing the schema definitions...");
+            LOG.info(PARSING_SCHEMA_DEFINITIONS);
             final SchemaDefinition schemaDefinition = schemaDefinitionReader.read(in);
 
             schemaDefinition.getGraph().forEach(graphItem -> {
@@ -74,9 +76,9 @@ public class SchemaModelParserImpl implements SchemaModelParser {
                         .filter(modelHandler -> modelHandler.supports(graphItem, options))
                         .forEach(modelHandler -> modelHandler.handle(schemaDefinitions, graphItem, options));
             });
-            LOG.info("Parsing completed.");
+            LOG.info(PARSING_COMPLETED);
         } catch (Exception e) {
-            LOG.warn("Could not generate the schema models: " + e.getMessage(), e);
+            LOG.warn(PARSING_ERROR + ": " + e.getMessage(), e);
         }
 
         return schemaDefinitions;
@@ -84,14 +86,14 @@ public class SchemaModelParserImpl implements SchemaModelParser {
 
     private static InputStream getInputStream(String resourceLocation, String version) throws IOException {
         if (resourceLocation != null) {
-            LOG.info("Loading resource '{}'", resourceLocation);
+            LOG.info(LOADING_RESOURCE + " " + PARAM, resourceLocation);
             return ResourceUtils.getURL(resourceLocation).openStream();
         } else if (version != null) {
-            LOG.info("Downloading version '{}'", version);
+            LOG.info(DOWNLOADING_VERSION + " " + PARAM, version);
             final String url = getUrl(version);
             return ResourceUtils.getURL(url).openStream();
         } else {
-            LOG.info("Loading local default resource '{}'", SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
+            LOG.info(LOADING_LOCAL_DEFAULT_RESOURCE + " " + PARAM, SCHEMAORG_DEFINITION_LOCAL_RESOURCE);
             return ResourceUtils.getURL(SCHEMAORG_DEFINITION_LOCAL_RESOURCE).openStream();
         }
     }

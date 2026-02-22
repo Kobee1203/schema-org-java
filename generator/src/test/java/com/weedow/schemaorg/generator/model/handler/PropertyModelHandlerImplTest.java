@@ -350,6 +350,7 @@ class PropertyModelHandlerImplTest {
         Map<String, Type> schemaDefinitions = new HashMap<>();
 
         GraphItem graphItem = mock(GraphItem.class);
+        when(graphItem.getId()).thenReturn("schema:OldProperty");
         when(graphItem.getRangeIncludes()).thenReturn(Collections.emptyList());
         when(graphItem.getSupersededBy()).thenReturn(supersededBy("NewProperty"));
 

@@ -3,6 +3,8 @@ package com.weedow.schemaorg.generator;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 
+import static com.weedow.schemaorg.generator.logging.LoggingConstants.VERBOSE_MODE_ON;
+
 public final class SchemaModelGeneratorConstants {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorConstants.class);
@@ -14,7 +16,7 @@ public final class SchemaModelGeneratorConstants {
 
     public static void setVerbose(boolean verbose) {
         if (verbose) {
-            LOG.info("VERBOSE MODE: ON.");
+            LOG.info(VERBOSE_MODE_ON);
             System.setProperty(SchemaModelGeneratorConstants.VERBOSE_KEY, String.valueOf(verbose));
         } else {
             System.clearProperty(SchemaModelGeneratorConstants.VERBOSE_KEY);
