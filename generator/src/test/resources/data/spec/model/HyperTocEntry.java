@@ -20,6 +20,27 @@ import spec.model.datatype.Text;
 public interface HyperTocEntry extends CreativeWork {
 
     /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    List<MediaObject> getAssociatedMediaList();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @return {@link MediaObject}
+     */
+    MediaObject getAssociatedMedia();
+
+    /**
+     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
+     *
+     * @param associatedMedia MediaObject value to set.
+     */
+    void addAssociatedMedia(MediaObject associatedMedia);
+
+    /**
      * A [[HyperTocEntry]] can have a [[tocContinuation]] indicated, which is another [[HyperTocEntry]] that would be the default next item to play or render.
      *
      * @return {@link HyperTocEntry}
@@ -72,25 +93,4 @@ public interface HyperTocEntry extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2766">https://github.com/schemaorg/schemaorg/issues/2766</a>
      */
     void addUtterances(Text utterances);
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    List<MediaObject> getAssociatedMediaList();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @return {@link MediaObject}
-     */
-    MediaObject getAssociatedMedia();
-
-    /**
-     * A media object that encodes this CreativeWork. This property is a synonym for encoding.
-     *
-     * @param associatedMedia MediaObject value to set.
-     */
-    void addAssociatedMedia(MediaObject associatedMedia);
 }

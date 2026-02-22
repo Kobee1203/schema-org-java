@@ -46,6 +46,30 @@ public interface TypeAndQuantityNode extends StructuredValue {
     void addAmountOfThisGood(Number amountOfThisGood);
 
     /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<BusinessFunction> getBusinessFunctionList();
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    BusinessFunction getBusinessFunction();
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @param businessFunction BusinessFunction value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addBusinessFunction(BusinessFunction businessFunction);
+
+    /**
      * The product that this structured value is referring to.
      *
      * @return {@link Service} or {@link Product}
@@ -106,30 +130,6 @@ public interface TypeAndQuantityNode extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addUnitCode(Text unitCode);
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @return {@link BusinessFunction}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<BusinessFunction> getBusinessFunctionList();
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @return {@link BusinessFunction}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    BusinessFunction getBusinessFunction();
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @param businessFunction BusinessFunction value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addBusinessFunction(BusinessFunction businessFunction);
 
     /**
      * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for

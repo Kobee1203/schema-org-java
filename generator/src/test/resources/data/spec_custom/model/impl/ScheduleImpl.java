@@ -41,6 +41,322 @@ import spec_custom.model.datatype.URL;
 @JsonLdTypeName("Schedule")
 public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Schedule {
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    @JsonLdFieldTypes({ Text.class, DayOfWeek.class })
+    private List<Object> byDay;
+
+    /**
+     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
+     *
+     * @return {@link Text} or {@link DayOfWeek}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public <T> List<T> getByDayList() {
+        return (List<T>) byDay;
+    }
+
+    /**
+     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
+     *
+     * @return {@link Text} or {@link DayOfWeek}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public <T> T getByDay() {
+        return (T) getFirst(byDay);
+    }
+
+    /**
+     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
+     *
+     * @param byDay Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addByDay(Text byDay) {
+        this.byDay = add(this.byDay, byDay);
+    }
+    /**
+     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
+     *
+     * @param byDay DayOfWeek value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addByDay(DayOfWeek byDay) {
+        this.byDay = add(this.byDay, byDay);
+    }
+
+    private List<Integer> byMonth;
+
+    /**
+     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Integer> getByMonthList() {
+        return byMonth;
+    }
+
+    /**
+     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public Integer getByMonth() {
+        return getFirst(byMonth);
+    }
+
+    /**
+     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
+     *
+     * @param byMonth Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addByMonth(Integer byMonth) {
+        this.byMonth = add(this.byMonth, byMonth);
+    }
+
+    private List<Integer> byMonthDay;
+
+    /**
+     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Integer> getByMonthDayList() {
+        return byMonthDay;
+    }
+
+    /**
+     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public Integer getByMonthDay() {
+        return getFirst(byMonthDay);
+    }
+
+    /**
+     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
+     *
+     * @param byMonthDay Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addByMonthDay(Integer byMonthDay) {
+        this.byMonthDay = add(this.byMonthDay, byMonthDay);
+    }
+
+    private List<Integer> byMonthWeek;
+
+    /**
+     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
+     */
+    @Override
+    public List<Integer> getByMonthWeekList() {
+        return byMonthWeek;
+    }
+
+    /**
+     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
+     */
+    @Override
+    public Integer getByMonthWeek() {
+        return getFirst(byMonthWeek);
+    }
+
+    /**
+     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
+     *
+     * @param byMonthWeek Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
+     */
+    @Override
+    public void addByMonthWeek(Integer byMonthWeek) {
+        this.byMonthWeek = add(this.byMonthWeek, byMonthWeek);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
     @JsonLdFieldTypes({ Duration.class, QuantitativeValue.class })
     private List<Object> duration;
 
@@ -95,90 +411,6 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.duration = add(this.duration, duration);
     }
 
-    private List<Integer> byMonth;
-
-    /**
-     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public List<Integer> getByMonthList() {
-        return byMonth;
-    }
-
-    /**
-     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Integer getByMonth() {
-        return getFirst(byMonth);
-    }
-
-    /**
-     * Defines the month(s) of the year on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-12. January is 1.
-     *
-     * @param byMonth Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addByMonth(Integer byMonth) {
-        this.byMonth = add(this.byMonth, byMonth);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Time.class })
-    private List<Object> startTime;
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> List<T> getStartTimeList() {
-        return (List<T>) startTime;
-    }
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getStartTime() {
-        return (T) getFirst(startTime);
-    }
-
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addStartTime(DateTime startTime) {
-        this.startTime = add(this.startTime, startTime);
-    }
-    /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param startTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addStartTime(Time startTime) {
-        this.startTime = add(this.startTime, startTime);
-    }
-
     @JsonLdFieldTypes({ DateTime.class, Date.class })
     private List<Object> endDate;
 
@@ -225,268 +457,50 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.endDate = add(this.endDate, endDate);
     }
 
-    @JsonLdFieldTypes({ Text.class, Duration.class })
-    private List<Object> repeatFrequency;
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> endTime;
 
     /**
-     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
-     *       events should be defined as a [[Duration]] of time.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link Text} or {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public <T> List<T> getRepeatFrequencyList() {
-        return (List<T>) repeatFrequency;
+    public <T> List<T> getEndTimeList() {
+        return (List<T>) endTime;
     }
 
     /**
-     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
-     *       events should be defined as a [[Duration]] of time.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @return {@link Text} or {@link Duration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public <T> T getRepeatFrequency() {
-        return (T) getFirst(repeatFrequency);
+    public <T> T getEndTime() {
+        return (T) getFirst(endTime);
     }
 
     /**
-     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
-     *       events should be defined as a [[Duration]] of time.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param repeatFrequency Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @param endTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void addRepeatFrequency(Text repeatFrequency) {
-        this.repeatFrequency = add(this.repeatFrequency, repeatFrequency);
+    public void addEndTime(DateTime endTime) {
+        this.endTime = add(this.endTime, endTime);
     }
     /**
-     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
-     *       events should be defined as a [[Duration]] of time.
+     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
      *
-     * @param repeatFrequency Duration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @param endTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
      */
     @Override
-    public void addRepeatFrequency(Duration repeatFrequency) {
-        this.repeatFrequency = add(this.repeatFrequency, repeatFrequency);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> startDate;
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> List<T> getStartDateList() {
-        return (List<T>) startDate;
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public <T> T getStartDate() {
-        return (T) getFirst(startDate);
-    }
-
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param startDate DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addStartDate(DateTime startDate) {
-        this.startDate = add(this.startDate, startDate);
-    }
-    /**
-     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
-     *
-     * @param startDate Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
-     */
-    @Override
-    public void addStartDate(Date startDate) {
-        this.startDate = add(this.startDate, startDate);
-    }
-
-    @JsonLdFieldTypes({ Text.class, DayOfWeek.class })
-    private List<Object> byDay;
-
-    /**
-     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
-     *
-     * @return {@link Text} or {@link DayOfWeek}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public <T> List<T> getByDayList() {
-        return (List<T>) byDay;
-    }
-
-    /**
-     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
-     *
-     * @return {@link Text} or {@link DayOfWeek}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public <T> T getByDay() {
-        return (T) getFirst(byDay);
-    }
-
-    /**
-     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
-     *
-     * @param byDay Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addByDay(Text byDay) {
-        this.byDay = add(this.byDay, byDay);
-    }
-    /**
-     * Defines the day(s) of the week on which a recurring [[Event]] takes place. May be specified using either [[DayOfWeek]], or alternatively [[Text]] conforming to iCal's syntax for byDay recurrence rules.
-     *
-     * @param byDay DayOfWeek value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addByDay(DayOfWeek byDay) {
-        this.byDay = add(this.byDay, byDay);
-    }
-
-    private List<Integer> byMonthWeek;
-
-    /**
-     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
-     */
-    @Override
-    public List<Integer> getByMonthWeekList() {
-        return byMonthWeek;
-    }
-
-    /**
-     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
-     */
-    @Override
-    public Integer getByMonthWeek() {
-        return getFirst(byMonthWeek);
-    }
-
-    /**
-     * Defines the week(s) of the month on which a recurring Event takes place. Specified as an Integer between 1-5. For clarity, byMonthWeek is best used in conjunction with byDay to indicate concepts like the first and third Mondays of a month.
-     *
-     * @param byMonthWeek Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2599">https://github.com/schemaorg/schemaorg/issues/2599</a>
-     */
-    @Override
-    public void addByMonthWeek(Integer byMonthWeek) {
-        this.byMonthWeek = add(this.byMonthWeek, byMonthWeek);
-    }
-
-    private List<Text> scheduleTimezone;
-
-    /**
-     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public List<Text> getScheduleTimezoneList() {
-        return scheduleTimezone;
-    }
-
-    /**
-     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Text getScheduleTimezone() {
-        return getFirst(scheduleTimezone);
-    }
-
-    /**
-     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
-     *
-     * @param scheduleTimezone Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addScheduleTimezone(Text scheduleTimezone) {
-        this.scheduleTimezone = add(this.scheduleTimezone, scheduleTimezone);
-    }
-
-    private List<Integer> byMonthDay;
-
-    /**
-     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public List<Integer> getByMonthDayList() {
-        return byMonthDay;
-    }
-
-    /**
-     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Integer getByMonthDay() {
-        return getFirst(byMonthDay);
-    }
-
-    /**
-     * Defines the day(s) of the month on which a recurring [[Event]] takes place. Specified as an [[Integer]] between 1-31.
-     *
-     * @param byMonthDay Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addByMonthDay(Integer byMonthDay) {
-        this.byMonthDay = add(this.byMonthDay, byMonthDay);
+    public void addEndTime(Time endTime) {
+        this.endTime = add(this.endTime, endTime);
     }
 
     @JsonLdFieldTypes({ Date.class, DateTime.class })
@@ -551,200 +565,6 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.exceptDate = add(this.exceptDate, exceptDate);
     }
 
-    @JsonLdFieldTypes({ DateTime.class, Time.class })
-    private List<Object> endTime;
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> List<T> getEndTimeList() {
-        return (List<T>) endTime;
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public <T> T getEndTime() {
-        return (T) getFirst(endTime);
-    }
-
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addEndTime(DateTime endTime) {
-        this.endTime = add(this.endTime, endTime);
-    }
-    /**
-     * The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
-     *
-     * @param endTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
-     */
-    @Override
-    public void addEndTime(Time endTime) {
-        this.endTime = add(this.endTime, endTime);
-    }
-
-    private List<Integer> repeatCount;
-
-    /**
-     * Defines the number of times a recurring [[Event]] will take place.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public List<Integer> getRepeatCountList() {
-        return repeatCount;
-    }
-
-    /**
-     * Defines the number of times a recurring [[Event]] will take place.
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public Integer getRepeatCount() {
-        return getFirst(repeatCount);
-    }
-
-    /**
-     * Defines the number of times a recurring [[Event]] will take place.
-     *
-     * @param repeatCount Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    @Override
-    public void addRepeatCount(Integer repeatCount) {
-        this.repeatCount = add(this.repeatCount, repeatCount);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
     private List<Object> identifier;
 
@@ -801,6 +621,122 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.identifier = add(this.identifier, identifier);
     }
 
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage CreativeWork value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> owner;
 
@@ -845,6 +781,292 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
     @Override
     public void addOwner(Organization owner) {
         this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<Integer> repeatCount;
+
+    /**
+     * Defines the number of times a recurring [[Event]] will take place.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Integer> getRepeatCountList() {
+        return repeatCount;
+    }
+
+    /**
+     * Defines the number of times a recurring [[Event]] will take place.
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public Integer getRepeatCount() {
+        return getFirst(repeatCount);
+    }
+
+    /**
+     * Defines the number of times a recurring [[Event]] will take place.
+     *
+     * @param repeatCount Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addRepeatCount(Integer repeatCount) {
+        this.repeatCount = add(this.repeatCount, repeatCount);
+    }
+
+    @JsonLdFieldTypes({ Text.class, Duration.class })
+    private List<Object> repeatFrequency;
+
+    /**
+     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
+     *       events should be defined as a [[Duration]] of time.
+     *
+     * @return {@link Text} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public <T> List<T> getRepeatFrequencyList() {
+        return (List<T>) repeatFrequency;
+    }
+
+    /**
+     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
+     *       events should be defined as a [[Duration]] of time.
+     *
+     * @return {@link Text} or {@link Duration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public <T> T getRepeatFrequency() {
+        return (T) getFirst(repeatFrequency);
+    }
+
+    /**
+     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
+     *       events should be defined as a [[Duration]] of time.
+     *
+     * @param repeatFrequency Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addRepeatFrequency(Text repeatFrequency) {
+        this.repeatFrequency = add(this.repeatFrequency, repeatFrequency);
+    }
+    /**
+     * Defines the frequency at which [[Event]]s will occur according to a schedule [[Schedule]]. The intervals between
+     *       events should be defined as a [[Duration]] of time.
+     *
+     * @param repeatFrequency Duration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addRepeatFrequency(Duration repeatFrequency) {
+        this.repeatFrequency = add(this.repeatFrequency, repeatFrequency);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Text> scheduleTimezone;
+
+    /**
+     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public List<Text> getScheduleTimezoneList() {
+        return scheduleTimezone;
+    }
+
+    /**
+     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public Text getScheduleTimezone() {
+        return getFirst(scheduleTimezone);
+    }
+
+    /**
+     * Indicates the timezone for which the time(s) indicated in the [[Schedule]] are given. The value provided should be among those listed in the IANA Time Zone Database.
+     *
+     * @param scheduleTimezone Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    @Override
+    public void addScheduleTimezone(Text scheduleTimezone) {
+        this.scheduleTimezone = add(this.scheduleTimezone, scheduleTimezone);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> startDate;
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> List<T> getStartDateList() {
+        return (List<T>) startDate;
+    }
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public <T> T getStartDate() {
+        return (T) getFirst(startDate);
+    }
+
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void addStartDate(DateTime startDate) {
+        this.startDate = add(this.startDate, startDate);
+    }
+    /**
+     * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
+     *
+     * @param startDate Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
+     */
+    @Override
+    public void addStartDate(Date startDate) {
+        this.startDate = add(this.startDate, startDate);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> startTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getStartTimeList() {
+        return (List<T>) startTime;
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getStartTime() {
+        return (T) getFirst(startTime);
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addStartTime(DateTime startTime) {
+        this.startTime = add(this.startTime, startTime);
+    }
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addStartTime(Time startTime) {
+        this.startTime = add(this.startTime, startTime);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -893,154 +1115,6 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
     private List<URL> url;
 
     /**
@@ -1071,79 +1145,5 @@ public class ScheduleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeI
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 }

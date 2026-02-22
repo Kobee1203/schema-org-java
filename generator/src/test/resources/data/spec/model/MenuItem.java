@@ -21,6 +21,37 @@ import spec.model.RestrictedDiet;
 public interface MenuItem extends Intangible {
 
     /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     *
+     * @return {@link MenuSection} or {@link MenuItem}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
+     */
+    <T> List<T> getMenuAddOnList();
+
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     *
+     * @return {@link MenuSection} or {@link MenuItem}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
+     */
+    <T> T getMenuAddOn();
+
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     *
+     * @param menuAddOn MenuSection value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
+     */
+    void addMenuAddOn(MenuSection menuAddOn);
+    /**
+     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
+     *
+     * @param menuAddOn MenuItem value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
+     */
+    void addMenuAddOn(MenuItem menuAddOn);
+
+    /**
      * Nutrition information about the recipe or menu item.
      *
      * @return {@link NutritionInformation}
@@ -96,35 +127,4 @@ public interface MenuItem extends Intangible {
      * @param suitableForDiet RestrictedDiet value to set.
      */
     void addSuitableForDiet(RestrictedDiet suitableForDiet);
-
-    /**
-     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
-     *
-     * @return {@link MenuSection} or {@link MenuItem}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
-     */
-    <T> List<T> getMenuAddOnList();
-
-    /**
-     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
-     *
-     * @return {@link MenuSection} or {@link MenuItem}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
-     */
-    <T> T getMenuAddOn();
-
-    /**
-     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
-     *
-     * @param menuAddOn MenuSection value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
-     */
-    void addMenuAddOn(MenuSection menuAddOn);
-    /**
-     * Additional menu item(s) such as a side dish of salad or side order of fries that can be added to this menu item. Additionally it can be a menu section containing allowed add-on menu items for this menu item.
-     *
-     * @param menuAddOn MenuItem value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1541">https://github.com/schemaorg/schemaorg/issues/1541</a>
-     */
-    void addMenuAddOn(MenuItem menuAddOn);
 }

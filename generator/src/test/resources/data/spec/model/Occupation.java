@@ -25,6 +25,83 @@ import spec.model.datatype.Text;
 public interface Occupation extends Intangible {
 
     /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @return {@link Text} or {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getEducationRequirementsList();
+
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @return {@link Text} or {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> T getEducationRequirements();
+
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @param educationRequirements Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEducationRequirements(Text educationRequirements);
+    /**
+     * Educational background needed for the position or Occupation.
+     *
+     * @param educationRequirements EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEducationRequirements(EducationalOccupationalCredential educationRequirements);
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link Number} or {@link MonetaryAmount} or {@link MonetaryAmountDistribution}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getEstimatedSalaryList();
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @return {@link Number} or {@link MonetaryAmount} or {@link MonetaryAmountDistribution}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> T getEstimatedSalary();
+
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary Number value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEstimatedSalary(Number estimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary MonetaryAmount value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEstimatedSalary(MonetaryAmount estimatedSalary);
+    /**
+     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
+     *
+     * @param estimatedSalary MonetaryAmountDistribution value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
+
+    /**
      * Description of skills and experience needed for the position or Occupation.
      *
      * @return {@link Text} or {@link OccupationalExperienceRequirements}
@@ -78,41 +155,6 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void addOccupationLocation(AdministrativeArea occupationLocation);
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> List<T> getSkillsList();
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> T getSkills();
-
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addSkills(Text skills);
-    /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
-     *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addSkills(DefinedTerm skills);
 
     /**
      * A category describing the job, preferably using a term from a taxonomy such as [BLS O*NET-SOC](http://www.onetcenter.org/taxonomy.html), [ISCO-08](https://www.ilo.org/public/english/bureau/stat/isco/isco08/) or similar, with the property repeated for each applicable value. Ideally the taxonomy should be identified, and both the textual label and formal code for the category should be provided.<br/>
@@ -170,107 +212,6 @@ public interface Occupation extends Intangible {
     void addOccupationalCategory(CategoryCode occupationalCategory);
 
     /**
-     * Educational background needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> List<T> getEducationRequirementsList();
-
-    /**
-     * Educational background needed for the position or Occupation.
-     *
-     * @return {@link Text} or {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> T getEducationRequirements();
-
-    /**
-     * Educational background needed for the position or Occupation.
-     *
-     * @param educationRequirements Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addEducationRequirements(Text educationRequirements);
-    /**
-     * Educational background needed for the position or Occupation.
-     *
-     * @param educationRequirements EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addEducationRequirements(EducationalOccupationalCredential educationRequirements);
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    List<Text> getResponsibilitiesList();
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    Text getResponsibilities();
-
-    /**
-     * Responsibilities associated with this role or Occupation.
-     *
-     * @param responsibilities Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addResponsibilities(Text responsibilities);
-
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @return {@link Number} or {@link MonetaryAmount} or {@link MonetaryAmountDistribution}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> List<T> getEstimatedSalaryList();
-
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @return {@link Number} or {@link MonetaryAmount} or {@link MonetaryAmountDistribution}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    <T> T getEstimatedSalary();
-
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @param estimatedSalary Number value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addEstimatedSalary(Number estimatedSalary);
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @param estimatedSalary MonetaryAmount value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addEstimatedSalary(MonetaryAmount estimatedSalary);
-    /**
-     * An estimated salary for a job posting or occupation, based on a variety of variables including, but not limited to industry, job title, and location. Estimated salaries  are often computed by outside organizations rather than the hiring organization, who may not have committed to the estimated value.
-     *
-     * @param estimatedSalary MonetaryAmountDistribution value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    void addEstimatedSalary(MonetaryAmountDistribution estimatedSalary);
-
-    /**
      * Specific qualifications required for this role or Occupation.
      *
      * @return {@link EducationalOccupationalCredential} or {@link Text}
@@ -308,4 +249,63 @@ public interface Occupation extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     void addQualifications(Text qualifications);
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    List<Text> getResponsibilitiesList();
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    Text getResponsibilities();
+
+    /**
+     * Responsibilities associated with this role or Occupation.
+     *
+     * @param responsibilities Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addResponsibilities(Text responsibilities);
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> List<T> getSkillsList();
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    <T> T getSkills();
+
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @param skills Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addSkills(Text skills);
+    /**
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     *
+     * @param skills DefinedTerm value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    void addSkills(DefinedTerm skills);
 }

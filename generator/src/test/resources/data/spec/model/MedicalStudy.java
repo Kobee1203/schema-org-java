@@ -48,54 +48,6 @@ public interface MedicalStudy extends MedicalEntity {
     void addHealthCondition(MedicalCondition healthCondition);
 
     /**
-     * The location in which the study is taking/took place.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<AdministrativeArea> getStudyLocationList();
-
-    /**
-     * The location in which the study is taking/took place.
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    AdministrativeArea getStudyLocation();
-
-    /**
-     * The location in which the study is taking/took place.
-     *
-     * @param studyLocation AdministrativeArea value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStudyLocation(AdministrativeArea studyLocation);
-
-    /**
-     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalEntity> getStudySubjectList();
-
-    /**
-     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
-     *
-     * @return {@link MedicalEntity}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalEntity getStudySubject();
-
-    /**
-     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
-     *
-     * @param studySubject MedicalEntity value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addStudySubject(MedicalEntity studySubject);
-
-    /**
      * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @return {@link Person} or {@link Organization}
@@ -159,4 +111,52 @@ public interface MedicalStudy extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addStatus(MedicalStudyStatus status);
+
+    /**
+     * The location in which the study is taking/took place.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<AdministrativeArea> getStudyLocationList();
+
+    /**
+     * The location in which the study is taking/took place.
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    AdministrativeArea getStudyLocation();
+
+    /**
+     * The location in which the study is taking/took place.
+     *
+     * @param studyLocation AdministrativeArea value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStudyLocation(AdministrativeArea studyLocation);
+
+    /**
+     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalEntity> getStudySubjectList();
+
+    /**
+     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
+     *
+     * @return {@link MedicalEntity}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalEntity getStudySubject();
+
+    /**
+     * A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
+     *
+     * @param studySubject MedicalEntity value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addStudySubject(MedicalEntity studySubject);
 }

@@ -19,27 +19,6 @@ import spec.model.datatype.Text;
 public interface ImageObject extends MediaObject {
 
     /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getRepresentativeOfPageList();
-
-    /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getRepresentativeOfPage();
-
-    /**
-     * Indicates whether this image is representative of the content of the page.
-     *
-     * @param representativeOfPage Boolean value to set.
-     */
-    void addRepresentativeOfPage(Boolean representativeOfPage);
-
-    /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
      * @return {@link Text} or {@link MediaObject}
@@ -119,4 +98,25 @@ public interface ImageObject extends MediaObject {
      * @param exifData Text value to set.
      */
     void addExifData(Text exifData);
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getRepresentativeOfPageList();
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getRepresentativeOfPage();
+
+    /**
+     * Indicates whether this image is representative of the content of the page.
+     *
+     * @param representativeOfPage Boolean value to set.
+     */
+    void addRepresentativeOfPage(Boolean representativeOfPage);
 }

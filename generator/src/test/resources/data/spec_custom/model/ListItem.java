@@ -61,27 +61,6 @@ public interface ListItem extends Intangible {
     void addNextItem(ListItem nextItem);
 
     /**
-     * A link to the ListItem that precedes the current one.
-     *
-     * @return {@link ListItem}
-     */
-    List<ListItem> getPreviousItemList();
-
-    /**
-     * A link to the ListItem that precedes the current one.
-     *
-     * @return {@link ListItem}
-     */
-    ListItem getPreviousItem();
-
-    /**
-     * A link to the ListItem that precedes the current one.
-     *
-     * @param previousItem ListItem value to set.
-     */
-    void addPreviousItem(ListItem previousItem);
-
-    /**
      * The position of an item in a series or sequence of items.
      *
      * @return {@link Text} or {@link Integer}
@@ -107,4 +86,25 @@ public interface ListItem extends Intangible {
      * @param position Integer value to set.
      */
     void addPosition(Integer position);
+
+    /**
+     * A link to the ListItem that precedes the current one.
+     *
+     * @return {@link ListItem}
+     */
+    List<ListItem> getPreviousItemList();
+
+    /**
+     * A link to the ListItem that precedes the current one.
+     *
+     * @return {@link ListItem}
+     */
+    ListItem getPreviousItem();
+
+    /**
+     * A link to the ListItem that precedes the current one.
+     *
+     * @param previousItem ListItem value to set.
+     */
+    void addPreviousItem(ListItem previousItem);
 }

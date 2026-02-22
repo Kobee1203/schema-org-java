@@ -8,23 +8,23 @@ package org.schema.model.impl;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Action;
-import org.schema.model.Country;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
-import org.schema.model.GeoShape;
-import org.schema.model.ImageObject;
-import org.schema.model.Intangible;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.PostalAddress;
-import org.schema.model.PropertyValue;
-import org.schema.model.StructuredValue;
-import org.schema.model.TextObject;
-import org.schema.model.Thing;
 import org.schema.model.datatype.Number;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
+import org.schema.model.models.Action;
+import org.schema.model.models.Country;
+import org.schema.model.models.CreativeWork;
+import org.schema.model.models.Event;
+import org.schema.model.models.GeoShape;
+import org.schema.model.models.ImageObject;
+import org.schema.model.models.Intangible;
+import org.schema.model.models.Organization;
+import org.schema.model.models.Person;
+import org.schema.model.models.PostalAddress;
+import org.schema.model.models.PropertyValue;
+import org.schema.model.models.StructuredValue;
+import org.schema.model.models.TextObject;
+import org.schema.model.models.Thing;
 
 /**
  * The geographic shape of a place. A GeoShape can be described using several properties whose values are based on latitude/longitude pairs. Either whitespace or commas can be used to separate latitude and longitude; whitespace should be used when writing a list of several such points.

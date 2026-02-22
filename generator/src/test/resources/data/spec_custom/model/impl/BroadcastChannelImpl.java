@@ -34,6 +34,268 @@ import spec_custom.model.datatype.URL;
 @JsonLdTypeName("BroadcastChannel")
 public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements BroadcastChannel {
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    private List<Text> broadcastChannelId;
+
+    /**
+     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getBroadcastChannelIdList() {
+        return broadcastChannelId;
+    }
+
+    /**
+     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getBroadcastChannelId() {
+        return getFirst(broadcastChannelId);
+    }
+
+    /**
+     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     *
+     * @param broadcastChannelId Text value to set.
+     */
+    @Override
+    public void addBroadcastChannelId(Text broadcastChannelId) {
+        this.broadcastChannelId = add(this.broadcastChannelId, broadcastChannelId);
+    }
+
+    @JsonLdFieldTypes({ Text.class, BroadcastFrequencySpecification.class })
+    private List<Object> broadcastFrequency;
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link Text} or {@link BroadcastFrequencySpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    @Override
+    public <T> List<T> getBroadcastFrequencyList() {
+        return (List<T>) broadcastFrequency;
+    }
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @return {@link Text} or {@link BroadcastFrequencySpecification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    @Override
+    public <T> T getBroadcastFrequency() {
+        return (T) getFirst(broadcastFrequency);
+    }
+
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    @Override
+    public void addBroadcastFrequency(Text broadcastFrequency) {
+        this.broadcastFrequency = add(this.broadcastFrequency, broadcastFrequency);
+    }
+    /**
+     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     *
+     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     */
+    @Override
+    public void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency) {
+        this.broadcastFrequency = add(this.broadcastFrequency, broadcastFrequency);
+    }
+
+    private List<Text> broadcastServiceTier;
+
+    /**
+     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getBroadcastServiceTierList() {
+        return broadcastServiceTier;
+    }
+
+    /**
+     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getBroadcastServiceTier() {
+        return getFirst(broadcastServiceTier);
+    }
+
+    /**
+     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     *
+     * @param broadcastServiceTier Text value to set.
+     */
+    @Override
+    public void addBroadcastServiceTier(Text broadcastServiceTier) {
+        this.broadcastServiceTier = add(this.broadcastServiceTier, broadcastServiceTier);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
     @JsonLdFieldTypes({ URL.class, Text.class, DefinedTerm.class })
     private List<Object> genre;
 
@@ -85,36 +347,102 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.genre = add(this.genre, genre);
     }
 
-    private List<Text> broadcastChannelId;
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
 
     /**
-     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @return {@link Text}
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
      */
     @Override
-    public List<Text> getBroadcastChannelIdList() {
-        return broadcastChannelId;
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
     }
 
     /**
-     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @return {@link Text}
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
      */
     @Override
-    public Text getBroadcastChannelId() {
-        return getFirst(broadcastChannelId);
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
     }
 
     /**
-     * The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @param broadcastChannelId Text value to set.
+     * @param identifier URL value to set.
      */
     @Override
-    public void addBroadcastChannelId(Text broadcastChannelId) {
-        this.broadcastChannelId = add(this.broadcastChannelId, broadcastChannelId);
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
     }
 
     private List<CableOrSatelliteService> inBroadcastLineup;
@@ -149,82 +477,156 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.inBroadcastLineup = add(this.inBroadcastLineup, inBroadcastLineup);
     }
 
-    private List<Text> broadcastServiceTier;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage CreativeWork value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getBroadcastServiceTierList() {
-        return broadcastServiceTier;
+    public List<Text> getNameList() {
+        return name;
     }
 
     /**
-     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     * The name of the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getBroadcastServiceTier() {
-        return getFirst(broadcastServiceTier);
+    public Text getName() {
+        return getFirst(name);
     }
 
     /**
-     * The type of service required to have access to the channel (e.g. Standard or Premium).
+     * The name of the item.
      *
-     * @param broadcastServiceTier Text value to set.
+     * @param name Text value to set.
      */
     @Override
-    public void addBroadcastServiceTier(Text broadcastServiceTier) {
-        this.broadcastServiceTier = add(this.broadcastServiceTier, broadcastServiceTier);
+    public void addName(Text name) {
+        this.name = add(this.name, name);
     }
 
-    @JsonLdFieldTypes({ Text.class, BroadcastFrequencySpecification.class })
-    private List<Object> broadcastFrequency;
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
 
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     * A person or organization who owns this Thing.
      *
-     * @return {@link Text} or {@link BroadcastFrequencySpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      */
     @Override
-    public <T> List<T> getBroadcastFrequencyList() {
-        return (List<T>) broadcastFrequency;
-    }
-
-    /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
-     *
-     * @return {@link Text} or {@link BroadcastFrequencySpecification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
-     */
-    @Override
-    public <T> T getBroadcastFrequency() {
-        return (T) getFirst(broadcastFrequency);
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
     }
 
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     * A person or organization who owns this Thing.
      *
-     * @param broadcastFrequency Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      */
     @Override
-    public void addBroadcastFrequency(Text broadcastFrequency) {
-        this.broadcastFrequency = add(this.broadcastFrequency, broadcastFrequency);
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
     }
     /**
-     * The frequency used for over-the-air broadcasts. Numeric values or simple ranges, e.g. 87-99. In addition a shortcut idiom is supported for frequencies of AM and FM radio channels, e.g. "87 FM".
+     * A person or organization who owns this Thing.
      *
-     * @param broadcastFrequency BroadcastFrequencySpecification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1004">https://github.com/schemaorg/schemaorg/issues/1004</a>
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      */
     @Override
-    public void addBroadcastFrequency(BroadcastFrequencySpecification broadcastFrequency) {
-        this.broadcastFrequency = add(this.broadcastFrequency, broadcastFrequency);
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     private List<BroadcastService> providesBroadcastService;
@@ -291,186 +693,6 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.sameAs = add(this.sameAs, sameAs);
     }
 
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
-    }
-
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
@@ -517,154 +739,6 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
     private List<URL> url;
 
     /**
@@ -695,79 +769,5 @@ public class BroadcastChannelImpl extends com.weedow.schemaorg.commons.model.Jso
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 }

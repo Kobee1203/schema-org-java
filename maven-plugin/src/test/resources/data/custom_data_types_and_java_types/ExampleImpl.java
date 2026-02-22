@@ -5,10 +5,10 @@
  */
 package org.schema.model.impl;
 
-import org.schema.model.Example;
-import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
+import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
+import org.schema.model.Example;
 
 /**
  * Example class.
@@ -242,6 +242,48 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
         this.number = add(this.number, number);
     }
 
+    @JsonLdFieldTypes({ java.lang.String.class, java.net.URL.class })
+    private List<Object> path;
+
+    /**
+     * 
+     *
+     * @return {@link java.lang.String} or {@link java.net.URL}
+     */
+    @Override
+    public <T> List<T> getPathList() {
+        return (List<T>) path;
+    }
+
+    /**
+     * 
+     *
+     * @return {@link java.lang.String} or {@link java.net.URL}
+     */
+    @Override
+    public <T> T getPath() {
+        return (T) getFirst(path);
+    }
+
+    /**
+     * 
+     *
+     * @param path java.lang.String value to set.
+     */
+    @Override
+    public void addPath(java.lang.String path) {
+        this.path = add(this.path, path);
+    }
+    /**
+     * 
+     *
+     * @param path java.net.URL value to set.
+     */
+    @Override
+    public void addPath(java.net.URL path) {
+        this.path = add(this.path, path);
+    }
+
     private List<java.lang.String> pronounceableText;
 
     /**
@@ -304,48 +346,6 @@ public class ExampleImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeIm
     @Override
     public void addText(java.lang.String text) {
         this.text = add(this.text, text);
-    }
-
-    @JsonLdFieldTypes({ java.lang.String.class, java.net.URL.class })
-    private List<Object> path;
-
-    /**
-     * 
-     *
-     * @return {@link java.lang.String} or {@link java.net.URL}
-     */
-    @Override
-    public <T> List<T> getPathList() {
-        return (List<T>) path;
-    }
-
-    /**
-     * 
-     *
-     * @return {@link java.lang.String} or {@link java.net.URL}
-     */
-    @Override
-    public <T> T getPath() {
-        return (T) getFirst(path);
-    }
-
-    /**
-     * 
-     *
-     * @param path java.lang.String value to set.
-     */
-    @Override
-    public void addPath(java.lang.String path) {
-        this.path = add(this.path, path);
-    }
-    /**
-     * 
-     *
-     * @param path java.net.URL value to set.
-     */
-    @Override
-    public void addPath(java.net.URL path) {
-        this.path = add(this.path, path);
     }
 
     @JsonLdFieldTypes({ java.time.LocalTime.class, java.time.ZonedDateTime.class })

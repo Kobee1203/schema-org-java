@@ -52,25 +52,25 @@ public interface WebPage extends CreativeWork {
     void addBreadcrumb(Text breadcrumb);
 
     /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @return {@link URL}
+     * @return {@link Date}
      */
-    List<URL> getSignificantLinkList();
+    List<Date> getLastReviewedList();
 
     /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @return {@link URL}
+     * @return {@link Date}
      */
-    URL getSignificantLink();
+    Date getLastReviewed();
 
     /**
-     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
      *
-     * @param significantLink URL value to set.
+     * @param lastReviewed Date value to set.
      */
-    void addSignificantLink(URL significantLink);
+    void addLastReviewed(Date lastReviewed);
 
     /**
      * Indicates if this web page element is the main subject of the page.
@@ -92,6 +92,48 @@ public interface WebPage extends CreativeWork {
      * @param mainContentOfPage WebPageElement value to set.
      */
     void addMainContentOfPage(WebPageElement mainContentOfPage);
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @return {@link ImageObject}
+     */
+    List<ImageObject> getPrimaryImageOfPageList();
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @return {@link ImageObject}
+     */
+    ImageObject getPrimaryImageOfPage();
+
+    /**
+     * Indicates the main image on the page.
+     *
+     * @param primaryImageOfPage ImageObject value to set.
+     */
+    void addPrimaryImageOfPage(ImageObject primaryImageOfPage);
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getRelatedLinkList();
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @return {@link URL}
+     */
+    URL getRelatedLink();
+
+    /**
+     * A link related to this web page, for example to other related web pages.
+     *
+     * @param relatedLink URL value to set.
+     */
+    void addRelatedLink(URL relatedLink);
 
     /**
      * People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
@@ -119,6 +161,48 @@ public interface WebPage extends CreativeWork {
      * @param reviewedBy Organization value to set.
      */
     void addReviewedBy(Organization reviewedBy);
+
+    /**
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getSignificantLinkList();
+
+    /**
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    URL getSignificantLink();
+
+    /**
+     * One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @param significantLink URL value to set.
+     */
+    void addSignificantLink(URL significantLink);
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    List<URL> getSignificantLinksList();
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @return {@link URL}
+     */
+    URL getSignificantLinks();
+
+    /**
+     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
+     *
+     * @param significantLinks URL value to set.
+     */
+    void addSignificantLinks(URL significantLinks);
 
     /**
      * Indicates sections of a Web page that are particularly 'speakable' in the sense of being highlighted as being especially appropriate for text-to-speech conversion. Other sections of a page may also be usefully spoken in particular circumstances; the 'speakable' property serves to indicate the parts most likely to be generally useful for speech.
@@ -204,48 +288,6 @@ public interface WebPage extends CreativeWork {
     void addSpeakable(SpeakableSpecification speakable);
 
     /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getSignificantLinksList();
-
-    /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @return {@link URL}
-     */
-    URL getSignificantLinks();
-
-    /**
-     * The most significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most.
-     *
-     * @param significantLinks URL value to set.
-     */
-    void addSignificantLinks(URL significantLinks);
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getLastReviewedList();
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @return {@link Date}
-     */
-    Date getLastReviewed();
-
-    /**
-     * Date on which the content on this web page was last reviewed for accuracy and/or completeness.
-     *
-     * @param lastReviewed Date value to set.
-     */
-    void addLastReviewed(Date lastReviewed);
-
-    /**
      * One of the domain specialities to which this web page's content applies.
      *
      * @return {@link Specialty}
@@ -265,46 +307,4 @@ public interface WebPage extends CreativeWork {
      * @param specialty Specialty value to set.
      */
     void addSpecialty(Specialty specialty);
-
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @return {@link URL}
-     */
-    List<URL> getRelatedLinkList();
-
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @return {@link URL}
-     */
-    URL getRelatedLink();
-
-    /**
-     * A link related to this web page, for example to other related web pages.
-     *
-     * @param relatedLink URL value to set.
-     */
-    void addRelatedLink(URL relatedLink);
-
-    /**
-     * Indicates the main image on the page.
-     *
-     * @return {@link ImageObject}
-     */
-    List<ImageObject> getPrimaryImageOfPageList();
-
-    /**
-     * Indicates the main image on the page.
-     *
-     * @return {@link ImageObject}
-     */
-    ImageObject getPrimaryImageOfPage();
-
-    /**
-     * Indicates the main image on the page.
-     *
-     * @param primaryImageOfPage ImageObject value to set.
-     */
-    void addPrimaryImageOfPage(ImageObject primaryImageOfPage);
 }

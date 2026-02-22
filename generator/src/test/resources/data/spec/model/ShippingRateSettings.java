@@ -22,6 +22,33 @@ import spec.model.datatype.Number;
 public interface ShippingRateSettings extends StructuredValue {
 
     /**
+     * Indicates when shipping to a particular [[shippingDestination]] is not available.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    List<Boolean> getDoesNotShipList();
+
+    /**
+     * Indicates when shipping to a particular [[shippingDestination]] is not available.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    Boolean getDoesNotShip();
+
+    /**
+     * Indicates when shipping to a particular [[shippingDestination]] is not available.
+     *
+     * @param doesNotShip Boolean value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDoesNotShip(Boolean doesNotShip);
+
+    /**
      * A monetary value above (or at) which the shipping rate becomes free. Intended to be used via an [[OfferShippingDetails]] with [[shippingSettingsLink]] matching this [[ShippingRateSettings]].
      *
      * @return {@link DeliveryChargeSpecification} or {@link MonetaryAmount}
@@ -51,6 +78,30 @@ public interface ShippingRateSettings extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
      */
     void addFreeShippingThreshold(MonetaryAmount freeShippingThreshold);
+
+    /**
+     * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    List<Boolean> getIsUnlabelledFallbackList();
+
+    /**
+     * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
+     *
+     * @return {@link Boolean}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    Boolean getIsUnlabelledFallback();
+
+    /**
+     * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
+     *
+     * @param isUnlabelledFallback Boolean value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    void addIsUnlabelledFallback(Boolean isUnlabelledFallback);
 
     /**
      * Value in the range [0.0 ; 1.0] representing the fraction of the value of the order that is charged as shipping cost.
@@ -107,84 +158,6 @@ public interface ShippingRateSettings extends StructuredValue {
     void addShippingDestination(DefinedRegion shippingDestination);
 
     /**
-     * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    List<Boolean> getIsUnlabelledFallbackList();
-
-    /**
-     * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    Boolean getIsUnlabelledFallback();
-
-    /**
-     * This can be marked 'true' to indicate that some published [[DeliveryTimeSettings]] or [[ShippingRateSettings]] are intended to apply to all [[OfferShippingDetails]] published by the same merchant, when referenced by a [[shippingSettingsLink]] in those settings. It is not meaningful to use a 'true' value for this property alongside a transitTimeLabel (for [[DeliveryTimeSettings]]) or shippingLabel (for [[ShippingRateSettings]]), since this property is for use with unlabelled settings.
-     *
-     * @param isUnlabelledFallback Boolean value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    void addIsUnlabelledFallback(Boolean isUnlabelledFallback);
-
-    /**
-     * Indicates when shipping to a particular [[shippingDestination]] is not available.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    List<Boolean> getDoesNotShipList();
-
-    /**
-     * Indicates when shipping to a particular [[shippingDestination]] is not available.
-     *
-     * @return {@link Boolean}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    Boolean getDoesNotShip();
-
-    /**
-     * Indicates when shipping to a particular [[shippingDestination]] is not available.
-     *
-     * @param doesNotShip Boolean value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    void addDoesNotShip(Boolean doesNotShip);
-
-    /**
-     * Value in the range [0.0 ; 1.0] representing the fraction of the weight that is used to compute the shipping price.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    List<Number> getWeightPercentageList();
-
-    /**
-     * Value in the range [0.0 ; 1.0] representing the fraction of the weight that is used to compute the shipping price.
-     *
-     * @return {@link Number}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    Number getWeightPercentage();
-
-    /**
-     * Value in the range [0.0 ; 1.0] representing the fraction of the weight that is used to compute the shipping price.
-     *
-     * @param weightPercentage Number value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    void addWeightPercentage(Number weightPercentage);
-
-    /**
      * The shipping rate is the cost of shipping to the specified destination. Typically, the maxValue and currency values (of the [[MonetaryAmount]]) are most appropriate.
      *
      * @return {@link MonetaryAmount} or {@link ShippingRateSettings}
@@ -218,4 +191,31 @@ public interface ShippingRateSettings extends StructuredValue {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addShippingRate(ShippingRateSettings shippingRate);
+
+    /**
+     * Value in the range [0.0 ; 1.0] representing the fraction of the weight that is used to compute the shipping price.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    List<Number> getWeightPercentageList();
+
+    /**
+     * Value in the range [0.0 ; 1.0] representing the fraction of the weight that is used to compute the shipping price.
+     *
+     * @return {@link Number}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    Number getWeightPercentage();
+
+    /**
+     * Value in the range [0.0 ; 1.0] representing the fraction of the weight that is used to compute the shipping price.
+     *
+     * @param weightPercentage Number value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addWeightPercentage(Number weightPercentage);
 }

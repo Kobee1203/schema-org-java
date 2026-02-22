@@ -8,23 +8,23 @@ package org.schema.model.impl;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Action;
-import org.schema.model.BreadcrumbList;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
-import org.schema.model.ImageObject;
-import org.schema.model.Intangible;
-import org.schema.model.ItemList;
-import org.schema.model.ItemListOrderType;
-import org.schema.model.ListItem;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.PropertyValue;
-import org.schema.model.TextObject;
-import org.schema.model.Thing;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
+import org.schema.model.models.Action;
+import org.schema.model.models.BreadcrumbList;
+import org.schema.model.models.CreativeWork;
+import org.schema.model.models.Event;
+import org.schema.model.models.ImageObject;
+import org.schema.model.models.Intangible;
+import org.schema.model.models.ItemList;
+import org.schema.model.models.ItemListOrderType;
+import org.schema.model.models.ListItem;
+import org.schema.model.models.Organization;
+import org.schema.model.models.Person;
+import org.schema.model.models.PropertyValue;
+import org.schema.model.models.TextObject;
+import org.schema.model.models.Thing;
 
 /**
  * A BreadcrumbList is an ItemList consisting of a chain of linked Web pages, typically described using at least their URL and their name, and typically ending with the current page.<br/><br/>The [[position]] property is used to reconstruct the order of the items in a BreadcrumbList. The convention is that a breadcrumb list has an [[itemListOrder]] of [[ItemListOrderAscending]] (lower values listed first), and that the first items in this list correspond to the "top" or beginning of the breadcrumb trail, e.g. with a site or section homepage. The specific values of 'position' are not assigned meaning for a BreadcrumbList, but they should be integers, e.g. beginning with '1' for the first item in the list.

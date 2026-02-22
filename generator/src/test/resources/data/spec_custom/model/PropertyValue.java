@@ -29,43 +29,79 @@ import spec_custom.model.datatype.URL;
 public interface PropertyValue extends StructuredValue {
 
     /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     * The upper value of some characteristic or property.
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> List<T> getPropertyIDList();
+    List<Number> getMaxValueList();
 
     /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     * The upper value of some characteristic or property.
      *
-     * @return {@link Text} or {@link URL}
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    <T> T getPropertyID();
+    Number getMaxValue();
 
     /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     * The upper value of some characteristic or property.
      *
-     * @param propertyID Text value to set.
+     * @param maxValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
-    void addPropertyID(Text propertyID);
+    void addMaxValue(Number maxValue);
+
     /**
-     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
-     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
-     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
-     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
      *
-     * @param propertyID URL value to set.
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
      */
-    void addPropertyID(URL propertyID);
+    <T> List<T> getMeasurementMethodList();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    <T> T getMeasurementMethod();
+
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(Text measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod MeasurementMethodEnum value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(DefinedTerm measurementMethod);
+    /**
+     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
+     *
+     * @param measurementMethod URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
+     */
+    void addMeasurementMethod(URL measurementMethod);
 
     /**
      * A technique, method or technology used in an [[Observation]], [[StatisticalVariable]] or [[Dataset]] (or [[DataDownload]], [[DataCatalog]]), corresponding to the method used for measuring the corresponding variable(s) (for datasets, described using [[variableMeasured]]; for [[Observation]], a [[StatisticalVariable]]). Often but not necessarily each [[variableMeasured]] will have an explicit representation as (or mapping to) an property such as those defined in Schema.org, or other RDF vocabularies and "knowledge graphs". In that case the subproperty of [[variableMeasured]] called [[measuredProperty]] is applicable.
@@ -155,6 +191,124 @@ public interface PropertyValue extends StructuredValue {
     void addMeasurementTechnique(Text measurementTechnique);
 
     /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Number> getMinValueList();
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Number getMinValue();
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addMinValue(Number minValue);
+
+    /**
+     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
+     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> List<T> getPropertyIDList();
+
+    /**
+     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
+     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     *
+     * @return {@link Text} or {@link URL}
+     */
+    <T> T getPropertyID();
+
+    /**
+     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
+     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     *
+     * @param propertyID Text value to set.
+     */
+    void addPropertyID(Text propertyID);
+    /**
+     * A commonly used identifier for the characteristic represented by the property, e.g. a manufacturer or a standard code for a property. propertyID can be
+     * (1) a prefixed string, mainly meant to be used with standards for product properties; (2) a site-specific, non-prefixed string (e.g. the primary key of the property or the vendor-specific ID of the property), or (3)
+     * a URL indicating the type of the property, either pointing to an external vocabulary, or a Web resource that describes the property (e.g. a glossary entry).
+     * Standards bodies should promote a standard prefix for the identifiers of properties from their standards.
+     *
+     * @param propertyID URL value to set.
+     */
+    void addPropertyID(URL propertyID);
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getUnitCodeList();
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getUnitCode();
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addUnitCode(URL unitCode);
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addUnitCode(Text unitCode);
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getUnitTextList();
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @return {@link Text}
+     */
+    Text getUnitText();
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @param unitText Text value to set.
+     */
+    void addUnitText(Text unitText);
+
+    /**
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
@@ -198,112 +352,6 @@ public interface PropertyValue extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValue(StructuredValue value);
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Number> getMaxValueList();
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Number getMaxValue();
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param maxValue Number value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addMaxValue(Number maxValue);
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getUnitCodeList();
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getUnitCode();
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param unitCode URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addUnitCode(URL unitCode);
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param unitCode Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addUnitCode(Text unitCode);
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> List<T> getMeasurementMethodList();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @return {@link Text} or {@link MeasurementMethodEnum} or {@link DefinedTerm} or {@link URL}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    <T> T getMeasurementMethod();
-
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(Text measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod MeasurementMethodEnum value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(MeasurementMethodEnum measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(DefinedTerm measurementMethod);
-    /**
-     * A subproperty of [[measurementTechnique]] that can be used for specifying specific methods, in particular via [[MeasurementMethodEnum]].
-     *
-     * @param measurementMethod URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1425">https://github.com/schemaorg/schemaorg/issues/1425</a>
-     */
-    void addMeasurementMethod(URL measurementMethod);
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -377,52 +425,4 @@ public interface PropertyValue extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(QualitativeValue valueReference);
-
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Number> getMinValueList();
-
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Number getMinValue();
-
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @param minValue Number value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addMinValue(Number minValue);
-
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getUnitTextList();
-
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @return {@link Text}
-     */
-    Text getUnitText();
-
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @param unitText Text value to set.
-     */
-    void addUnitText(Text unitText);
 }

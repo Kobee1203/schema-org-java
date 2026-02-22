@@ -20,33 +20,6 @@ import spec.model.datatype.Text;
 public interface HealthPlanNetwork extends Intangible {
 
     /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    List<Text> getHealthPlanNetworkIdList();
-
-    /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    Text getHealthPlanNetworkId();
-
-    /**
-     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
-     *
-     * @param healthPlanNetworkId Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
-     */
-    void addHealthPlanNetworkId(Text healthPlanNetworkId);
-
-    /**
      * The costs to the patient for services under this network or formulary.
      *
      * @return {@link HealthPlanCostSharingSpecification} or {@link Boolean}
@@ -80,6 +53,33 @@ public interface HealthPlanNetwork extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
      */
     void addHealthPlanCostSharing(Boolean healthPlanCostSharing);
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    List<Text> getHealthPlanNetworkIdList();
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    Text getHealthPlanNetworkId();
+
+    /**
+     * Name or unique ID of network. (Networks are often reused across different insurance plans.)
+     *
+     * @param healthPlanNetworkId Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1062">https://github.com/schemaorg/schemaorg/issues/1062</a>
+     */
+    void addHealthPlanNetworkId(Text healthPlanNetworkId);
 
     /**
      * The tier(s) for this network.

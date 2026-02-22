@@ -29,195 +29,31 @@ import spec_custom.model.datatype.URL;
 public interface Certification extends CreativeWork {
 
     /**
-     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     * The subject matter of an object.
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    List<QuantitativeValue> getHasMeasurementList();
+    List<Thing> getAboutList();
 
     /**
-     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     * The subject matter of an object.
      *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    QuantitativeValue getHasMeasurement();
+    Thing getAbout();
 
     /**
-     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     * The subject matter of an object.
      *
-     * @param hasMeasurement QuantitativeValue value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void addHasMeasurement(QuantitativeValue hasMeasurement);
-
-    /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    List<AdministrativeArea> getValidInList();
-
-    /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-     *
-     * @return {@link AdministrativeArea}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    AdministrativeArea getValidIn();
-
-    /**
-     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
-     *
-     * @param validIn AdministrativeArea value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
-     */
-    void addValidIn(AdministrativeArea validIn);
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getLogoList();
-
-    /**
-     * An associated logo.
-     *
-     * @return {@link URL} or {@link ImageObject}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getLogo();
-
-    /**
-     * An associated logo.
-     *
-     * @param logo URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addLogo(URL logo);
-    /**
-     * An associated logo.
-     *
-     * @param logo ImageObject value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addLogo(ImageObject logo);
-
-    /**
-     * Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).
-     *
-     * @return {@link CertificationStatusEnumeration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    List<CertificationStatusEnumeration> getCertificationStatusList();
-
-    /**
-     * Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).
-     *
-     * @return {@link CertificationStatusEnumeration}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    CertificationStatusEnumeration getCertificationStatus();
-
-    /**
-     * Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).
-     *
-     * @param certificationStatus CertificationStatusEnumeration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    void addCertificationStatus(CertificationStatusEnumeration certificationStatus);
-
-    /**
-     * Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).
-     *
-     * @return {@link Rating}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    List<Rating> getCertificationRatingList();
-
-    /**
-     * Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).
-     *
-     * @return {@link Rating}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    Rating getCertificationRating();
-
-    /**
-     * Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).
-     *
-     * @param certificationRating Rating value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    void addCertificationRating(Rating certificationRating);
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getValidFromList();
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getValidFrom();
-
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom DateTime value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addValidFrom(DateTime validFrom);
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom Date value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addValidFrom(Date validFrom);
-
-    /**
-     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> List<T> getDatePublishedList();
-
-    /**
-     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
-     *
-     * @return {@link Date} or {@link DateTime}
-     */
-    <T> T getDatePublished();
-
-    /**
-     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
-     *
-     * @param datePublished Date value to set.
-     */
-    void addDatePublished(Date datePublished);
-    /**
-     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
-     *
-     * @param datePublished DateTime value to set.
-     */
-    void addDatePublished(DateTime datePublished);
+    void addAbout(Thing about);
 
     /**
      * Date when a certification was last audited. See also  [gs1:certificationAuditDate](https://www.gs1.org/voc/certificationAuditDate).
@@ -249,60 +85,6 @@ public interface Certification extends CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
      */
     void addAuditDate(Date auditDate);
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> List<T> getExpiresList();
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
-     *
-     * @return {@link DateTime} or {@link Date}
-     */
-    <T> T getExpires();
-
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
-     *
-     * @param expires DateTime value to set.
-     */
-    void addExpires(DateTime expires);
-    /**
-     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
-     *
-     * @param expires Date value to set.
-     */
-    void addExpires(Date expires);
-
-    /**
-     * The subject matter of an object.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    List<Thing> getAboutList();
-
-    /**
-     * The subject matter of an object.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    Thing getAbout();
-
-    /**
-     * The subject matter of an object.
-     *
-     * @param about Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    void addAbout(Thing about);
 
     /**
      * Identifier of a certification instance (as registered with an independent certification body). Typically this identifier can be used to consult and verify the certification instance. See also [gs1:certificationIdentification](https://www.gs1.org/voc/certificationIdentification).
@@ -340,6 +122,138 @@ public interface Certification extends CreativeWork {
     void addCertificationIdentification(Text certificationIdentification);
 
     /**
+     * Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).
+     *
+     * @return {@link Rating}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    List<Rating> getCertificationRatingList();
+
+    /**
+     * Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).
+     *
+     * @return {@link Rating}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    Rating getCertificationRating();
+
+    /**
+     * Rating of a certification instance (as defined by an independent certification body). Typically this rating can be used to rate the level to which the requirements of the certification instance are fulfilled. See also [gs1:certificationValue](https://www.gs1.org/voc/certificationValue).
+     *
+     * @param certificationRating Rating value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    void addCertificationRating(Rating certificationRating);
+
+    /**
+     * Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).
+     *
+     * @return {@link CertificationStatusEnumeration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    List<CertificationStatusEnumeration> getCertificationStatusList();
+
+    /**
+     * Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).
+     *
+     * @return {@link CertificationStatusEnumeration}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    CertificationStatusEnumeration getCertificationStatus();
+
+    /**
+     * Indicates the current status of a certification: active or inactive. See also  [gs1:certificationStatus](https://www.gs1.org/voc/certificationStatus).
+     *
+     * @param certificationStatus CertificationStatusEnumeration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    void addCertificationStatus(CertificationStatusEnumeration certificationStatus);
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> List<T> getDatePublishedList();
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @return {@link Date} or {@link DateTime}
+     */
+    <T> T getDatePublished();
+
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @param datePublished Date value to set.
+     */
+    void addDatePublished(Date datePublished);
+    /**
+     * Date of first publication or broadcast. For example the date a [[CreativeWork]] was broadcast or a [[Certification]] was issued.
+     *
+     * @param datePublished DateTime value to set.
+     */
+    void addDatePublished(DateTime datePublished);
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> List<T> getExpiresList();
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @return {@link DateTime} or {@link Date}
+     */
+    <T> T getExpires();
+
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @param expires DateTime value to set.
+     */
+    void addExpires(DateTime expires);
+    /**
+     * Date the content expires and is no longer useful or available. For example a [[VideoObject]] or [[NewsArticle]] whose availability or relevance is time-limited, a [[ClaimReview]] fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date, or a [[Certification]] the validity has expired.
+     *
+     * @param expires Date value to set.
+     */
+    void addExpires(Date expires);
+
+    /**
+     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    List<QuantitativeValue> getHasMeasurementList();
+
+    /**
+     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    QuantitativeValue getHasMeasurement();
+
+    /**
+     * A measurement of an item, For example, the inseam of pants, the wheel size of a bicycle, the gauge of a screw, or the carbon footprint measured for certification by an authority. Usually an exact measurement, but can also be a range of measurements for adjustable products, for example belts and ski bindings.
+     *
+     * @param hasMeasurement QuantitativeValue value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2811">https://github.com/schemaorg/schemaorg/issues/2811</a>
+     */
+    void addHasMeasurement(QuantitativeValue hasMeasurement);
+
+    /**
      * The organization issuing the item, for example a [[Permit]], [[Ticket]], or [[Certification]].
      *
      * @return {@link Organization}
@@ -359,4 +273,90 @@ public interface Certification extends CreativeWork {
      * @param issuedBy Organization value to set.
      */
     void addIssuedBy(Organization issuedBy);
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getLogoList();
+
+    /**
+     * An associated logo.
+     *
+     * @return {@link URL} or {@link ImageObject}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getLogo();
+
+    /**
+     * An associated logo.
+     *
+     * @param logo URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addLogo(URL logo);
+    /**
+     * An associated logo.
+     *
+     * @param logo ImageObject value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addLogo(ImageObject logo);
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getValidFromList();
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getValidFrom();
+
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addValidFrom(DateTime validFrom);
+    /**
+     * The date when the item becomes valid.
+     *
+     * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addValidFrom(Date validFrom);
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    List<AdministrativeArea> getValidInList();
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @return {@link AdministrativeArea}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    AdministrativeArea getValidIn();
+
+    /**
+     * The geographic area where the item is valid. Applies for example to a [[Permit]], a [[Certification]], or an [[EducationalOccupationalCredential]]. 
+     *
+     * @param validIn AdministrativeArea value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1779">https://github.com/schemaorg/schemaorg/issues/1779</a>
+     */
+    void addValidIn(AdministrativeArea validIn);
 }

@@ -23,93 +23,6 @@ import spec_custom.model.datatype.Text;
 public interface MusicRelease extends MusicPlaylist {
 
     /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    <T> List<T> getDurationList();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @return {@link Duration} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    <T> T getDuration();
-
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param duration Duration value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    void addDuration(Duration duration);
-    /**
-     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
-     *
-     * @param duration QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     */
-    void addDuration(QuantitativeValue duration);
-
-    /**
-     * The label that issued the release.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    List<Organization> getRecordLabelList();
-
-    /**
-     * The label that issued the release.
-     *
-     * @return {@link Organization}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    Organization getRecordLabel();
-
-    /**
-     * The label that issued the release.
-     *
-     * @param recordLabel Organization value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addRecordLabel(Organization recordLabel);
-
-    /**
-     * The album this is a release of.
-     *
-     * @return {@link MusicAlbum}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    List<MusicAlbum> getReleaseOfList();
-
-    /**
-     * The album this is a release of.
-     *
-     * @return {@link MusicAlbum}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    MusicAlbum getReleaseOf();
-
-    /**
-     * The album this is a release of.
-     *
-     * @param releaseOf MusicAlbum value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addReleaseOf(MusicAlbum releaseOf);
-
-    /**
      * The catalog number for the release.
      *
      * @return {@link Text}
@@ -165,6 +78,45 @@ public interface MusicRelease extends MusicPlaylist {
     void addCreditedTo(Organization creditedTo);
 
     /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> List<T> getDurationList();
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @return {@link Duration} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    <T> T getDuration();
+
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param duration Duration value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDuration(Duration duration);
+    /**
+     * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
+     *
+     * @param duration QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     */
+    void addDuration(QuantitativeValue duration);
+
+    /**
      * Format of this release (the type of recording media used, i.e. compact disc, digital media, LP, etc.).
      *
      * @return {@link MusicReleaseFormatType}
@@ -187,4 +139,52 @@ public interface MusicRelease extends MusicPlaylist {
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addMusicReleaseFormat(MusicReleaseFormatType musicReleaseFormat);
+
+    /**
+     * The label that issued the release.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    List<Organization> getRecordLabelList();
+
+    /**
+     * The label that issued the release.
+     *
+     * @return {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    Organization getRecordLabel();
+
+    /**
+     * The label that issued the release.
+     *
+     * @param recordLabel Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addRecordLabel(Organization recordLabel);
+
+    /**
+     * The album this is a release of.
+     *
+     * @return {@link MusicAlbum}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    List<MusicAlbum> getReleaseOfList();
+
+    /**
+     * The album this is a release of.
+     *
+     * @return {@link MusicAlbum}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    MusicAlbum getReleaseOf();
+
+    /**
+     * The album this is a release of.
+     *
+     * @param releaseOf MusicAlbum value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addReleaseOf(MusicAlbum releaseOf);
 }

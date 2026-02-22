@@ -47,6 +47,87 @@ public interface Rating extends Intangible {
     void addAuthor(Person author);
 
     /**
+     * The highest value allowed in this rating system.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> List<T> getBestRatingList();
+
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @return {@link Text} or {@link Number}
+     */
+    <T> T getBestRating();
+
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @param bestRating Text value to set.
+     */
+    void addBestRating(Text bestRating);
+    /**
+     * The highest value allowed in this rating system.
+     *
+     * @param bestRating Number value to set.
+     */
+    void addBestRating(Number bestRating);
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    List<Text> getRatingExplanationList();
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    Text getRatingExplanation();
+
+    /**
+     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
+     *
+     * @param ratingExplanation Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
+     */
+    void addRatingExplanation(Text ratingExplanation);
+
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> List<T> getRatingValueList();
+
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @return {@link Number} or {@link Text}
+     */
+    <T> T getRatingValue();
+
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param ratingValue Number value to set.
+     */
+    void addRatingValue(Number ratingValue);
+    /**
+     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
+     *
+     * @param ratingValue Text value to set.
+     */
+    void addRatingValue(Text ratingValue);
+
+    /**
      * This Review or Rating is relevant to this part or facet of the itemReviewed.
      *
      * @return {@link Text} or {@link StructuredValue}
@@ -78,60 +159,6 @@ public interface Rating extends Intangible {
     void addReviewAspect(StructuredValue reviewAspect);
 
     /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    <T> List<T> getRatingValueList();
-
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @return {@link Number} or {@link Text}
-     */
-    <T> T getRatingValue();
-
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param ratingValue Number value to set.
-     */
-    void addRatingValue(Number ratingValue);
-    /**
-     * The rating for the content.<br/><br/>Usage guidelines:<br/><br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
-     *
-     * @param ratingValue Text value to set.
-     */
-    void addRatingValue(Text ratingValue);
-
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
-    List<Text> getRatingExplanationList();
-
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
-    Text getRatingExplanation();
-
-    /**
-     * A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating. This is particularly applicable to ratings associated with "fact check" markup using [[ClaimReview]].
-     *
-     * @param ratingExplanation Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2300">https://github.com/schemaorg/schemaorg/issues/2300</a>
-     */
-    void addRatingExplanation(Text ratingExplanation);
-
-    /**
      * The lowest value allowed in this rating system.
      *
      * @return {@link Text} or {@link Number}
@@ -157,31 +184,4 @@ public interface Rating extends Intangible {
      * @param worstRating Number value to set.
      */
     void addWorstRating(Number worstRating);
-
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> List<T> getBestRatingList();
-
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @return {@link Text} or {@link Number}
-     */
-    <T> T getBestRating();
-
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @param bestRating Text value to set.
-     */
-    void addBestRating(Text bestRating);
-    /**
-     * The highest value allowed in this rating system.
-     *
-     * @param bestRating Number value to set.
-     */
-    void addBestRating(Number bestRating);
 }

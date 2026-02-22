@@ -40,6 +40,52 @@ import spec.model.datatype.URL;
 @JsonLdTypeName("PostalAddress")
 public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements PostalAddress {
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
     @JsonLdFieldTypes({ Country.class, Text.class })
     private List<Object> addressCountry;
 
@@ -86,68 +132,36 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.addressCountry = add(this.addressCountry, addressCountry);
     }
 
-    private List<Text> extendedAddress;
+    private List<Text> addressLocality;
 
     /**
-     * An address extension such as an apartment number, C/O or alternative name.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getExtendedAddressList() {
-        return extendedAddress;
+    public List<Text> getAddressLocalityList() {
+        return addressLocality;
     }
 
     /**
-     * An address extension such as an apartment number, C/O or alternative name.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getExtendedAddress() {
-        return getFirst(extendedAddress);
+    public Text getAddressLocality() {
+        return getFirst(addressLocality);
     }
 
     /**
-     * An address extension such as an apartment number, C/O or alternative name.
+     * The locality in which the street address is, and which is in the region. For example, Mountain View.
      *
-     * @param extendedAddress Text value to set.
+     * @param addressLocality Text value to set.
      */
     @Override
-    public void addExtendedAddress(Text extendedAddress) {
-        this.extendedAddress = add(this.extendedAddress, extendedAddress);
-    }
-
-    private List<Text> streetAddress;
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getStreetAddressList() {
-        return streetAddress;
-    }
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getStreetAddress() {
-        return getFirst(streetAddress);
-    }
-
-    /**
-     * The street address. For example, 1600 Amphitheatre Pkwy.
-     *
-     * @param streetAddress Text value to set.
-     */
-    @Override
-    public void addStreetAddress(Text streetAddress) {
-        this.streetAddress = add(this.streetAddress, streetAddress);
+    public void addAddressLocality(Text addressLocality) {
+        this.addressLocality = add(this.addressLocality, addressLocality);
     }
 
     @JsonLdFieldTypes({ AdministrativeArea.class, Text.class })
@@ -196,177 +210,36 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.addressRegion = add(this.addressRegion, addressRegion);
     }
 
-    private List<Text> addressLocality;
+    private List<Text> alternateName;
 
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAddressLocalityList() {
-        return addressLocality;
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     * An alias for the item.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAddressLocality() {
-        return getFirst(addressLocality);
+    public Text getAlternateName() {
+        return getFirst(alternateName);
     }
 
     /**
-     * The locality in which the street address is, and which is in the region. For example, Mountain View.
+     * An alias for the item.
      *
-     * @param addressLocality Text value to set.
+     * @param alternateName Text value to set.
      */
     @Override
-    public void addAddressLocality(Text addressLocality) {
-        this.addressLocality = add(this.addressLocality, addressLocality);
-    }
-
-    private List<Text> postOfficeBoxNumber;
-
-    /**
-     * The post office box number for PO box addresses.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getPostOfficeBoxNumberList() {
-        return postOfficeBoxNumber;
-    }
-
-    /**
-     * The post office box number for PO box addresses.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getPostOfficeBoxNumber() {
-        return getFirst(postOfficeBoxNumber);
-    }
-
-    /**
-     * The post office box number for PO box addresses.
-     *
-     * @param postOfficeBoxNumber Text value to set.
-     */
-    @Override
-    public void addPostOfficeBoxNumber(Text postOfficeBoxNumber) {
-        this.postOfficeBoxNumber = add(this.postOfficeBoxNumber, postOfficeBoxNumber);
-    }
-
-    private List<Text> postalCode;
-
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public List<Text> getPostalCodeList() {
-        return postalCode;
-    }
-
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @return {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public Text getPostalCode() {
-        return getFirst(postalCode);
-    }
-
-    /**
-     * The postal code. For example, 94043.
-     *
-     * @param postalCode Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
-     */
-    @Override
-    public void addPostalCode(Text postalCode) {
-        this.postalCode = add(this.postalCode, postalCode);
-    }
-
-    private List<OpeningHoursSpecification> hoursAvailable;
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public List<OpeningHoursSpecification> getHoursAvailableList() {
-        return hoursAvailable;
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @return {@link OpeningHoursSpecification}
-     */
-    @Override
-    public OpeningHoursSpecification getHoursAvailable() {
-        return getFirst(hoursAvailable);
-    }
-
-    /**
-     * The hours during which this service or contact is available.
-     *
-     * @param hoursAvailable OpeningHoursSpecification value to set.
-     */
-    @Override
-    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
-        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
-    }
-
-    @JsonLdFieldTypes({ Text.class, Product.class })
-    private List<Object> productSupported;
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @return {@link Text} or {@link Product}
-     */
-    @Override
-    public <T> List<T> getProductSupportedList() {
-        return (List<T>) productSupported;
-    }
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @return {@link Text} or {@link Product}
-     */
-    @Override
-    public <T> T getProductSupported() {
-        return (T) getFirst(productSupported);
-    }
-
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @param productSupported Text value to set.
-     */
-    @Override
-    public void addProductSupported(Text productSupported) {
-        this.productSupported = add(this.productSupported, productSupported);
-    }
-    /**
-     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
-     *
-     * @param productSupported Product value to set.
-     */
-    @Override
-    public void addProductSupported(Product productSupported) {
-        this.productSupported = add(this.productSupported, productSupported);
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
     }
 
     @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
@@ -471,57 +344,6 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.availableLanguage = add(this.availableLanguage, availableLanguage);
     }
 
-    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
-    private List<Object> serviceArea;
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
-     */
-    @Override
-    public <T> List<T> getServiceAreaList() {
-        return (List<T>) serviceArea;
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
-     */
-    @Override
-    public <T> T getServiceArea() {
-        return (T) getFirst(serviceArea);
-    }
-
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea AdministrativeArea value to set.
-     */
-    @Override
-    public void addServiceArea(AdministrativeArea serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea GeoShape value to set.
-     */
-    @Override
-    public void addServiceArea(GeoShape serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-    /**
-     * The geographic area where the service is provided.
-     *
-     * @param serviceArea Place value to set.
-     */
-    @Override
-    public void addServiceArea(Place serviceArea) {
-        this.serviceArea = add(this.serviceArea, serviceArea);
-    }
-
     private List<ContactPointOption> contactOption;
 
     /**
@@ -552,38 +374,6 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     @Override
     public void addContactOption(ContactPointOption contactOption) {
         this.contactOption = add(this.contactOption, contactOption);
-    }
-
-    private List<Text> telephone;
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getTelephoneList() {
-        return telephone;
-    }
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTelephone() {
-        return getFirst(telephone);
-    }
-
-    /**
-     * The telephone number.
-     *
-     * @param telephone Text value to set.
-     */
-    @Override
-    public void addTelephone(Text telephone) {
-        this.telephone = add(this.telephone, telephone);
     }
 
     private List<Text> contactType;
@@ -618,36 +408,78 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.contactType = add(this.contactType, contactType);
     }
 
-    private List<Text> faxNumber;
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
 
     /**
-     * The fax number.
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getFaxNumberList() {
-        return faxNumber;
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
     }
 
     /**
-     * The fax number.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getFaxNumber() {
-        return getFirst(faxNumber);
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
     }
 
     /**
-     * The fax number.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param faxNumber Text value to set.
+     * @param disambiguatingDescription Text value to set.
      */
     @Override
-    public void addFaxNumber(Text faxNumber) {
-        this.faxNumber = add(this.faxNumber, faxNumber);
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
     private List<Text> email;
@@ -682,114 +514,100 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.email = add(this.email, email);
     }
 
-    private List<URL> sameAs;
+    private List<Text> extendedAddress;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
+     * An address extension such as an apartment number, C/O or alternative name.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getNameList() {
-        return name;
+    public List<Text> getExtendedAddressList() {
+        return extendedAddress;
     }
 
     /**
-     * The name of the item.
+     * An address extension such as an apartment number, C/O or alternative name.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getName() {
-        return getFirst(name);
+    public Text getExtendedAddress() {
+        return getFirst(extendedAddress);
     }
 
     /**
-     * The name of the item.
+     * An address extension such as an apartment number, C/O or alternative name.
      *
-     * @param name Text value to set.
+     * @param extendedAddress Text value to set.
      */
     @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
+    public void addExtendedAddress(Text extendedAddress) {
+        this.extendedAddress = add(this.extendedAddress, extendedAddress);
     }
 
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
+    private List<Text> faxNumber;
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     * The fax number.
      *
-     * @return {@link URL} or {@link Text}
+     * @return {@link Text}
      */
     @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
     }
 
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     * The fax number.
      *
-     * @param additionalType URL value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public Text getFaxNumber() {
+        return getFirst(faxNumber);
     }
+
     /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     * The fax number.
      *
-     * @param additionalType Text value to set.
+     * @param faxNumber Text value to set.
      */
     @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
+    }
+
+    private List<OpeningHoursSpecification> hoursAvailable;
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public List<OpeningHoursSpecification> getHoursAvailableList() {
+        return hoursAvailable;
+    }
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @return {@link OpeningHoursSpecification}
+     */
+    @Override
+    public OpeningHoursSpecification getHoursAvailable() {
+        return getFirst(hoursAvailable);
+    }
+
+    /**
+     * The hours during which this service or contact is available.
+     *
+     * @param hoursAvailable OpeningHoursSpecification value to set.
+     */
+    @Override
+    public void addHoursAvailable(OpeningHoursSpecification hoursAvailable) {
+        this.hoursAvailable = add(this.hoursAvailable, hoursAvailable);
     }
 
     @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
@@ -848,6 +666,122 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.identifier = add(this.identifier, identifier);
     }
 
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage CreativeWork value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
     @JsonLdFieldTypes({ Person.class, Organization.class })
     private List<Object> owner;
 
@@ -892,6 +826,262 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     @Override
     public void addOwner(Organization owner) {
         this.owner = add(this.owner, owner);
+    }
+
+    private List<Text> postOfficeBoxNumber;
+
+    /**
+     * The post office box number for PO box addresses.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getPostOfficeBoxNumberList() {
+        return postOfficeBoxNumber;
+    }
+
+    /**
+     * The post office box number for PO box addresses.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getPostOfficeBoxNumber() {
+        return getFirst(postOfficeBoxNumber);
+    }
+
+    /**
+     * The post office box number for PO box addresses.
+     *
+     * @param postOfficeBoxNumber Text value to set.
+     */
+    @Override
+    public void addPostOfficeBoxNumber(Text postOfficeBoxNumber) {
+        this.postOfficeBoxNumber = add(this.postOfficeBoxNumber, postOfficeBoxNumber);
+    }
+
+    private List<Text> postalCode;
+
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public List<Text> getPostalCodeList() {
+        return postalCode;
+    }
+
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @return {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public Text getPostalCode() {
+        return getFirst(postalCode);
+    }
+
+    /**
+     * The postal code. For example, 94043.
+     *
+     * @param postalCode Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2506">https://github.com/schemaorg/schemaorg/issues/2506</a>
+     */
+    @Override
+    public void addPostalCode(Text postalCode) {
+        this.postalCode = add(this.postalCode, postalCode);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    @JsonLdFieldTypes({ Text.class, Product.class })
+    private List<Object> productSupported;
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @return {@link Text} or {@link Product}
+     */
+    @Override
+    public <T> List<T> getProductSupportedList() {
+        return (List<T>) productSupported;
+    }
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @return {@link Text} or {@link Product}
+     */
+    @Override
+    public <T> T getProductSupported() {
+        return (T) getFirst(productSupported);
+    }
+
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param productSupported Text value to set.
+     */
+    @Override
+    public void addProductSupported(Text productSupported) {
+        this.productSupported = add(this.productSupported, productSupported);
+    }
+    /**
+     * The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. "iPhone") or a general category of products or services (e.g. "smartphones").
+     *
+     * @param productSupported Product value to set.
+     */
+    @Override
+    public void addProductSupported(Product productSupported) {
+        this.productSupported = add(this.productSupported, productSupported);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ AdministrativeArea.class, GeoShape.class, Place.class })
+    private List<Object> serviceArea;
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    @Override
+    public <T> List<T> getServiceAreaList() {
+        return (List<T>) serviceArea;
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @return {@link AdministrativeArea} or {@link GeoShape} or {@link Place}
+     */
+    @Override
+    public <T> T getServiceArea() {
+        return (T) getFirst(serviceArea);
+    }
+
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea AdministrativeArea value to set.
+     */
+    @Override
+    public void addServiceArea(AdministrativeArea serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea GeoShape value to set.
+     */
+    @Override
+    public void addServiceArea(GeoShape serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+    /**
+     * The geographic area where the service is provided.
+     *
+     * @param serviceArea Place value to set.
+     */
+    @Override
+    public void addServiceArea(Place serviceArea) {
+        this.serviceArea = add(this.serviceArea, serviceArea);
+    }
+
+    private List<Text> streetAddress;
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getStreetAddressList() {
+        return streetAddress;
+    }
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getStreetAddress() {
+        return getFirst(streetAddress);
+    }
+
+    /**
+     * The street address. For example, 1600 Amphitheatre Pkwy.
+     *
+     * @param streetAddress Text value to set.
+     */
+    @Override
+    public void addStreetAddress(Text streetAddress) {
+        this.streetAddress = add(this.streetAddress, streetAddress);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -940,152 +1130,36 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    private List<Text> telephone;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getTelephoneList() {
+        return telephone;
     }
 
     /**
-     * An alias for the item.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getTelephone() {
+        return getFirst(telephone);
     }
 
     /**
-     * An alias for the item.
+     * The telephone number.
      *
-     * @param alternateName Text value to set.
+     * @param telephone Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
     private List<URL> url;
@@ -1118,79 +1192,5 @@ public class PostalAddressImpl extends com.weedow.schemaorg.commons.model.JsonLd
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 }

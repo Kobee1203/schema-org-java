@@ -39,156 +39,156 @@ import spec.model.datatype.URL;
 @JsonLdTypeName("InteractionCounter")
 public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements InteractionCounter {
 
-    @JsonLdFieldTypes({ DateTime.class, Time.class })
-    private List<Object> startTime;
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link URL} or {@link Text}
      */
     @Override
-    public <T> List<T> getStartTimeList() {
-        return (List<T>) startTime;
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @return {@link DateTime} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @return {@link URL} or {@link Text}
      */
     @Override
-    public <T> T getStartTime() {
-        return (T) getFirst(startTime);
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
     }
 
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @param startTime DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @param additionalType URL value to set.
      */
     @Override
-    public void addStartTime(DateTime startTime) {
-        this.startTime = add(this.startTime, startTime);
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
     /**
-     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
      *
-     * @param startTime Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     * @param additionalType Text value to set.
      */
     @Override
-    public void addStartTime(Time startTime) {
-        this.startTime = add(this.startTime, startTime);
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
     }
 
-    @JsonLdFieldTypes({ SoftwareApplication.class, WebSite.class })
-    private List<Object> interactionService;
+    private List<Text> alternateName;
 
     /**
-     * The WebSite or SoftwareApplication where the interactions took place.
+     * An alias for the item.
      *
-     * @return {@link SoftwareApplication} or {@link WebSite}
+     * @return {@link Text}
      */
     @Override
-    public <T> List<T> getInteractionServiceList() {
-        return (List<T>) interactionService;
-    }
-
-    /**
-     * The WebSite or SoftwareApplication where the interactions took place.
-     *
-     * @return {@link SoftwareApplication} or {@link WebSite}
-     */
-    @Override
-    public <T> T getInteractionService() {
-        return (T) getFirst(interactionService);
+    public List<Text> getAlternateNameList() {
+        return alternateName;
     }
 
     /**
-     * The WebSite or SoftwareApplication where the interactions took place.
+     * An alias for the item.
      *
-     * @param interactionService SoftwareApplication value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addInteractionService(SoftwareApplication interactionService) {
-        this.interactionService = add(this.interactionService, interactionService);
-    }
-    /**
-     * The WebSite or SoftwareApplication where the interactions took place.
-     *
-     * @param interactionService WebSite value to set.
-     */
-    @Override
-    public void addInteractionService(WebSite interactionService) {
-        this.interactionService = add(this.interactionService, interactionService);
-    }
-
-    private List<Integer> userInteractionCount;
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
-     *
-     * @return {@link Integer}
-     */
-    @Override
-    public List<Integer> getUserInteractionCountList() {
-        return userInteractionCount;
+    public Text getAlternateName() {
+        return getFirst(alternateName);
     }
 
     /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+     * An alias for the item.
      *
-     * @return {@link Integer}
+     * @param alternateName Text value to set.
      */
     @Override
-    public Integer getUserInteractionCount() {
-        return getFirst(userInteractionCount);
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
     }
 
     /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
+     * A description of the item.
      *
-     * @param userInteractionCount Integer value to set.
+     * @return {@link TextObject} or {@link Text}
      */
     @Override
-    public void addUserInteractionCount(Integer userInteractionCount) {
-        this.userInteractionCount = add(this.userInteractionCount, userInteractionCount);
-    }
-
-    private List<Action> interactionType;
-
-    /**
-     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getInteractionTypeList() {
-        return interactionType;
+    public <T> T getDescription() {
+        return (T) getFirst(description);
     }
 
     /**
-     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+     * A description of the item.
      *
-     * @return {@link Action}
+     * @param description TextObject value to set.
      */
     @Override
-    public Action getInteractionType() {
-        return getFirst(interactionType);
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
     }
 
     /**
-     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
      *
-     * @param interactionType Action value to set.
+     * @return {@link Text}
      */
     @Override
-    public void addInteractionType(Action interactionType) {
-        this.interactionType = add(this.interactionType, interactionType);
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 
     @JsonLdFieldTypes({ DateTime.class, Time.class })
@@ -235,6 +235,178 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
     @Override
     public void addEndTime(Time endTime) {
         this.endTime = add(this.endTime, endTime);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ SoftwareApplication.class, WebSite.class })
+    private List<Object> interactionService;
+
+    /**
+     * The WebSite or SoftwareApplication where the interactions took place.
+     *
+     * @return {@link SoftwareApplication} or {@link WebSite}
+     */
+    @Override
+    public <T> List<T> getInteractionServiceList() {
+        return (List<T>) interactionService;
+    }
+
+    /**
+     * The WebSite or SoftwareApplication where the interactions took place.
+     *
+     * @return {@link SoftwareApplication} or {@link WebSite}
+     */
+    @Override
+    public <T> T getInteractionService() {
+        return (T) getFirst(interactionService);
+    }
+
+    /**
+     * The WebSite or SoftwareApplication where the interactions took place.
+     *
+     * @param interactionService SoftwareApplication value to set.
+     */
+    @Override
+    public void addInteractionService(SoftwareApplication interactionService) {
+        this.interactionService = add(this.interactionService, interactionService);
+    }
+    /**
+     * The WebSite or SoftwareApplication where the interactions took place.
+     *
+     * @param interactionService WebSite value to set.
+     */
+    @Override
+    public void addInteractionService(WebSite interactionService) {
+        this.interactionService = add(this.interactionService, interactionService);
+    }
+
+    private List<Action> interactionType;
+
+    /**
+     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getInteractionTypeList() {
+        return interactionType;
+    }
+
+    /**
+     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getInteractionType() {
+        return getFirst(interactionType);
+    }
+
+    /**
+     * The Action representing the type of interaction. For up votes, +1s, etc. use [[LikeAction]]. For down votes use [[DislikeAction]]. Otherwise, use the most specific Action.
+     *
+     * @param interactionType Action value to set.
+     */
+    @Override
+    public void addInteractionType(Action interactionType) {
+        this.interactionType = add(this.interactionType, interactionType);
     }
 
     @JsonLdFieldTypes({ Text.class, VirtualLocation.class, Place.class, PostalAddress.class })
@@ -297,36 +469,46 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.location = add(this.location, location);
     }
 
-    private List<URL> sameAs;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link URL}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param sameAs URL value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     private List<Text> name;
@@ -359,108 +541,6 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
     @Override
     public void addName(Text name) {
         this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
@@ -509,6 +589,116 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.owner = add(this.owner, owner);
     }
 
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Time.class })
+    private List<Object> startTime;
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> List<T> getStartTimeList() {
+        return (List<T>) startTime;
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @return {@link DateTime} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public <T> T getStartTime() {
+        return (T) getFirst(startTime);
+    }
+
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addStartTime(DateTime startTime) {
+        this.startTime = add(this.startTime, startTime);
+    }
+    /**
+     * The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.<br/><br/>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.
+     *
+     * @param startTime Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2493">https://github.com/schemaorg/schemaorg/issues/2493</a>
+     */
+    @Override
+    public void addStartTime(Time startTime) {
+        this.startTime = add(this.startTime, startTime);
+    }
+
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
@@ -555,154 +745,6 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
     private List<URL> url;
 
     /**
@@ -735,77 +777,35 @@ public class InteractionCounterImpl extends com.weedow.schemaorg.commons.model.J
         this.url = add(this.url, url);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    private List<Integer> userInteractionCount;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
      *
-     * @return {@link ImageObject} or {@link URL}
+     * @return {@link Integer}
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public List<Integer> getUserInteractionCountList() {
+        return userInteractionCount;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
      *
-     * @return {@link ImageObject} or {@link URL}
+     * @return {@link Integer}
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public Integer getUserInteractionCount() {
+        return getFirst(userInteractionCount);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication.
      *
-     * @param image ImageObject value to set.
+     * @param userInteractionCount Integer value to set.
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public void addUserInteractionCount(Integer userInteractionCount) {
+        this.userInteractionCount = add(this.userInteractionCount, userInteractionCount);
     }
 }

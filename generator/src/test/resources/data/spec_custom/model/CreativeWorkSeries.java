@@ -19,30 +19,6 @@ import spec_custom.model.datatype.Text;
 public interface CreativeWorkSeries extends Series, CreativeWork {
 
     /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    List<Text> getIssnList();
-
-    /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    Text getIssn();
-
-    /**
-     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
-     *
-     * @param issn Text value to set.
-     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
-     */
-    void addIssn(Text issn);
-
-    /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @return {@link DateTime} or {@link Date}
@@ -72,6 +48,30 @@ public interface CreativeWorkSeries extends Series, CreativeWork {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     void addEndDate(Date endDate);
+
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    List<Text> getIssnList();
+
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    Text getIssn();
+
+    /**
+     * The International Standard Serial Number (ISSN) that identifies this serial publication. You can repeat this property to identify different formats of, or the linking ISSN (ISSN-L) for, this serial publication.
+     *
+     * @param issn Text value to set.
+     * @see <a href="https://schema.org/docs/collab/bibex">https://schema.org/docs/collab/bibex</a>
+     */
+    void addIssn(Text issn);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).

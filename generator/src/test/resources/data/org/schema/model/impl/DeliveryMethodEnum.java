@@ -8,22 +8,22 @@ package org.schema.model.impl;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Action;
-import org.schema.model.Class;
-import org.schema.model.CreativeWork;
-import org.schema.model.DeliveryMethod;
-import org.schema.model.Enumeration;
-import org.schema.model.Event;
-import org.schema.model.ImageObject;
-import org.schema.model.Intangible;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.Property;
-import org.schema.model.PropertyValue;
-import org.schema.model.TextObject;
-import org.schema.model.Thing;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
+import org.schema.model.models.Action;
+import org.schema.model.models.Class;
+import org.schema.model.models.CreativeWork;
+import org.schema.model.models.DeliveryMethod;
+import org.schema.model.models.Enumeration;
+import org.schema.model.models.Event;
+import org.schema.model.models.ImageObject;
+import org.schema.model.models.Intangible;
+import org.schema.model.models.Organization;
+import org.schema.model.models.Person;
+import org.schema.model.models.Property;
+import org.schema.model.models.PropertyValue;
+import org.schema.model.models.TextObject;
+import org.schema.model.models.Thing;
 
 /**
  * A delivery method is a standardized procedure for transferring the product or service to the destination of fulfillment chosen by the customer. Delivery methods are characterized by the means of transportation used, and by the organization or group that is the contracting party for the sending organization or person.<br/><br/>Commonly used values:<br/><br/>* http://purl.org/goodrelations/v1#DeliveryModeDirectDownload<br/>* http://purl.org/goodrelations/v1#DeliveryModeFreight<br/>* http://purl.org/goodrelations/v1#DeliveryModeMail<br/>* http://purl.org/goodrelations/v1#DeliveryModeOwnFleet<br/>* http://purl.org/goodrelations/v1#DeliveryModePickUp<br/>* http://purl.org/goodrelations/v1#DHL<br/>* http://purl.org/goodrelations/v1#FederalExpress<br/>* http://purl.org/goodrelations/v1#UPS

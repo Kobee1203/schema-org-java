@@ -36,6 +36,610 @@ import spec.model.datatype.URL;
 @JsonLdTypeName("ServiceChannel")
 public class ServiceChannelImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements ServiceChannel {
 
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    @JsonLdFieldTypes({ Language.class, Text.class })
+    private List<Object> availableLanguage;
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAvailableLanguageList() {
+        return (List<T>) availableLanguage;
+    }
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     */
+    @Override
+    public <T> T getAvailableLanguage() {
+        return (T) getFirst(availableLanguage);
+    }
+
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Language value to set.
+     */
+    @Override
+    public void addAvailableLanguage(Language availableLanguage) {
+        this.availableLanguage = add(this.availableLanguage, availableLanguage);
+    }
+    /**
+     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
+     *
+     * @param availableLanguage Text value to set.
+     */
+    @Override
+    public void addAvailableLanguage(Text availableLanguage) {
+        this.availableLanguage = add(this.availableLanguage, availableLanguage);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @return {@link CreativeWork} or {@link URL}
+     */
+    @Override
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
+    }
+
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage CreativeWork value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+    /**
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     *
+     * @param mainEntityOfPage URL value to set.
+     */
+    @Override
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Text> name;
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getNameList() {
+        return name;
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getName() {
+        return getFirst(name);
+    }
+
+    /**
+     * The name of the item.
+     *
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<Duration> processingTime;
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @return {@link Duration}
+     */
+    @Override
+    public List<Duration> getProcessingTimeList() {
+        return processingTime;
+    }
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @return {@link Duration}
+     */
+    @Override
+    public Duration getProcessingTime() {
+        return getFirst(processingTime);
+    }
+
+    /**
+     * Estimated processing time for the service using this channel.
+     *
+     * @param processingTime Duration value to set.
+     */
+    @Override
+    public void addProcessingTime(Duration processingTime) {
+        this.processingTime = add(this.processingTime, processingTime);
+    }
+
+    private List<Service> providesService;
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
+    @Override
+    public List<Service> getProvidesServiceList() {
+        return providesService;
+    }
+
+    /**
+     * The service provided by this channel.
+     *
+     * @return {@link Service}
+     */
+    @Override
+    public Service getProvidesService() {
+        return getFirst(providesService);
+    }
+
+    /**
+     * The service provided by this channel.
+     *
+     * @param providesService Service value to set.
+     */
+    @Override
+    public void addProvidesService(Service providesService) {
+        this.providesService = add(this.providesService, providesService);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    private List<Place> serviceLocation;
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getServiceLocationList() {
+        return serviceLocation;
+    }
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getServiceLocation() {
+        return getFirst(serviceLocation);
+    }
+
+    /**
+     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
+     *
+     * @param serviceLocation Place value to set.
+     */
+    @Override
+    public void addServiceLocation(Place serviceLocation) {
+        this.serviceLocation = add(this.serviceLocation, serviceLocation);
+    }
+
+    private List<ContactPoint> servicePhone;
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getServicePhoneList() {
+        return servicePhone;
+    }
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public ContactPoint getServicePhone() {
+        return getFirst(servicePhone);
+    }
+
+    /**
+     * The phone number to use to access the service.
+     *
+     * @param servicePhone ContactPoint value to set.
+     */
+    @Override
+    public void addServicePhone(ContactPoint servicePhone) {
+        this.servicePhone = add(this.servicePhone, servicePhone);
+    }
+
     private List<PostalAddress> servicePostalAddress;
 
     /**
@@ -100,70 +704,6 @@ public class ServiceChannelImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.serviceSmsNumber = add(this.serviceSmsNumber, serviceSmsNumber);
     }
 
-    private List<Service> providesService;
-
-    /**
-     * The service provided by this channel.
-     *
-     * @return {@link Service}
-     */
-    @Override
-    public List<Service> getProvidesServiceList() {
-        return providesService;
-    }
-
-    /**
-     * The service provided by this channel.
-     *
-     * @return {@link Service}
-     */
-    @Override
-    public Service getProvidesService() {
-        return getFirst(providesService);
-    }
-
-    /**
-     * The service provided by this channel.
-     *
-     * @param providesService Service value to set.
-     */
-    @Override
-    public void addProvidesService(Service providesService) {
-        this.providesService = add(this.providesService, providesService);
-    }
-
-    private List<ContactPoint> servicePhone;
-
-    /**
-     * The phone number to use to access the service.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public List<ContactPoint> getServicePhoneList() {
-        return servicePhone;
-    }
-
-    /**
-     * The phone number to use to access the service.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public ContactPoint getServicePhone() {
-        return getFirst(servicePhone);
-    }
-
-    /**
-     * The phone number to use to access the service.
-     *
-     * @param servicePhone ContactPoint value to set.
-     */
-    @Override
-    public void addServicePhone(ContactPoint servicePhone) {
-        this.servicePhone = add(this.servicePhone, servicePhone);
-    }
-
     private List<URL> serviceUrl;
 
     /**
@@ -194,324 +734,6 @@ public class ServiceChannelImpl extends com.weedow.schemaorg.commons.model.JsonL
     @Override
     public void addServiceUrl(URL serviceUrl) {
         this.serviceUrl = add(this.serviceUrl, serviceUrl);
-    }
-
-    private List<Duration> processingTime;
-
-    /**
-     * Estimated processing time for the service using this channel.
-     *
-     * @return {@link Duration}
-     */
-    @Override
-    public List<Duration> getProcessingTimeList() {
-        return processingTime;
-    }
-
-    /**
-     * Estimated processing time for the service using this channel.
-     *
-     * @return {@link Duration}
-     */
-    @Override
-    public Duration getProcessingTime() {
-        return getFirst(processingTime);
-    }
-
-    /**
-     * Estimated processing time for the service using this channel.
-     *
-     * @param processingTime Duration value to set.
-     */
-    @Override
-    public void addProcessingTime(Duration processingTime) {
-        this.processingTime = add(this.processingTime, processingTime);
-    }
-
-    @JsonLdFieldTypes({ Language.class, Text.class })
-    private List<Object> availableLanguage;
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAvailableLanguageList() {
-        return (List<T>) availableLanguage;
-    }
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     */
-    @Override
-    public <T> T getAvailableLanguage() {
-        return (T) getFirst(availableLanguage);
-    }
-
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Language value to set.
-     */
-    @Override
-    public void addAvailableLanguage(Language availableLanguage) {
-        this.availableLanguage = add(this.availableLanguage, availableLanguage);
-    }
-    /**
-     * A language someone may use with or at the item, service or place. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[inLanguage]].
-     *
-     * @param availableLanguage Text value to set.
-     */
-    @Override
-    public void addAvailableLanguage(Text availableLanguage) {
-        this.availableLanguage = add(this.availableLanguage, availableLanguage);
-    }
-
-    private List<Place> serviceLocation;
-
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getServiceLocationList() {
-        return serviceLocation;
-    }
-
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getServiceLocation() {
-        return getFirst(serviceLocation);
-    }
-
-    /**
-     * The location (e.g. civic structure, local business, etc.) where a person can go to access the service.
-     *
-     * @param serviceLocation Place value to set.
-     */
-    @Override
-    public void addServiceLocation(Place serviceLocation) {
-        this.serviceLocation = add(this.serviceLocation, serviceLocation);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -560,154 +782,6 @@ public class ServiceChannelImpl extends com.weedow.schemaorg.commons.model.JsonL
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
     private List<URL> url;
 
     /**
@@ -738,79 +812,5 @@ public class ServiceChannelImpl extends com.weedow.schemaorg.commons.model.JsonL
     @Override
     public void addUrl(URL url) {
         this.url = add(this.url, url);
-    }
-
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @param disambiguatingDescription Text value to set.
-     */
-    @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
     }
 }

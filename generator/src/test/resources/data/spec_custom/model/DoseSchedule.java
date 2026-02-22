@@ -19,28 +19,28 @@ import spec_custom.model.datatype.Text;
 public interface DoseSchedule extends MedicalIntangible {
 
     /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     * The unit of the dose, e.g. 'mg'.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getTargetPopulationList();
+    List<Text> getDoseUnitList();
 
     /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     * The unit of the dose, e.g. 'mg'.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getTargetPopulation();
+    Text getDoseUnit();
 
     /**
-     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
+     * The unit of the dose, e.g. 'mg'.
      *
-     * @param targetPopulation Text value to set.
+     * @param doseUnit Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addTargetPopulation(Text targetPopulation);
+    void addDoseUnit(Text doseUnit);
 
     /**
      * The value of the dose, e.g. 500.
@@ -98,26 +98,26 @@ public interface DoseSchedule extends MedicalIntangible {
     void addFrequency(Text frequency);
 
     /**
-     * The unit of the dose, e.g. 'mg'.
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    List<Text> getDoseUnitList();
+    List<Text> getTargetPopulationList();
 
     /**
-     * The unit of the dose, e.g. 'mg'.
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
      * @return {@link Text}
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    Text getDoseUnit();
+    Text getTargetPopulation();
 
     /**
-     * The unit of the dose, e.g. 'mg'.
+     * Characteristics of the population for which this is intended, or which typically uses it, e.g. 'adults'.
      *
-     * @param doseUnit Text value to set.
+     * @param targetPopulation Text value to set.
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
-    void addDoseUnit(Text doseUnit);
+    void addTargetPopulation(Text targetPopulation);
 }

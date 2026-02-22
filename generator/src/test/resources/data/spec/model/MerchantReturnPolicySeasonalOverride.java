@@ -26,33 +26,6 @@ import spec.model.datatype.Number;
 public interface MerchantReturnPolicySeasonalOverride extends Intangible {
 
     /**
-     * A refund type, from an enumerated list.
-     *
-     * @return {@link RefundTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    List<RefundTypeEnumeration> getRefundTypeList();
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @return {@link RefundTypeEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    RefundTypeEnumeration getRefundType();
-
-    /**
-     * A refund type, from an enumerated list.
-     *
-     * @param refundType RefundTypeEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void addRefundType(RefundTypeEnumeration refundType);
-
-    /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @return {@link DateTime} or {@link Date}
@@ -82,33 +55,6 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     void addEndDate(Date endDate);
-
-    /**
-     * The type of return method offered, specified from an enumeration.
-     *
-     * @return {@link ReturnMethodEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<ReturnMethodEnumeration> getReturnMethodList();
-
-    /**
-     * The type of return method offered, specified from an enumeration.
-     *
-     * @return {@link ReturnMethodEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    ReturnMethodEnumeration getReturnMethod();
-
-    /**
-     * The type of return method offered, specified from an enumeration.
-     *
-     * @param returnMethod ReturnMethodEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addReturnMethod(ReturnMethodEnumeration returnMethod);
 
     /**
      * Specifies either a fixed return date or the number of days (from the delivery date) that a product can be returned. Used when the [[returnPolicyCategory]] property is specified as [[MerchantReturnFiniteReturnWindow]].
@@ -154,58 +100,31 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     void addMerchantReturnDays(DateTime merchantReturnDays);
 
     /**
-     * The type of return fees for purchased products (for any return reason).
+     * A refund type, from an enumerated list.
      *
-     * @return {@link ReturnFeesEnumeration}
+     * @return {@link RefundTypeEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    List<ReturnFeesEnumeration> getReturnFeesList();
+    List<RefundTypeEnumeration> getRefundTypeList();
 
     /**
-     * The type of return fees for purchased products (for any return reason).
+     * A refund type, from an enumerated list.
      *
-     * @return {@link ReturnFeesEnumeration}
+     * @return {@link RefundTypeEnumeration}
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    ReturnFeesEnumeration getReturnFees();
+    RefundTypeEnumeration getRefundType();
 
     /**
-     * The type of return fees for purchased products (for any return reason).
+     * A refund type, from an enumerated list.
      *
-     * @param returnFees ReturnFeesEnumeration value to set.
+     * @param refundType RefundTypeEnumeration value to set.
      * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
      */
-    void addReturnFees(ReturnFeesEnumeration returnFees);
-
-    /**
-     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    List<MonetaryAmount> getReturnShippingFeesAmountList();
-
-    /**
-     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-     *
-     * @return {@link MonetaryAmount}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    MonetaryAmount getReturnShippingFeesAmount();
-
-    /**
-     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
-     *
-     * @param returnShippingFeesAmount MonetaryAmount value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
-     */
-    void addReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount);
+    void addRefundType(RefundTypeEnumeration refundType);
 
     /**
      * Use [[MonetaryAmount]] to specify a fixed restocking fee for product returns, or use [[Number]] to specify a percentage of the product price paid by the customer.
@@ -243,6 +162,114 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
     void addRestockingFee(MonetaryAmount restockingFee);
 
     /**
+     * The type of return fees for purchased products (for any return reason).
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    List<ReturnFeesEnumeration> getReturnFeesList();
+
+    /**
+     * The type of return fees for purchased products (for any return reason).
+     *
+     * @return {@link ReturnFeesEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    ReturnFeesEnumeration getReturnFees();
+
+    /**
+     * The type of return fees for purchased products (for any return reason).
+     *
+     * @param returnFees ReturnFeesEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addReturnFees(ReturnFeesEnumeration returnFees);
+
+    /**
+     * The type of return method offered, specified from an enumeration.
+     *
+     * @return {@link ReturnMethodEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<ReturnMethodEnumeration> getReturnMethodList();
+
+    /**
+     * The type of return method offered, specified from an enumeration.
+     *
+     * @return {@link ReturnMethodEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    ReturnMethodEnumeration getReturnMethod();
+
+    /**
+     * The type of return method offered, specified from an enumeration.
+     *
+     * @param returnMethod ReturnMethodEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addReturnMethod(ReturnMethodEnumeration returnMethod);
+
+    /**
+     * Specifies an applicable return policy (from an enumeration).
+     *
+     * @return {@link MerchantReturnEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    List<MerchantReturnEnumeration> getReturnPolicyCategoryList();
+
+    /**
+     * Specifies an applicable return policy (from an enumeration).
+     *
+     * @return {@link MerchantReturnEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    MerchantReturnEnumeration getReturnPolicyCategory();
+
+    /**
+     * Specifies an applicable return policy (from an enumeration).
+     *
+     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
+
+    /**
+     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    List<MonetaryAmount> getReturnShippingFeesAmountList();
+
+    /**
+     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
+     *
+     * @return {@link MonetaryAmount}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    MonetaryAmount getReturnShippingFeesAmount();
+
+    /**
+     * Amount of shipping costs for product returns (for any reason). Applicable when property [[returnFees]] equals [[ReturnShippingFees]].
+     *
+     * @param returnShippingFeesAmount MonetaryAmount value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2880">https://github.com/schemaorg/schemaorg/issues/2880</a>
+     */
+    void addReturnShippingFeesAmount(MonetaryAmount returnShippingFeesAmount);
+
+    /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
      *
      * @return {@link DateTime} or {@link Date}
@@ -272,31 +299,4 @@ public interface MerchantReturnPolicySeasonalOverride extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2486">https://github.com/schemaorg/schemaorg/issues/2486</a>
      */
     void addStartDate(Date startDate);
-
-    /**
-     * Specifies an applicable return policy (from an enumeration).
-     *
-     * @return {@link MerchantReturnEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    List<MerchantReturnEnumeration> getReturnPolicyCategoryList();
-
-    /**
-     * Specifies an applicable return policy (from an enumeration).
-     *
-     * @return {@link MerchantReturnEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    MerchantReturnEnumeration getReturnPolicyCategory();
-
-    /**
-     * Specifies an applicable return policy (from an enumeration).
-     *
-     * @param returnPolicyCategory MerchantReturnEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    void addReturnPolicyCategory(MerchantReturnEnumeration returnPolicyCategory);
 }

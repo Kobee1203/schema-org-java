@@ -27,6 +27,130 @@ import spec_custom.model.datatype.URL;
 public interface QuantitativeValue extends StructuredValue {
 
     /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    List<PropertyValue> getAdditionalPropertyList();
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @return {@link PropertyValue}
+     */
+    PropertyValue getAdditionalProperty();
+
+    /**
+     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+     *
+     * @param additionalProperty PropertyValue value to set.
+     */
+    void addAdditionalProperty(PropertyValue additionalProperty);
+
+    /**
+     * The upper value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Number> getMaxValueList();
+
+    /**
+     * The upper value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Number getMaxValue();
+
+    /**
+     * The upper value of some characteristic or property.
+     *
+     * @param maxValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addMaxValue(Number maxValue);
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    List<Number> getMinValueList();
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @return {@link Number}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    Number getMinValue();
+
+    /**
+     * The lower value of some characteristic or property.
+     *
+     * @param minValue Number value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addMinValue(Number minValue);
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> List<T> getUnitCodeList();
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    <T> T getUnitCode();
+
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode URL value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addUnitCode(URL unitCode);
+    /**
+     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
+     *
+     * @param unitCode Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    void addUnitCode(Text unitCode);
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getUnitTextList();
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @return {@link Text}
+     */
+    Text getUnitText();
+
+    /**
+     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
+     * <a href='unitCode'>unitCode</a>.
+     *
+     * @param unitText Text value to set.
+     */
+    void addUnitText(Text unitText);
+
+    /**
      * The value of a [[QuantitativeValue]] (including [[Observation]]) or property value node.<br/><br/>* For [[QuantitativeValue]] and [[MonetaryAmount]], the recommended type for values is 'Number'.<br/>* For [[PropertyValue]], it can be 'Text', 'Number', 'Boolean', or 'StructuredValue'.<br/>* Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similar Unicode symbols.<br/>* Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.
      *
      * @return {@link Boolean} or {@link Number} or {@link Text} or {@link StructuredValue}
@@ -70,61 +194,6 @@ public interface QuantitativeValue extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValue(StructuredValue value);
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Number> getMaxValueList();
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Number getMaxValue();
-
-    /**
-     * The upper value of some characteristic or property.
-     *
-     * @param maxValue Number value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addMaxValue(Number maxValue);
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> List<T> getUnitCodeList();
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    <T> T getUnitCode();
-
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param unitCode URL value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addUnitCode(URL unitCode);
-    /**
-     * The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.
-     *
-     * @param unitCode Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addUnitCode(Text unitCode);
 
     /**
      * A secondary value that provides additional information on the original value, e.g. a reference temperature or a type of measurement.
@@ -198,73 +267,4 @@ public interface QuantitativeValue extends StructuredValue {
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     void addValueReference(QualitativeValue valueReference);
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    List<PropertyValue> getAdditionalPropertyList();
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @return {@link PropertyValue}
-     */
-    PropertyValue getAdditionalProperty();
-
-    /**
-     * A property-value pair representing an additional characteristic of the entity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.<br/><br/>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. https://schema.org/width, https://schema.org/color, https://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
-     *
-     * @param additionalProperty PropertyValue value to set.
-     */
-    void addAdditionalProperty(PropertyValue additionalProperty);
-
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    List<Number> getMinValueList();
-
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @return {@link Number}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    Number getMinValue();
-
-    /**
-     * The lower value of some characteristic or property.
-     *
-     * @param minValue Number value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    void addMinValue(Number minValue);
-
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getUnitTextList();
-
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @return {@link Text}
-     */
-    Text getUnitText();
-
-    /**
-     * A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for
-     * <a href='unitCode'>unitCode</a>.
-     *
-     * @param unitText Text value to set.
-     */
-    void addUnitText(Text unitText);
 }

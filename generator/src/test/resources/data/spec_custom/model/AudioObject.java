@@ -18,27 +18,6 @@ import spec_custom.model.datatype.Text;
 public interface AudioObject extends MediaObject {
 
     /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @return {@link Text}
-     */
-    List<Text> getTranscriptList();
-
-    /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @return {@link Text}
-     */
-    Text getTranscript();
-
-    /**
-     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
-     *
-     * @param transcript Text value to set.
-     */
-    void addTranscript(Text transcript);
-
-    /**
      * The caption for this object. For downloadable machine formats (closed caption, subtitles etc.) use MediaObject and indicate the [[encodingFormat]].
      *
      * @return {@link Text} or {@link MediaObject}
@@ -91,4 +70,25 @@ public interface AudioObject extends MediaObject {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2450">https://github.com/schemaorg/schemaorg/issues/2450</a>
      */
     void addEmbeddedTextCaption(Text embeddedTextCaption);
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @return {@link Text}
+     */
+    List<Text> getTranscriptList();
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @return {@link Text}
+     */
+    Text getTranscript();
+
+    /**
+     * If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
+     *
+     * @param transcript Text value to set.
+     */
+    void addTranscript(Text transcript);
 }

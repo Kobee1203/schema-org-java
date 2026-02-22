@@ -22,6 +22,30 @@ import spec_custom.model.datatype.Text;
 public interface MedicalTest extends MedicalEntity {
 
     /**
+     * Drugs that affect the test's results.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<Drug> getAffectedByList();
+
+    /**
+     * Drugs that affect the test's results.
+     *
+     * @return {@link Drug}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    Drug getAffectedBy();
+
+    /**
+     * Drugs that affect the test's results.
+     *
+     * @param affectedBy Drug value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addAffectedBy(Drug affectedBy);
+
+    /**
      * Range of acceptable values for a typical patient, when applicable.
      *
      * @return {@link MedicalEnumeration} or {@link Text}
@@ -53,30 +77,6 @@ public interface MedicalTest extends MedicalEntity {
     void addNormalRange(Text normalRange);
 
     /**
-     * Device used to perform the test.
-     *
-     * @return {@link MedicalDevice}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<MedicalDevice> getUsesDeviceList();
-
-    /**
-     * Device used to perform the test.
-     *
-     * @return {@link MedicalDevice}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    MedicalDevice getUsesDevice();
-
-    /**
-     * Device used to perform the test.
-     *
-     * @param usesDevice MedicalDevice value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addUsesDevice(MedicalDevice usesDevice);
-
-    /**
      * A sign detected by the test.
      *
      * @return {@link MedicalSign}
@@ -101,30 +101,6 @@ public interface MedicalTest extends MedicalEntity {
     void addSignDetected(MedicalSign signDetected);
 
     /**
-     * Drugs that affect the test's results.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    List<Drug> getAffectedByList();
-
-    /**
-     * Drugs that affect the test's results.
-     *
-     * @return {@link Drug}
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    Drug getAffectedBy();
-
-    /**
-     * Drugs that affect the test's results.
-     *
-     * @param affectedBy Drug value to set.
-     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
-     */
-    void addAffectedBy(Drug affectedBy);
-
-    /**
      * A condition the test is used to diagnose.
      *
      * @return {@link MedicalCondition}
@@ -147,4 +123,28 @@ public interface MedicalTest extends MedicalEntity {
      * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
      */
     void addUsedToDiagnose(MedicalCondition usedToDiagnose);
+
+    /**
+     * Device used to perform the test.
+     *
+     * @return {@link MedicalDevice}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    List<MedicalDevice> getUsesDeviceList();
+
+    /**
+     * Device used to perform the test.
+     *
+     * @return {@link MedicalDevice}
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    MedicalDevice getUsesDevice();
+
+    /**
+     * Device used to perform the test.
+     *
+     * @param usesDevice MedicalDevice value to set.
+     * @see <a href="https://health-lifesci.schema.org">https://health-lifesci.schema.org</a>
+     */
+    void addUsesDevice(MedicalDevice usesDevice);
 }

@@ -20,31 +20,28 @@ import spec.model.Person;
 public interface MusicAlbum extends MusicPlaylist {
 
     /**
-     * The artist that performed this album or recording.
+     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
-     * @return {@link Person} or {@link MusicGroup}
+     * @return {@link MusicAlbumProductionType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
-    <T> List<T> getByArtistList();
+    List<MusicAlbumProductionType> getAlbumProductionTypeList();
 
     /**
-     * The artist that performed this album or recording.
+     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
-     * @return {@link Person} or {@link MusicGroup}
+     * @return {@link MusicAlbumProductionType}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
-    <T> T getByArtist();
+    MusicAlbumProductionType getAlbumProductionType();
 
     /**
-     * The artist that performed this album or recording.
+     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
      *
-     * @param byArtist Person value to set.
+     * @param albumProductionType MusicAlbumProductionType value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
-    void addByArtist(Person byArtist);
-    /**
-     * The artist that performed this album or recording.
-     *
-     * @param byArtist MusicGroup value to set.
-     */
-    void addByArtist(MusicGroup byArtist);
+    void addAlbumProductionType(MusicAlbumProductionType albumProductionType);
 
     /**
      * A release of this album.
@@ -92,26 +89,29 @@ public interface MusicAlbum extends MusicPlaylist {
     void addAlbumReleaseType(MusicAlbumReleaseType albumReleaseType);
 
     /**
-     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
+     * The artist that performed this album or recording.
      *
-     * @return {@link MusicAlbumProductionType}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     * @return {@link Person} or {@link MusicGroup}
      */
-    List<MusicAlbumProductionType> getAlbumProductionTypeList();
+    <T> List<T> getByArtistList();
 
     /**
-     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
+     * The artist that performed this album or recording.
      *
-     * @return {@link MusicAlbumProductionType}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     * @return {@link Person} or {@link MusicGroup}
      */
-    MusicAlbumProductionType getAlbumProductionType();
+    <T> T getByArtist();
 
     /**
-     * Classification of the album by its type of content: soundtrack, live album, studio album, etc.
+     * The artist that performed this album or recording.
      *
-     * @param albumProductionType MusicAlbumProductionType value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     * @param byArtist Person value to set.
      */
-    void addAlbumProductionType(MusicAlbumProductionType albumProductionType);
+    void addByArtist(Person byArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist MusicGroup value to set.
+     */
+    void addByArtist(MusicGroup byArtist);
 }

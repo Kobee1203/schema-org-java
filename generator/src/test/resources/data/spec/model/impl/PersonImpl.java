@@ -55,6 +55,991 @@ import spec.model.datatype.URL;
 @JsonLdTypeName("Person")
 public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Person {
 
+    private List<Text> additionalName;
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAdditionalNameList() {
+        return additionalName;
+    }
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAdditionalName() {
+        return getFirst(additionalName);
+    }
+
+    /**
+     * An additional name for a Person, can be used for a middle name.
+     *
+     * @param additionalName Text value to set.
+     */
+    @Override
+    public void addAdditionalName(Text additionalName) {
+        this.additionalName = add(this.additionalName, additionalName);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    @JsonLdFieldTypes({ PostalAddress.class, Text.class })
+    private List<Object> address;
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link PostalAddress} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAddressList() {
+        return (List<T>) address;
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     * @return {@link PostalAddress} or {@link Text}
+     */
+    @Override
+    public <T> T getAddress() {
+        return (T) getFirst(address);
+    }
+
+    /**
+     * Physical address of the item.
+     *
+     * @param address PostalAddress value to set.
+     */
+    @Override
+    public void addAddress(PostalAddress address) {
+        this.address = add(this.address, address);
+    }
+    /**
+     * Physical address of the item.
+     *
+     * @param address Text value to set.
+     */
+    @Override
+    public void addAddress(Text address) {
+        this.address = add(this.address, address);
+    }
+
+    private List<Organization> affiliation;
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getAffiliationList() {
+        return affiliation;
+    }
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getAffiliation() {
+        return getFirst(affiliation);
+    }
+
+    /**
+     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
+     *
+     * @param affiliation Organization value to set.
+     */
+    @Override
+    public void addAffiliation(Organization affiliation) {
+        this.affiliation = add(this.affiliation, affiliation);
+    }
+
+    private List<InteractionCounter> agentInteractionStatistic;
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    @Override
+    public List<InteractionCounter> getAgentInteractionStatisticList() {
+        return agentInteractionStatistic;
+    }
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    @Override
+    public InteractionCounter getAgentInteractionStatistic() {
+        return getFirst(agentInteractionStatistic);
+    }
+
+    /**
+     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
+     *
+     * @param agentInteractionStatistic InteractionCounter value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
+     */
+    @Override
+    public void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic) {
+        this.agentInteractionStatistic = add(this.agentInteractionStatistic, agentInteractionStatistic);
+    }
+
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    @JsonLdFieldTypes({ EducationalOrganization.class, Organization.class })
+    private List<Object> alumniOf;
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @return {@link EducationalOrganization} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getAlumniOfList() {
+        return (List<T>) alumniOf;
+    }
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @return {@link EducationalOrganization} or {@link Organization}
+     */
+    @Override
+    public <T> T getAlumniOf() {
+        return (T) getFirst(alumniOf);
+    }
+
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @param alumniOf EducationalOrganization value to set.
+     */
+    @Override
+    public void addAlumniOf(EducationalOrganization alumniOf) {
+        this.alumniOf = add(this.alumniOf, alumniOf);
+    }
+    /**
+     * An organization that the person is an alumni of.
+     *
+     * @param alumniOf Organization value to set.
+     */
+    @Override
+    public void addAlumniOf(Organization alumniOf) {
+        this.alumniOf = add(this.alumniOf, alumniOf);
+    }
+
+    private List<Text> award;
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardList() {
+        return award;
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAward() {
+        return getFirst(award);
+    }
+
+    /**
+     * An award won by or for this item.
+     *
+     * @param award Text value to set.
+     */
+    @Override
+    public void addAward(Text award) {
+        this.award = add(this.award, award);
+    }
+
+    private List<Text> awards;
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAwardsList() {
+        return awards;
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAwards() {
+        return getFirst(awards);
+    }
+
+    /**
+     * Awards won by or for this item.
+     *
+     * @param awards Text value to set.
+     */
+    @Override
+    public void addAwards(Text awards) {
+        this.awards = add(this.awards, awards);
+    }
+
+    private List<Date> birthDate;
+
+    /**
+     * Date of birth.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getBirthDateList() {
+        return birthDate;
+    }
+
+    /**
+     * Date of birth.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getBirthDate() {
+        return getFirst(birthDate);
+    }
+
+    /**
+     * Date of birth.
+     *
+     * @param birthDate Date value to set.
+     */
+    @Override
+    public void addBirthDate(Date birthDate) {
+        this.birthDate = add(this.birthDate, birthDate);
+    }
+
+    private List<Place> birthPlace;
+
+    /**
+     * The place where the person was born.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getBirthPlaceList() {
+        return birthPlace;
+    }
+
+    /**
+     * The place where the person was born.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getBirthPlace() {
+        return getFirst(birthPlace);
+    }
+
+    /**
+     * The place where the person was born.
+     *
+     * @param birthPlace Place value to set.
+     */
+    @Override
+    public void addBirthPlace(Place birthPlace) {
+        this.birthPlace = add(this.birthPlace, birthPlace);
+    }
+
+    @JsonLdFieldTypes({ Brand.class, Organization.class })
+    private List<Object> brand;
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getBrandList() {
+        return (List<T>) brand;
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @return {@link Brand} or {@link Organization}
+     */
+    @Override
+    public <T> T getBrand() {
+        return (T) getFirst(brand);
+    }
+
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Brand value to set.
+     */
+    @Override
+    public void addBrand(Brand brand) {
+        this.brand = add(this.brand, brand);
+    }
+    /**
+     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     *
+     * @param brand Organization value to set.
+     */
+    @Override
+    public void addBrand(Organization brand) {
+        this.brand = add(this.brand, brand);
+    }
+
+    private List<Text> callSign;
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public List<Text> getCallSignList() {
+        return callSign;
+    }
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @return {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public Text getCallSign() {
+        return getFirst(callSign);
+    }
+
+    /**
+     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
+     *
+     * @param callSign Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
+     */
+    @Override
+    public void addCallSign(Text callSign) {
+        this.callSign = add(this.callSign, callSign);
+    }
+
+    private List<Person> children;
+
+    /**
+     * A child of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getChildrenList() {
+        return children;
+    }
+
+    /**
+     * A child of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getChildren() {
+        return getFirst(children);
+    }
+
+    /**
+     * A child of the person.
+     *
+     * @param children Person value to set.
+     */
+    @Override
+    public void addChildren(Person children) {
+        this.children = add(this.children, children);
+    }
+
+    @JsonLdFieldTypes({ Person.class, URL.class })
+    private List<Object> colleague;
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getColleagueList() {
+        return (List<T>) colleague;
+    }
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person} or {@link URL}
+     */
+    @Override
+    public <T> T getColleague() {
+        return (T) getFirst(colleague);
+    }
+
+    /**
+     * A colleague of the person.
+     *
+     * @param colleague Person value to set.
+     */
+    @Override
+    public void addColleague(Person colleague) {
+        this.colleague = add(this.colleague, colleague);
+    }
+    /**
+     * A colleague of the person.
+     *
+     * @param colleague URL value to set.
+     */
+    @Override
+    public void addColleague(URL colleague) {
+        this.colleague = add(this.colleague, colleague);
+    }
+
+    private List<Person> colleagues;
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getColleaguesList() {
+        return colleagues;
+    }
+
+    /**
+     * A colleague of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getColleagues() {
+        return getFirst(colleagues);
+    }
+
+    /**
+     * A colleague of the person.
+     *
+     * @param colleagues Person value to set.
+     */
+    @Override
+    public void addColleagues(Person colleagues) {
+        this.colleagues = add(this.colleagues, colleagues);
+    }
+
+    private List<ContactPoint> contactPoint;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointList() {
+        return contactPoint;
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public ContactPoint getContactPoint() {
+        return getFirst(contactPoint);
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoint ContactPoint value to set.
+     */
+    @Override
+    public void addContactPoint(ContactPoint contactPoint) {
+        this.contactPoint = add(this.contactPoint, contactPoint);
+    }
+
+    private List<ContactPoint> contactPoints;
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public List<ContactPoint> getContactPointsList() {
+        return contactPoints;
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @return {@link ContactPoint}
+     */
+    @Override
+    public ContactPoint getContactPoints() {
+        return getFirst(contactPoints);
+    }
+
+    /**
+     * A contact point for a person or organization.
+     *
+     * @param contactPoints ContactPoint value to set.
+     */
+    @Override
+    public void addContactPoints(ContactPoint contactPoints) {
+        this.contactPoints = add(this.contactPoints, contactPoints);
+    }
+
+    private List<Date> deathDate;
+
+    /**
+     * Date of death.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public List<Date> getDeathDateList() {
+        return deathDate;
+    }
+
+    /**
+     * Date of death.
+     *
+     * @return {@link Date}
+     */
+    @Override
+    public Date getDeathDate() {
+        return getFirst(deathDate);
+    }
+
+    /**
+     * Date of death.
+     *
+     * @param deathDate Date value to set.
+     */
+    @Override
+    public void addDeathDate(Date deathDate) {
+        this.deathDate = add(this.deathDate, deathDate);
+    }
+
+    private List<Place> deathPlace;
+
+    /**
+     * The place where the person died.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public List<Place> getDeathPlaceList() {
+        return deathPlace;
+    }
+
+    /**
+     * The place where the person died.
+     *
+     * @return {@link Place}
+     */
+    @Override
+    public Place getDeathPlace() {
+        return getFirst(deathPlace);
+    }
+
+    /**
+     * The place where the person died.
+     *
+     * @param deathPlace Place value to set.
+     */
+    @Override
+    public void addDeathPlace(Place deathPlace) {
+        this.deathPlace = add(this.deathPlace, deathPlace);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    private List<Text> duns;
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getDunsList() {
+        return duns;
+    }
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getDuns() {
+        return getFirst(duns);
+    }
+
+    /**
+     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
+     *
+     * @param duns Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addDuns(Text duns) {
+        this.duns = add(this.duns, duns);
+    }
+
+    private List<Text> email;
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getEmailList() {
+        return email;
+    }
+
+    /**
+     * Email address.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getEmail() {
+        return getFirst(email);
+    }
+
+    /**
+     * Email address.
+     *
+     * @param email Text value to set.
+     */
+    @Override
+    public void addEmail(Text email) {
+        this.email = add(this.email, email);
+    }
+
+    private List<Text> familyName;
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFamilyNameList() {
+        return familyName;
+    }
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getFamilyName() {
+        return getFirst(familyName);
+    }
+
+    /**
+     * Family name. In the U.S., the last name of a Person.
+     *
+     * @param familyName Text value to set.
+     */
+    @Override
+    public void addFamilyName(Text familyName) {
+        this.familyName = add(this.familyName, familyName);
+    }
+
+    private List<Text> faxNumber;
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getFaxNumberList() {
+        return faxNumber;
+    }
+
+    /**
+     * The fax number.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getFaxNumber() {
+        return getFirst(faxNumber);
+    }
+
+    /**
+     * The fax number.
+     *
+     * @param faxNumber Text value to set.
+     */
+    @Override
+    public void addFaxNumber(Text faxNumber) {
+        this.faxNumber = add(this.faxNumber, faxNumber);
+    }
+
+    private List<Person> follows;
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getFollowsList() {
+        return follows;
+    }
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getFollows() {
+        return getFirst(follows);
+    }
+
+    /**
+     * The most generic uni-directional social relation.
+     *
+     * @param follows Person value to set.
+     */
+    @Override
+    public void addFollows(Person follows) {
+        this.follows = add(this.follows, follows);
+    }
+
+    @JsonLdFieldTypes({ Organization.class, Person.class })
+    private List<Object> funder;
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> List<T> getFunderList() {
+        return (List<T>) funder;
+    }
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    @Override
+    public <T> T getFunder() {
+        return (T) getFirst(funder);
+    }
+
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Organization value to set.
+     */
+    @Override
+    public void addFunder(Organization funder) {
+        this.funder = add(this.funder, funder);
+    }
+    /**
+     * A person or organization that supports (sponsors) something through some kind of financial contribution.
+     *
+     * @param funder Person value to set.
+     */
+    @Override
+    public void addFunder(Person funder) {
+        this.funder = add(this.funder, funder);
+    }
+
     private List<Grant> funding;
 
     /**
@@ -96,118 +1081,296 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.funding = add(this.funding, funding);
     }
 
-    private List<Text> honorificPrefix;
+    @JsonLdFieldTypes({ Text.class, GenderType.class })
+    private List<Object> gender;
 
     /**
-     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @return {@link Text} or {@link GenderType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public <T> List<T> getGenderList() {
+        return (List<T>) gender;
+    }
+
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @return {@link Text} or {@link GenderType}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public <T> T getGender() {
+        return (T) getFirst(gender);
+    }
+
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param gender Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public void addGender(Text gender) {
+        this.gender = add(this.gender, gender);
+    }
+    /**
+     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
+     *
+     * @param gender GenderType value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
+     */
+    @Override
+    public void addGender(GenderType gender) {
+        this.gender = add(this.gender, gender);
+    }
+
+    private List<Text> givenName;
+
+    /**
+     * Given name. In the U.S., the first name of a Person.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getHonorificPrefixList() {
-        return honorificPrefix;
+    public List<Text> getGivenNameList() {
+        return givenName;
     }
 
     /**
-     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     * Given name. In the U.S., the first name of a Person.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getHonorificPrefix() {
-        return getFirst(honorificPrefix);
+    public Text getGivenName() {
+        return getFirst(givenName);
     }
 
     /**
-     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     * Given name. In the U.S., the first name of a Person.
      *
-     * @param honorificPrefix Text value to set.
+     * @param givenName Text value to set.
      */
     @Override
-    public void addHonorificPrefix(Text honorificPrefix) {
-        this.honorificPrefix = add(this.honorificPrefix, honorificPrefix);
+    public void addGivenName(Text givenName) {
+        this.givenName = add(this.givenName, givenName);
     }
 
-    @JsonLdFieldTypes({ Mass.class, QuantitativeValue.class })
-    private List<Object> weight;
+    private List<Text> globalLocationNumber;
 
     /**
-     * The weight of the product or person.
-     *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getWeightList() {
-        return (List<T>) weight;
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @return {@link Mass} or {@link QuantitativeValue}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getWeight() {
-        return (T) getFirst(weight);
-    }
-
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight Mass value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addWeight(Mass weight) {
-        this.weight = add(this.weight, weight);
-    }
-    /**
-     * The weight of the product or person.
-     *
-     * @param weight QuantitativeValue value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addWeight(QuantitativeValue weight) {
-        this.weight = add(this.weight, weight);
-    }
-
-    private List<Text> awards;
-
-    /**
-     * Awards won by or for this item.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public List<Text> getAwardsList() {
-        return awards;
+    public List<Text> getGlobalLocationNumberList() {
+        return globalLocationNumber;
     }
 
     /**
-     * Awards won by or for this item.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public Text getAwards() {
-        return getFirst(awards);
+    public Text getGlobalLocationNumber() {
+        return getFirst(globalLocationNumber);
     }
 
     /**
-     * Awards won by or for this item.
+     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
      *
-     * @param awards Text value to set.
+     * @param globalLocationNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addAwards(Text awards) {
-        this.awards = add(this.awards, awards);
+    public void addGlobalLocationNumber(Text globalLocationNumber) {
+        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
+    }
+
+    private List<Certification> hasCertification;
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    @Override
+    public List<Certification> getHasCertificationList() {
+        return hasCertification;
+    }
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @return {@link Certification}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    @Override
+    public Certification getHasCertification() {
+        return getFirst(hasCertification);
+    }
+
+    /**
+     * Certification information about a product, organization, service, place, or person.
+     *
+     * @param hasCertification Certification value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
+     */
+    @Override
+    public void addHasCertification(Certification hasCertification) {
+        this.hasCertification = add(this.hasCertification, hasCertification);
+    }
+
+    private List<EducationalOccupationalCredential> hasCredential;
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public List<EducationalOccupationalCredential> getHasCredentialList() {
+        return hasCredential;
+    }
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @return {@link EducationalOccupationalCredential}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public EducationalOccupationalCredential getHasCredential() {
+        return getFirst(hasCredential);
+    }
+
+    /**
+     * A credential awarded to the Person or Organization.
+     *
+     * @param hasCredential EducationalOccupationalCredential value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
+     */
+    @Override
+    public void addHasCredential(EducationalOccupationalCredential hasCredential) {
+        this.hasCredential = add(this.hasCredential, hasCredential);
+    }
+
+    private List<Occupation> hasOccupation;
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public List<Occupation> getHasOccupationList() {
+        return hasOccupation;
+    }
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @return {@link Occupation}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public Occupation getHasOccupation() {
+        return getFirst(hasOccupation);
+    }
+
+    /**
+     * The Person's occupation. For past professions, use Role for expressing dates.
+     *
+     * @param hasOccupation Occupation value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     */
+    @Override
+    public void addHasOccupation(Occupation hasOccupation) {
+        this.hasOccupation = add(this.hasOccupation, hasOccupation);
+    }
+
+    private List<OfferCatalog> hasOfferCatalog;
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public List<OfferCatalog> getHasOfferCatalogList() {
+        return hasOfferCatalog;
+    }
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @return {@link OfferCatalog}
+     */
+    @Override
+    public OfferCatalog getHasOfferCatalog() {
+        return getFirst(hasOfferCatalog);
+    }
+
+    /**
+     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
+     *
+     * @param hasOfferCatalog OfferCatalog value to set.
+     */
+    @Override
+    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
+        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
+    }
+
+    private List<Place> hasPOS;
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Place> getHasPOSList() {
+        return hasPOS;
+    }
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Place getHasPOS() {
+        return getFirst(hasPOS);
+    }
+
+    /**
+     * Points-of-Sales operated by the organization or person.
+     *
+     * @param hasPOS Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addHasPOS(Place hasPOS) {
+        this.hasPOS = add(this.hasPOS, hasPOS);
     }
 
     @JsonLdFieldTypes({ QuantitativeValue.class, Distance.class })
@@ -254,6 +1417,362 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     @Override
     public void addHeight(Distance height) {
         this.height = add(this.height, height);
+    }
+
+    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
+    private List<Object> homeLocation;
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    @Override
+    public <T> List<T> getHomeLocationList() {
+        return (List<T>) homeLocation;
+    }
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    @Override
+    public <T> T getHomeLocation() {
+        return (T) getFirst(homeLocation);
+    }
+
+    /**
+     * A contact location for a person's residence.
+     *
+     * @param homeLocation Place value to set.
+     */
+    @Override
+    public void addHomeLocation(Place homeLocation) {
+        this.homeLocation = add(this.homeLocation, homeLocation);
+    }
+    /**
+     * A contact location for a person's residence.
+     *
+     * @param homeLocation ContactPoint value to set.
+     */
+    @Override
+    public void addHomeLocation(ContactPoint homeLocation) {
+        this.homeLocation = add(this.homeLocation, homeLocation);
+    }
+
+    private List<Text> honorificPrefix;
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getHonorificPrefixList() {
+        return honorificPrefix;
+    }
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getHonorificPrefix() {
+        return getFirst(honorificPrefix);
+    }
+
+    /**
+     * An honorific prefix preceding a Person's name such as Dr/Mrs/Mr.
+     *
+     * @param honorificPrefix Text value to set.
+     */
+    @Override
+    public void addHonorificPrefix(Text honorificPrefix) {
+        this.honorificPrefix = add(this.honorificPrefix, honorificPrefix);
+    }
+
+    private List<Text> honorificSuffix;
+
+    /**
+     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getHonorificSuffixList() {
+        return honorificSuffix;
+    }
+
+    /**
+     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getHonorificSuffix() {
+        return getFirst(honorificSuffix);
+    }
+
+    /**
+     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
+     *
+     * @param honorificSuffix Text value to set.
+     */
+    @Override
+    public void addHonorificSuffix(Text honorificSuffix) {
+        this.honorificSuffix = add(this.honorificSuffix, honorificSuffix);
+    }
+
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
+     */
+    @Override
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
+    }
+
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier URL value to set.
+     */
+    @Override
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @return {@link ImageObject} or {@link URL}
+     */
+    @Override
+    public <T> T getImage() {
+        return (T) getFirst(image);
+    }
+
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<InteractionCounter> interactionStatistic;
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public List<InteractionCounter> getInteractionStatisticList() {
+        return interactionStatistic;
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @return {@link InteractionCounter}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public InteractionCounter getInteractionStatistic() {
+        return getFirst(interactionStatistic);
+    }
+
+    /**
+     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
+     *
+     * @param interactionStatistic InteractionCounter value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
+     */
+    @Override
+    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
+        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
+    }
+
+    private List<Text> isicV4;
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getIsicV4List() {
+        return isicV4;
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getIsicV4() {
+        return getFirst(isicV4);
+    }
+
+    /**
+     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
+     *
+     * @param isicV4 Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addIsicV4(Text isicV4) {
+        this.isicV4 = add(this.isicV4, isicV4);
+    }
+
+    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
+    private List<Object> jobTitle;
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public <T> List<T> getJobTitleList() {
+        return (List<T>) jobTitle;
+    }
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @return {@link DefinedTerm} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public <T> T getJobTitle() {
+        return (T) getFirst(jobTitle);
+    }
+
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param jobTitle DefinedTerm value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public void addJobTitle(DefinedTerm jobTitle) {
+        this.jobTitle = add(this.jobTitle, jobTitle);
+    }
+    /**
+     * The job title of the person (for example, Financial Manager).
+     *
+     * @param jobTitle Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     */
+    @Override
+    public void addJobTitle(Text jobTitle) {
+        this.jobTitle = add(this.jobTitle, jobTitle);
+    }
+
+    private List<Person> knows;
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getKnowsList() {
+        return knows;
+    }
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getKnows() {
+        return getFirst(knows);
+    }
+
+    /**
+     * The most generic bi-directional social/work relation.
+     *
+     * @param knows Person value to set.
+     */
+    @Override
+    public void addKnows(Person knows) {
+        this.knows = add(this.knows, knows);
     }
 
     @JsonLdFieldTypes({ Text.class, Thing.class, URL.class })
@@ -322,98 +1841,6 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.knowsAbout = add(this.knowsAbout, knowsAbout);
     }
 
-    @JsonLdFieldTypes({ Text.class, GenderType.class })
-    private List<Object> gender;
-
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @return {@link Text} or {@link GenderType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    @Override
-    public <T> List<T> getGenderList() {
-        return (List<T>) gender;
-    }
-
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @return {@link Text} or {@link GenderType}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    @Override
-    public <T> T getGender() {
-        return (T) getFirst(gender);
-    }
-
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @param gender Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    @Override
-    public void addGender(Text gender) {
-        this.gender = add(this.gender, gender);
-    }
-    /**
-     * Gender of something, typically a [[Person]], but possibly also fictional characters, animals, etc. While https://schema.org/Male and https://schema.org/Female may be used, text strings are also acceptable for people who are not a binary gender. The [[gender]] property can also be used in an extended sense to cover e.g. the gender of sports teams. As with the gender of individuals, we do not try to enumerate all possibilities. A mixed-gender [[SportsTeam]] can be indicated with a text value of "Mixed".
-     *
-     * @param gender GenderType value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2341">https://github.com/schemaorg/schemaorg/issues/2341</a>
-     */
-    @Override
-    public void addGender(GenderType gender) {
-        this.gender = add(this.gender, gender);
-    }
-
-    @JsonLdFieldTypes({ Organization.class, Person.class })
-    private List<Object> funder;
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> List<T> getFunderList() {
-        return (List<T>) funder;
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    @Override
-    public <T> T getFunder() {
-        return (T) getFirst(funder);
-    }
-
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Organization value to set.
-     */
-    @Override
-    public void addFunder(Organization funder) {
-        this.funder = add(this.funder, funder);
-    }
-    /**
-     * A person or organization that supports (sponsors) something through some kind of financial contribution.
-     *
-     * @param funder Person value to set.
-     */
-    @Override
-    public void addFunder(Person funder) {
-        this.funder = add(this.funder, funder);
-    }
-
     @JsonLdFieldTypes({ Language.class, Text.class })
     private List<Object> knowsLanguage;
 
@@ -468,96 +1895,170 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.knowsLanguage = add(this.knowsLanguage, knowsLanguage);
     }
 
-    @JsonLdFieldTypes({ Brand.class, Organization.class })
-    private List<Object> brand;
+    private List<Event> lifeEvent;
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
      *
-     * @return {@link Brand} or {@link Organization}
+     * @return {@link Event}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
      */
     @Override
-    public <T> List<T> getBrandList() {
-        return (List<T>) brand;
+    public List<Event> getLifeEventList() {
+        return lifeEvent;
     }
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
      *
-     * @return {@link Brand} or {@link Organization}
+     * @return {@link Event}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
      */
     @Override
-    public <T> T getBrand() {
-        return (T) getFirst(brand);
+    public Event getLifeEvent() {
+        return getFirst(lifeEvent);
     }
 
     /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
+     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
      *
-     * @param brand Brand value to set.
+     * @param lifeEvent Event value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
      */
     @Override
-    public void addBrand(Brand brand) {
-        this.brand = add(this.brand, brand);
-    }
-    /**
-     * The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
-     *
-     * @param brand Organization value to set.
-     */
-    @Override
-    public void addBrand(Organization brand) {
-        this.brand = add(this.brand, brand);
+    public void addLifeEvent(Event lifeEvent) {
+        this.lifeEvent = add(this.lifeEvent, lifeEvent);
     }
 
-    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
-    private List<Object> skills;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public <T> List<T> getSkillsList() {
-        return (List<T>) skills;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link Text} or {@link DefinedTerm}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public <T> T getSkills() {
-        return (T) getFirst(skills);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param skills Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addSkills(Text skills) {
-        this.skills = add(this.skills, skills);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
     /**
-     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param skills DefinedTerm value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public void addSkills(DefinedTerm skills) {
-        this.skills = add(this.skills, skills);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    }
+
+    private List<Offer> makesOffer;
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Offer> getMakesOfferList() {
+        return makesOffer;
+    }
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Offer getMakesOffer() {
+        return getFirst(makesOffer);
+    }
+
+    /**
+     * A pointer to products or services offered by the organization or person.
+     *
+     * @param makesOffer Offer value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addMakesOffer(Offer makesOffer) {
+        this.makesOffer = add(this.makesOffer, makesOffer);
+    }
+
+    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class, MemberProgramTier.class })
+    private List<Object> memberOf;
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
+     */
+    @Override
+    public <T> List<T> getMemberOfList() {
+        return (List<T>) memberOf;
+    }
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
+     */
+    @Override
+    public <T> T getMemberOf() {
+        return (T) getFirst(memberOf);
+    }
+
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf ProgramMembership value to set.
+     */
+    @Override
+    public void addMemberOf(ProgramMembership memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf Organization value to set.
+     */
+    @Override
+    public void addMemberOf(Organization memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
+    }
+    /**
+     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
+     *
+     * @param memberOf MemberProgramTier value to set.
+     */
+    @Override
+    public void addMemberOf(MemberProgramTier memberOf) {
+        this.memberOf = add(this.memberOf, memberOf);
     }
 
     private List<Text> naics;
@@ -595,39 +2096,322 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.naics = add(this.naics, naics);
     }
 
-    private List<Text> globalLocationNumber;
+    private List<Text> name;
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * The name of the item.
      *
      * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public List<Text> getGlobalLocationNumberList() {
-        return globalLocationNumber;
+    public List<Text> getNameList() {
+        return name;
     }
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * The name of the item.
      *
      * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public Text getGlobalLocationNumber() {
-        return getFirst(globalLocationNumber);
+    public Text getName() {
+        return getFirst(name);
     }
 
     /**
-     * The [Global Location Number](http://www.gs1.org/gln) (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
+     * The name of the item.
      *
-     * @param globalLocationNumber Text value to set.
+     * @param name Text value to set.
+     */
+    @Override
+    public void addName(Text name) {
+        this.name = add(this.name, name);
+    }
+
+    private List<Country> nationality;
+
+    /**
+     * Nationality of the person.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public List<Country> getNationalityList() {
+        return nationality;
+    }
+
+    /**
+     * Nationality of the person.
+     *
+     * @return {@link Country}
+     */
+    @Override
+    public Country getNationality() {
+        return getFirst(nationality);
+    }
+
+    /**
+     * Nationality of the person.
+     *
+     * @param nationality Country value to set.
+     */
+    @Override
+    public void addNationality(Country nationality) {
+        this.nationality = add(this.nationality, nationality);
+    }
+
+    @JsonLdFieldTypes({ PriceSpecification.class, MonetaryAmount.class })
+    private List<Object> netWorth;
+
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    @Override
+    public <T> List<T> getNetWorthList() {
+        return (List<T>) netWorth;
+    }
+
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @return {@link PriceSpecification} or {@link MonetaryAmount}
+     */
+    @Override
+    public <T> T getNetWorth() {
+        return (T) getFirst(netWorth);
+    }
+
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @param netWorth PriceSpecification value to set.
+     */
+    @Override
+    public void addNetWorth(PriceSpecification netWorth) {
+        this.netWorth = add(this.netWorth, netWorth);
+    }
+    /**
+     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
+     *
+     * @param netWorth MonetaryAmount value to set.
+     */
+    @Override
+    public void addNetWorth(MonetaryAmount netWorth) {
+        this.netWorth = add(this.netWorth, netWorth);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> owner;
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> List<T> getOwnerList() {
+        return (List<T>) owner;
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public <T> T getOwner() {
+        return (T) getFirst(owner);
+    }
+
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Person value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Person owner) {
+        this.owner = add(this.owner, owner);
+    }
+    /**
+     * A person or organization who owns this Thing.
+     *
+     * @param owner Organization value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     */
+    @Override
+    public void addOwner(Organization owner) {
+        this.owner = add(this.owner, owner);
+    }
+
+    private List<Thing> owns;
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addGlobalLocationNumber(Text globalLocationNumber) {
-        this.globalLocationNumber = add(this.globalLocationNumber, globalLocationNumber);
+    public List<Thing> getOwnsList() {
+        return owns;
+    }
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Thing getOwns() {
+        return getFirst(owns);
+    }
+
+    /**
+     * Things owned by the organization or person.
+     *
+     * @param owns Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addOwns(Thing owns) {
+        this.owns = add(this.owns, owns);
+    }
+
+    private List<Person> parent;
+
+    /**
+     * A parent of this person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getParentList() {
+        return parent;
+    }
+
+    /**
+     * A parent of this person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getParent() {
+        return getFirst(parent);
+    }
+
+    /**
+     * A parent of this person.
+     *
+     * @param parent Person value to set.
+     */
+    @Override
+    public void addParent(Person parent) {
+        this.parent = add(this.parent, parent);
+    }
+
+    private List<Person> parents;
+
+    /**
+     * A parents of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getParentsList() {
+        return parents;
+    }
+
+    /**
+     * A parents of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getParents() {
+        return getFirst(parents);
+    }
+
+    /**
+     * A parents of the person.
+     *
+     * @param parents Person value to set.
+     */
+    @Override
+    public void addParents(Person parents) {
+        this.parents = add(this.parents, parents);
+    }
+
+    private List<Event> performerIn;
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public List<Event> getPerformerInList() {
+        return performerIn;
+    }
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @return {@link Event}
+     */
+    @Override
+    public Event getPerformerIn() {
+        return getFirst(performerIn);
+    }
+
+    /**
+     * Event that this person is a performer or participant in.
+     *
+     * @param performerIn Event value to set.
+     */
+    @Override
+    public void addPerformerIn(Event performerIn) {
+        this.performerIn = add(this.performerIn, performerIn);
+    }
+
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
     }
 
     @JsonLdFieldTypes({ Text.class, StructuredValue.class, DefinedTerm.class })
@@ -701,893 +2485,6 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.pronouns = add(this.pronouns, pronouns);
     }
 
-    private List<Date> deathDate;
-
-    /**
-     * Date of death.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public List<Date> getDeathDateList() {
-        return deathDate;
-    }
-
-    /**
-     * Date of death.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getDeathDate() {
-        return getFirst(deathDate);
-    }
-
-    /**
-     * Date of death.
-     *
-     * @param deathDate Date value to set.
-     */
-    @Override
-    public void addDeathDate(Date deathDate) {
-        this.deathDate = add(this.deathDate, deathDate);
-    }
-
-    private List<Organization> affiliation;
-
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getAffiliationList() {
-        return affiliation;
-    }
-
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getAffiliation() {
-        return getFirst(affiliation);
-    }
-
-    /**
-     * An organization that this person is affiliated with. For example, a school/university, a club, or a team.
-     *
-     * @param affiliation Organization value to set.
-     */
-    @Override
-    public void addAffiliation(Organization affiliation) {
-        this.affiliation = add(this.affiliation, affiliation);
-    }
-
-    private List<InteractionCounter> interactionStatistic;
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public List<InteractionCounter> getInteractionStatisticList() {
-        return interactionStatistic;
-    }
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public InteractionCounter getInteractionStatistic() {
-        return getFirst(interactionStatistic);
-    }
-
-    /**
-     * The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.
-     *
-     * @param interactionStatistic InteractionCounter value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2421">https://github.com/schemaorg/schemaorg/issues/2421</a>
-     */
-    @Override
-    public void addInteractionStatistic(InteractionCounter interactionStatistic) {
-        this.interactionStatistic = add(this.interactionStatistic, interactionStatistic);
-    }
-
-    private List<Person> children;
-
-    /**
-     * A child of the person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getChildrenList() {
-        return children;
-    }
-
-    /**
-     * A child of the person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getChildren() {
-        return getFirst(children);
-    }
-
-    /**
-     * A child of the person.
-     *
-     * @param children Person value to set.
-     */
-    @Override
-    public void addChildren(Person children) {
-        this.children = add(this.children, children);
-    }
-
-    @JsonLdFieldTypes({ PostalAddress.class, Text.class })
-    private List<Object> address;
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAddressList() {
-        return (List<T>) address;
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     * @return {@link PostalAddress} or {@link Text}
-     */
-    @Override
-    public <T> T getAddress() {
-        return (T) getFirst(address);
-    }
-
-    /**
-     * Physical address of the item.
-     *
-     * @param address PostalAddress value to set.
-     */
-    @Override
-    public void addAddress(PostalAddress address) {
-        this.address = add(this.address, address);
-    }
-    /**
-     * Physical address of the item.
-     *
-     * @param address Text value to set.
-     */
-    @Override
-    public void addAddress(Text address) {
-        this.address = add(this.address, address);
-    }
-
-    private List<Person> follows;
-
-    /**
-     * The most generic uni-directional social relation.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getFollowsList() {
-        return follows;
-    }
-
-    /**
-     * The most generic uni-directional social relation.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getFollows() {
-        return getFirst(follows);
-    }
-
-    /**
-     * The most generic uni-directional social relation.
-     *
-     * @param follows Person value to set.
-     */
-    @Override
-    public void addFollows(Person follows) {
-        this.follows = add(this.follows, follows);
-    }
-
-    private List<Person> relatedTo;
-
-    /**
-     * The most generic familial relation.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getRelatedToList() {
-        return relatedTo;
-    }
-
-    /**
-     * The most generic familial relation.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getRelatedTo() {
-        return getFirst(relatedTo);
-    }
-
-    /**
-     * The most generic familial relation.
-     *
-     * @param relatedTo Person value to set.
-     */
-    @Override
-    public void addRelatedTo(Person relatedTo) {
-        this.relatedTo = add(this.relatedTo, relatedTo);
-    }
-
-    private List<Country> nationality;
-
-    /**
-     * Nationality of the person.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public List<Country> getNationalityList() {
-        return nationality;
-    }
-
-    /**
-     * Nationality of the person.
-     *
-     * @return {@link Country}
-     */
-    @Override
-    public Country getNationality() {
-        return getFirst(nationality);
-    }
-
-    /**
-     * Nationality of the person.
-     *
-     * @param nationality Country value to set.
-     */
-    @Override
-    public void addNationality(Country nationality) {
-        this.nationality = add(this.nationality, nationality);
-    }
-
-    @JsonLdFieldTypes({ ProgramMembership.class, Organization.class, MemberProgramTier.class })
-    private List<Object> memberOf;
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
-    @Override
-    public <T> List<T> getMemberOfList() {
-        return (List<T>) memberOf;
-    }
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @return {@link ProgramMembership} or {@link Organization} or {@link MemberProgramTier}
-     */
-    @Override
-    public <T> T getMemberOf() {
-        return (T) getFirst(memberOf);
-    }
-
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf ProgramMembership value to set.
-     */
-    @Override
-    public void addMemberOf(ProgramMembership memberOf) {
-        this.memberOf = add(this.memberOf, memberOf);
-    }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf Organization value to set.
-     */
-    @Override
-    public void addMemberOf(Organization memberOf) {
-        this.memberOf = add(this.memberOf, memberOf);
-    }
-    /**
-     * An Organization (or ProgramMembership) to which this Person or Organization belongs.
-     *
-     * @param memberOf MemberProgramTier value to set.
-     */
-    @Override
-    public void addMemberOf(MemberProgramTier memberOf) {
-        this.memberOf = add(this.memberOf, memberOf);
-    }
-
-    private List<Date> birthDate;
-
-    /**
-     * Date of birth.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public List<Date> getBirthDateList() {
-        return birthDate;
-    }
-
-    /**
-     * Date of birth.
-     *
-     * @return {@link Date}
-     */
-    @Override
-    public Date getBirthDate() {
-        return getFirst(birthDate);
-    }
-
-    /**
-     * Date of birth.
-     *
-     * @param birthDate Date value to set.
-     */
-    @Override
-    public void addBirthDate(Date birthDate) {
-        this.birthDate = add(this.birthDate, birthDate);
-    }
-
-    private List<ContactPoint> contactPoint;
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public List<ContactPoint> getContactPointList() {
-        return contactPoint;
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public ContactPoint getContactPoint() {
-        return getFirst(contactPoint);
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoint ContactPoint value to set.
-     */
-    @Override
-    public void addContactPoint(ContactPoint contactPoint) {
-        this.contactPoint = add(this.contactPoint, contactPoint);
-    }
-
-    private List<Certification> hasCertification;
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public List<Certification> getHasCertificationList() {
-        return hasCertification;
-    }
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @return {@link Certification}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public Certification getHasCertification() {
-        return getFirst(hasCertification);
-    }
-
-    /**
-     * Certification information about a product, organization, service, place, or person.
-     *
-     * @param hasCertification Certification value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3230">https://github.com/schemaorg/schemaorg/issues/3230</a>
-     */
-    @Override
-    public void addHasCertification(Certification hasCertification) {
-        this.hasCertification = add(this.hasCertification, hasCertification);
-    }
-
-    private List<Place> birthPlace;
-
-    /**
-     * The place where the person was born.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getBirthPlaceList() {
-        return birthPlace;
-    }
-
-    /**
-     * The place where the person was born.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getBirthPlace() {
-        return getFirst(birthPlace);
-    }
-
-    /**
-     * The place where the person was born.
-     *
-     * @param birthPlace Place value to set.
-     */
-    @Override
-    public void addBirthPlace(Place birthPlace) {
-        this.birthPlace = add(this.birthPlace, birthPlace);
-    }
-
-    private List<Text> isicV4;
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getIsicV4List() {
-        return isicV4;
-    }
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getIsicV4() {
-        return getFirst(isicV4);
-    }
-
-    /**
-     * The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
-     *
-     * @param isicV4 Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIsicV4(Text isicV4) {
-        this.isicV4 = add(this.isicV4, isicV4);
-    }
-
-    private List<Occupation> hasOccupation;
-
-    /**
-     * The Person's occupation. For past professions, use Role for expressing dates.
-     *
-     * @return {@link Occupation}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public List<Occupation> getHasOccupationList() {
-        return hasOccupation;
-    }
-
-    /**
-     * The Person's occupation. For past professions, use Role for expressing dates.
-     *
-     * @return {@link Occupation}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public Occupation getHasOccupation() {
-        return getFirst(hasOccupation);
-    }
-
-    /**
-     * The Person's occupation. For past professions, use Role for expressing dates.
-     *
-     * @param hasOccupation Occupation value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
-     */
-    @Override
-    public void addHasOccupation(Occupation hasOccupation) {
-        this.hasOccupation = add(this.hasOccupation, hasOccupation);
-    }
-
-    @JsonLdFieldTypes({ Person.class, URL.class })
-    private List<Object> colleague;
-
-    /**
-     * A colleague of the person.
-     *
-     * @return {@link Person} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getColleagueList() {
-        return (List<T>) colleague;
-    }
-
-    /**
-     * A colleague of the person.
-     *
-     * @return {@link Person} or {@link URL}
-     */
-    @Override
-    public <T> T getColleague() {
-        return (T) getFirst(colleague);
-    }
-
-    /**
-     * A colleague of the person.
-     *
-     * @param colleague Person value to set.
-     */
-    @Override
-    public void addColleague(Person colleague) {
-        this.colleague = add(this.colleague, colleague);
-    }
-    /**
-     * A colleague of the person.
-     *
-     * @param colleague URL value to set.
-     */
-    @Override
-    public void addColleague(URL colleague) {
-        this.colleague = add(this.colleague, colleague);
-    }
-
-    private List<Event> lifeEvent;
-
-    /**
-     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
-     *
-     * @return {@link Event}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
-     */
-    @Override
-    public List<Event> getLifeEventList() {
-        return lifeEvent;
-    }
-
-    /**
-     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
-     *
-     * @return {@link Event}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
-     */
-    @Override
-    public Event getLifeEvent() {
-        return getFirst(lifeEvent);
-    }
-
-    /**
-     * A life event like baptism, communions, Bar Mitzvahs, Aqiqah, Namakarana, Miyamairi, burial, ....
-     *
-     * @param lifeEvent Event value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4540">https://github.com/schemaorg/schemaorg/issues/4540</a>
-     */
-    @Override
-    public void addLifeEvent(Event lifeEvent) {
-        this.lifeEvent = add(this.lifeEvent, lifeEvent);
-    }
-
-    private List<Text> honorificSuffix;
-
-    /**
-     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getHonorificSuffixList() {
-        return honorificSuffix;
-    }
-
-    /**
-     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getHonorificSuffix() {
-        return getFirst(honorificSuffix);
-    }
-
-    /**
-     * An honorific suffix following a Person's name such as M.D./PhD/MSCSW.
-     *
-     * @param honorificSuffix Text value to set.
-     */
-    @Override
-    public void addHonorificSuffix(Text honorificSuffix) {
-        this.honorificSuffix = add(this.honorificSuffix, honorificSuffix);
-    }
-
-    private List<Person> knows;
-
-    /**
-     * The most generic bi-directional social/work relation.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getKnowsList() {
-        return knows;
-    }
-
-    /**
-     * The most generic bi-directional social/work relation.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getKnows() {
-        return getFirst(knows);
-    }
-
-    /**
-     * The most generic bi-directional social/work relation.
-     *
-     * @param knows Person value to set.
-     */
-    @Override
-    public void addKnows(Person knows) {
-        this.knows = add(this.knows, knows);
-    }
-
-    private List<Text> telephone;
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getTelephoneList() {
-        return telephone;
-    }
-
-    /**
-     * The telephone number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getTelephone() {
-        return getFirst(telephone);
-    }
-
-    /**
-     * The telephone number.
-     *
-     * @param telephone Text value to set.
-     */
-    @Override
-    public void addTelephone(Text telephone) {
-        this.telephone = add(this.telephone, telephone);
-    }
-
-    private List<Person> sibling;
-
-    /**
-     * A sibling of the person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getSiblingList() {
-        return sibling;
-    }
-
-    /**
-     * A sibling of the person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getSibling() {
-        return getFirst(sibling);
-    }
-
-    /**
-     * A sibling of the person.
-     *
-     * @param sibling Person value to set.
-     */
-    @Override
-    public void addSibling(Person sibling) {
-        this.sibling = add(this.sibling, sibling);
-    }
-
-    private List<ContactPoint> contactPoints;
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public List<ContactPoint> getContactPointsList() {
-        return contactPoints;
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @return {@link ContactPoint}
-     */
-    @Override
-    public ContactPoint getContactPoints() {
-        return getFirst(contactPoints);
-    }
-
-    /**
-     * A contact point for a person or organization.
-     *
-     * @param contactPoints ContactPoint value to set.
-     */
-    @Override
-    public void addContactPoints(ContactPoint contactPoints) {
-        this.contactPoints = add(this.contactPoints, contactPoints);
-    }
-
-    @JsonLdFieldTypes({ PriceSpecification.class, MonetaryAmount.class })
-    private List<Object> netWorth;
-
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @return {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    @Override
-    public <T> List<T> getNetWorthList() {
-        return (List<T>) netWorth;
-    }
-
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @return {@link PriceSpecification} or {@link MonetaryAmount}
-     */
-    @Override
-    public <T> T getNetWorth() {
-        return (T) getFirst(netWorth);
-    }
-
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @param netWorth PriceSpecification value to set.
-     */
-    @Override
-    public void addNetWorth(PriceSpecification netWorth) {
-        this.netWorth = add(this.netWorth, netWorth);
-    }
-    /**
-     * The total financial value of the person as calculated by subtracting the total value of liabilities from the total value of assets.
-     *
-     * @param netWorth MonetaryAmount value to set.
-     */
-    @Override
-    public void addNetWorth(MonetaryAmount netWorth) {
-        this.netWorth = add(this.netWorth, netWorth);
-    }
-
-    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
-    private List<Object> workLocation;
-
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @return {@link Place} or {@link ContactPoint}
-     */
-    @Override
-    public <T> List<T> getWorkLocationList() {
-        return (List<T>) workLocation;
-    }
-
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @return {@link Place} or {@link ContactPoint}
-     */
-    @Override
-    public <T> T getWorkLocation() {
-        return (T) getFirst(workLocation);
-    }
-
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @param workLocation Place value to set.
-     */
-    @Override
-    public void addWorkLocation(Place workLocation) {
-        this.workLocation = add(this.workLocation, workLocation);
-    }
-    /**
-     * A contact location for a person's place of work.
-     *
-     * @param workLocation ContactPoint value to set.
-     */
-    @Override
-    public void addWorkLocation(ContactPoint workLocation) {
-        this.workLocation = add(this.workLocation, workLocation);
-    }
-
-    @JsonLdFieldTypes({ EducationalOrganization.class, Organization.class })
-    private List<Object> alumniOf;
-
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @return {@link EducationalOrganization} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getAlumniOfList() {
-        return (List<T>) alumniOf;
-    }
-
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @return {@link EducationalOrganization} or {@link Organization}
-     */
-    @Override
-    public <T> T getAlumniOf() {
-        return (T) getFirst(alumniOf);
-    }
-
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @param alumniOf EducationalOrganization value to set.
-     */
-    @Override
-    public void addAlumniOf(EducationalOrganization alumniOf) {
-        this.alumniOf = add(this.alumniOf, alumniOf);
-    }
-    /**
-     * An organization that the person is an alumni of.
-     *
-     * @param alumniOf Organization value to set.
-     */
-    @Override
-    public void addAlumniOf(Organization alumniOf) {
-        this.alumniOf = add(this.alumniOf, alumniOf);
-    }
-
     @JsonLdFieldTypes({ CreativeWork.class, URL.class })
     private List<Object> publishingPrinciples;
 
@@ -1638,118 +2535,135 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.publishingPrinciples = add(this.publishingPrinciples, publishingPrinciples);
     }
 
-    private List<Text> award;
+    private List<Person> relatedTo;
 
     /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAwardList() {
-        return award;
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAward() {
-        return getFirst(award);
-    }
-
-    /**
-     * An award won by or for this item.
-     *
-     * @param award Text value to set.
-     */
-    @Override
-    public void addAward(Text award) {
-        this.award = add(this.award, award);
-    }
-
-    private List<Person> parents;
-
-    /**
-     * A parents of the person.
+     * The most generic familial relation.
      *
      * @return {@link Person}
      */
     @Override
-    public List<Person> getParentsList() {
-        return parents;
+    public List<Person> getRelatedToList() {
+        return relatedTo;
     }
 
     /**
-     * A parents of the person.
+     * The most generic familial relation.
      *
      * @return {@link Person}
      */
     @Override
-    public Person getParents() {
-        return getFirst(parents);
+    public Person getRelatedTo() {
+        return getFirst(relatedTo);
     }
 
     /**
-     * A parents of the person.
+     * The most generic familial relation.
      *
-     * @param parents Person value to set.
+     * @param relatedTo Person value to set.
      */
     @Override
-    public void addParents(Person parents) {
-        this.parents = add(this.parents, parents);
+    public void addRelatedTo(Person relatedTo) {
+        this.relatedTo = add(this.relatedTo, relatedTo);
     }
 
-    @JsonLdFieldTypes({ DefinedTerm.class, Text.class })
-    private List<Object> jobTitle;
+    private List<URL> sameAs;
 
     /**
-     * The job title of the person (for example, Financial Manager).
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link URL}
      */
     @Override
-    public <T> List<T> getJobTitleList() {
-        return (List<T>) jobTitle;
+    public List<URL> getSameAsList() {
+        return sameAs;
     }
 
     /**
-     * The job title of the person (for example, Financial Manager).
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @return {@link DefinedTerm} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link URL}
      */
     @Override
-    public <T> T getJobTitle() {
-        return (T) getFirst(jobTitle);
+    public URL getSameAs() {
+        return getFirst(sameAs);
     }
 
     /**
-     * The job title of the person (for example, Financial Manager).
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
      *
-     * @param jobTitle DefinedTerm value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @param sameAs URL value to set.
      */
     @Override
-    public void addJobTitle(DefinedTerm jobTitle) {
-        this.jobTitle = add(this.jobTitle, jobTitle);
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
     }
+
+    private List<Demand> seeks;
+
     /**
-     * The job title of the person (for example, Financial Manager).
+     * A pointer to products or services sought by the organization or person (demand).
      *
-     * @param jobTitle Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2192">https://github.com/schemaorg/schemaorg/issues/2192</a>
+     * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addJobTitle(Text jobTitle) {
-        this.jobTitle = add(this.jobTitle, jobTitle);
+    public List<Demand> getSeeksList() {
+        return seeks;
+    }
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @return {@link Demand}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Demand getSeeks() {
+        return getFirst(seeks);
+    }
+
+    /**
+     * A pointer to products or services sought by the organization or person (demand).
+     *
+     * @param seeks Demand value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addSeeks(Demand seeks) {
+        this.seeks = add(this.seeks, seeks);
+    }
+
+    private List<Person> sibling;
+
+    /**
+     * A sibling of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public List<Person> getSiblingList() {
+        return sibling;
+    }
+
+    /**
+     * A sibling of the person.
+     *
+     * @return {@link Person}
+     */
+    @Override
+    public Person getSibling() {
+        return getFirst(sibling);
+    }
+
+    /**
+     * A sibling of the person.
+     *
+     * @param sibling Person value to set.
+     */
+    @Override
+    public void addSibling(Person sibling) {
+        this.sibling = add(this.sibling, sibling);
     }
 
     private List<Person> siblings;
@@ -1784,141 +2698,54 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.siblings = add(this.siblings, siblings);
     }
 
-    private List<Text> taxID;
+    @JsonLdFieldTypes({ Text.class, DefinedTerm.class })
+    private List<Object> skills;
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public List<Text> getTaxIDList() {
-        return taxID;
+    public <T> List<T> getSkillsList() {
+        return (List<T>) skills;
     }
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link Text} or {@link DefinedTerm}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public Text getTaxID() {
-        return getFirst(taxID);
+    public <T> T getSkills() {
+        return (T) getFirst(skills);
     }
 
     /**
-     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @param taxID Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param skills Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public void addTaxID(Text taxID) {
-        this.taxID = add(this.taxID, taxID);
+    public void addSkills(Text skills) {
+        this.skills = add(this.skills, skills);
     }
-
-    private List<Person> colleagues;
-
     /**
-     * A colleague of the person.
+     * A statement of knowledge, skill, ability, task or any other assertion expressing a competency that is either claimed by a person, an organization or desired or required to fulfill a role or to work in an occupation.
      *
-     * @return {@link Person}
+     * @param skills DefinedTerm value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2322">https://github.com/schemaorg/schemaorg/issues/2322</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1698">https://github.com/schemaorg/schemaorg/issues/1698</a>
      */
     @Override
-    public List<Person> getColleaguesList() {
-        return colleagues;
-    }
-
-    /**
-     * A colleague of the person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getColleagues() {
-        return getFirst(colleagues);
-    }
-
-    /**
-     * A colleague of the person.
-     *
-     * @param colleagues Person value to set.
-     */
-    @Override
-    public void addColleagues(Person colleagues) {
-        this.colleagues = add(this.colleagues, colleagues);
-    }
-
-    private List<Text> familyName;
-
-    /**
-     * Family name. In the U.S., the last name of a Person.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getFamilyNameList() {
-        return familyName;
-    }
-
-    /**
-     * Family name. In the U.S., the last name of a Person.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFamilyName() {
-        return getFirst(familyName);
-    }
-
-    /**
-     * Family name. In the U.S., the last name of a Person.
-     *
-     * @param familyName Text value to set.
-     */
-    @Override
-    public void addFamilyName(Text familyName) {
-        this.familyName = add(this.familyName, familyName);
-    }
-
-    private List<EducationalOccupationalCredential> hasCredential;
-
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public List<EducationalOccupationalCredential> getHasCredentialList() {
-        return hasCredential;
-    }
-
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @return {@link EducationalOccupationalCredential}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public EducationalOccupationalCredential getHasCredential() {
-        return getFirst(hasCredential);
-    }
-
-    /**
-     * A credential awarded to the Person or Organization.
-     *
-     * @param hasCredential EducationalOccupationalCredential value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
-     */
-    @Override
-    public void addHasCredential(EducationalOccupationalCredential hasCredential) {
-        this.hasCredential = add(this.hasCredential, hasCredential);
+    public void addSkills(DefinedTerm skills) {
+        this.skills = add(this.skills, skills);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
@@ -1963,587 +2790,6 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.sponsor = add(this.sponsor, sponsor);
     }
 
-    private List<Event> performerIn;
-
-    /**
-     * Event that this person is a performer or participant in.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public List<Event> getPerformerInList() {
-        return performerIn;
-    }
-
-    /**
-     * Event that this person is a performer or participant in.
-     *
-     * @return {@link Event}
-     */
-    @Override
-    public Event getPerformerIn() {
-        return getFirst(performerIn);
-    }
-
-    /**
-     * Event that this person is a performer or participant in.
-     *
-     * @param performerIn Event value to set.
-     */
-    @Override
-    public void addPerformerIn(Event performerIn) {
-        this.performerIn = add(this.performerIn, performerIn);
-    }
-
-    private List<InteractionCounter> agentInteractionStatistic;
-
-    /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
-     */
-    @Override
-    public List<InteractionCounter> getAgentInteractionStatisticList() {
-        return agentInteractionStatistic;
-    }
-
-    /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
-     *
-     * @return {@link InteractionCounter}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
-     */
-    @Override
-    public InteractionCounter getAgentInteractionStatistic() {
-        return getFirst(agentInteractionStatistic);
-    }
-
-    /**
-     * The number of completed interactions for this entity, in a particular role (the 'agent'), in a particular action (indicated in the statistic), and in a particular context (i.e. interactionService).
-     *
-     * @param agentInteractionStatistic InteractionCounter value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2858">https://github.com/schemaorg/schemaorg/issues/2858</a>
-     */
-    @Override
-    public void addAgentInteractionStatistic(InteractionCounter agentInteractionStatistic) {
-        this.agentInteractionStatistic = add(this.agentInteractionStatistic, agentInteractionStatistic);
-    }
-
-    private List<Text> givenName;
-
-    /**
-     * Given name. In the U.S., the first name of a Person.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getGivenNameList() {
-        return givenName;
-    }
-
-    /**
-     * Given name. In the U.S., the first name of a Person.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getGivenName() {
-        return getFirst(givenName);
-    }
-
-    /**
-     * Given name. In the U.S., the first name of a Person.
-     *
-     * @param givenName Text value to set.
-     */
-    @Override
-    public void addGivenName(Text givenName) {
-        this.givenName = add(this.givenName, givenName);
-    }
-
-    private List<Organization> worksFor;
-
-    /**
-     * Organizations that the person works for.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public List<Organization> getWorksForList() {
-        return worksFor;
-    }
-
-    /**
-     * Organizations that the person works for.
-     *
-     * @return {@link Organization}
-     */
-    @Override
-    public Organization getWorksFor() {
-        return getFirst(worksFor);
-    }
-
-    /**
-     * Organizations that the person works for.
-     *
-     * @param worksFor Organization value to set.
-     */
-    @Override
-    public void addWorksFor(Organization worksFor) {
-        this.worksFor = add(this.worksFor, worksFor);
-    }
-
-    private List<Demand> seeks;
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Demand> getSeeksList() {
-        return seeks;
-    }
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @return {@link Demand}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Demand getSeeks() {
-        return getFirst(seeks);
-    }
-
-    /**
-     * A pointer to products or services sought by the organization or person (demand).
-     *
-     * @param seeks Demand value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addSeeks(Demand seeks) {
-        this.seeks = add(this.seeks, seeks);
-    }
-
-    private List<Offer> makesOffer;
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Offer> getMakesOfferList() {
-        return makesOffer;
-    }
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Offer getMakesOffer() {
-        return getFirst(makesOffer);
-    }
-
-    /**
-     * A pointer to products or services offered by the organization or person.
-     *
-     * @param makesOffer Offer value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addMakesOffer(Offer makesOffer) {
-        this.makesOffer = add(this.makesOffer, makesOffer);
-    }
-
-    private List<Text> vatID;
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getVatIDList() {
-        return vatID;
-    }
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getVatID() {
-        return getFirst(vatID);
-    }
-
-    /**
-     * The Value-added Tax ID of the organization or person.
-     *
-     * @param vatID Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addVatID(Text vatID) {
-        this.vatID = add(this.vatID, vatID);
-    }
-
-    private List<Text> duns;
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getDunsList() {
-        return duns;
-    }
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getDuns() {
-        return getFirst(duns);
-    }
-
-    /**
-     * The Dun & Bradstreet DUNS number for identifying an organization or business person.
-     *
-     * @param duns Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addDuns(Text duns) {
-        this.duns = add(this.duns, duns);
-    }
-
-    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
-    private List<Object> homeLocation;
-
-    /**
-     * A contact location for a person's residence.
-     *
-     * @return {@link Place} or {@link ContactPoint}
-     */
-    @Override
-    public <T> List<T> getHomeLocationList() {
-        return (List<T>) homeLocation;
-    }
-
-    /**
-     * A contact location for a person's residence.
-     *
-     * @return {@link Place} or {@link ContactPoint}
-     */
-    @Override
-    public <T> T getHomeLocation() {
-        return (T) getFirst(homeLocation);
-    }
-
-    /**
-     * A contact location for a person's residence.
-     *
-     * @param homeLocation Place value to set.
-     */
-    @Override
-    public void addHomeLocation(Place homeLocation) {
-        this.homeLocation = add(this.homeLocation, homeLocation);
-    }
-    /**
-     * A contact location for a person's residence.
-     *
-     * @param homeLocation ContactPoint value to set.
-     */
-    @Override
-    public void addHomeLocation(ContactPoint homeLocation) {
-        this.homeLocation = add(this.homeLocation, homeLocation);
-    }
-
-    private List<Text> faxNumber;
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getFaxNumberList() {
-        return faxNumber;
-    }
-
-    /**
-     * The fax number.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getFaxNumber() {
-        return getFirst(faxNumber);
-    }
-
-    /**
-     * The fax number.
-     *
-     * @param faxNumber Text value to set.
-     */
-    @Override
-    public void addFaxNumber(Text faxNumber) {
-        this.faxNumber = add(this.faxNumber, faxNumber);
-    }
-
-    private List<Place> hasPOS;
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Place> getHasPOSList() {
-        return hasPOS;
-    }
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Place getHasPOS() {
-        return getFirst(hasPOS);
-    }
-
-    /**
-     * Points-of-Sales operated by the organization or person.
-     *
-     * @param hasPOS Place value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addHasPOS(Place hasPOS) {
-        this.hasPOS = add(this.hasPOS, hasPOS);
-    }
-
-    private List<Person> parent;
-
-    /**
-     * A parent of this person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public List<Person> getParentList() {
-        return parent;
-    }
-
-    /**
-     * A parent of this person.
-     *
-     * @return {@link Person}
-     */
-    @Override
-    public Person getParent() {
-        return getFirst(parent);
-    }
-
-    /**
-     * A parent of this person.
-     *
-     * @param parent Person value to set.
-     */
-    @Override
-    public void addParent(Person parent) {
-        this.parent = add(this.parent, parent);
-    }
-
-    private List<Text> additionalName;
-
-    /**
-     * An additional name for a Person, can be used for a middle name.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAdditionalNameList() {
-        return additionalName;
-    }
-
-    /**
-     * An additional name for a Person, can be used for a middle name.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAdditionalName() {
-        return getFirst(additionalName);
-    }
-
-    /**
-     * An additional name for a Person, can be used for a middle name.
-     *
-     * @param additionalName Text value to set.
-     */
-    @Override
-    public void addAdditionalName(Text additionalName) {
-        this.additionalName = add(this.additionalName, additionalName);
-    }
-
-    private List<Text> email;
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getEmailList() {
-        return email;
-    }
-
-    /**
-     * Email address.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getEmail() {
-        return getFirst(email);
-    }
-
-    /**
-     * Email address.
-     *
-     * @param email Text value to set.
-     */
-    @Override
-    public void addEmail(Text email) {
-        this.email = add(this.email, email);
-    }
-
-    private List<Text> callSign;
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public List<Text> getCallSignList() {
-        return callSign;
-    }
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @return {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public Text getCallSign() {
-        return getFirst(callSign);
-    }
-
-    /**
-     * A [callsign](https://en.wikipedia.org/wiki/Call_sign), as used in broadcasting and radio communications to identify people, radio and TV stations, or vehicles.
-     *
-     * @param callSign Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2109">https://github.com/schemaorg/schemaorg/issues/2109</a>
-     */
-    @Override
-    public void addCallSign(Text callSign) {
-        this.callSign = add(this.callSign, callSign);
-    }
-
-    private List<OfferCatalog> hasOfferCatalog;
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public List<OfferCatalog> getHasOfferCatalogList() {
-        return hasOfferCatalog;
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @return {@link OfferCatalog}
-     */
-    @Override
-    public OfferCatalog getHasOfferCatalog() {
-        return getFirst(hasOfferCatalog);
-    }
-
-    /**
-     * Indicates an OfferCatalog listing for this Organization, Person, or Service.
-     *
-     * @param hasOfferCatalog OfferCatalog value to set.
-     */
-    @Override
-    public void addHasOfferCatalog(OfferCatalog hasOfferCatalog) {
-        this.hasOfferCatalog = add(this.hasOfferCatalog, hasOfferCatalog);
-    }
-
-    private List<Place> deathPlace;
-
-    /**
-     * The place where the person died.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public List<Place> getDeathPlaceList() {
-        return deathPlace;
-    }
-
-    /**
-     * The place where the person died.
-     *
-     * @return {@link Place}
-     */
-    @Override
-    public Place getDeathPlace() {
-        return getFirst(deathPlace);
-    }
-
-    /**
-     * The place where the person died.
-     *
-     * @param deathPlace Place value to set.
-     */
-    @Override
-    public void addDeathPlace(Place deathPlace) {
-        this.deathPlace = add(this.deathPlace, deathPlace);
-    }
-
     private List<Person> spouse;
 
     /**
@@ -2574,256 +2820,6 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     @Override
     public void addSpouse(Person spouse) {
         this.spouse = add(this.spouse, spouse);
-    }
-
-    private List<Thing> owns;
-
-    /**
-     * Things owned by the organization or person.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Thing> getOwnsList() {
-        return owns;
-    }
-
-    /**
-     * Things owned by the organization or person.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Thing getOwns() {
-        return getFirst(owns);
-    }
-
-    /**
-     * Things owned by the organization or person.
-     *
-     * @param owns Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addOwns(Thing owns) {
-        this.owns = add(this.owns, owns);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
-    private List<Text> name;
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getNameList() {
-        return name;
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getName() {
-        return getFirst(name);
-    }
-
-    /**
-     * The name of the item.
-     *
-     * @param name Text value to set.
-     */
-    @Override
-    public void addName(Text name) {
-        this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> owner;
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> List<T> getOwnerList() {
-        return (List<T>) owner;
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public <T> T getOwner() {
-        return (T) getFirst(owner);
-    }
-
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Person value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Person owner) {
-        this.owner = add(this.owner, owner);
-    }
-    /**
-     * A person or organization who owns this Thing.
-     *
-     * @param owner Organization value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4603">https://github.com/schemaorg/schemaorg/issues/4603</a>
-     */
-    @Override
-    public void addOwner(Organization owner) {
-        this.owner = add(this.owner, owner);
     }
 
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
@@ -2872,152 +2868,71 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
+    private List<Text> taxID;
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
+    public List<Text> getTaxIDList() {
+        return taxID;
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @return {@link CreativeWork} or {@link URL}
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
+    public Text getTaxID() {
+        return getFirst(taxID);
     }
 
     /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
+     * The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
      *
-     * @param mainEntityOfPage CreativeWork value to set.
+     * @param taxID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
+    public void addTaxID(Text taxID) {
+        this.taxID = add(this.taxID, taxID);
     }
 
-    private List<Action> potentialAction;
+    private List<Text> telephone;
 
     /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
+    public List<Text> getTelephoneList() {
+        return telephone;
     }
 
     /**
-     * An alias for the item.
+     * The telephone number.
      *
      * @return {@link Text}
      */
     @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
+    public Text getTelephone() {
+        return getFirst(telephone);
     }
 
     /**
-     * An alias for the item.
+     * The telephone number.
      *
-     * @param alternateName Text value to set.
+     * @param telephone Text value to set.
      */
     @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
+    public void addTelephone(Text telephone) {
+        this.telephone = add(this.telephone, telephone);
     }
 
     private List<URL> url;
@@ -3052,77 +2967,162 @@ public class PersonImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.url = add(this.url, url);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    private List<Text> vatID;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @return {@link ImageObject} or {@link URL}
-     */
-    @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
-    }
-
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image ImageObject value to set.
-     */
-    @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
-    }
-    /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
-     *
-     * @param image URL value to set.
-     */
-    @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
-    }
-
-    private List<Text> disambiguatingDescription;
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
+    public List<Text> getVatIDList() {
+        return vatID;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The Value-added Tax ID of the organization or person.
      *
      * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public Text getVatID() {
+        return getFirst(vatID);
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The Value-added Tax ID of the organization or person.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @param vatID Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public void addVatID(Text vatID) {
+        this.vatID = add(this.vatID, vatID);
+    }
+
+    @JsonLdFieldTypes({ Mass.class, QuantitativeValue.class })
+    private List<Object> weight;
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getWeightList() {
+        return (List<T>) weight;
+    }
+
+    /**
+     * The weight of the product or person.
+     *
+     * @return {@link Mass} or {@link QuantitativeValue}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getWeight() {
+        return (T) getFirst(weight);
+    }
+
+    /**
+     * The weight of the product or person.
+     *
+     * @param weight Mass value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addWeight(Mass weight) {
+        this.weight = add(this.weight, weight);
+    }
+    /**
+     * The weight of the product or person.
+     *
+     * @param weight QuantitativeValue value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addWeight(QuantitativeValue weight) {
+        this.weight = add(this.weight, weight);
+    }
+
+    @JsonLdFieldTypes({ Place.class, ContactPoint.class })
+    private List<Object> workLocation;
+
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    @Override
+    public <T> List<T> getWorkLocationList() {
+        return (List<T>) workLocation;
+    }
+
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @return {@link Place} or {@link ContactPoint}
+     */
+    @Override
+    public <T> T getWorkLocation() {
+        return (T) getFirst(workLocation);
+    }
+
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @param workLocation Place value to set.
+     */
+    @Override
+    public void addWorkLocation(Place workLocation) {
+        this.workLocation = add(this.workLocation, workLocation);
+    }
+    /**
+     * A contact location for a person's place of work.
+     *
+     * @param workLocation ContactPoint value to set.
+     */
+    @Override
+    public void addWorkLocation(ContactPoint workLocation) {
+        this.workLocation = add(this.workLocation, workLocation);
+    }
+
+    private List<Organization> worksFor;
+
+    /**
+     * Organizations that the person works for.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public List<Organization> getWorksForList() {
+        return worksFor;
+    }
+
+    /**
+     * Organizations that the person works for.
+     *
+     * @return {@link Organization}
+     */
+    @Override
+    public Organization getWorksFor() {
+        return getFirst(worksFor);
+    }
+
+    /**
+     * Organizations that the person works for.
+     *
+     * @param worksFor Organization value to set.
+     */
+    @Override
+    public void addWorksFor(Organization worksFor) {
+        this.worksFor = add(this.worksFor, worksFor);
     }
 }

@@ -23,6 +23,33 @@ import spec.model.datatype.Text;
 public interface MusicRecording extends CreativeWork {
 
     /**
+     * The artist that performed this album or recording.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> List<T> getByArtistList();
+
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @return {@link Person} or {@link MusicGroup}
+     */
+    <T> T getByArtist();
+
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist Person value to set.
+     */
+    void addByArtist(Person byArtist);
+    /**
+     * The artist that performed this album or recording.
+     *
+     * @param byArtist MusicGroup value to set.
+     */
+    void addByArtist(MusicGroup byArtist);
+
+    /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
      *
      * @return {@link Duration} or {@link QuantitativeValue}
@@ -83,31 +110,25 @@ public interface MusicRecording extends CreativeWork {
     void addInAlbum(MusicAlbum inAlbum);
 
     /**
-     * The artist that performed this album or recording.
+     * The playlist to which this recording belongs.
      *
-     * @return {@link Person} or {@link MusicGroup}
+     * @return {@link MusicPlaylist}
      */
-    <T> List<T> getByArtistList();
+    List<MusicPlaylist> getInPlaylistList();
 
     /**
-     * The artist that performed this album or recording.
+     * The playlist to which this recording belongs.
      *
-     * @return {@link Person} or {@link MusicGroup}
+     * @return {@link MusicPlaylist}
      */
-    <T> T getByArtist();
+    MusicPlaylist getInPlaylist();
 
     /**
-     * The artist that performed this album or recording.
+     * The playlist to which this recording belongs.
      *
-     * @param byArtist Person value to set.
+     * @param inPlaylist MusicPlaylist value to set.
      */
-    void addByArtist(Person byArtist);
-    /**
-     * The artist that performed this album or recording.
-     *
-     * @param byArtist MusicGroup value to set.
-     */
-    void addByArtist(MusicGroup byArtist);
+    void addInPlaylist(MusicPlaylist inPlaylist);
 
     /**
      * The International Standard Recording Code for the recording.
@@ -156,25 +177,4 @@ public interface MusicRecording extends CreativeWork {
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addRecordingOf(MusicComposition recordingOf);
-
-    /**
-     * The playlist to which this recording belongs.
-     *
-     * @return {@link MusicPlaylist}
-     */
-    List<MusicPlaylist> getInPlaylistList();
-
-    /**
-     * The playlist to which this recording belongs.
-     *
-     * @return {@link MusicPlaylist}
-     */
-    MusicPlaylist getInPlaylist();
-
-    /**
-     * The playlist to which this recording belongs.
-     *
-     * @param inPlaylist MusicPlaylist value to set.
-     */
-    void addInPlaylist(MusicPlaylist inPlaylist);
 }

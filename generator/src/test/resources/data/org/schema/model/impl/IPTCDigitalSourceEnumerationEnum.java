@@ -8,23 +8,23 @@ package org.schema.model.impl;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Action;
-import org.schema.model.Class;
-import org.schema.model.CreativeWork;
-import org.schema.model.Enumeration;
-import org.schema.model.Event;
-import org.schema.model.IPTCDigitalSourceEnumeration;
-import org.schema.model.ImageObject;
-import org.schema.model.Intangible;
-import org.schema.model.MediaEnumeration;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.Property;
-import org.schema.model.PropertyValue;
-import org.schema.model.TextObject;
-import org.schema.model.Thing;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
+import org.schema.model.models.Action;
+import org.schema.model.models.Class;
+import org.schema.model.models.CreativeWork;
+import org.schema.model.models.Enumeration;
+import org.schema.model.models.Event;
+import org.schema.model.models.IPTCDigitalSourceEnumeration;
+import org.schema.model.models.ImageObject;
+import org.schema.model.models.Intangible;
+import org.schema.model.models.MediaEnumeration;
+import org.schema.model.models.Organization;
+import org.schema.model.models.Person;
+import org.schema.model.models.Property;
+import org.schema.model.models.PropertyValue;
+import org.schema.model.models.TextObject;
+import org.schema.model.models.Thing;
 
 /**
  * <a href="https://www.iptc.org/">IPTC</a> "Digital Source" codes for use with the [[digitalSourceType]] property, providing information about the source for a digital media object.

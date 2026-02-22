@@ -44,34 +44,260 @@ import spec.model.datatype.URL;
 public interface Event extends Thing {
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * The subject matter of an object.
      *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    List<Grant> getFundingList();
+    List<Thing> getAboutList();
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * The subject matter of an object.
      *
-     * @return {@link Grant}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     * @return {@link Thing}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    Grant getFunding();
+    Thing getAbout();
 
     /**
-     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
+     * The subject matter of an object.
      *
-     * @param funding Grant value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
-     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
+     * @param about Thing value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
      */
-    void addFunding(Grant funding);
+    void addAbout(Thing about);
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> List<T> getActorList();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link PerformingGroup} or {@link Person}
+     */
+    <T> T getActor();
+
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor PerformingGroup value to set.
+     */
+    void addActor(PerformingGroup actor);
+    /**
+     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param actor Person value to set.
+     */
+    void addActor(Person actor);
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    List<AggregateRating> getAggregateRatingList();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @return {@link AggregateRating}
+     */
+    AggregateRating getAggregateRating();
+
+    /**
+     * The overall rating, based on a collection of reviews or ratings, of the item.
+     *
+     * @param aggregateRating AggregateRating value to set.
+     */
+    void addAggregateRating(AggregateRating aggregateRating);
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getAttendeeList();
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getAttendee();
+
+    /**
+     * A person or organization attending the event.
+     *
+     * @param attendee Person value to set.
+     */
+    void addAttendee(Person attendee);
+    /**
+     * A person or organization attending the event.
+     *
+     * @param attendee Organization value to set.
+     */
+    void addAttendee(Organization attendee);
+
+    /**
+     * A person attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getAttendeesList();
+
+    /**
+     * A person attending the event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getAttendees();
+
+    /**
+     * A person attending the event.
+     *
+     * @param attendees Person value to set.
+     */
+    void addAttendees(Person attendees);
+    /**
+     * A person attending the event.
+     *
+     * @param attendees Organization value to set.
+     */
+    void addAttendees(Organization attendees);
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    List<Audience> getAudienceList();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @return {@link Audience}
+     */
+    Audience getAudience();
+
+    /**
+     * An intended audience, i.e. a group for whom something was created.
+     *
+     * @param audience Audience value to set.
+     */
+    void addAudience(Audience audience);
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    <T> List<T> getComposerList();
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @return {@link Person} or {@link Organization}
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    <T> T getComposer();
+
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Person value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addComposer(Person composer);
+    /**
+     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
+     *
+     * @param composer Organization value to set.
+     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
+     */
+    void addComposer(Organization composer);
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getContributorList();
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getContributor();
+
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Person value to set.
+     */
+    void addContributor(Person contributor);
+    /**
+     * A secondary contributor to the CreativeWork or Event.
+     *
+     * @param contributor Organization value to set.
+     */
+    void addContributor(Organization contributor);
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getDirectorList();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @return {@link Person}
+     */
+    Person getDirector();
+
+    /**
+     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
+     *
+     * @param director Person value to set.
+     */
+    void addDirector(Person director);
+
+    /**
+     * The time admission will commence.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    <T> List<T> getDoorTimeList();
+
+    /**
+     * The time admission will commence.
+     *
+     * @return {@link Time} or {@link DateTime}
+     */
+    <T> T getDoorTime();
+
+    /**
+     * The time admission will commence.
+     *
+     * @param doorTime Time value to set.
+     */
+    void addDoorTime(Time doorTime);
+    /**
+     * The time admission will commence.
+     *
+     * @param doorTime DateTime value to set.
+     */
+    void addDoorTime(DateTime doorTime);
 
     /**
      * The duration of the item (movie, audio recording, event, etc.) in [ISO 8601 duration format](http://en.wikipedia.org/wiki/ISO_8601).
@@ -111,66 +337,6 @@ public interface Event extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/3617">https://github.com/schemaorg/schemaorg/issues/3617</a>
      */
     void addDuration(QuantitativeValue duration);
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getPerformersList();
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getPerformers();
-
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @param performers Person value to set.
-     */
-    void addPerformers(Person performers);
-    /**
-     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
-     *
-     * @param performers Organization value to set.
-     */
-    void addPerformers(Organization performers);
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
-    <T> List<T> getKeywordsList();
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
-     */
-    <T> T getKeywords();
-
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords Text value to set.
-     */
-    void addKeywords(Text keywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords DefinedTerm value to set.
-     */
-    void addKeywords(DefinedTerm keywords);
-    /**
-     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
-     *
-     * @param keywords URL value to set.
-     */
-    void addKeywords(URL keywords);
 
     /**
      * The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -231,6 +397,69 @@ public interface Event extends Thing {
     void addEventAttendanceMode(EventAttendanceModeEnumeration eventAttendanceMode);
 
     /**
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     *
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    List<Schedule> getEventScheduleList();
+
+    /**
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     *
+     * @return {@link Schedule}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    Schedule getEventSchedule();
+
+    /**
+     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
+     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
+     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
+     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
+     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
+     *       or seasons.
+     *
+     * @param eventSchedule Schedule value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
+     */
+    void addEventSchedule(Schedule eventSchedule);
+
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @return {@link EventStatusType}
+     */
+    List<EventStatusType> getEventStatusList();
+
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @return {@link EventStatusType}
+     */
+    EventStatusType getEventStatus();
+
+    /**
+     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
+     *
+     * @param eventStatus EventStatusType value to set.
+     */
+    void addEventStatus(EventStatusType eventStatus);
+
+    /**
      * A person or organization that supports (sponsors) something through some kind of financial contribution.
      *
      * @return {@link Organization} or {@link Person}
@@ -258,31 +487,260 @@ public interface Event extends Thing {
     void addFunder(Person funder);
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link PerformingGroup} or {@link Person}
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> List<T> getActorList();
+    List<Grant> getFundingList();
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @return {@link PerformingGroup} or {@link Person}
+     * @return {@link Grant}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    <T> T getActor();
+    Grant getFunding();
 
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * A [[Grant]] that directly or indirectly provide funding or sponsorship for this item. See also [[ownershipFundingInfo]].
      *
-     * @param actor PerformingGroup value to set.
+     * @param funding Grant value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/383">https://github.com/schemaorg/schemaorg/issues/383</a>
+     * @see <a href="https://schema.org/docs/collab/TP">https://schema.org/docs/collab/TP</a>
      */
-    void addActor(PerformingGroup actor);
+    void addFunding(Grant funding);
+
     /**
-     * An actor (individual or a group), e.g. in TV, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.
+     * An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.
      *
-     * @param actor Person value to set.
+     * @return {@link Offer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
      */
-    void addActor(Person actor);
+    List<Offer> getHasParticipationOfferList();
+
+    /**
+     * An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
+     */
+    Offer getHasParticipationOffer();
+
+    /**
+     * An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.
+     *
+     * @param hasParticipationOffer Offer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
+     */
+    void addHasParticipationOffer(Offer hasParticipationOffer);
+
+    /**
+     * An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
+     */
+    List<Offer> getHasSponsorshipOfferList();
+
+    /**
+     * An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.
+     *
+     * @return {@link Offer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
+     */
+    Offer getHasSponsorshipOffer();
+
+    /**
+     * An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.
+     *
+     * @param hasSponsorshipOffer Offer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
+     */
+    void addHasSponsorshipOffer(Offer hasSponsorshipOffer);
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> List<T> getInLanguageList();
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @return {@link Language} or {@link Text}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    <T> T getInLanguage();
+
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Language value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void addInLanguage(Language inLanguage);
+    /**
+     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
+     *
+     * @param inLanguage Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
+     */
+    void addInLanguage(Text inLanguage);
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    List<Boolean> getIsAccessibleForFreeList();
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @return {@link Boolean}
+     */
+    Boolean getIsAccessibleForFree();
+
+    /**
+     * A flag to signal that the item, event, or place is accessible for free.
+     *
+     * @param isAccessibleForFree Boolean value to set.
+     */
+    void addIsAccessibleForFree(Boolean isAccessibleForFree);
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    <T> List<T> getKeywordsList();
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @return {@link Text} or {@link DefinedTerm} or {@link URL}
+     */
+    <T> T getKeywords();
+
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords Text value to set.
+     */
+    void addKeywords(Text keywords);
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords DefinedTerm value to set.
+     */
+    void addKeywords(DefinedTerm keywords);
+    /**
+     * Keywords or tags used to describe some item. Multiple textual entries in a keywords list are typically delimited by commas, or by repeating the property.
+     *
+     * @param keywords URL value to set.
+     */
+    void addKeywords(URL keywords);
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
+     */
+    <T> List<T> getLocationList();
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
+     */
+    <T> T getLocation();
+
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Text value to set.
+     */
+    void addLocation(Text location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location VirtualLocation value to set.
+     */
+    void addLocation(VirtualLocation location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location Place value to set.
+     */
+    void addLocation(Place location);
+    /**
+     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
+     *
+     * @param location PostalAddress value to set.
+     */
+    void addLocation(PostalAddress location);
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    List<Integer> getMaximumAttendeeCapacityList();
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @return {@link Integer}
+     */
+    Integer getMaximumAttendeeCapacity();
+
+    /**
+     * The total number of individuals that may attend an event or venue.
+     *
+     * @param maximumAttendeeCapacity Integer value to set.
+     */
+    void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    List<Integer> getMaximumPhysicalAttendeeCapacityList();
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @return {@link Integer}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    Integer getMaximumPhysicalAttendeeCapacity();
+
+    /**
+     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
+     *
+     * @param maximumPhysicalAttendeeCapacity Integer value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
+     */
+    void addMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity);
 
     /**
      * The maximum virtual attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OnlineEventAttendanceMode]] (or the online aspects, in the case of a [[MixedEventAttendanceMode]]). 
@@ -310,69 +768,6 @@ public interface Event extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
      */
     void addMaximumVirtualAttendeeCapacity(Integer maximumVirtualAttendeeCapacity);
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    List<AggregateRating> getAggregateRatingList();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @return {@link AggregateRating}
-     */
-    AggregateRating getAggregateRating();
-
-    /**
-     * The overall rating, based on a collection of reviews or ratings, of the item.
-     *
-     * @param aggregateRating AggregateRating value to set.
-     */
-    void addAggregateRating(AggregateRating aggregateRating);
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    List<Review> getReviewList();
-
-    /**
-     * A review of the item.
-     *
-     * @return {@link Review}
-     */
-    Review getReview();
-
-    /**
-     * A review of the item.
-     *
-     * @param review Review value to set.
-     */
-    void addReview(Review review);
-
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     *
-     * @return {@link Event}
-     */
-    List<Event> getSuperEventList();
-
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     *
-     * @return {@link Event}
-     */
-    Event getSuperEvent();
-
-    /**
-     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
-     *
-     * @param superEvent Event value to set.
-     */
-    void addSuperEvent(Event superEvent);
 
     /**
      * An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event. Use [[businessFunction]] to indicate the kind of transaction offered, i.e. sell, lease, etc. This property can also be used to describe a [[Demand]]. While this property is listed as expected on a number of common types, it can be used in others. In that case, using a second type, such as Product or a subtype of Product, can clarify the nature of the offer.
@@ -408,6 +803,108 @@ public interface Event extends Thing {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2289">https://github.com/schemaorg/schemaorg/issues/2289</a>
      */
     void addOffers(Demand offers);
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getOrganizerList();
+
+    /**
+     * An organizer of an Event.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getOrganizer();
+
+    /**
+     * An organizer of an Event.
+     *
+     * @param organizer Person value to set.
+     */
+    void addOrganizer(Person organizer);
+    /**
+     * An organizer of an Event.
+     *
+     * @param organizer Organization value to set.
+     */
+    void addOrganizer(Organization organizer);
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getPerformerList();
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getPerformer();
+
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @param performer Person value to set.
+     */
+    void addPerformer(Person performer);
+    /**
+     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     *
+     * @param performer Organization value to set.
+     */
+    void addPerformer(Organization performer);
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> List<T> getPerformersList();
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    <T> T getPerformers();
+
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @param performers Person value to set.
+     */
+    void addPerformers(Person performers);
+    /**
+     * The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.
+     *
+     * @param performers Organization value to set.
+     */
+    void addPerformers(Organization performers);
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @return {@link Date}
+     */
+    List<Date> getPreviousStartDateList();
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @return {@link Date}
+     */
+    Date getPreviousStartDate();
+
+    /**
+     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
+     *
+     * @param previousStartDate Date value to set.
+     */
+    void addPreviousStartDate(Date previousStartDate);
 
     /**
      * The CreativeWork that captured all or part of this Event.
@@ -452,225 +949,52 @@ public interface Event extends Thing {
     void addRemainingAttendeeCapacity(Integer remainingAttendeeCapacity);
 
     /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
+     * A review of the item.
      *
-     * @return {@link CreativeWork}
+     * @return {@link Review}
      */
-    List<CreativeWork> getWorkPerformedList();
+    List<Review> getReviewList();
 
     /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
+     * A review of the item.
      *
-     * @return {@link CreativeWork}
+     * @return {@link Review}
      */
-    CreativeWork getWorkPerformed();
+    Review getReview();
 
     /**
-     * A work performed in some event, for example a play performed in a TheaterEvent.
+     * A review of the item.
      *
-     * @param workPerformed CreativeWork value to set.
+     * @param review Review value to set.
      */
-    void addWorkPerformed(CreativeWork workPerformed);
+    void addReview(Review review);
 
     /**
-     * A person or organization attending the event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @return {@link Person} or {@link Organization}
      */
-    <T> List<T> getAttendeeList();
+    <T> List<T> getSponsorList();
 
     /**
-     * A person or organization attending the event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
      * @return {@link Person} or {@link Organization}
      */
-    <T> T getAttendee();
+    <T> T getSponsor();
 
     /**
-     * A person or organization attending the event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param attendee Person value to set.
+     * @param sponsor Person value to set.
      */
-    void addAttendee(Person attendee);
+    void addSponsor(Person sponsor);
     /**
-     * A person or organization attending the event.
+     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
      *
-     * @param attendee Organization value to set.
+     * @param sponsor Organization value to set.
      */
-    void addAttendee(Organization attendee);
-
-    /**
-     * An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
-     */
-    List<Offer> getHasParticipationOfferList();
-
-    /**
-     * An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
-     */
-    Offer getHasParticipationOffer();
-
-    /**
-     * An offer to participate in the event, for example, Call for Proposals, Call for Speakers, or Call for Performers.
-     *
-     * @param hasParticipationOffer Offer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
-     */
-    void addHasParticipationOffer(Offer hasParticipationOffer);
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    <T> List<T> getInLanguageList();
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @return {@link Language} or {@link Text}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    <T> T getInLanguage();
-
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param inLanguage Language value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void addInLanguage(Language inLanguage);
-    /**
-     * The language of the content or performance or used in an action. Please use one of the language codes from the [IETF BCP 47 standard](http://tools.ietf.org/html/bcp47). See also [[availableLanguage]].
-     *
-     * @param inLanguage Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2382">https://github.com/schemaorg/schemaorg/issues/2382</a>
-     */
-    void addInLanguage(Text inLanguage);
-
-    /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
-     *
-     * @return {@link Event}
-     */
-    List<Event> getSubEventsList();
-
-    /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
-     *
-     * @return {@link Event}
-     */
-    Event getSubEvents();
-
-    /**
-     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
-     *
-     * @param subEvents Event value to set.
-     */
-    void addSubEvents(Event subEvents);
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    <T> List<T> getComposerList();
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @return {@link Person} or {@link Organization}
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    <T> T getComposer();
-
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @param composer Person value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addComposer(Person composer);
-    /**
-     * The person or organization who wrote a composition, or who is the composer of a work performed at some event.
-     *
-     * @param composer Organization value to set.
-     * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
-     */
-    void addComposer(Organization composer);
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @return {@link EventStatusType}
-     */
-    List<EventStatusType> getEventStatusList();
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @return {@link EventStatusType}
-     */
-    EventStatusType getEventStatus();
-
-    /**
-     * An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
-     *
-     * @param eventStatus EventStatusType value to set.
-     */
-    void addEventStatus(EventStatusType eventStatus);
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @return {@link Event}
-     */
-    List<Event> getSubEventList();
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @return {@link Event}
-     */
-    Event getSubEvent();
-
-    /**
-     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
-     *
-     * @param subEvent Event value to set.
-     */
-    void addSubEvent(Event subEvent);
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    List<Audience> getAudienceList();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @return {@link Audience}
-     */
-    Audience getAudience();
-
-    /**
-     * An intended audience, i.e. a group for whom something was created.
-     *
-     * @param audience Audience value to set.
-     */
-    void addAudience(Audience audience);
+    void addSponsor(Organization sponsor);
 
     /**
      * The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601)).
@@ -704,31 +1028,94 @@ public interface Event extends Thing {
     void addStartDate(Date startDate);
 
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Event}
      */
-    <T> List<T> getPerformerList();
+    List<Event> getSubEventList();
 
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
-     * @return {@link Person} or {@link Organization}
+     * @return {@link Event}
      */
-    <T> T getPerformer();
+    Event getSubEvent();
 
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.
      *
-     * @param performer Person value to set.
+     * @param subEvent Event value to set.
      */
-    void addPerformer(Person performer);
+    void addSubEvent(Event subEvent);
+
     /**
-     * A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
      *
-     * @param performer Organization value to set.
+     * @return {@link Event}
      */
-    void addPerformer(Organization performer);
+    List<Event> getSubEventsList();
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @return {@link Event}
+     */
+    Event getSubEvents();
+
+    /**
+     * Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.
+     *
+     * @param subEvents Event value to set.
+     */
+    void addSubEvents(Event subEvents);
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
+    List<Event> getSuperEventList();
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @return {@link Event}
+     */
+    Event getSuperEvent();
+
+    /**
+     * An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
+     *
+     * @param superEvent Event value to set.
+     */
+    void addSuperEvent(Event superEvent);
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> List<T> getTranslatorList();
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @return {@link Organization} or {@link Person}
+     */
+    <T> T getTranslator();
+
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param translator Organization value to set.
+     */
+    void addTranslator(Organization translator);
+    /**
+     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
+     *
+     * @param translator Person value to set.
+     */
+    void addTranslator(Person translator);
 
     /**
      * The typical expected age range, e.g. '7-9', '11-'.
@@ -776,410 +1163,23 @@ public interface Event extends Thing {
     void addWorkFeatured(CreativeWork workFeatured);
 
     /**
-     * The time admission will commence.
+     * A work performed in some event, for example a play performed in a TheaterEvent.
      *
-     * @return {@link Time} or {@link DateTime}
+     * @return {@link CreativeWork}
      */
-    <T> List<T> getDoorTimeList();
+    List<CreativeWork> getWorkPerformedList();
 
     /**
-     * The time admission will commence.
+     * A work performed in some event, for example a play performed in a TheaterEvent.
      *
-     * @return {@link Time} or {@link DateTime}
+     * @return {@link CreativeWork}
      */
-    <T> T getDoorTime();
+    CreativeWork getWorkPerformed();
 
     /**
-     * The time admission will commence.
+     * A work performed in some event, for example a play performed in a TheaterEvent.
      *
-     * @param doorTime Time value to set.
+     * @param workPerformed CreativeWork value to set.
      */
-    void addDoorTime(Time doorTime);
-    /**
-     * The time admission will commence.
-     *
-     * @param doorTime DateTime value to set.
-     */
-    void addDoorTime(DateTime doorTime);
-
-    /**
-     * An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
-     */
-    List<Offer> getHasSponsorshipOfferList();
-
-    /**
-     * An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.
-     *
-     * @return {@link Offer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
-     */
-    Offer getHasSponsorshipOffer();
-
-    /**
-     * An offer to sponsor the event, for example, Sponsorship Prospectus, Sponsorship Opportunities, or Sponsor Packages.
-     *
-     * @param hasSponsorshipOffer Offer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4495">https://github.com/schemaorg/schemaorg/issues/4495</a>
-     */
-    void addHasSponsorshipOffer(Offer hasSponsorshipOffer);
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    List<Boolean> getIsAccessibleForFreeList();
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @return {@link Boolean}
-     */
-    Boolean getIsAccessibleForFree();
-
-    /**
-     * A flag to signal that the item, event, or place is accessible for free.
-     *
-     * @param isAccessibleForFree Boolean value to set.
-     */
-    void addIsAccessibleForFree(Boolean isAccessibleForFree);
-
-    /**
-     * The subject matter of an object.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    List<Thing> getAboutList();
-
-    /**
-     * The subject matter of an object.
-     *
-     * @return {@link Thing}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    Thing getAbout();
-
-    /**
-     * The subject matter of an object.
-     *
-     * @param about Thing value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/4588">https://github.com/schemaorg/schemaorg/issues/4588</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1670">https://github.com/schemaorg/schemaorg/issues/1670</a>
-     */
-    void addAbout(Thing about);
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getSponsorList();
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getSponsor();
-
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Person value to set.
-     */
-    void addSponsor(Person sponsor);
-    /**
-     * A person or organization that supports a thing through a pledge, promise, or financial contribution. E.g. a sponsor of a Medical Study or a corporate sponsor of an event.
-     *
-     * @param sponsor Organization value to set.
-     */
-    void addSponsor(Organization sponsor);
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    List<Integer> getMaximumPhysicalAttendeeCapacityList();
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @return {@link Integer}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    Integer getMaximumPhysicalAttendeeCapacity();
-
-    /**
-     * The maximum physical attendee capacity of an [[Event]] whose [[eventAttendanceMode]] is [[OfflineEventAttendanceMode]] (or the offline aspects, in the case of a [[MixedEventAttendanceMode]]). 
-     *
-     * @param maximumPhysicalAttendeeCapacity Integer value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1842">https://github.com/schemaorg/schemaorg/issues/1842</a>
-     */
-    void addMaximumPhysicalAttendeeCapacity(Integer maximumPhysicalAttendeeCapacity);
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    List<Integer> getMaximumAttendeeCapacityList();
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @return {@link Integer}
-     */
-    Integer getMaximumAttendeeCapacity();
-
-    /**
-     * The total number of individuals that may attend an event or venue.
-     *
-     * @param maximumAttendeeCapacity Integer value to set.
-     */
-    void addMaximumAttendeeCapacity(Integer maximumAttendeeCapacity);
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> List<T> getTranslatorList();
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @return {@link Organization} or {@link Person}
-     */
-    <T> T getTranslator();
-
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @param translator Organization value to set.
-     */
-    void addTranslator(Organization translator);
-    /**
-     * Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.
-     *
-     * @param translator Person value to set.
-     */
-    void addTranslator(Person translator);
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
-     */
-    <T> List<T> getLocationList();
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @return {@link Text} or {@link VirtualLocation} or {@link Place} or {@link PostalAddress}
-     */
-    <T> T getLocation();
-
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Text value to set.
-     */
-    void addLocation(Text location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location VirtualLocation value to set.
-     */
-    void addLocation(VirtualLocation location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location Place value to set.
-     */
-    void addLocation(Place location);
-    /**
-     * The location of, for example, where an event is happening, where an organization is located, or where an action takes place.
-     *
-     * @param location PostalAddress value to set.
-     */
-    void addLocation(PostalAddress location);
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getContributorList();
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getContributor();
-
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Person value to set.
-     */
-    void addContributor(Person contributor);
-    /**
-     * A secondary contributor to the CreativeWork or Event.
-     *
-     * @param contributor Organization value to set.
-     */
-    void addContributor(Organization contributor);
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @return {@link Date}
-     */
-    List<Date> getPreviousStartDateList();
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @return {@link Date}
-     */
-    Date getPreviousStartDate();
-
-    /**
-     * Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
-     *
-     * @param previousStartDate Date value to set.
-     */
-    void addPreviousStartDate(Date previousStartDate);
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getDirectorList();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @return {@link Person}
-     */
-    Person getDirector();
-
-    /**
-     * A director of e.g. TV, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.
-     *
-     * @param director Person value to set.
-     */
-    void addDirector(Person director);
-
-    /**
-     * A person attending the event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getAttendeesList();
-
-    /**
-     * A person attending the event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getAttendees();
-
-    /**
-     * A person attending the event.
-     *
-     * @param attendees Person value to set.
-     */
-    void addAttendees(Person attendees);
-    /**
-     * A person attending the event.
-     *
-     * @param attendees Organization value to set.
-     */
-    void addAttendees(Organization attendees);
-
-    /**
-     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
-     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
-     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     *
-     * @return {@link Schedule}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    List<Schedule> getEventScheduleList();
-
-    /**
-     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
-     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
-     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     *
-     * @return {@link Schedule}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    Schedule getEventSchedule();
-
-    /**
-     * Associates an [[Event]] with a [[Schedule]]. There are circumstances where it is preferable to share a schedule for a series of
-     *       repeating events rather than data on the individual events themselves. For example, a website or application might prefer to publish a schedule for a weekly
-     *       gym class rather than provide data on every event. A schedule could be processed by applications to add forthcoming events to a calendar. An [[Event]] that
-     *       is associated with a [[Schedule]] using this property should not have [[startDate]] or [[endDate]] properties. These are instead defined within the associated
-     *       [[Schedule]], this avoids any ambiguity for clients using the data. The property might have repeated values to specify different schedules, e.g. for different months
-     *       or seasons.
-     *
-     * @param eventSchedule Schedule value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1457">https://github.com/schemaorg/schemaorg/issues/1457</a>
-     */
-    void addEventSchedule(Schedule eventSchedule);
-
-    /**
-     * An organizer of an Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> List<T> getOrganizerList();
-
-    /**
-     * An organizer of an Event.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    <T> T getOrganizer();
-
-    /**
-     * An organizer of an Event.
-     *
-     * @param organizer Person value to set.
-     */
-    void addOrganizer(Person organizer);
-    /**
-     * An organizer of an Event.
-     *
-     * @param organizer Organization value to set.
-     */
-    void addOrganizer(Organization organizer);
+    void addWorkPerformed(CreativeWork workPerformed);
 }

@@ -53,6 +53,705 @@ import spec_custom.model.datatype.URL;
 @JsonLdTypeName("Demand")
 public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImpl implements Demand {
 
+    @JsonLdFieldTypes({ Text.class, LoanOrCredit.class, PaymentMethod.class })
+    private List<Object> acceptedPaymentMethod;
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getAcceptedPaymentMethodList() {
+        return (List<T>) acceptedPaymentMethod;
+    }
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAcceptedPaymentMethod() {
+        return (T) getFirst(acceptedPaymentMethod);
+    }
+
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAcceptedPaymentMethod(Text acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    }
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod LoanOrCredit value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    }
+    /**
+     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
+     *
+     * @param acceptedPaymentMethod PaymentMethod value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
+        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> additionalType;
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAdditionalTypeList() {
+        return (List<T>) additionalType;
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @return {@link URL} or {@link Text}
+     */
+    @Override
+    public <T> T getAdditionalType() {
+        return (T) getFirst(additionalType);
+    }
+
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType URL value to set.
+     */
+    @Override
+    public void addAdditionalType(URL additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+    /**
+     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
+     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
+     *
+     * @param additionalType Text value to set.
+     */
+    @Override
+    public void addAdditionalType(Text additionalType) {
+        this.additionalType = add(this.additionalType, additionalType);
+    }
+
+    private List<QuantitativeValue> advanceBookingRequirement;
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getAdvanceBookingRequirementList() {
+        return advanceBookingRequirement;
+    }
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public QuantitativeValue getAdvanceBookingRequirement() {
+        return getFirst(advanceBookingRequirement);
+    }
+
+    /**
+     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
+     *
+     * @param advanceBookingRequirement QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement) {
+        this.advanceBookingRequirement = add(this.advanceBookingRequirement, advanceBookingRequirement);
+    }
+
+    private List<Text> alternateName;
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getAlternateNameList() {
+        return alternateName;
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getAlternateName() {
+        return getFirst(alternateName);
+    }
+
+    /**
+     * An alias for the item.
+     *
+     * @param alternateName Text value to set.
+     */
+    @Override
+    public void addAlternateName(Text alternateName) {
+        this.alternateName = add(this.alternateName, alternateName);
+    }
+
+    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
+    private List<Object> areaServed;
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getAreaServedList() {
+        return (List<T>) areaServed;
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
+     */
+    @Override
+    public <T> T getAreaServed() {
+        return (T) getFirst(areaServed);
+    }
+
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Place value to set.
+     */
+    @Override
+    public void addAreaServed(Place areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed AdministrativeArea value to set.
+     */
+    @Override
+    public void addAreaServed(AdministrativeArea areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed GeoShape value to set.
+     */
+    @Override
+    public void addAreaServed(GeoShape areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+    /**
+     * The geographic area where a service or offered item is provided.
+     *
+     * @param areaServed Text value to set.
+     */
+    @Override
+    public void addAreaServed(Text areaServed) {
+        this.areaServed = add(this.areaServed, areaServed);
+    }
+
+    @JsonLdFieldTypes({ URL.class, Text.class })
+    private List<Object> asin;
+
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public <T> List<T> getAsinList() {
+        return (List<T>) asin;
+    }
+
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @return {@link URL} or {@link Text}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public <T> T getAsin() {
+        return (T) getFirst(asin);
+    }
+
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @param asin URL value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void addAsin(URL asin) {
+        this.asin = add(this.asin, asin);
+    }
+    /**
+     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
+     * 
+     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
+     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
+     *
+     * @param asin Text value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
+     */
+    @Override
+    public void addAsin(Text asin) {
+        this.asin = add(this.asin, asin);
+    }
+
+    private List<ItemAvailability> availability;
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @return {@link ItemAvailability}
+     */
+    @Override
+    public List<ItemAvailability> getAvailabilityList() {
+        return availability;
+    }
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @return {@link ItemAvailability}
+     */
+    @Override
+    public ItemAvailability getAvailability() {
+        return getFirst(availability);
+    }
+
+    /**
+     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     *
+     * @param availability ItemAvailability value to set.
+     */
+    @Override
+    public void addAvailability(ItemAvailability availability) {
+        this.availability = add(this.availability, availability);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class, Time.class })
+    private List<Object> availabilityEnds;
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getAvailabilityEndsList() {
+        return (List<T>) availabilityEnds;
+    }
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAvailabilityEnds() {
+        return (T) getFirst(availabilityEnds);
+    }
+
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailabilityEnds(DateTime availabilityEnds) {
+        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailabilityEnds(Date availabilityEnds) {
+        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
+    }
+    /**
+     * The end of the availability of the product or service included in the offer.
+     *
+     * @param availabilityEnds Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailabilityEnds(Time availabilityEnds) {
+        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
+    }
+
+    @JsonLdFieldTypes({ DateTime.class, Date.class, Time.class })
+    private List<Object> availabilityStarts;
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getAvailabilityStartsList() {
+        return (List<T>) availabilityStarts;
+    }
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @return {@link DateTime} or {@link Date} or {@link Time}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getAvailabilityStarts() {
+        return (T) getFirst(availabilityStarts);
+    }
+
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts DateTime value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailabilityStarts(DateTime availabilityStarts) {
+        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Date value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailabilityStarts(Date availabilityStarts) {
+        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
+    }
+    /**
+     * The beginning of the availability of the product or service included in the offer.
+     *
+     * @param availabilityStarts Time value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailabilityStarts(Time availabilityStarts) {
+        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
+    }
+
+    private List<Place> availableAtOrFrom;
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Place> getAvailableAtOrFromList() {
+        return availableAtOrFrom;
+    }
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @return {@link Place}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Place getAvailableAtOrFrom() {
+        return getFirst(availableAtOrFrom);
+    }
+
+    /**
+     * The place(s) from which the offer can be obtained (e.g. store locations).
+     *
+     * @param availableAtOrFrom Place value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailableAtOrFrom(Place availableAtOrFrom) {
+        this.availableAtOrFrom = add(this.availableAtOrFrom, availableAtOrFrom);
+    }
+
+    private List<DeliveryMethod> availableDeliveryMethod;
+
+    /**
+     * The delivery method(s) available for this offer.
+     *
+     * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<DeliveryMethod> getAvailableDeliveryMethodList() {
+        return availableDeliveryMethod;
+    }
+
+    /**
+     * The delivery method(s) available for this offer.
+     *
+     * @return {@link DeliveryMethod}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public DeliveryMethod getAvailableDeliveryMethod() {
+        return getFirst(availableDeliveryMethod);
+    }
+
+    /**
+     * The delivery method(s) available for this offer.
+     *
+     * @param availableDeliveryMethod DeliveryMethod value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod) {
+        this.availableDeliveryMethod = add(this.availableDeliveryMethod, availableDeliveryMethod);
+    }
+
+    private List<BusinessFunction> businessFunction;
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<BusinessFunction> getBusinessFunctionList() {
+        return businessFunction;
+    }
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @return {@link BusinessFunction}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public BusinessFunction getBusinessFunction() {
+        return getFirst(businessFunction);
+    }
+
+    /**
+     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+     *
+     * @param businessFunction BusinessFunction value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addBusinessFunction(BusinessFunction businessFunction) {
+        this.businessFunction = add(this.businessFunction, businessFunction);
+    }
+
+    private List<QuantitativeValue> deliveryLeadTime;
+
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<QuantitativeValue> getDeliveryLeadTimeList() {
+        return deliveryLeadTime;
+    }
+
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     *
+     * @return {@link QuantitativeValue}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public QuantitativeValue getDeliveryLeadTime() {
+        return getFirst(deliveryLeadTime);
+    }
+
+    /**
+     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     *
+     * @param deliveryLeadTime QuantitativeValue value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addDeliveryLeadTime(QuantitativeValue deliveryLeadTime) {
+        this.deliveryLeadTime = add(this.deliveryLeadTime, deliveryLeadTime);
+    }
+
+    @JsonLdFieldTypes({ TextObject.class, Text.class })
+    private List<Object> description;
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> List<T> getDescriptionList() {
+        return (List<T>) description;
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @return {@link TextObject} or {@link Text}
+     */
+    @Override
+    public <T> T getDescription() {
+        return (T) getFirst(description);
+    }
+
+    /**
+     * A description of the item.
+     *
+     * @param description TextObject value to set.
+     */
+    @Override
+    public void addDescription(TextObject description) {
+        this.description = add(this.description, description);
+    }
+    /**
+     * A description of the item.
+     *
+     * @param description Text value to set.
+     */
+    @Override
+    public void addDescription(Text description) {
+        this.description = add(this.description, description);
+    }
+
+    private List<Text> disambiguatingDescription;
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public List<Text> getDisambiguatingDescriptionList() {
+        return disambiguatingDescription;
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @return {@link Text}
+     */
+    @Override
+    public Text getDisambiguatingDescription() {
+        return getFirst(disambiguatingDescription);
+    }
+
+    /**
+     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     *
+     * @param disambiguatingDescription Text value to set.
+     */
+    @Override
+    public void addDisambiguatingDescription(Text disambiguatingDescription) {
+        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    }
+
+    private List<BusinessEntityType> eligibleCustomerType;
+
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     *
+     * @return {@link BusinessEntityType}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<BusinessEntityType> getEligibleCustomerTypeList() {
+        return eligibleCustomerType;
+    }
+
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     *
+     * @return {@link BusinessEntityType}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public BusinessEntityType getEligibleCustomerType() {
+        return getFirst(eligibleCustomerType);
+    }
+
+    /**
+     * The type(s) of customers for which the given offer is valid.
+     *
+     * @param eligibleCustomerType BusinessEntityType value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addEligibleCustomerType(BusinessEntityType eligibleCustomerType) {
+        this.eligibleCustomerType = add(this.eligibleCustomerType, eligibleCustomerType);
+    }
+
     private List<QuantitativeValue> eligibleDuration;
 
     /**
@@ -88,39 +787,140 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.eligibleDuration = add(this.eligibleDuration, eligibleDuration);
     }
 
-    private List<WarrantyPromise> warranty;
+    private List<QuantitativeValue> eligibleQuantity;
 
     /**
-     * The warranty promise(s) included in the offer.
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @return {@link WarrantyPromise}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public List<WarrantyPromise> getWarrantyList() {
-        return warranty;
+    public List<QuantitativeValue> getEligibleQuantityList() {
+        return eligibleQuantity;
     }
 
     /**
-     * The warranty promise(s) included in the offer.
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @return {@link WarrantyPromise}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public WarrantyPromise getWarranty() {
-        return getFirst(warranty);
+    public QuantitativeValue getEligibleQuantity() {
+        return getFirst(eligibleQuantity);
     }
 
     /**
-     * The warranty promise(s) included in the offer.
+     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
      *
-     * @param warranty WarrantyPromise value to set.
+     * @param eligibleQuantity QuantitativeValue value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addWarranty(WarrantyPromise warranty) {
-        this.warranty = add(this.warranty, warranty);
+    public void addEligibleQuantity(QuantitativeValue eligibleQuantity) {
+        this.eligibleQuantity = add(this.eligibleQuantity, eligibleQuantity);
+    }
+
+    @JsonLdFieldTypes({ GeoShape.class, Text.class, Place.class })
+    private List<Object> eligibleRegion;
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> List<T> getEligibleRegionList() {
+        return (List<T>) eligibleRegion;
+    }
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @return {@link GeoShape} or {@link Text} or {@link Place}
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public <T> T getEligibleRegion() {
+        return (T) getFirst(eligibleRegion);
+    }
+
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion GeoShape value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addEligibleRegion(GeoShape eligibleRegion) {
+        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Text value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addEligibleRegion(Text eligibleRegion) {
+        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
+    }
+    /**
+     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
+     *     
+     *
+     * @param eligibleRegion Place value to set.
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addEligibleRegion(Place eligibleRegion) {
+        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
+    }
+
+    private List<PriceSpecification> eligibleTransactionVolume;
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<PriceSpecification> getEligibleTransactionVolumeList() {
+        return eligibleTransactionVolume;
+    }
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public PriceSpecification getEligibleTransactionVolume() {
+        return getFirst(eligibleTransactionVolume);
+    }
+
+    /**
+     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
+     *
+     * @param eligibleTransactionVolume PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
+        this.eligibleTransactionVolume = add(this.eligibleTransactionVolume, eligibleTransactionVolume);
     }
 
     @JsonLdFieldTypes({ Text.class, URL.class })
@@ -233,39 +1033,39 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.gtin12 = add(this.gtin12, gtin12);
     }
 
-    private List<QuantitativeValue> deliveryLeadTime;
+    private List<Text> gtin13;
 
     /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public List<QuantitativeValue> getDeliveryLeadTimeList() {
-        return deliveryLeadTime;
+    public List<Text> getGtin13List() {
+        return gtin13;
     }
 
     /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @return {@link QuantitativeValue}
+     * @return {@link Text}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public QuantitativeValue getDeliveryLeadTime() {
-        return getFirst(deliveryLeadTime);
+    public Text getGtin13() {
+        return getFirst(gtin13);
     }
 
     /**
-     * The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.
+     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
      *
-     * @param deliveryLeadTime QuantitativeValue value to set.
+     * @param gtin13 Text value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addDeliveryLeadTime(QuantitativeValue deliveryLeadTime) {
-        this.deliveryLeadTime = add(this.deliveryLeadTime, deliveryLeadTime);
+    public void addGtin13(Text gtin13) {
+        this.gtin13 = add(this.gtin13, gtin13);
     }
 
     private List<Text> gtin14;
@@ -303,136 +1103,6 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.gtin14 = add(this.gtin14, gtin14);
     }
 
-    @JsonLdFieldTypes({ Place.class, AdministrativeArea.class, GeoShape.class, Text.class })
-    private List<Object> areaServed;
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAreaServedList() {
-        return (List<T>) areaServed;
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @return {@link Place} or {@link AdministrativeArea} or {@link GeoShape} or {@link Text}
-     */
-    @Override
-    public <T> T getAreaServed() {
-        return (T) getFirst(areaServed);
-    }
-
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Place value to set.
-     */
-    @Override
-    public void addAreaServed(Place areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed AdministrativeArea value to set.
-     */
-    @Override
-    public void addAreaServed(AdministrativeArea areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed GeoShape value to set.
-     */
-    @Override
-    public void addAreaServed(GeoShape areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-    /**
-     * The geographic area where a service or offered item is provided.
-     *
-     * @param areaServed Text value to set.
-     */
-    @Override
-    public void addAreaServed(Text areaServed) {
-        this.areaServed = add(this.areaServed, areaServed);
-    }
-
-    private List<DeliveryMethod> availableDeliveryMethod;
-
-    /**
-     * The delivery method(s) available for this offer.
-     *
-     * @return {@link DeliveryMethod}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<DeliveryMethod> getAvailableDeliveryMethodList() {
-        return availableDeliveryMethod;
-    }
-
-    /**
-     * The delivery method(s) available for this offer.
-     *
-     * @return {@link DeliveryMethod}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public DeliveryMethod getAvailableDeliveryMethod() {
-        return getFirst(availableDeliveryMethod);
-    }
-
-    /**
-     * The delivery method(s) available for this offer.
-     *
-     * @param availableDeliveryMethod DeliveryMethod value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailableDeliveryMethod(DeliveryMethod availableDeliveryMethod) {
-        this.availableDeliveryMethod = add(this.availableDeliveryMethod, availableDeliveryMethod);
-    }
-
-    private List<QuantitativeValue> inventoryLevel;
-
-    /**
-     * The current approximate inventory level for the item or items.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<QuantitativeValue> getInventoryLevelList() {
-        return inventoryLevel;
-    }
-
-    /**
-     * The current approximate inventory level for the item or items.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getInventoryLevel() {
-        return getFirst(inventoryLevel);
-    }
-
-    /**
-     * The current approximate inventory level for the item or items.
-     *
-     * @param inventoryLevel QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addInventoryLevel(QuantitativeValue inventoryLevel) {
-        this.inventoryLevel = add(this.inventoryLevel, inventoryLevel);
-    }
-
     private List<Text> gtin8;
 
     /**
@@ -468,74 +1138,137 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.gtin8 = add(this.gtin8, gtin8);
     }
 
-    private List<Text> sku;
+    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
+    private List<Object> identifier;
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
      */
     @Override
-    public List<Text> getSkuList() {
-        return sku;
+    public <T> List<T> getIdentifierList() {
+        return (List<T>) identifier;
     }
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link URL} or {@link PropertyValue} or {@link Text}
      */
     @Override
-    public Text getSku() {
-        return getFirst(sku);
+    public <T> T getIdentifier() {
+        return (T) getFirst(identifier);
     }
 
     /**
-     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
      *
-     * @param sku Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param identifier URL value to set.
      */
     @Override
-    public void addSku(Text sku) {
-        this.sku = add(this.sku, sku);
+    public void addIdentifier(URL identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier PropertyValue value to set.
+     */
+    @Override
+    public void addIdentifier(PropertyValue identifier) {
+        this.identifier = add(this.identifier, identifier);
+    }
+    /**
+     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
+     *         
+     *
+     * @param identifier Text value to set.
+     */
+    @Override
+    public void addIdentifier(Text identifier) {
+        this.identifier = add(this.identifier, identifier);
     }
 
-    private List<Text> gtin13;
+    @JsonLdFieldTypes({ ImageObject.class, URL.class })
+    private List<Object> image;
 
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public List<Text> getGtin13List() {
-        return gtin13;
+    public <T> List<T> getImageList() {
+        return (List<T>) image;
     }
 
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link ImageObject} or {@link URL}
      */
     @Override
-    public Text getGtin13() {
-        return getFirst(gtin13);
+    public <T> T getImage() {
+        return (T) getFirst(image);
     }
 
     /**
-     * The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceding zero. See [GS1 GTIN Summary](http://www.gs1.org/barcodes/technical/idkeys/gtin) for more details.
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
      *
-     * @param gtin13 Text value to set.
+     * @param image ImageObject value to set.
+     */
+    @Override
+    public void addImage(ImageObject image) {
+        this.image = add(this.image, image);
+    }
+    /**
+     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     *
+     * @param image URL value to set.
+     */
+    @Override
+    public void addImage(URL image) {
+        this.image = add(this.image, image);
+    }
+
+    private List<TypeAndQuantityNode> includesObject;
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addGtin13(Text gtin13) {
-        this.gtin13 = add(this.gtin13, gtin13);
+    public List<TypeAndQuantityNode> getIncludesObjectList() {
+        return includesObject;
+    }
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @return {@link TypeAndQuantityNode}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public TypeAndQuantityNode getIncludesObject() {
+        return getFirst(includesObject);
+    }
+
+    /**
+     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     *
+     * @param includesObject TypeAndQuantityNode value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addIncludesObject(TypeAndQuantityNode includesObject) {
+        this.includesObject = add(this.includesObject, includesObject);
     }
 
     @JsonLdFieldTypes({ GeoShape.class, Text.class, Place.class })
@@ -604,188 +1337,71 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.ineligibleRegion = add(this.ineligibleRegion, ineligibleRegion);
     }
 
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> validFrom;
+    private List<QuantitativeValue> inventoryLevel;
 
     /**
-     * The date when the item becomes valid.
+     * The current approximate inventory level for the item or items.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public <T> List<T> getValidFromList() {
-        return (List<T>) validFrom;
+    public List<QuantitativeValue> getInventoryLevelList() {
+        return inventoryLevel;
     }
 
     /**
-     * The date when the item becomes valid.
+     * The current approximate inventory level for the item or items.
      *
-     * @return {@link DateTime} or {@link Date}
+     * @return {@link QuantitativeValue}
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getValidFrom() {
-        return (T) getFirst(validFrom);
+    public QuantitativeValue getInventoryLevel() {
+        return getFirst(inventoryLevel);
     }
 
     /**
-     * The date when the item becomes valid.
+     * The current approximate inventory level for the item or items.
      *
-     * @param validFrom DateTime value to set.
+     * @param inventoryLevel QuantitativeValue value to set.
      * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addValidFrom(DateTime validFrom) {
-        this.validFrom = add(this.validFrom, validFrom);
-    }
-    /**
-     * The date when the item becomes valid.
-     *
-     * @param validFrom Date value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidFrom(Date validFrom) {
-        this.validFrom = add(this.validFrom, validFrom);
+    public void addInventoryLevel(QuantitativeValue inventoryLevel) {
+        this.inventoryLevel = add(this.inventoryLevel, inventoryLevel);
     }
 
-    private List<BusinessEntityType> eligibleCustomerType;
+    private List<OfferItemCondition> itemCondition;
 
     /**
-     * The type(s) of customers for which the given offer is valid.
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @return {@link BusinessEntityType}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link OfferItemCondition}
      */
     @Override
-    public List<BusinessEntityType> getEligibleCustomerTypeList() {
-        return eligibleCustomerType;
+    public List<OfferItemCondition> getItemConditionList() {
+        return itemCondition;
     }
 
     /**
-     * The type(s) of customers for which the given offer is valid.
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @return {@link BusinessEntityType}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @return {@link OfferItemCondition}
      */
     @Override
-    public BusinessEntityType getEligibleCustomerType() {
-        return getFirst(eligibleCustomerType);
+    public OfferItemCondition getItemCondition() {
+        return getFirst(itemCondition);
     }
 
     /**
-     * The type(s) of customers for which the given offer is valid.
+     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
      *
-     * @param eligibleCustomerType BusinessEntityType value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param itemCondition OfferItemCondition value to set.
      */
     @Override
-    public void addEligibleCustomerType(BusinessEntityType eligibleCustomerType) {
-        this.eligibleCustomerType = add(this.eligibleCustomerType, eligibleCustomerType);
-    }
-
-    @JsonLdFieldTypes({ Person.class, Organization.class })
-    private List<Object> seller;
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> List<T> getSellerList() {
-        return (List<T>) seller;
-    }
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @return {@link Person} or {@link Organization}
-     */
-    @Override
-    public <T> T getSeller() {
-        return (T) getFirst(seller);
-    }
-
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Person value to set.
-     */
-    @Override
-    public void addSeller(Person seller) {
-        this.seller = add(this.seller, seller);
-    }
-    /**
-     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
-     *
-     * @param seller Organization value to set.
-     */
-    @Override
-    public void addSeller(Organization seller) {
-        this.seller = add(this.seller, seller);
-    }
-
-    @JsonLdFieldTypes({ Text.class, LoanOrCredit.class, PaymentMethod.class })
-    private List<Object> acceptedPaymentMethod;
-
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getAcceptedPaymentMethodList() {
-        return (List<T>) acceptedPaymentMethod;
-    }
-
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @return {@link Text} or {@link LoanOrCredit} or {@link PaymentMethod}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAcceptedPaymentMethod() {
-        return (T) getFirst(acceptedPaymentMethod);
-    }
-
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAcceptedPaymentMethod(Text acceptedPaymentMethod) {
-        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
-    }
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod LoanOrCredit value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAcceptedPaymentMethod(LoanOrCredit acceptedPaymentMethod) {
-        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
-    }
-    /**
-     * The payment method(s) that are accepted in general by an organization, or for some specific demand or offer.
-     *
-     * @param acceptedPaymentMethod PaymentMethod value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/3537">https://github.com/schemaorg/schemaorg/issues/3537</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAcceptedPaymentMethod(PaymentMethod acceptedPaymentMethod) {
-        this.acceptedPaymentMethod = add(this.acceptedPaymentMethod, acceptedPaymentMethod);
+    public void addItemCondition(OfferItemCondition itemCondition) {
+        this.itemCondition = add(this.itemCondition, itemCondition);
     }
 
     @JsonLdFieldTypes({ Product.class, Event.class, AggregateOffer.class, Trip.class, CreativeWork.class, Service.class, MenuItem.class })
@@ -875,173 +1491,46 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.itemOffered = add(this.itemOffered, itemOffered);
     }
 
-    private List<ItemAvailability> availability;
+    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
+    private List<Object> mainEntityOfPage;
 
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link ItemAvailability}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public List<ItemAvailability> getAvailabilityList() {
-        return availability;
+    public <T> List<T> getMainEntityOfPageList() {
+        return (List<T>) mainEntityOfPage;
     }
 
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link ItemAvailability}
+     * @return {@link CreativeWork} or {@link URL}
      */
     @Override
-    public ItemAvailability getAvailability() {
-        return getFirst(availability);
+    public <T> T getMainEntityOfPage() {
+        return (T) getFirst(mainEntityOfPage);
     }
 
     /**
-     * The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @param availability ItemAvailability value to set.
+     * @param mainEntityOfPage CreativeWork value to set.
      */
     @Override
-    public void addAvailability(ItemAvailability availability) {
-        this.availability = add(this.availability, availability);
+    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
-
-    private List<TypeAndQuantityNode> includesObject;
-
     /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
+     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
      *
-     * @return {@link TypeAndQuantityNode}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     * @param mainEntityOfPage URL value to set.
      */
     @Override
-    public List<TypeAndQuantityNode> getIncludesObjectList() {
-        return includesObject;
-    }
-
-    /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
-     *
-     * @return {@link TypeAndQuantityNode}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public TypeAndQuantityNode getIncludesObject() {
-        return getFirst(includesObject);
-    }
-
-    /**
-     * This links to a node or nodes indicating the exact quantity of the products included in  an [[Offer]] or [[ProductCollection]].
-     *
-     * @param includesObject TypeAndQuantityNode value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addIncludesObject(TypeAndQuantityNode includesObject) {
-        this.includesObject = add(this.includesObject, includesObject);
-    }
-
-    private List<OfferItemCondition> itemCondition;
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public List<OfferItemCondition> getItemConditionList() {
-        return itemCondition;
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @return {@link OfferItemCondition}
-     */
-    @Override
-    public OfferItemCondition getItemCondition() {
-        return getFirst(itemCondition);
-    }
-
-    /**
-     * A predefined value from OfferItemCondition specifying the condition of the product or service, or the products or services included in the offer. Also used for product return policies to specify the condition of products accepted for returns.
-     *
-     * @param itemCondition OfferItemCondition value to set.
-     */
-    @Override
-    public void addItemCondition(OfferItemCondition itemCondition) {
-        this.itemCondition = add(this.itemCondition, itemCondition);
-    }
-
-    private List<BusinessFunction> businessFunction;
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @return {@link BusinessFunction}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<BusinessFunction> getBusinessFunctionList() {
-        return businessFunction;
-    }
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @return {@link BusinessFunction}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public BusinessFunction getBusinessFunction() {
-        return getFirst(businessFunction);
-    }
-
-    /**
-     * The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
-     *
-     * @param businessFunction BusinessFunction value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addBusinessFunction(BusinessFunction businessFunction) {
-        this.businessFunction = add(this.businessFunction, businessFunction);
-    }
-
-    private List<QuantitativeValue> advanceBookingRequirement;
-
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<QuantitativeValue> getAdvanceBookingRequirementList() {
-        return advanceBookingRequirement;
-    }
-
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getAdvanceBookingRequirement() {
-        return getFirst(advanceBookingRequirement);
-    }
-
-    /**
-     * The amount of time that is required between accepting the offer and the actual usage of the resource or service.
-     *
-     * @param advanceBookingRequirement QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAdvanceBookingRequirement(QuantitativeValue advanceBookingRequirement) {
-        this.advanceBookingRequirement = add(this.advanceBookingRequirement, advanceBookingRequirement);
+    public void addMainEntityOfPage(URL mainEntityOfPage) {
+        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
     }
 
     private List<Text> mpn;
@@ -1079,509 +1568,6 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.mpn = add(this.mpn, mpn);
     }
 
-    @JsonLdFieldTypes({ GeoShape.class, Text.class, Place.class })
-    private List<Object> eligibleRegion;
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @return {@link GeoShape} or {@link Text} or {@link Place}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getEligibleRegionList() {
-        return (List<T>) eligibleRegion;
-    }
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @return {@link GeoShape} or {@link Text} or {@link Place}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getEligibleRegion() {
-        return (T) getFirst(eligibleRegion);
-    }
-
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param eligibleRegion GeoShape value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addEligibleRegion(GeoShape eligibleRegion) {
-        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param eligibleRegion Text value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addEligibleRegion(Text eligibleRegion) {
-        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
-    }
-    /**
-     * The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.<br/><br/>See also [[ineligibleRegion]].
-     *     
-     *
-     * @param eligibleRegion Place value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addEligibleRegion(Place eligibleRegion) {
-        this.eligibleRegion = add(this.eligibleRegion, eligibleRegion);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class, Time.class })
-    private List<Object> availabilityStarts;
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Date} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getAvailabilityStartsList() {
-        return (List<T>) availabilityStarts;
-    }
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Date} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAvailabilityStarts() {
-        return (T) getFirst(availabilityStarts);
-    }
-
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param availabilityStarts DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailabilityStarts(DateTime availabilityStarts) {
-        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
-    }
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param availabilityStarts Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailabilityStarts(Date availabilityStarts) {
-        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
-    }
-    /**
-     * The beginning of the availability of the product or service included in the offer.
-     *
-     * @param availabilityStarts Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailabilityStarts(Time availabilityStarts) {
-        this.availabilityStarts = add(this.availabilityStarts, availabilityStarts);
-    }
-
-    private List<PriceSpecification> eligibleTransactionVolume;
-
-    /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<PriceSpecification> getEligibleTransactionVolumeList() {
-        return eligibleTransactionVolume;
-    }
-
-    /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public PriceSpecification getEligibleTransactionVolume() {
-        return getFirst(eligibleTransactionVolume);
-    }
-
-    /**
-     * The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
-     *
-     * @param eligibleTransactionVolume PriceSpecification value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addEligibleTransactionVolume(PriceSpecification eligibleTransactionVolume) {
-        this.eligibleTransactionVolume = add(this.eligibleTransactionVolume, eligibleTransactionVolume);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> asin;
-
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> List<T> getAsinList() {
-        return (List<T>) asin;
-    }
-
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @return {@link URL} or {@link Text}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public <T> T getAsin() {
-        return (T) getFirst(asin);
-    }
-
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @param asin URL value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addAsin(URL asin) {
-        this.asin = add(this.asin, asin);
-    }
-    /**
-     * An Amazon Standard Identification Number (ASIN) is a 10-character alphanumeric unique identifier assigned by Amazon.com and its partners for product identification within the Amazon organization (summary from [Wikipedia](https://en.wikipedia.org/wiki/Amazon_Standard_Identification_Number)'s article).
-     * 
-     * Note also that this is a definition for how to include ASINs in Schema.org data, and not a definition of ASINs in general - see documentation from Amazon for authoritative details.
-     * ASINs are most commonly encoded as text strings, but the [asin] property supports URL/URI as potential values too.
-     *
-     * @param asin Text value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2288">https://github.com/schemaorg/schemaorg/issues/2288</a>
-     */
-    @Override
-    public void addAsin(Text asin) {
-        this.asin = add(this.asin, asin);
-    }
-
-    private List<Text> serialNumber;
-
-    /**
-     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Text> getSerialNumberList() {
-        return serialNumber;
-    }
-
-    /**
-     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-     *
-     * @return {@link Text}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Text getSerialNumber() {
-        return getFirst(serialNumber);
-    }
-
-    /**
-     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
-     *
-     * @param serialNumber Text value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addSerialNumber(Text serialNumber) {
-        this.serialNumber = add(this.serialNumber, serialNumber);
-    }
-
-    private List<QuantitativeValue> eligibleQuantity;
-
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<QuantitativeValue> getEligibleQuantityList() {
-        return eligibleQuantity;
-    }
-
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     *
-     * @return {@link QuantitativeValue}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public QuantitativeValue getEligibleQuantity() {
-        return getFirst(eligibleQuantity);
-    }
-
-    /**
-     * The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
-     *
-     * @param eligibleQuantity QuantitativeValue value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addEligibleQuantity(QuantitativeValue eligibleQuantity) {
-        this.eligibleQuantity = add(this.eligibleQuantity, eligibleQuantity);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class })
-    private List<Object> validThrough;
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getValidThroughList() {
-        return (List<T>) validThrough;
-    }
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @return {@link DateTime} or {@link Date}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getValidThrough() {
-        return (T) getFirst(validThrough);
-    }
-
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough DateTime value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidThrough(DateTime validThrough) {
-        this.validThrough = add(this.validThrough, validThrough);
-    }
-    /**
-     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
-     *
-     * @param validThrough Date value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addValidThrough(Date validThrough) {
-        this.validThrough = add(this.validThrough, validThrough);
-    }
-
-    private List<PriceSpecification> priceSpecification;
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<PriceSpecification> getPriceSpecificationList() {
-        return priceSpecification;
-    }
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @return {@link PriceSpecification}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public PriceSpecification getPriceSpecification() {
-        return getFirst(priceSpecification);
-    }
-
-    /**
-     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
-     *
-     * @param priceSpecification PriceSpecification value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addPriceSpecification(PriceSpecification priceSpecification) {
-        this.priceSpecification = add(this.priceSpecification, priceSpecification);
-    }
-
-    @JsonLdFieldTypes({ DateTime.class, Date.class, Time.class })
-    private List<Object> availabilityEnds;
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Date} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> List<T> getAvailabilityEndsList() {
-        return (List<T>) availabilityEnds;
-    }
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @return {@link DateTime} or {@link Date} or {@link Time}
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public <T> T getAvailabilityEnds() {
-        return (T) getFirst(availabilityEnds);
-    }
-
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds DateTime value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailabilityEnds(DateTime availabilityEnds) {
-        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
-    }
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds Date value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailabilityEnds(Date availabilityEnds) {
-        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
-    }
-    /**
-     * The end of the availability of the product or service included in the offer.
-     *
-     * @param availabilityEnds Time value to set.
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/1741">https://github.com/schemaorg/schemaorg/issues/1741</a>
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailabilityEnds(Time availabilityEnds) {
-        this.availabilityEnds = add(this.availabilityEnds, availabilityEnds);
-    }
-
-    private List<Place> availableAtOrFrom;
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public List<Place> getAvailableAtOrFromList() {
-        return availableAtOrFrom;
-    }
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @return {@link Place}
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public Place getAvailableAtOrFrom() {
-        return getFirst(availableAtOrFrom);
-    }
-
-    /**
-     * The place(s) from which the offer can be obtained (e.g. store locations).
-     *
-     * @param availableAtOrFrom Place value to set.
-     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
-     */
-    @Override
-    public void addAvailableAtOrFrom(Place availableAtOrFrom) {
-        this.availableAtOrFrom = add(this.availableAtOrFrom, availableAtOrFrom);
-    }
-
-    private List<URL> sameAs;
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public List<URL> getSameAsList() {
-        return sameAs;
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @return {@link URL}
-     */
-    @Override
-    public URL getSameAs() {
-        return getFirst(sameAs);
-    }
-
-    /**
-     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
-     *
-     * @param sameAs URL value to set.
-     */
-    @Override
-    public void addSameAs(URL sameAs) {
-        this.sameAs = add(this.sameAs, sameAs);
-    }
-
     private List<Text> name;
 
     /**
@@ -1612,108 +1598,6 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
     @Override
     public void addName(Text name) {
         this.name = add(this.name, name);
-    }
-
-    @JsonLdFieldTypes({ URL.class, Text.class })
-    private List<Object> additionalType;
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getAdditionalTypeList() {
-        return (List<T>) additionalType;
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @return {@link URL} or {@link Text}
-     */
-    @Override
-    public <T> T getAdditionalType() {
-        return (T) getFirst(additionalType);
-    }
-
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType URL value to set.
-     */
-    @Override
-    public void addAdditionalType(URL additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-    /**
-     * An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. Typically the value is a URI-identified RDF class, and in this case corresponds to the
-     *     use of rdf:type in RDF. Text values can be used sparingly, for cases where useful information can be added without their being an appropriate schema to reference. In the case of text values, the class label should follow the schema.org <a href="https://schema.org/docs/styleguide.html">style guide</a>.
-     *
-     * @param additionalType Text value to set.
-     */
-    @Override
-    public void addAdditionalType(Text additionalType) {
-        this.additionalType = add(this.additionalType, additionalType);
-    }
-
-    @JsonLdFieldTypes({ URL.class, PropertyValue.class, Text.class })
-    private List<Object> identifier;
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getIdentifierList() {
-        return (List<T>) identifier;
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @return {@link URL} or {@link PropertyValue} or {@link Text}
-     */
-    @Override
-    public <T> T getIdentifier() {
-        return (T) getFirst(identifier);
-    }
-
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier URL value to set.
-     */
-    @Override
-    public void addIdentifier(URL identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier PropertyValue value to set.
-     */
-    @Override
-    public void addIdentifier(PropertyValue identifier) {
-        this.identifier = add(this.identifier, identifier);
-    }
-    /**
-     * The identifier property represents any kind of identifier for any kind of [[Thing]], such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See [background notes](/docs/datamodel.html#identifierBg) for more details.
-     *         
-     *
-     * @param identifier Text value to set.
-     */
-    @Override
-    public void addIdentifier(Text identifier) {
-        this.identifier = add(this.identifier, identifier);
     }
 
     @JsonLdFieldTypes({ Person.class, Organization.class })
@@ -1762,6 +1646,217 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.owner = add(this.owner, owner);
     }
 
+    private List<Action> potentialAction;
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public List<Action> getPotentialActionList() {
+        return potentialAction;
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @return {@link Action}
+     */
+    @Override
+    public Action getPotentialAction() {
+        return getFirst(potentialAction);
+    }
+
+    /**
+     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
+     *
+     * @param potentialAction Action value to set.
+     */
+    @Override
+    public void addPotentialAction(Action potentialAction) {
+        this.potentialAction = add(this.potentialAction, potentialAction);
+    }
+
+    private List<PriceSpecification> priceSpecification;
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<PriceSpecification> getPriceSpecificationList() {
+        return priceSpecification;
+    }
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @return {@link PriceSpecification}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public PriceSpecification getPriceSpecification() {
+        return getFirst(priceSpecification);
+    }
+
+    /**
+     * One or more detailed price specifications, indicating the unit price and delivery or payment charges.
+     *
+     * @param priceSpecification PriceSpecification value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addPriceSpecification(PriceSpecification priceSpecification) {
+        this.priceSpecification = add(this.priceSpecification, priceSpecification);
+    }
+
+    private List<URL> sameAs;
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public List<URL> getSameAsList() {
+        return sameAs;
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @return {@link URL}
+     */
+    @Override
+    public URL getSameAs() {
+        return getFirst(sameAs);
+    }
+
+    /**
+     * URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.
+     *
+     * @param sameAs URL value to set.
+     */
+    @Override
+    public void addSameAs(URL sameAs) {
+        this.sameAs = add(this.sameAs, sameAs);
+    }
+
+    @JsonLdFieldTypes({ Person.class, Organization.class })
+    private List<Object> seller;
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> List<T> getSellerList() {
+        return (List<T>) seller;
+    }
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @return {@link Person} or {@link Organization}
+     */
+    @Override
+    public <T> T getSeller() {
+        return (T) getFirst(seller);
+    }
+
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Person value to set.
+     */
+    @Override
+    public void addSeller(Person seller) {
+        this.seller = add(this.seller, seller);
+    }
+    /**
+     * An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.
+     *
+     * @param seller Organization value to set.
+     */
+    @Override
+    public void addSeller(Organization seller) {
+        this.seller = add(this.seller, seller);
+    }
+
+    private List<Text> serialNumber;
+
+    /**
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getSerialNumberList() {
+        return serialNumber;
+    }
+
+    /**
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getSerialNumber() {
+        return getFirst(serialNumber);
+    }
+
+    /**
+     * The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+     *
+     * @param serialNumber Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addSerialNumber(Text serialNumber) {
+        this.serialNumber = add(this.serialNumber, serialNumber);
+    }
+
+    private List<Text> sku;
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<Text> getSkuList() {
+        return sku;
+    }
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @return {@link Text}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public Text getSku() {
+        return getFirst(sku);
+    }
+
+    /**
+     * The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
+     *
+     * @param sku Text value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addSku(Text sku) {
+        this.sku = add(this.sku, sku);
+    }
+
     @JsonLdFieldTypes({ Event.class, CreativeWork.class })
     private List<Object> subjectOf;
 
@@ -1808,154 +1903,6 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.subjectOf = add(this.subjectOf, subjectOf);
     }
 
-    @JsonLdFieldTypes({ CreativeWork.class, URL.class })
-    private List<Object> mainEntityOfPage;
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> List<T> getMainEntityOfPageList() {
-        return (List<T>) mainEntityOfPage;
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @return {@link CreativeWork} or {@link URL}
-     */
-    @Override
-    public <T> T getMainEntityOfPage() {
-        return (T) getFirst(mainEntityOfPage);
-    }
-
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage CreativeWork value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(CreativeWork mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-    /**
-     * Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See [background notes](/docs/datamodel.html#mainEntityBackground) for details.
-     *
-     * @param mainEntityOfPage URL value to set.
-     */
-    @Override
-    public void addMainEntityOfPage(URL mainEntityOfPage) {
-        this.mainEntityOfPage = add(this.mainEntityOfPage, mainEntityOfPage);
-    }
-
-    private List<Action> potentialAction;
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public List<Action> getPotentialActionList() {
-        return potentialAction;
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @return {@link Action}
-     */
-    @Override
-    public Action getPotentialAction() {
-        return getFirst(potentialAction);
-    }
-
-    /**
-     * Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.
-     *
-     * @param potentialAction Action value to set.
-     */
-    @Override
-    public void addPotentialAction(Action potentialAction) {
-        this.potentialAction = add(this.potentialAction, potentialAction);
-    }
-
-    @JsonLdFieldTypes({ TextObject.class, Text.class })
-    private List<Object> description;
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> List<T> getDescriptionList() {
-        return (List<T>) description;
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @return {@link TextObject} or {@link Text}
-     */
-    @Override
-    public <T> T getDescription() {
-        return (T) getFirst(description);
-    }
-
-    /**
-     * A description of the item.
-     *
-     * @param description TextObject value to set.
-     */
-    @Override
-    public void addDescription(TextObject description) {
-        this.description = add(this.description, description);
-    }
-    /**
-     * A description of the item.
-     *
-     * @param description Text value to set.
-     */
-    @Override
-    public void addDescription(Text description) {
-        this.description = add(this.description, description);
-    }
-
-    private List<Text> alternateName;
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public List<Text> getAlternateNameList() {
-        return alternateName;
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getAlternateName() {
-        return getFirst(alternateName);
-    }
-
-    /**
-     * An alias for the item.
-     *
-     * @param alternateName Text value to set.
-     */
-    @Override
-    public void addAlternateName(Text alternateName) {
-        this.alternateName = add(this.alternateName, alternateName);
-    }
-
     private List<URL> url;
 
     /**
@@ -1988,77 +1935,130 @@ public class DemandImpl extends com.weedow.schemaorg.commons.model.JsonLdNodeImp
         this.url = add(this.url, url);
     }
 
-    @JsonLdFieldTypes({ ImageObject.class, URL.class })
-    private List<Object> image;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> validFrom;
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The date when the item becomes valid.
      *
-     * @return {@link ImageObject} or {@link URL}
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public <T> List<T> getImageList() {
-        return (List<T>) image;
+    public <T> List<T> getValidFromList() {
+        return (List<T>) validFrom;
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The date when the item becomes valid.
      *
-     * @return {@link ImageObject} or {@link URL}
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public <T> T getImage() {
-        return (T) getFirst(image);
+    public <T> T getValidFrom() {
+        return (T) getFirst(validFrom);
     }
 
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The date when the item becomes valid.
      *
-     * @param image ImageObject value to set.
+     * @param validFrom DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addImage(ImageObject image) {
-        this.image = add(this.image, image);
+    public void addValidFrom(DateTime validFrom) {
+        this.validFrom = add(this.validFrom, validFrom);
     }
     /**
-     * An image of the item. This can be a [[URL]] or a fully described [[ImageObject]].
+     * The date when the item becomes valid.
      *
-     * @param image URL value to set.
+     * @param validFrom Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addImage(URL image) {
-        this.image = add(this.image, image);
+    public void addValidFrom(Date validFrom) {
+        this.validFrom = add(this.validFrom, validFrom);
     }
 
-    private List<Text> disambiguatingDescription;
+    @JsonLdFieldTypes({ DateTime.class, Date.class })
+    private List<Object> validThrough;
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @return {@link Text}
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public List<Text> getDisambiguatingDescriptionList() {
-        return disambiguatingDescription;
-    }
-
-    /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
-     *
-     * @return {@link Text}
-     */
-    @Override
-    public Text getDisambiguatingDescription() {
-        return getFirst(disambiguatingDescription);
+    public <T> List<T> getValidThroughList() {
+        return (List<T>) validThrough;
     }
 
     /**
-     * A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
      *
-     * @param disambiguatingDescription Text value to set.
+     * @return {@link DateTime} or {@link Date}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
      */
     @Override
-    public void addDisambiguatingDescription(Text disambiguatingDescription) {
-        this.disambiguatingDescription = add(this.disambiguatingDescription, disambiguatingDescription);
+    public <T> T getValidThrough() {
+        return (T) getFirst(validThrough);
+    }
+
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough DateTime value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addValidThrough(DateTime validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
+    }
+    /**
+     * The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.
+     *
+     * @param validThrough Date value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addValidThrough(Date validThrough) {
+        this.validThrough = add(this.validThrough, validThrough);
+    }
+
+    private List<WarrantyPromise> warranty;
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public List<WarrantyPromise> getWarrantyList() {
+        return warranty;
+    }
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @return {@link WarrantyPromise}
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public WarrantyPromise getWarranty() {
+        return getFirst(warranty);
+    }
+
+    /**
+     * The warranty promise(s) included in the offer.
+     *
+     * @param warranty WarrantyPromise value to set.
+     * @see <a href="https://schema.org/docs/collab/GoodRelationsTerms">https://schema.org/docs/collab/GoodRelationsTerms</a>
+     */
+    @Override
+    public void addWarranty(WarrantyPromise warranty) {
+        this.warranty = add(this.warranty, warranty);
     }
 }

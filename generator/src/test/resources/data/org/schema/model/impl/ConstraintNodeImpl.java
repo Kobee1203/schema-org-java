@@ -8,21 +8,21 @@ package org.schema.model.impl;
 import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import java.util.List;
-import org.schema.model.Action;
-import org.schema.model.ConstraintNode;
-import org.schema.model.CreativeWork;
-import org.schema.model.Event;
-import org.schema.model.ImageObject;
-import org.schema.model.Intangible;
-import org.schema.model.Organization;
-import org.schema.model.Person;
-import org.schema.model.Property;
-import org.schema.model.PropertyValue;
-import org.schema.model.TextObject;
-import org.schema.model.Thing;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Text;
 import org.schema.model.datatype.URL;
+import org.schema.model.models.Action;
+import org.schema.model.models.ConstraintNode;
+import org.schema.model.models.CreativeWork;
+import org.schema.model.models.Event;
+import org.schema.model.models.ImageObject;
+import org.schema.model.models.Intangible;
+import org.schema.model.models.Organization;
+import org.schema.model.models.Person;
+import org.schema.model.models.Property;
+import org.schema.model.models.PropertyValue;
+import org.schema.model.models.TextObject;
+import org.schema.model.models.Thing;
 
 /**
  * The ConstraintNode type is provided to support usecases in which a node in a structured data graph is described with properties which appear to describe a single entity, but are being used in a situation where they serve a more abstract purpose. A [[ConstraintNode]] can be described using [[constraintProperty]] and [[numConstraints]]. These constraint properties can serve a

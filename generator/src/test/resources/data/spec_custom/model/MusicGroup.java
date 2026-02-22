@@ -22,6 +22,48 @@ import spec_custom.model.datatype.URL;
 public interface MusicGroup extends PerformingGroup {
 
     /**
+     * A music album.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getAlbumList();
+
+    /**
+     * A music album.
+     *
+     * @return {@link MusicAlbum}
+     */
+    MusicAlbum getAlbum();
+
+    /**
+     * A music album.
+     *
+     * @param album MusicAlbum value to set.
+     */
+    void addAlbum(MusicAlbum album);
+
+    /**
+     * A collection of music albums.
+     *
+     * @return {@link MusicAlbum}
+     */
+    List<MusicAlbum> getAlbumsList();
+
+    /**
+     * A collection of music albums.
+     *
+     * @return {@link MusicAlbum}
+     */
+    MusicAlbum getAlbums();
+
+    /**
+     * A collection of music albums.
+     *
+     * @param albums MusicAlbum value to set.
+     */
+    void addAlbums(MusicAlbum albums);
+
+    /**
      * Genre of the creative work, broadcast channel or group.
      *
      * @return {@link URL} or {@link Text} or {@link DefinedTerm}
@@ -55,6 +97,27 @@ public interface MusicGroup extends PerformingGroup {
     void addGenre(DefinedTerm genre);
 
     /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @return {@link Person}
+     */
+    List<Person> getMusicGroupMemberList();
+
+    /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @return {@link Person}
+     */
+    Person getMusicGroupMember();
+
+    /**
+     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
+     *
+     * @param musicGroupMember Person value to set.
+     */
+    void addMusicGroupMember(Person musicGroupMember);
+
+    /**
      * A music recording (track)&#x2014;usually a single song. If an ItemList is given, the list should contain items of type MusicRecording.
      *
      * @return {@link ItemList} or {@link MusicRecording}
@@ -84,69 +147,6 @@ public interface MusicGroup extends PerformingGroup {
      * @see <a href="https://schema.org/docs/collab/MBZ">https://schema.org/docs/collab/MBZ</a>
      */
     void addTrack(MusicRecording track);
-
-    /**
-     * A collection of music albums.
-     *
-     * @return {@link MusicAlbum}
-     */
-    List<MusicAlbum> getAlbumsList();
-
-    /**
-     * A collection of music albums.
-     *
-     * @return {@link MusicAlbum}
-     */
-    MusicAlbum getAlbums();
-
-    /**
-     * A collection of music albums.
-     *
-     * @param albums MusicAlbum value to set.
-     */
-    void addAlbums(MusicAlbum albums);
-
-    /**
-     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-     *
-     * @return {@link Person}
-     */
-    List<Person> getMusicGroupMemberList();
-
-    /**
-     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-     *
-     * @return {@link Person}
-     */
-    Person getMusicGroupMember();
-
-    /**
-     * A member of a music group&#x2014;for example, John, Paul, George, or Ringo.
-     *
-     * @param musicGroupMember Person value to set.
-     */
-    void addMusicGroupMember(Person musicGroupMember);
-
-    /**
-     * A music album.
-     *
-     * @return {@link MusicAlbum}
-     */
-    List<MusicAlbum> getAlbumList();
-
-    /**
-     * A music album.
-     *
-     * @return {@link MusicAlbum}
-     */
-    MusicAlbum getAlbum();
-
-    /**
-     * A music album.
-     *
-     * @param album MusicAlbum value to set.
-     */
-    void addAlbum(MusicAlbum album);
 
     /**
      * A music recording (track)&#x2014;usually a single song.

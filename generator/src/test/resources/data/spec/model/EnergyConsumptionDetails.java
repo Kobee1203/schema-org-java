@@ -19,33 +19,6 @@ import spec.model.EnergyEfficiencyEnumeration;
 public interface EnergyConsumptionDetails extends Intangible {
 
     /**
-     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
-     *
-     * @return {@link EnergyEfficiencyEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    List<EnergyEfficiencyEnumeration> getHasEnergyEfficiencyCategoryList();
-
-    /**
-     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
-     *
-     * @return {@link EnergyEfficiencyEnumeration}
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    EnergyEfficiencyEnumeration getHasEnergyEfficiencyCategory();
-
-    /**
-     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
-     *
-     * @param hasEnergyEfficiencyCategory EnergyEfficiencyEnumeration value to set.
-     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
-     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
-     */
-    void addHasEnergyEfficiencyCategory(EnergyEfficiencyEnumeration hasEnergyEfficiencyCategory);
-
-    /**
      * Specifies the most energy efficient class on the regulated EU energy consumption scale for the product category a product belongs to. For example, energy consumption for televisions placed on the market after January 1, 2020 is scaled from D to A+++.
      *
      * @return {@link EUEnergyEfficiencyEnumeration}
@@ -98,4 +71,31 @@ public interface EnergyConsumptionDetails extends Intangible {
      * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
      */
     void addEnergyEfficiencyScaleMin(EUEnergyEfficiencyEnumeration energyEfficiencyScaleMin);
+
+    /**
+     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyEfficiencyEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    List<EnergyEfficiencyEnumeration> getHasEnergyEfficiencyCategoryList();
+
+    /**
+     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
+     *
+     * @return {@link EnergyEfficiencyEnumeration}
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    EnergyEfficiencyEnumeration getHasEnergyEfficiencyCategory();
+
+    /**
+     * Defines the energy efficiency Category (which could be either a rating out of range of values or a yes/no certification) for a product according to an international energy efficiency standard.
+     *
+     * @param hasEnergyEfficiencyCategory EnergyEfficiencyEnumeration value to set.
+     * @see <a href="https://pending.schema.org">https://pending.schema.org</a>
+     * @see <a href="https://github.com/schemaorg/schemaorg/issues/2670">https://github.com/schemaorg/schemaorg/issues/2670</a>
+     */
+    void addHasEnergyEfficiencyCategory(EnergyEfficiencyEnumeration hasEnergyEfficiencyCategory);
 }
