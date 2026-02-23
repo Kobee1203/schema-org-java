@@ -59,7 +59,7 @@
 
         <!-- Dependencies -->
         <lombok.version>1.18.42</lombok.version>
-        <logback-classic.version>1.5.29</logback-classic.version>
+        <logback-classic.version>1.5.32</logback-classic.version>
         <jackson.version>2.20.0</jackson.version>
         <handlebars-helpers.version>4.5.0</handlebars-helpers.version>
         <commons-cli.version>1.11.0</commons-cli.version>
