@@ -321,7 +321,8 @@ All notable changes to this project will be documented in this file.
 
 schema-org-java is alive!
 
-[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.10.0...HEAD
+[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.11.0...HEAD
+[0.11.0]: https://github.com/Kobee1203/schema-org-java/compare/0.10.0...0.11.0
 [0.10.0]: https://github.com/Kobee1203/schema-org-java/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/Kobee1203/schema-org-java/compare/0.8.0...0.9.0
 [0.8.0]: https://github.com/Kobee1203/schema-org-java/compare/0.7.0...0.8.0
