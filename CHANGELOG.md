@@ -10,6 +10,17 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
+## [0.11.0]
+
+### Changed
+
+* [generator] New CLI with Picocli library 🚀 by @Kobee1203 in https://github.com/Kobee1203/schema-org-java/pull/267 \
+  ⚠️ **Breaking change: Some command options have been changed. Please refer to the documentation.**
+![schema-org-java-cli-ezgif com-optimize](https://github.com/user-attachments/assets/98b8cc00-585b-48da-8d13-a6495157e620)
+* [generator] Sort imports alphabetically by @Kobee1203 in https://github.com/Kobee1203/schema-org-java/pull/271
+* [generator] Sort type properties alphabetically by @Kobee1203 in https://github.com/Kobee1203/schema-org-java/pull/271
+* [generator] Remove Javadoc from the methods of implementation classes by @Kobee1203 in https://github.com/Kobee1203/schema-org-java/pull/271 (Issue https://github.com/Kobee1203/schema-org-java/issues/270)
+
 ## [0.10.0]
 
 ### Added
@@ -310,7 +321,8 @@ All notable changes to this project will be documented in this file.
 
 schema-org-java is alive!
 
-[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.10.0...HEAD
+[unreleased]: https://github.com/Kobee1203/schema-org-java/compare/0.11.0...HEAD
+[0.11.0]: https://github.com/Kobee1203/schema-org-java/compare/0.10.0...0.11.0
 [0.10.0]: https://github.com/Kobee1203/schema-org-java/compare/0.9.0...0.10.0
 [0.9.0]: https://github.com/Kobee1203/schema-org-java/compare/0.8.0...0.9.0
 [0.8.0]: https://github.com/Kobee1203/schema-org-java/compare/0.7.0...0.8.0
