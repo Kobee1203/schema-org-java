@@ -43,8 +43,7 @@ public final class SchemaGeneratorUtils {
                         .flatMap(parentType -> getAllImports(modelPackage, dataTypePackage, parentType).stream())
                         .forEach(imports::add);
             }
-            //Optional.ofNullable(resolveClassName(modelPackage, dataTypePackage, type)).ifPresent(imports::add);
-            imports.add(resolveClassName(modelPackage, dataTypePackage, t));
+            Optional.ofNullable(resolveClassName(modelPackage, dataTypePackage, t)).ifPresent(imports::add);
             imports.add(JsonLdTypeName.class.getName());
             if (t.getAllProperties().stream().anyMatch(property -> property.getTypes().size() > 1)) {
                 imports.add(JsonLdFieldTypes.class.getName());
