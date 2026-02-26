@@ -18,6 +18,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import static com.weedow.schemaorg.generator.logging.Emojis.*;
+
 @MavenJupiterExtension
 @MavenRepository
 class SchemaModelGeneratorMojoIT {
@@ -31,7 +33,7 @@ class SchemaModelGeneratorMojoIT {
                 .info()
                 .contains("VERBOSE MODE: ON.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -56,7 +58,7 @@ class SchemaModelGeneratorMojoIT {
                 .info()
                 .doesNotContain("VERBOSE MODE: ON.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -81,7 +83,7 @@ class SchemaModelGeneratorMojoIT {
                 .info()
                 .doesNotContain("VERBOSE MODE: ON.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -105,9 +107,9 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .doesNotContain("VERBOSE MODE: ON.")
-                .contains("Java types are used instead of Schema.org Data Types.")
+                .contains(JAVA.value() + " Java types are used instead of Schema.org Data Types.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -141,9 +143,9 @@ class SchemaModelGeneratorMojoIT {
         MavenITAssertions.assertThat(result)
                 .out()
                 .info()
-                .contains("Custom data Types configured: DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
+                .contains(LABEL.value() + " Custom data Types configured: DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -177,10 +179,10 @@ class SchemaModelGeneratorMojoIT {
         MavenITAssertions.assertThat(result)
                 .out()
                 .info()
-                .contains("Custom data Types configured: DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
-                .contains("Java types are used instead of Schema.org Data Types.")
+                .contains(LABEL.value() + " Custom data Types configured: DateTime=java.time.ZonedDateTime, XPathType=javax.xml.xpath.XPath")
+                .contains(JAVA.value() + " Java types are used instead of Schema.org Data Types.")
                 .contains("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()
@@ -237,7 +239,7 @@ class SchemaModelGeneratorMojoIT {
                 .out()
                 .info()
                 .doesNotContain("Adding the generated java types and generated resources as compiled source root.")
-                .anyMatch(s -> s.matches("Finished: \\d+ s"));
+                .anyMatch(s -> s.matches(TIMER.value() + " Finished: \\d+ s"));
 
         MavenITAssertions.assertThat(result)
                 .project()

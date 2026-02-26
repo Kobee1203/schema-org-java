@@ -11,8 +11,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
-import com.weedow.schemaorg.serializer.JsonLdDataTypeModule;
 import com.weedow.schemaorg.serializer.JsonLdConstants;
+import com.weedow.schemaorg.serializer.JsonLdDataTypeModule;
 import com.weedow.schemaorg.serializer.JsonLdException;
 import com.weedow.schemaorg.serializer.JsonLdNodeMixIn;
 

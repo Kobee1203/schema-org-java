@@ -4,6 +4,8 @@ import com.weedow.schemaorg.generator.model.Property;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
+import nl.altindag.log.LogCaptor;
+import nl.altindag.log.model.LogEvent;
 import org.assertj.core.api.Assertions;
 import org.assertj.core.groups.Tuple;
 import org.junit.jupiter.api.Test;
@@ -347,18 +349,29 @@ class PropertyModelHandlerImplTest {
 
     @Test
     void handle_with_deprecated_type() {
-        Map<String, Type> schemaDefinitions = new HashMap<>();
+        try (LogCaptor logCaptor = LogCaptor.forClass(PropertyModelHandlerImpl.class)) {
+            Map<String, Type> schemaDefinitions = new HashMap<>();
 
-        GraphItem graphItem = mock(GraphItem.class);
-        when(graphItem.getId()).thenReturn("schema:OldProperty");
-        when(graphItem.getRangeIncludes()).thenReturn(Collections.emptyList());
-        when(graphItem.getSupersededBy()).thenReturn(supersededBy("NewProperty"));
+            GraphItem graphItem = mock(GraphItem.class);
+            when(graphItem.getId()).thenReturn("schema:OldProperty");
+            when(graphItem.getRangeIncludes()).thenReturn(Collections.emptyList());
+            when(graphItem.getSupersededBy()).thenReturn(supersededBy("NewProperty"));
 
-        ParserOptions options = mock(ParserOptions.class);
+            ParserOptions options = mock(ParserOptions.class);
 
-        modelHandler.handle(schemaDefinitions, graphItem, options);
+            modelHandler.handle(schemaDefinitions, graphItem, options);
 
-        Assertions.assertThat(schemaDefinitions).isEmpty();
+            Assertions.assertThat(schemaDefinitions).isEmpty();
+
+            // Verify log
+            List<LogEvent> logEvents = logCaptor.getLogEvents();
+            Assertions.assertThat(logEvents).hasSize(1);
+
+            LogEvent logEvent = logEvents.get(0);
+            Assertions.assertThat(logEvent.getLevel()).isEqualTo("INFO");
+            Assertions.assertThat(logEvent.getMessage()).isEqualTo("⚠️ ** DEPRECATED ** {} is superseded by {}");
+            Assertions.assertThat(logEvent.getArguments()).containsExactly("schema:OldProperty", "NewProperty");
+        }
     }
 
     private static GraphItem createGraphItem() {

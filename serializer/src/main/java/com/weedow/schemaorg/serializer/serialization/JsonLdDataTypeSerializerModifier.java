@@ -1,6 +1,9 @@
 package com.weedow.schemaorg.serializer.serialization;
 
-import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.databind.BeanDescription;
+import com.fasterxml.jackson.databind.JavaType;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;

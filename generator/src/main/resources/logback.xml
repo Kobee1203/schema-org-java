@@ -13,16 +13,6 @@
         </encoder>
     </appender>
 
-    <appender name="PROGRESS" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%msg</pattern>
-        </encoder>
-    </appender>
-
-    <logger name="PROGRESS_BAR" level="INFO" additivity="false">
-        <appender-ref ref="PROGRESS"/>
-    </logger>
-
     <logger name="com.weedow.schemaorg" level="INFO"/>
 
     <root level="INFO">

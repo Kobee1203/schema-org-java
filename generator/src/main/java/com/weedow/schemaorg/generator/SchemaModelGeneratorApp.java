@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-import static com.weedow.schemaorg.generator.logging.LoggingConstants.FINISHED;
+import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
 
 @picocli.CommandLine.Command(
         name = "java -jar schema-org-generator-{version}-jar-with-dependencies.jar",
@@ -79,7 +79,7 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage)
                 .setModels(models)
-                .addCompleteHandler(elapsedTime -> LOG.info(FINISHED + " {} s", elapsedTime.toSeconds()));
+                .addCompleteHandler(elapsedTime -> LOG.success(TIMER, "Finished:" + " {} s", elapsedTime.toSeconds()));
 
         ParserOptions parserOptions = new ParserOptions()
                 .setSchemaResource(schemaResource)

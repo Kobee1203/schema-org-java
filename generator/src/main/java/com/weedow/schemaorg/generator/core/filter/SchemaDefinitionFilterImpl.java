@@ -9,7 +9,8 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static com.weedow.schemaorg.generator.logging.LoggingConstants.ARCHIVED;
+import static com.weedow.schemaorg.generator.logging.Emojis.ARCHIVED;
+import static com.weedow.schemaorg.generator.logging.LogMarkers.WARNING;
 
 public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
 
@@ -24,7 +25,7 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
                 .filter(entry -> {
                     Type type = entry.getValue();
                     if (type.getName() == null || type.getName().isEmpty()) {
-                        LOG.info(ARCHIVED + " {} has been retired from the vocabulary (see https://schema.org/docs/attic.home.html)", type.getId());
+                        LOG.info(WARNING, ARCHIVED, "** ARCHIVED **" + " {} has been retired from the vocabulary (see https://schema.org/docs/attic.home.html)", type.getId());
                         return false;
                     }
                     return true;
@@ -56,7 +57,7 @@ public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
             types.add(type);
             type.getParents().forEach(parent -> addType(types, parent));
             type.getAllProperties().forEach(property -> property.getTypes().forEach(propertyType -> addType(types, propertyType)));
-            if(type.isEnumerationType()) {
+            if (type.isEnumerationType()) {
                 types.addAll(type.getSubTypes());
             }
         }
