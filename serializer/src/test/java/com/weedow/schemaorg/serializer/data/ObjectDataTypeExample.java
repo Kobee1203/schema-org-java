@@ -4,11 +4,11 @@ import com.weedow.schemaorg.commons.model.JsonLdFieldTypes;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
 import lombok.Data;
+import org.schema.model.datatype.*;
 import org.schema.model.datatype.Boolean;
 import org.schema.model.datatype.Float;
 import org.schema.model.datatype.Integer;
 import org.schema.model.datatype.Number;
-import org.schema.model.datatype.*;
 
 @Data
 @JsonLdTypeName("ObjectDataTypeExample")

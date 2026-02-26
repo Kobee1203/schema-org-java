@@ -2,7 +2,6 @@ package com.weedow.schemaorg.generator.core.copy;
 
 import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
 import nl.altindag.log.LogCaptor;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -16,6 +15,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+import static com.weedow.schemaorg.generator.logging.Emojis.WARNING;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 
@@ -40,9 +41,9 @@ class CopyServiceImplTest {
             try (MockedStatic<Files> files = Mockito.mockStatic(Files.class)) {
                 copyService.copy(CopyServiceImplTest.class, targetDirectory);
 
-                Assertions.assertThat(logCaptor.getInfoLogs()).containsExactly("Copying 'com.weedow.schemaorg.generator.core.copy.CopyServiceImplTest'");
-                Assertions.assertThat(logCaptor.getWarnLogs()).isEmpty();
-                Assertions.assertThat(logCaptor.getErrorLogs()).isEmpty();
+                assertThat(logCaptor.getInfoLogs()).containsExactly("Copying 'com.weedow.schemaorg.generator.core.copy.CopyServiceImplTest'");
+                assertThat(logCaptor.getWarnLogs()).isEmpty();
+                assertThat(logCaptor.getErrorLogs()).isEmpty();
                 files.verify(() -> Files.createDirectories(targetDirectory));
                 files.verify(() -> Files.copy(any(InputStream.class), eq(Paths.get("target/test/CopyServiceImplTest.java")), eq(StandardCopyOption.REPLACE_EXISTING)));
             }
@@ -60,9 +61,9 @@ class CopyServiceImplTest {
 
                 copyService.copy(CopyServiceImplTest.class, targetDirectory);
 
-                Assertions.assertThat(logCaptor.getInfoLogs()).containsExactly("Copying 'com.weedow.schemaorg.generator.core.copy.CopyServiceImplTest'");
-                Assertions.assertThat(logCaptor.getWarnLogs()).containsExactly("Could not read the resource 'CopyServiceImplTest.java': Could not create the directory");
-                Assertions.assertThat(logCaptor.getErrorLogs()).isEmpty();
+                assertThat(logCaptor.getInfoLogs()).containsExactly("Copying 'com.weedow.schemaorg.generator.core.copy.CopyServiceImplTest'");
+                assertThat(logCaptor.getWarnLogs()).containsExactly(WARNING.value() + " Could not read the resource 'CopyServiceImplTest.java': Could not create the directory");
+                assertThat(logCaptor.getErrorLogs()).isEmpty();
                 files.verify(
                         () -> Files.copy(any(InputStream.class), eq(Paths.get("target/test/CopyServiceImplTest.java")), eq(StandardCopyOption.REPLACE_EXISTING)),
                         Mockito.never()

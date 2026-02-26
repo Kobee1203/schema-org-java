@@ -6,6 +6,7 @@ import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
+import com.weedow.schemaorg.generator.logging.LogMarkers;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.logging.ProgressTracker;
@@ -23,7 +24,7 @@ import java.time.Instant;
 import java.util.*;
 import java.util.stream.Stream;
 
-import static com.weedow.schemaorg.generator.logging.LoggingConstants.*;
+import static com.weedow.schemaorg.generator.logging.Emojis.*;
 
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
@@ -61,15 +62,15 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         final Path dataTypeFolder = options.getDataTypeFolder();
 
         if (!createFolderIfNotExists(modelFolder)) {
-            LOG.error(MODEL_DIRECTORY_NOT_CREATED + ": " + PARAM, modelFolder);
+            LOG.error(ERROR, "Model directory does not exist and could not be created" + ": {}", modelFolder);
             return;
         }
         if (!createFolderIfNotExists(modelImplFolder)) {
-            LOG.error(MODEL_IMPL_DIRECTORY_NOT_CREATED + ": " + PARAM, modelImplFolder);
+            LOG.error(ERROR, "Model Implementation directory does not exist and could not be created" + ": {}", modelImplFolder);
             return;
         }
         if (!createFolderIfNotExists(dataTypeFolder)) {
-            LOG.error(DATA_TYPE_DIRECTORY_NOT_CREATED + ": " + PARAM, dataTypeFolder);
+            LOG.error(ERROR, "DataType directory does not exist and could not be created" + ": {}", dataTypeFolder);
             return;
         }
 
@@ -84,12 +85,12 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
         Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
         if (filteredSchemaDefinitions.isEmpty()) {
-            LOG.info(NO_SCHEMA_MODEL_FOUND);
+            LOG.info(LogMarkers.ERROR, GHOST, "No schema models found to generate");
             return;
         }
 
         if (options.isCopyCommonModels()) {
-            LOG.info(COPYING_COMMON_MODELS);
+            LOG.info(COPY, "Copying common models...");
             copyJavaFile(JsonLdTypeName.class);
             copyJavaFile(JsonLdFieldTypes.class);
             copyJavaFile(JsonLdSubTypes.class);
@@ -98,7 +99,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             copyJavaFile(JsonLdDataType.class);
         }
 
-        LOG.info(GENERATING_MODELS);
+        LOG.info(GEAR, "Generating models...");
 
         ProgressTracker tracker = new ProgressTracker(filteredSchemaDefinitions.size());
         try (Stream<Type> stream = streamService.stream(filteredSchemaDefinitions)) {
@@ -125,7 +126,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
                         tracker.tick(type.getName());
                     });
         }
-        LOG.info(COMPLETED);
+        LOG.success(CHECK, "Model generation completed.");
     }
 
     private void copyPropertyFile(Path outputFolder, String modelPackage, String modelImplPackage, String dataTypePackage) {
@@ -139,7 +140,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
             properties.store(outputStream, "Schema.org Java properties");
         } catch (IOException e) {
-            LOG.warn(COULD_NOT_WRITE_PROPERTIES_FILE + " " + PARAM, outputFolder);
+            LOG.warn(WARNING, "Could not write the properties file to directory" + " '{}'", outputFolder);
         }
     }
 
@@ -202,7 +203,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
             templateService.apply(templateLocation, outputFile, context);
             options.getSuccessHandlers().forEach(successHandler -> successHandler.onSuccess(templateLocation, outputFile, context));
         } catch (IOException e) {
-            LOG.warn(COULD_NOT_WRITE_OUTPUT_FILE + " " + PARAM + " from template " + PARAM + ": " + PARAM, outputFile, templateLocation, e.getMessage());
+            LOG.warn(WARNING, "Could not write output file '{}' from template '{}': {}", outputFile, templateLocation, e.getMessage());
             options.getErrorHandlers().forEach(errorHandler -> errorHandler.onError(templateLocation, outputFile, context, e));
         }
     }
@@ -212,7 +213,7 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         try {
             return Files.exists(Files.createDirectories(folder));
         } catch (IOException e) {
-            LOG.warn(COULD_NOT_CREATE_DIRECTORY + " " + PARAM + ": " + PARAM, folder, e.getMessage());
+            LOG.warn("Could not create directory" + " '{}': {}", folder, e.getMessage());
             return false;
         }
     }

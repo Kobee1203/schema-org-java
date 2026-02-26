@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -69,7 +70,7 @@ class SchemaModelGeneratorMojoTest {
         verify(project).addCompileSourceRoot(OUTPUT.toString());
         verify(project).addResource(any(Resource.class));
         verify(log).info("Adding the generated java types and generated resources as compiled source root.");
-        verify(log).info("Finished: 10 s");
+        verify(log).info(TIMER.value() + " Finished: 10 s");
     }
 
     @Test
@@ -108,7 +109,7 @@ class SchemaModelGeneratorMojoTest {
         verify(project).addCompileSourceRoot(OUTPUT.toString());
         verify(project).addResource(any(Resource.class));
         verify(log).info("Adding the generated java types and generated resources as compiled source root.");
-        verify(log).info("Finished: 10 s");
+        verify(log).info(TIMER.value() + " Finished: 10 s");
     }
 
     @Test
@@ -209,7 +210,7 @@ class SchemaModelGeneratorMojoTest {
         verify(project).addTestCompileSourceRoot(OUTPUT.toString());
         verify(project).addTestResource(any(Resource.class));
         verify(log).info("Adding the generated java types and generated resources as compiled test-source root.");
-        verify(log).info("Finished: 10 s");
+        verify(log).info(TIMER.value() + " Finished: 10 s");
     }
 
     private static SchemaModelGeneratorBuilder mockSchemaModelGeneratorBuilder(boolean copyCommonModels) {

@@ -12,6 +12,7 @@ import com.weedow.schemaorg.generator.core.stream.StreamService;
 import com.weedow.schemaorg.generator.logging.ProgressTracker;
 import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.template.TemplateService;
+import nl.altindag.log.LogCaptor;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,6 +33,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Consumer;
 
+import static com.weedow.schemaorg.generator.logging.Emojis.GHOST;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.*;
 
@@ -66,17 +68,20 @@ class SchemaModelGeneratorImplTest {
 
     @Test
     void generate_without_schema_definitions() {
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
+        try (LogCaptor logCaptor = LogCaptor.forClass(SchemaModelGeneratorImpl.class)) {
+            when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
 
-        try (MockedConstruction<ProgressTracker> mockedTracker = mockConstruction(ProgressTracker.class)) {
-            schemaModelGenerator.generate();
+            try (MockedConstruction<ProgressTracker> mockedTracker = mockConstruction(ProgressTracker.class)) {
+                schemaModelGenerator.generate();
 
-            assertThat(mockedTracker.constructed()).isEmpty();
+                assertThat(mockedTracker.constructed()).isEmpty();
+            }
+
+            verifyNoInteractions(streamService);
+            verifyNoInteractions(copyService);
+            verifyNoInteractions(templateService);
+            assertThat(logCaptor.getInfoLogs()).containsExactly(GHOST.value() + " No schema models found to generate");
         }
-
-        verifyNoInteractions(streamService);
-        verifyNoInteractions(copyService);
-        verifyNoInteractions(templateService);
     }
 
     @Test

@@ -11,6 +11,7 @@ import uk.org.webcompere.systemstubs.jupiter.SystemStub;
 import uk.org.webcompere.systemstubs.jupiter.SystemStubsExtension;
 import uk.org.webcompere.systemstubs.security.SystemExit;
 
+import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
 import static uk.org.webcompere.systemstubs.SystemStubs.tapSystemOutNormalized;
 
 @ExtendWith(SystemStubsExtension.class)
@@ -90,7 +91,7 @@ class SchemaModelGeneratorAppTest {
                 .contains("100% (272/272)")
                 .contains(" > ")
                 .contains("✔ Completed")
-                .containsPattern("Finished: \\d+ s")
+                .containsPattern(TIMER.value() + " Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
 
@@ -114,7 +115,7 @@ class SchemaModelGeneratorAppTest {
                 .contains("100% (14/14)")
                 .contains(" > ")
                 .contains("✔ Completed")
-                .containsPattern("Finished: \\d+ s")
+                .containsPattern(TIMER.value() + " Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
 
@@ -139,7 +140,7 @@ class SchemaModelGeneratorAppTest {
                 .contains("100% (13/13)")
                 .contains(" > ")
                 .contains("✔ Completed")
-                .containsPattern("Finished: \\d+ s")
+                .containsPattern(TIMER.value() + " Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
 
@@ -164,7 +165,7 @@ class SchemaModelGeneratorAppTest {
                 .contains("100% (14/14)")
                 .contains(" > ")
                 .contains("✔ Completed")
-                .containsPattern("Finished: \\d+ s")
+                .containsPattern(TIMER.value() + " Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
 
@@ -191,7 +192,7 @@ class SchemaModelGeneratorAppTest {
                 .contains("100% (13/13)")
                 .contains(" > ")
                 .contains("✔ Completed")
-                .containsPattern("Finished: \\d+ s")
+                .containsPattern(TIMER.value() + " Finished: \\d+ s")
                 .contains("Model generation completed.");
     }
 }

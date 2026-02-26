@@ -20,7 +20,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static com.weedow.schemaorg.generator.logging.LoggingConstants.FINISHED;
+import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
+import static com.weedow.schemaorg.generator.logging.LoggingUtils.msg;
 
 /**
  * Goal which generates Schema.org models.
@@ -126,6 +127,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     private MavenProject project;
 
     @Override
+    @SuppressWarnings("RedundantThrows")
     public void execute() throws MojoExecutionException, MojoFailureException {
         if (skip) {
             getLog().info("Code generation is skipped.");
@@ -150,7 +152,7 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage)
                 .setCopyCommonModels(copyCommonModels)
-                .addCompleteHandler(elapsedTime -> getLog().info(String.format(FINISHED + " %s s", elapsedTime.toSeconds())));
+                .addCompleteHandler(elapsedTime -> getLog().info(String.format(msg(TIMER, "Finished:" + " %s s"), elapsedTime.toSeconds())));
 
         final SchemaModelGenerator generator = schemaModelGeneratorBuilder()
                 .parserOptions(parserOptions)

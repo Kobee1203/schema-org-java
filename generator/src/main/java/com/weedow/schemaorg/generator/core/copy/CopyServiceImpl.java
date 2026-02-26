@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
-import static com.weedow.schemaorg.generator.logging.LoggingConstants.COPY_ERROR;
+import static com.weedow.schemaorg.generator.logging.Emojis.WARNING;
 
 public class CopyServiceImpl implements CopyService {
 
@@ -33,7 +33,7 @@ public class CopyServiceImpl implements CopyService {
             Files.createDirectories(targetDirectory);
             Files.copy(Objects.requireNonNull(in), targetFile, StandardCopyOption.REPLACE_EXISTING);
         } catch (Exception e) {
-            LOG.warn(COPY_ERROR + " '" + resource + "': " + e.getMessage(), e);
+            LOG.warn(WARNING, "Could not read the resource" + " '{}': {}", resource, e.getMessage(), e);
         }
     }
 }

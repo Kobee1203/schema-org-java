@@ -9,15 +9,13 @@ import static ch.qos.logback.core.pattern.color.ANSIConstants.*;
 
 public class ProgressTracker {
 
-    private static final Logger LOG = LoggerFactory.getLogger("PROGRESS_BAR");
-
     protected static final Supplier<String> DEFAULT_INIT = () -> "Initializing...";
     protected static final Supplier<String> DEFAULT_COMPLETED = () -> "✔ Completed";
 
     private static final int BAR_SIZE = 40;
 
     // \r: Return to beginning of line, \u001B[2K: Erase the entire line
-    protected static final String RESET_LINE = "\r" + ESC_START +"2K";
+    protected static final String RESET_LINE = "\r" + ESC_START + "2K";
 
     protected static final String SET_DEFAULT_COLOR = ESC_START + RESET + DEFAULT_FG + ESC_END;
 
@@ -56,13 +54,21 @@ public class ProgressTracker {
     }
 
     private synchronized void init() {
-        LOG.info(HIDE_CURSOR + "\n");
+        if (SchemaModelGeneratorConstants.isVerbose()) {
+            return;
+        }
+
+        log(HIDE_CURSOR + "\n");
         printBar(0, init.get(), INIT_PROGRESS_BAR_COLORS);
     }
 
     private synchronized void complete() {
+        if (SchemaModelGeneratorConstants.isVerbose()) {
+            return;
+        }
+
         printBar(100, completed.get(), COMPLETED_PROGRESS_BAR_COLORS);
-        LOG.info(SHOW_CURSOR + "\n\n");
+        log(SHOW_CURSOR + "\n\n");
     }
 
     public synchronized void tick(String currentTask) {
@@ -108,7 +114,13 @@ public class ProgressTracker {
         // Final space required for stable rendering in some terminals
         sb.append(" ");
 
-        LOG.info(sb.toString());
+        log(sb.toString());
+    }
+
+    @SuppressWarnings("java:S106") // Allow to use System.out instead of a logger
+    private static void log(String msg) {
+        System.out.print(msg);
+        System.out.flush();
     }
 
     private static String msg(String color, Supplier<String> msg) {

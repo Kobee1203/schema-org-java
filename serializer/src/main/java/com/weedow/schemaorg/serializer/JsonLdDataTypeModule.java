@@ -3,6 +3,7 @@ package com.weedow.schemaorg.serializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.weedow.schemaorg.serializer.deserialization.JsonLdDataTypeDeserializerModifier;
 import com.weedow.schemaorg.serializer.serialization.JsonLdDataTypeSerializerModifier;
+
 import java.io.Serial;
 
 public class JsonLdDataTypeModule extends SimpleModule {
