@@ -2,9 +2,13 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+/**
+ * Converter for Schema.org Float data type to Java Float.
+ */
 @SuppressWarnings("java:S6548")
 public class FloatConverter extends AbstractConverter {
 
+    /** Singleton instance. */
     public static final FloatConverter INSTANCE = new FloatConverter();
 
     private FloatConverter() {

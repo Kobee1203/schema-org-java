@@ -19,14 +19,25 @@ import com.weedow.schemaorg.serializer.JsonLdNodeMixIn;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Implementation of JsonLdSerializer that uses Jackson to serialize Schema.org objects to JSON-LD.
+ */
 public class JsonLdSerializerImpl implements JsonLdSerializer {
 
     private final ObjectMapper objectMapper;
 
+    /**
+     * Constructs a JsonLdSerializerImpl with default options.
+     */
     public JsonLdSerializerImpl() {
         this(JsonLdSerializerOptions.builder().build());
     }
 
+    /**
+     * Constructs a JsonLdSerializerImpl with the specified options.
+     *
+     * @param options serialization options
+     */
     public JsonLdSerializerImpl(JsonLdSerializerOptions options) {
         this.objectMapper = objectMapper(options);
     }

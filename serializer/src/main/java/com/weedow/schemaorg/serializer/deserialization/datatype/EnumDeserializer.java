@@ -10,12 +10,22 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.lang.reflect.Method;
 
+/**
+ * Deserializer for Schema.org enumeration types from JSON-LD.
+ * Attempts to convert string values to enum constants using custom from() method or standard valueOf().
+ */
 public class EnumDeserializer extends AbstractTypeDeserializer<Enum<?>> {
 
     private static final Logger LOG = LoggerFactory.getLogger(EnumDeserializer.class);
 
+    /** Enumeration type */
     private final Class<?> enumType;
 
+    /**
+     * Constructs an EnumDeserializer for the specified enum type.
+     *
+     * @param enumType the enum class to deserialize
+     */
     public EnumDeserializer(Class<?> enumType) {
         super(enumType);
         this.enumType = enumType;

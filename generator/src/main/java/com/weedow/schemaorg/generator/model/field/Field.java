@@ -10,17 +10,31 @@ import java.util.function.Supplier;
 
 import static com.weedow.schemaorg.generator.model.field.FieldUtils.supplier;
 
+/**
+ * Represents a field definition for a Schema.org property.
+ * Provides lazy-evaluated field type information.
+ */
 @Value
 public class Field {
 
+    /** The property name. */
     String name;
 
+    /** The field name derived from the property name. */
     String fieldName;
+    /** Supplier for the field type. */
     @NonNull
     Supplier<String> fieldType;
+    /** Supplier for the field type as a list. */
     @NonNull
     Supplier<String> fieldTypeAsList;
 
+    /**
+     * Creates a new Field with the specified name and types.
+     *
+     * @param name the property name
+     * @param types list of types this field can have
+     */
     public Field(String name, List<Type> types) {
         this.name = name;
 
@@ -29,10 +43,20 @@ public class Field {
         this.fieldTypeAsList = supplier(types, t -> t.size() > 1 ? "List<Object>" : "List<" + t.get(0).getName() + ">");
     }
 
+    /**
+     * Gets the field type name.
+     *
+     * @return the field type, or Object for multiple types
+     */
     public String getFieldType() {
         return fieldType.get();
     }
 
+    /**
+     * Gets the field type as a list type.
+     *
+     * @return the field type as a list, or List&lt;Object&gt; for multiple types
+     */
     public String getFieldTypeAsList() {
         return fieldTypeAsList.get();
     }

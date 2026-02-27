@@ -9,16 +9,67 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+/**
+ * Represents a base type definition with Java interface and implementation classes.
+ * Extracts method information from the interface class for code generation.
+ */
 @Value
 public class BaseType {
+    /** The type identifier. */
     String id;
 
+    /** The Java interface class. */
     Class<?> interfaceClass;
 
+    /** The Java implementation class. */
     Class<?> implementationClass;
 
+    /** The set of method information extracted from the interface. */
     Set<MethodInfo> methods;
 
+    /**
+     * Returns the type identifier.
+     *
+     * @return the type identifier
+     */
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Returns the Java interface class.
+     *
+     * @return the Java interface class
+     */
+    public Class<?> getInterfaceClass() {
+        return interfaceClass;
+    }
+
+    /**
+     * Returns the Java implementation class.
+     *
+     * @return the Java implementation class
+     */
+    public Class<?> getImplementationClass() {
+        return implementationClass;
+    }
+
+    /**
+     * Returns the set of method information extracted from the interface.
+     *
+     * @return the set of method information
+     */
+    public Set<MethodInfo> getMethods() {
+        return methods;
+    }
+
+    /**
+     * Creates a new BaseType with the specified classes.
+     *
+     * @param id the type identifier
+     * @param interfaceClass the Java interface class
+     * @param implementationClass the Java implementation class (may be null)
+     */
     public BaseType(String id, Class<?> interfaceClass, Class<?> implementationClass) {
         this.id = id;
         this.interfaceClass = interfaceClass;
@@ -26,42 +77,58 @@ public class BaseType {
         this.methods = getMethodInfos(interfaceClass);
     }
 
-    public static Set<MethodInfo> getMethodInfos(Class<?> clazz) {
+    /**
+     * Extracts method information from a class.
+     *
+     * @param clazz the class to extract methods from
+     * @return set of method information objects
+     */
+    private static Set<MethodInfo> getMethodInfos(Class<?> clazz) {
         return Arrays.stream(clazz.getMethods()).map(m ->
-                                MethodInfo.builder()
-                                        .name(m.getName())
-                                        .returnType(m.getReturnType().getName())
-                                        .modifiers(Modifier.toString(m.getModifiers()).replace("abstract", ""))
-                                        .parameters(
-                                                Arrays.stream(m.getParameters())
-                                                        .map(param ->
-                                                                MethodInfo.ParameterInfo.builder()
-                                                                        .name(param.getName())
-                                                                        .type(param.getType().getName())
-                                                                        .build())
-                                                        .toList()
-                                        )
-                                        .exceptions(
-                                                Arrays.stream(m.getExceptionTypes())
-                                                        .map(Class::getName)
-                                                        .toList()
-                                        )
-                                        .build()
+                        MethodInfo.builder()
+                                .name(m.getName())
+                                .returnType(m.getReturnType().getName())
+                                .modifiers(Modifier.toString(m.getModifiers()).replace("abstract", ""))
+                                .parameters(
+                                        Arrays.stream(m.getParameters())
+                                                .map(param ->
+                                                        MethodInfo.ParameterInfo.builder()
+                                                                .name(param.getName())
+                                                                .type(param.getType().getName())
+                                                                .build())
+                                                .toList()
+                                )
+                                .exceptions(
+                                        Arrays.stream(m.getExceptionTypes())
+                                                .map(Class::getName)
+                                                .toList()
+                                )
+                                .build()
                 )
                 .collect(Collectors.toSet());
     }
 
+    /**
+     * Gets the fully qualified name of the interface class.
+     *
+     * @return the interface class name
+     */
     public String getInterfaceClassName() {
         return interfaceClass.getName();
     }
 
+    /**
+     * Gets the fully qualified name of the implementation class.
+     *
+     * @return the implementation class name
+     */
     public String getImplementationClassName() {
         return implementationClass.getName();
     }
 
     @Value
     @Builder
-    private static class MethodInfo {
+    public static class MethodInfo {
         String name;
         String returnType;
         String modifiers;

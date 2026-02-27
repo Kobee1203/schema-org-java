@@ -2,9 +2,13 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+/**
+ * Converter for Schema.org Number data type to Java Number.
+ */
 @SuppressWarnings("java:S6548")
 public class NumberConverter extends AbstractConverter {
 
+    /** Singleton instance. */
     public static final NumberConverter INSTANCE = new NumberConverter();
 
     private NumberConverter() {

@@ -2,6 +2,7 @@ package com.weedow.schemaorg.generator.core.copy;
 
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
+import lombok.NoArgsConstructor;
 
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -11,6 +12,10 @@ import java.util.Objects;
 
 import static com.weedow.schemaorg.generator.logging.Emojis.WARNING;
 
+/**
+ * Implementation of CopyService that copies Java source files from classpath resources.
+ */
+@NoArgsConstructor
 public class CopyServiceImpl implements CopyService {
 
     private static final Logger LOG = LoggerFactory.getLogger(CopyServiceImpl.class);

@@ -14,13 +14,29 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Custom deserializer for collections that handles Schema.org's single-value-as-array pattern.
+ * Allows a single object to be deserialized as a list containing that object.
+ */
 public class JsonLdCollectionDeserializer extends StdDeserializer<List<?>> {
 
+    /** Deserialization Config */
     private final DeserializationConfig config;
+    /** Content Type */
     private final JavaType contentType;
+    /** Deserializer */
     private final transient JsonDeserializer<?> deserializer;
+    /** Deserializer for a single value */
     private final transient JsonDeserializer<?> singleValueDeserializer;
 
+    /**
+     * Constructs a JsonLdCollectionDeserializer.
+     *
+     * @param config deserialization configuration
+     * @param beanDesc bean description
+     * @param deserializer the standard collection deserializer
+     * @param singleValueDeserializer deserializer for single values
+     */
     public JsonLdCollectionDeserializer(DeserializationConfig config, BeanDescription beanDesc, JsonDeserializer<?> deserializer, JsonDeserializer<?> singleValueDeserializer) {
         super(List.class);
         this.config = config;

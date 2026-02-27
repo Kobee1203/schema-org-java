@@ -6,6 +6,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
 
+/**
+ * Utility class for resolving resource locations to URLs.
+ */
 public final class ResourceUtils {
 
     /** Pseudo URL prefix for loading from the class path: "classpath:". */

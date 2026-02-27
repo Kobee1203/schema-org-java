@@ -29,6 +29,9 @@ public class ContainsHelper implements Helper<Object> {
      */
     public static final String NAME = "contains";
 
+    private ContainsHelper() {
+    }
+
     @Override
     public Object apply(final Object context, final Options options) throws IOException {
         Object value = options.param(0, null);

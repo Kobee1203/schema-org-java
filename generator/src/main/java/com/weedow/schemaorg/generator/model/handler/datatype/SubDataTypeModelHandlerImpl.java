@@ -7,10 +7,25 @@ import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Handler for Schema.org types that are subclasses of data types.
+ * <p>
+ * This handler processes classes that extend Schema.org data types (such as Text, Number, etc.)
+ * but are not themselves marked as DataType. It:
+ * <ul>
+ *   <li>Maps the type to the appropriate Java type based on its parent data type</li>
+ *   <li>Optionally uses Java primitive/standard types if configured</li>
+ *   <li>Marks types as stringifiable if they extend String but have a different Java type</li>
+ * </ul>
+ *
+ * <p>Example: A type like "URL" that extends "Text" would be processed by this handler.
+ */
+@NoArgsConstructor
 public class SubDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
     @Override

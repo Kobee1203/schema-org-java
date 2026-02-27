@@ -7,10 +7,14 @@ import lombok.Value;
 
 import java.util.List;
 
+/**
+ * Configuration options for JSON-LD deserialization.
+ */
 @Value
 @Builder
 public class JsonLdDeserializerOptions {
 
+    /** Jackson modules to add to the object mapper. */
     @Singular
     List<Module> modules;
 }

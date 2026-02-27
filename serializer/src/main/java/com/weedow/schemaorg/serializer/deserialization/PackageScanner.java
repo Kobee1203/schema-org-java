@@ -13,10 +13,15 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+/**
+ * Utility class for scanning packages and discovering classes at runtime.
+ * Supports scanning filesystem directories and JAR files.
+ */
 public final class PackageScanner {
 
     private static final Logger LOG = LoggerFactory.getLogger(PackageScanner.class);
 
+    /** Class file extension. */
     private static final String CLASS_EXTENSION = ".class";
     private static final int CLASS_EXTENSION_SIZE = CLASS_EXTENSION.length();
 
@@ -25,10 +30,23 @@ public final class PackageScanner {
     private PackageScanner() {
     }
 
+    /**
+     * Gets all classes in the specified package.
+     *
+     * @param packageName the package name to scan
+     * @return set of discovered classes
+     */
     public static Set<Class<?>> getClassesIn(String packageName) {
         return getClassesIn(packageName, (Class<?>) null);
     }
 
+    /**
+     * Gets all classes in the specified package that are assignable from the given class.
+     *
+     * @param packageName the package name to scan
+     * @param isAssignableFrom filter to include only classes assignable from this type
+     * @return set of discovered classes
+     */
     public static Set<Class<?>> getClassesIn(String packageName, Class<?> isAssignableFrom) {
         Set<Class<?>> classes = getClassesIn(packageName, (String) null);
 

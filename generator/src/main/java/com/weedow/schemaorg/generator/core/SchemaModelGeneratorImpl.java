@@ -26,6 +26,28 @@ import java.util.stream.Stream;
 
 import static com.weedow.schemaorg.generator.logging.Emojis.*;
 
+/**
+ * Default implementation of {@link SchemaModelGenerator}.
+ * <p>
+ * This generator orchestrates the entire code generation process:
+ * <ul>
+ *   <li>Creates output directories for models, implementations, and data types</li>
+ *   <li>Copies common model classes (JsonLdNode, JsonLdTypeName, etc.)</li>
+ *   <li>Writes a properties file with package configuration</li>
+ *   <li>Filters schema definitions based on configured models</li>
+ *   <li>Applies Handlebars templates to generate Java files</li>
+ *   <li>Tracks progress and invokes handlers for success/error/completion</li>
+ * </ul>
+ *
+ * <p>The generator handles different type categories:
+ * <ul>
+ *   <li>Abstract data type (schema:DataType)</li>
+ *   <li>Data types (Boolean, Text, Number, etc.)</li>
+ *   <li>Sub data types (types extending data types)</li>
+ *   <li>Enumerations (with enum implementations)</li>
+ *   <li>Regular types (with interface and implementation)</li>
+ * </ul>
+ */
 public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorImpl.class);
@@ -39,6 +61,16 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
     private final CopyService copyService;
     private final StreamService streamService;
 
+    /**
+     * Constructs a new generator with all required dependencies.
+     *
+     * @param options the generator configuration options
+     * @param templateService the service for applying Handlebars templates
+     * @param schemaDefinitionFilter the filter for selecting which types to generate
+     * @param schemaDefinitions the complete map of parsed schema type definitions
+     * @param copyService the service for copying common model classes
+     * @param streamService the service for creating streams (sequential or parallel)
+     */
     public SchemaModelGeneratorImpl(
             GeneratorOptions options,
             TemplateService templateService,
@@ -129,6 +161,14 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         LOG.success(CHECK, "Model generation completed.");
     }
 
+    /**
+     * Copies the properties file containing package configuration to the output folder.
+     *
+     * @param outputFolder the folder where the properties file will be written
+     * @param modelPackage the package name for model interfaces
+     * @param modelImplPackage the package name for model implementations
+     * @param dataTypePackage the package name for data types
+     */
     private void copyPropertyFile(Path outputFolder, String modelPackage, String modelImplPackage, String dataTypePackage) {
         try (OutputStream outputStream = new FileOutputStream(outputFolder.resolve(GeneratorConstants.SCHEMA_ORG_PROP_FILENAME).toFile())) {
             Properties properties = new Properties();
@@ -144,10 +184,22 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
     }
 
+    /**
+     * Copies a Java source file to the appropriate package folder.
+     *
+     * @param clazz the class whose source file should be copied
+     */
     private void copyJavaFile(Class<?> clazz) {
         copyService.copy(clazz, options.resolvePath(clazz.getPackageName()));
     }
 
+    /**
+     * Generates the abstract data type base class (schema:DataType).
+     *
+     * @param dataTypeFolder the folder where the file will be generated
+     * @param dataTypePackage the package name for data types
+     * @param type the DataType type definition
+     */
     private void generateAbstractDataType(Path dataTypeFolder, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/abstract_data_type",
@@ -156,6 +208,14 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         );
     }
 
+    /**
+     * Generates a concrete data type class (Boolean, Text, Number, etc.).
+     *
+     * @param dataTypeFolder the folder where the file will be generated
+     * @param dataTypePackage the package name for data types
+     * @param modelPackage the package name for model interfaces
+     * @param type the data type definition
+     */
     private void generateDataType(Path dataTypeFolder, String dataTypePackage, String modelPackage, Type type) {
         final List<String> additionalImports = Collections.singletonList(JsonLdTypeName.class.getName());
         applyTemplate(
@@ -165,6 +225,16 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         );
     }
 
+    /**
+     * Generates an enumeration type (interface and enum implementation).
+     *
+     * @param modelFolder the folder for the interface
+     * @param modelImplFolder the folder for the enum implementation
+     * @param modelPackage the package name for model interfaces
+     * @param modelImplPackage the package name for model implementations
+     * @param dataTypePackage the package name for data types
+     * @param type the enumeration type definition
+     */
     private void generateEnumerationType(Path modelFolder, Path modelImplFolder, String modelPackage, String modelImplPackage, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/type_interface",
@@ -184,6 +254,16 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         );
     }
 
+    /**
+     * Generates a regular type (interface and implementation class).
+     *
+     * @param modelFolder the folder for the interface
+     * @param modelImplFolder the folder for the implementation
+     * @param modelPackage the package name for model interfaces
+     * @param modelImplPackage the package name for model implementations
+     * @param dataTypePackage the package name for data types
+     * @param type the type definition
+     */
     private void generateType(Path modelFolder, Path modelImplFolder, String modelPackage, String modelImplPackage, String dataTypePackage, Type type) {
         applyTemplate(
                 "templates/type_interface",
@@ -198,6 +278,13 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         );
     }
 
+    /**
+     * Applies a template to generate an output file and invokes success/error handlers.
+     *
+     * @param templateLocation the template name/location
+     * @param outputFile the path where the file will be written
+     * @param context the context containing type and package information
+     */
     private void applyTemplate(String templateLocation, Path outputFile, Context context) {
         try {
             templateService.apply(templateLocation, outputFile, context);
@@ -208,6 +295,12 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         }
     }
 
+    /**
+     * Creates a folder if it doesn't already exist.
+     *
+     * @param folder the folder to create
+     * @return {@code true} if the folder exists (or was created), {@code false} on error
+     */
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     private static boolean createFolderIfNotExists(Path folder) {
         try {

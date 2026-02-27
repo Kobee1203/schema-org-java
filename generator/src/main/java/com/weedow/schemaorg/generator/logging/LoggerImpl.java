@@ -6,10 +6,18 @@ import org.slf4j.Marker;
 import static com.weedow.schemaorg.generator.logging.LogMarkers.*;
 import static com.weedow.schemaorg.generator.logging.LoggingUtils.msg;
 
+/**
+ * Implementation of the Logger interface using SLF4J.
+ */
 public class LoggerImpl implements Logger {
 
     private final org.slf4j.Logger logger;
 
+    /**
+     * Creates a new logger with the specified name.
+     *
+     * @param name the logger name
+     */
     public LoggerImpl(String name) {
         logger = org.slf4j.LoggerFactory.getLogger(name);
     }

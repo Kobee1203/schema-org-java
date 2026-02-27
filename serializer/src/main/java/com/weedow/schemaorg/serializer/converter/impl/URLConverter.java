@@ -7,11 +7,15 @@ import org.slf4j.LoggerFactory;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Converter for Schema.org URL data type to Java URL.
+ */
 @SuppressWarnings("java:S6548")
 public class URLConverter extends AbstractConverter {
 
     private static final Logger LOG = LoggerFactory.getLogger(URLConverter.class);
 
+    /** Singleton instance. */
     public static final URLConverter INSTANCE = new URLConverter();
 
     private URLConverter() {

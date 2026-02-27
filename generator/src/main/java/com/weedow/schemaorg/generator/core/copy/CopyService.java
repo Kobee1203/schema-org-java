@@ -2,6 +2,9 @@ package com.weedow.schemaorg.generator.core.copy;
 
 import java.nio.file.Path;
 
+/**
+ * Service for copying decompiled Java class content to target directories.
+ */
 public interface CopyService {
 
     /**

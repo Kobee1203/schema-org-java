@@ -5,9 +5,13 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Converter for Schema.org Date data type to LocalDate.
+ */
 @SuppressWarnings("java:S6548")
 public class DateConverter extends AbstractConverter {
 
+    /** Singleton instance. */
     public static final DateConverter INSTANCE = new DateConverter();
 
     private DateConverter() {

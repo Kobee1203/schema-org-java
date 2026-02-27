@@ -26,9 +26,7 @@ public class Emoji {
     @SuppressWarnings("UnnecessaryUnicodeEscape")
     public static final String VS = "\uFE0F";
 
-    /**
-     * The raw emoji value (without variant selector).
-     */
+    /** The raw emoji value (without variant selector). */
     @NonNull
     String rawValue;
 

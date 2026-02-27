@@ -11,9 +11,14 @@ import com.weedow.schemaorg.serializer.serialization.datatype.*;
 
 import java.util.*;
 
+/**
+ * Service that manages specifications for all Schema.org data types.
+ * Provides access to serializers, deserializers, and converters for each data type.
+ */
 @SuppressWarnings("java:S6548")
 public class DataTypeSpecificationService {
 
+    /** List of all supported data type specifications. */
     private static final List<DataTypeSpecification> DATA_TYPES = Arrays.asList(
             new DataTypeSpecification(SchemaDataType.BOOLEAN, BooleanSerializer::new, BooleanDeserializer::new, BooleanConverter.INSTANCE),
             new DataTypeSpecification(SchemaDataType.INTEGER, IntegerSerializer::new, IntegerDeserializer::new, IntegerConverter.INSTANCE),
@@ -29,6 +34,7 @@ public class DataTypeSpecificationService {
             new DataTypeSpecification(SchemaDataType.TEXT, TextSerializer::new, TextDeserializer::new, TextConverter.INSTANCE)
     );
 
+    /** Singleton instance. */
     private static final DataTypeSpecificationService INSTANCE = new DataTypeSpecificationService();
 
     private final List<String> dataTypeNames = new ArrayList<>();
@@ -47,25 +53,52 @@ public class DataTypeSpecificationService {
         });
     }
 
+    /**
+     * Gets the singleton instance.
+     *
+     * @return the DataTypeSpecificationService instance
+     */
     public static DataTypeSpecificationService getInstance() {
         return INSTANCE;
     }
 
+    /**
+     * Gets all registered converters.
+     *
+     * @return list of converters
+     */
     @SuppressWarnings("java:S1452")
     public List<Converter<Object, ? extends JsonLdDataType<?>>> getConverters() {
         return converters;
     }
 
+    /**
+     * Gets a comparator that sorts data types by their priority.
+     *
+     * @return comparator for data type classes
+     */
     @SuppressWarnings("java:S1452")
     public Comparator<Class<JsonLdDataType<?>>> getDataTypeComparator() {
         return Comparator.comparingInt((Class<JsonLdDataType<?>> clazz) -> dataTypeNames.indexOf(clazz.getSimpleName()));
     }
 
+    /**
+     * Gets the serializer for the specified data type class.
+     *
+     * @param clazz the data type class
+     * @return the serializer instance
+     */
     @SuppressWarnings("java:S1452")
     public JsonSerializer<? extends JsonLdDataType<?>> getSerializer(Class<? extends JsonLdDataType<?>> clazz) {
         return serializers.get(clazz.getSimpleName()).apply(clazz);
     }
 
+    /**
+     * Gets the deserializer for the specified data type class.
+     *
+     * @param clazz the data type class
+     * @return the deserializer instance
+     */
     @SuppressWarnings("java:S1452")
     public JsonDeserializer<? extends JsonLdDataType<?>> getDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         return deserializers.get(clazz.getSimpleName()).apply(clazz);

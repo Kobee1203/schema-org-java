@@ -2,9 +2,13 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+/**
+ * Converter for Schema.org CssSelectorType data type to String.
+ */
 @SuppressWarnings("java:S6548")
 public class CssSelectorTypeConverter extends AbstractConverter {
 
+    /** Singleton instance. */
     public static final CssSelectorTypeConverter INSTANCE = new CssSelectorTypeConverter();
 
     private CssSelectorTypeConverter() {

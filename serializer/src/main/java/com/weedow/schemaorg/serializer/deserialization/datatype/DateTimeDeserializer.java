@@ -8,9 +8,17 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Deserializer for Schema.org DateTime data type from JSON-LD ISO 8601 DateTime String.
+ */
 @SuppressWarnings("java:S110")
 public class DateTimeDeserializer extends AbstractDataTypeDeserializer<JsonLdDataType<LocalDateTime>> {
 
+    /**
+     * Constructs a DateTimeDeserializer for the specified class.
+     *
+     * @param clazz the JsonLdDataType class to deserialize
+     */
     public DateTimeDeserializer(Class<? extends JsonLdDataType<?>> clazz) {
         super(clazz);
     }

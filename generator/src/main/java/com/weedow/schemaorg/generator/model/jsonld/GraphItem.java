@@ -10,6 +10,10 @@ import lombok.Data;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Abstract base class representing a graph item from Schema.org JSON-LD specification.
+ * Contains common properties shared by classes, properties, and data types.
+ */
 @Data
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@type", visible = true, defaultImpl = DefaultItem.class)
 @JsonSubTypes({
@@ -21,35 +25,45 @@ public abstract class GraphItem {
 
     private static final Logger LOG = LoggerFactory.getLogger(GraphItem.class);
 
+    /** Item id */
     @JsonProperty("@id")
     private String id;
 
+    /** Item types */
     @JsonProperty("@type")
     private List<String> types;
 
+    /** Item-related comment */
     @JsonProperty("rdfs:comment")
     private Comment comment;
 
+    /** Item label */
     @JsonProperty("rdfs:label")
     private Label label;
 
+    /** Indicates what the item is part of */
     @JsonProperty("schema:isPartOf")
     private List<PartOf> partOf;
 
+    /** References that define the vocabulary's structure */
     @JsonProperty("schema:source")
     private List<Source> source;
 
+    /** Contributors for this item */
     @JsonProperty("schema:contributor")
     private List<Contributor> contributor;
 
     //*** [START] Specific Fields for Property items ***//
 
+    /** Classes that is (one of) the type(s) the property is expected to be used on. */
     @JsonProperty("schema:domainIncludes")
     private List<DomainIncludes> domainIncludes;
 
+    /** Classes that constitutes (one of) the expected type(s) for values of the property. */
     @JsonProperty("schema:rangeIncludes")
     private List<RangeIncludes> rangeIncludes;
 
+    /** A related resource that is superseded by this item. */
     @JsonProperty("schema:supersededBy")
     private SupersededBy supersededBy;
 
@@ -57,11 +71,18 @@ public abstract class GraphItem {
 
     //*** [START] Specific Fields for Class items ***//
 
+    /** Subclasses of this item. */
     @JsonProperty("rdfs:subClassOf")
     private List<SubClassOf> subClassOf;
 
     //*** [END] Specific Fields for Class items ***//
 
+    /**
+     * Sets the comment field from either a String or a Map containing language and value.
+     *
+     * @param comment the comment value
+     * @return this GraphItem for method chaining
+     */
     @SuppressWarnings("unchecked")
     public GraphItem setComment(Object comment) {
         final Comment c = new Comment();
@@ -79,6 +100,12 @@ public abstract class GraphItem {
         return this;
     }
 
+    /**
+     * Sets the label field from either a String or a Map containing language and value.
+     *
+     * @param label the label value
+     * @return this GraphItem for method chaining
+     */
     @SuppressWarnings("unchecked")
     public GraphItem setLabel(Object label) {
         final Label l = new Label();

@@ -1,12 +1,18 @@
 package com.weedow.schemaorg.commons.model;
 
-import java.util.*;
+import lombok.NoArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+import java.util.StringJoiner;
 
 /**
  * Implementation of {@link JsonLdNode}.
  *
  * @see <a href="https://json-ld.org/spec/latest/json-ld/#basic-concepts">Basic Concepts</a>)
  */
+@NoArgsConstructor
 public class JsonLdNodeImpl implements JsonLdNode {
 
     private String context;
@@ -40,6 +46,14 @@ public class JsonLdNodeImpl implements JsonLdNode {
         return jsonLdTypeName != null && !jsonLdTypeName.value().isEmpty() ? jsonLdTypeName.value() : objectClass.getSimpleName();
     }
 
+    /**
+     * Adds an item to a list, creating the list if it doesn't exist.
+     *
+     * @param <T>  the type of elements in the list
+     * @param list the list to add to, may be null
+     * @param item the item to add
+     * @return the list containing the item
+     */
     protected static <T> List<T> add(List<T> list, T item) {
         if (list == null) {
             list = new ArrayList<>();
@@ -48,6 +62,13 @@ public class JsonLdNodeImpl implements JsonLdNode {
         return list;
     }
 
+    /**
+     * Gets the first element from a list.
+     *
+     * @param <T>  the type of elements in the list
+     * @param list the list to get the first element from
+     * @return the first element or null if the list is null or empty
+     */
     protected static <T> T getFirst(List<T> list) {
         return list != null && !list.isEmpty() ? list.get(0) : null;
     }

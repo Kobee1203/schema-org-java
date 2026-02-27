@@ -2,6 +2,7 @@ package com.weedow.schemaorg.serializer.converter;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,6 +10,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * Implementation of {@link ConversionService} to convert an object to a JSON-LD DataType.
+ */
+@NoArgsConstructor
 public class ConversionServiceImpl implements ConversionService {
 
     private static final Logger LOG = LoggerFactory.getLogger(ConversionServiceImpl.class);

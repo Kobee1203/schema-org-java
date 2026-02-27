@@ -7,6 +7,7 @@ import com.github.jknack.handlebars.helper.StringHelpers;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
+import lombok.NoArgsConstructor;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -14,12 +15,32 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ * Default implementation of {@link TemplateService} using Handlebars template engine.
+ * <p>
+ * This service is configured with various Handlebars helpers for string manipulation,
+ * conditional logic, and character sequence operations.
+ */
+@NoArgsConstructor
 public class TemplateServiceImpl implements TemplateService {
 
     private static final Logger LOG = LoggerFactory.getLogger(TemplateServiceImpl.class);
 
     private final Handlebars handlebars = handlebars();
 
+    /**
+     * Creates and configures a Handlebars instance with registered helpers.
+     * <p>
+     * The Handlebars instance is configured with:
+     * <ul>
+     *   <li>Pretty printing enabled</li>
+     *   <li>String manipulation helpers</li>
+     *   <li>Conditional logic helpers</li>
+     *   <li>CharSequence helpers</li>
+     * </ul>
+     *
+     * @return a configured Handlebars instance
+     */
     private static Handlebars handlebars() {
         final Handlebars handlebars = new Handlebars();
         handlebars.setPrettyPrint(true);

@@ -2,9 +2,13 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+/**
+ * Converter for Schema.org Text data type to Java String.
+ */
 @SuppressWarnings("java:S6548")
 public class TextConverter extends AbstractConverter {
 
+    /** Singleton instance. */
     public static final TextConverter INSTANCE = new TextConverter();
 
     private TextConverter() {

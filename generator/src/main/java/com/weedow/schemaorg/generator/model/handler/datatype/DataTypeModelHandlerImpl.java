@@ -6,10 +6,16 @@ import com.weedow.schemaorg.generator.model.handler.AbstractTypeModelHandler;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Model handler for Schema.org DataType types.
+ * Handles data types and optionally maps them to Java types.
+ */
+@NoArgsConstructor
 public class DataTypeModelHandlerImpl extends AbstractTypeModelHandler {
 
     @Override

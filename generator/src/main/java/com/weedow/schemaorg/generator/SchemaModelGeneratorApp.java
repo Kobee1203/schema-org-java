@@ -5,6 +5,7 @@ import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
+import lombok.NoArgsConstructor;
 import picocli.CommandLine;
 
 import java.nio.file.Path;
@@ -14,6 +15,30 @@ import java.util.concurrent.Callable;
 
 import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
 
+/**
+ * Command-line application for generating Java classes from Schema.org definitions.
+ * <p>
+ * This application uses picocli to provide a user-friendly CLI interface for configuring
+ * and running the Schema.org Java code generator. It supports options for:
+ * <ul>
+ *   <li>Selecting specific models to generate or generating all models</li>
+ *   <li>Choosing Schema.org versions or custom resources</li>
+ *   <li>Configuring output packages and directories</li>
+ *   <li>Using Java standard types or Schema.org data types</li>
+ *   <li>Custom type mappings for data types</li>
+ *   <li>Verbose logging for troubleshooting</li>
+ * </ul>
+ *
+ * <p>Example usage:
+ * <pre>
+ * java -jar schema-org-generator-{version}-jar-with-dependencies.jar \
+ *   --models Person Organization \
+ *   --output target/generated-sources \
+ *   --schema-version 15.0 \
+ *   --javatypes
+ * </pre>
+ */
+@NoArgsConstructor
 @picocli.CommandLine.Command(
         name = "java -jar schema-org-generator-{version}-jar-with-dependencies.jar",
         descriptionHeading = "%n",
@@ -62,6 +87,11 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
     @picocli.CommandLine.Option(names = {"-v", "--verbose"}, description = "Verbose mode. Helpful for troubleshooting.", order = 9)
     private boolean verboseMode;
 
+    /**
+     * Main entry point for the CLI application.
+     *
+     * @param args command-line arguments
+     */
     public static void main(String[] args) {
         picocli.CommandLine commandLine = new picocli.CommandLine(new SchemaModelGeneratorApp());
         commandLine.setColorScheme(picocli.CommandLine.Help.defaultColorScheme(picocli.CommandLine.Help.Ansi.AUTO));
@@ -71,6 +101,12 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
         System.exit(exitCode);
     }
 
+    /**
+     * Executes the code generation based on provided command-line options.
+     *
+     * @return exit code (0 for success)
+     * @throws Exception if generation fails
+     */
     @Override
     public Integer call() throws Exception {
         GeneratorOptions generatorOptions = new GeneratorOptions()
@@ -98,7 +134,17 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
     }
 }
 
+/**
+ * Version provider for picocli that reads version information from properties file.
+ */
 class VersionProvider implements CommandLine.IVersionProvider {
+
+    /**
+     * Retrieves the application version from the version.properties resource file.
+     *
+     * @return array containing the version string
+     * @throws Exception if an error occurs (caught and ignored, returns "unknown")
+     */
     @Override
     public String[] getVersion() throws Exception {
         String version = "unknown";

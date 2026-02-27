@@ -7,31 +7,61 @@ import java.util.function.Supplier;
 
 import static ch.qos.logback.core.pattern.color.ANSIConstants.*;
 
+/**
+ * Tracks and displays progress for long-running operations using a visual progress bar.
+ */
 public class ProgressTracker {
 
+    /**
+     * Default initialization message supplier.
+     */
     protected static final Supplier<String> DEFAULT_INIT = () -> "Initializing...";
+
+    /**
+     * Default completion message supplier.
+     */
     protected static final Supplier<String> DEFAULT_COMPLETED = () -> "✔ Completed";
 
     private static final int BAR_SIZE = 40;
 
-    // \r: Return to beginning of line, \u001B[2K: Erase the entire line
+    /**
+     * ANSI escape sequence to reset the current line.<br>
+     * \r: Return to beginning of line, \u001B[2K: Erase the entire line
+     */
     protected static final String RESET_LINE = "\r" + ESC_START + "2K";
 
+    /** ANSI escape sequence to set the default color. */
     protected static final String SET_DEFAULT_COLOR = ESC_START + RESET + DEFAULT_FG + ESC_END;
 
+    /** Foreground color for the progress bar completed section. */
     protected static final String PROGRESS_BAR_COLOR_FG = "38;5;39";
+
+    /** Background color for the progress bar incomplete section. */
     protected static final String PROGRESS_BAR_COLOR_BG = "38;5;244";
+
+    /** Color for the percentage information. */
     protected static final String PERCENT_INFO_COLOR = DEFAULT_FG;
+
+    /** Color for the initialization message. */
     protected static final String INIT_COLOR = WHITE_FG;
+
+    /** Color for the completion message. */
     protected static final String COMPLETED_COLOR = "38;5;70";
+
+    /** Color for the current task description. */
     protected static final String TASK_COLOR = WHITE_FG;
+
+    /** Color for the separator between components. */
     protected static final String SEPARATOR_COLOR = WHITE_FG;
 
     private static final ProgressBarColors DEFAULT_PROGRESS_BAR_COLORS = new ProgressBarColors(PROGRESS_BAR_COLOR_FG, PROGRESS_BAR_COLOR_BG, PERCENT_INFO_COLOR, TASK_COLOR);
     private static final ProgressBarColors INIT_PROGRESS_BAR_COLORS = new ProgressBarColors(PROGRESS_BAR_COLOR_FG, PROGRESS_BAR_COLOR_BG, PERCENT_INFO_COLOR, INIT_COLOR);
     private static final ProgressBarColors COMPLETED_PROGRESS_BAR_COLORS = new ProgressBarColors(PROGRESS_BAR_COLOR_FG, PROGRESS_BAR_COLOR_BG, PERCENT_INFO_COLOR, COMPLETED_COLOR);
 
+    /** ANSI escape sequence to hide the terminal cursor. */
     protected static final String HIDE_CURSOR = ESC_START + "?25l";
+
+    /** ANSI escape sequence to show the terminal cursor. */
     protected static final String SHOW_CURSOR = ESC_START + "?25h";
 
     private final int total;
@@ -41,6 +71,13 @@ public class ProgressTracker {
     private int current = 0;
     private int lastPercent = -1;
 
+    /**
+     * Creates a progress tracker with custom initialization and completion messages.
+     *
+     * @param total     the total number of items to process
+     * @param init      supplier for the initialization message, or {@code null} to use default
+     * @param completed supplier for the completion message, or {@code null} to use default
+     */
     public ProgressTracker(int total, Supplier<String> init, Supplier<String> completed) {
         this.total = total;
         this.init = Optional.ofNullable(init).orElse(DEFAULT_INIT);
@@ -49,6 +86,11 @@ public class ProgressTracker {
         init();
     }
 
+    /**
+     * Creates a progress tracker with default initialization and completion messages.
+     *
+     * @param total the total number of items to process
+     */
     public ProgressTracker(int total) {
         this(total, null, null);
     }
@@ -71,6 +113,11 @@ public class ProgressTracker {
         log(SHOW_CURSOR + "\n\n");
     }
 
+    /**
+     * Increments the progress counter and updates the progress bar display.
+     *
+     * @param currentTask description of the current task being processed
+     */
     public synchronized void tick(String currentTask) {
         current++;
         int percent = (int) (((double) current / total) * 100);

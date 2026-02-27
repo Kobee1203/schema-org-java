@@ -2,9 +2,13 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+/**
+ * Converter for Schema.org Integer data type to Java Integer.
+ */
 @SuppressWarnings("java:S6548")
 public class IntegerConverter extends AbstractConverter {
 
+    /** Singleton instance. */
     public static final IntegerConverter INSTANCE = new IntegerConverter();
 
     private IntegerConverter() {

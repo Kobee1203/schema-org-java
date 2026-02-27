@@ -2,12 +2,19 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
+/**
+ * Converter for Schema.org Boolean data type to Java Boolean.
+ */
 @SuppressWarnings("java:S6548")
 public class BooleanConverter extends AbstractConverter {
 
+    /** String representation of false. */
     public static final String FALSE = "false";
+
+    /** String representation of true. */
     public static final String TRUE = "true";
 
+    /** Singleton instance. */
     public static final BooleanConverter INSTANCE = new BooleanConverter();
 
     private BooleanConverter() {

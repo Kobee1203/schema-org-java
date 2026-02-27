@@ -7,16 +7,23 @@ import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Jackson BeanSerializerModifier that provides custom serialization for Schema.org JsonLdDataType instances.
+ * Looks up and applies the appropriate serializer for each data type.
+ */
+@NoArgsConstructor
 public class JsonLdDataTypeSerializerModifier extends BeanSerializerModifier {
 
     private static final Logger LOG = LoggerFactory.getLogger(JsonLdDataTypeSerializerModifier.class);
 
+    /** Cache whose key is a Class and value is the related Serializer */
     private final Map<Class<?>, JsonSerializer<?>> cache = new HashMap<>();
 
     @Override

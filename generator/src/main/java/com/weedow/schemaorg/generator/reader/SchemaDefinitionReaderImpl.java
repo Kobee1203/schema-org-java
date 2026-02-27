@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.weedow.schemaorg.generator.model.jsonld.SchemaDefinition;
+import lombok.NoArgsConstructor;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,10 +16,31 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
+/**
+ * Default implementation of {@link SchemaDefinitionReader} that reads Schema.org JSON-LD definitions
+ * using Jackson JSON parser.
+ * <p>
+ * This reader is configured to handle the specific JSON-LD structure of Schema.org vocabulary files,
+ * including support for single values as arrays and unknown properties.
+ */
+@NoArgsConstructor
 public class SchemaDefinitionReaderImpl implements SchemaDefinitionReader {
 
     private final JsonMapper jsonMapper = jsonMapper();
 
+    /**
+     * Creates and configures a JsonMapper for reading Schema.org JSON-LD files.
+     * <p>
+     * The mapper is configured with:
+     * <ul>
+     *   <li>Java 8 date/time module support</li>
+     *   <li>Acceptance of single values as arrays</li>
+     *   <li>Ignoring unknown properties</li>
+     *   <li>Alphabetical property sorting</li>
+     * </ul>
+     *
+     * @return a configured JsonMapper instance
+     */
     private static JsonMapper jsonMapper() {
         return JsonMapper.builder()
                 // Register support for Java 8 date/time types (specified in JSR-310 specification)

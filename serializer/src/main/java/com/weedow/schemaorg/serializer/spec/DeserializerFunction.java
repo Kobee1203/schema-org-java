@@ -5,5 +5,8 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 
 import java.util.function.Function;
 
+/**
+ * Function interface for creating Jackson deserializers for Schema.org data types.
+ */
 public interface DeserializerFunction extends Function<Class<? extends JsonLdDataType<?>>, JsonDeserializer<? extends JsonLdDataType<?>>> {
 }

@@ -1,5 +1,8 @@
 package com.weedow.schemaorg.generator.logging;
 
+/**
+ * Utility methods for log messages.
+ */
 public final class LoggingUtils {
 
     private LoggingUtils() {

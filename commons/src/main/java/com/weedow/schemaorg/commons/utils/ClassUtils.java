@@ -1,5 +1,8 @@
 package com.weedow.schemaorg.commons.utils;
 
+/**
+ * Utility class for working with class loaders.
+ */
 public final class ClassUtils {
 
     private ClassUtils() {

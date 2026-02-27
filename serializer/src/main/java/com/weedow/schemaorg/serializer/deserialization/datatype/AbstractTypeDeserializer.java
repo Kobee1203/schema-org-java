@@ -7,8 +7,19 @@ import com.fasterxml.jackson.databind.jsontype.TypeDeserializer;
 
 import java.io.IOException;
 
+/**
+ * Abstract base deserializer for Schema.org data types from JSON-LD.
+ * Provides common deserialization infrastructure for type-specific deserializers.
+ *
+ * @param <T> the type to deserialize
+ */
 public abstract class AbstractTypeDeserializer<T> extends StdDeserializer<T> {
 
+    /**
+     * Constructs a deserializer for the specified class.
+     *
+     * @param clazz the class to deserialize
+     */
     protected AbstractTypeDeserializer(Class<?> clazz) {
         super(clazz);
     }

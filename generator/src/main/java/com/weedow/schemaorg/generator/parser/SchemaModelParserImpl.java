@@ -18,6 +18,17 @@ import java.util.stream.Collectors;
 
 import static com.weedow.schemaorg.generator.logging.Emojis.*;
 
+/**
+ * Default implementation of {@link SchemaModelParser} that parses Schema.org JSON-LD definitions
+ * and builds a type model using registered model handlers.
+ * <p>
+ * This parser supports loading schemas from:
+ * <ul>
+ *   <li>Custom resource locations (classpath or URLs)</li>
+ *   <li>Specific Schema.org versions</li>
+ *   <li>Local bundled default schema</li>
+ * </ul>
+ */
 public class SchemaModelParserImpl implements SchemaModelParser {
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelParserImpl.class);
@@ -29,6 +40,12 @@ public class SchemaModelParserImpl implements SchemaModelParser {
     private final SchemaDefinitionReader schemaDefinitionReader;
     private final List<ModelHandler> modelHandlers;
 
+    /**
+     * Constructs a new parser with the specified reader and handlers.
+     *
+     * @param schemaDefinitionReader the reader for Schema.org JSON-LD definitions
+     * @param modelHandlers the list of handlers to process graph items
+     */
     public SchemaModelParserImpl(SchemaDefinitionReader schemaDefinitionReader, List<ModelHandler> modelHandlers) {
         this.schemaDefinitionReader = schemaDefinitionReader;
         this.modelHandlers = modelHandlers;

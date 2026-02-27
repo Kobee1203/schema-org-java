@@ -7,12 +7,17 @@ import lombok.Value;
 
 import java.util.List;
 
+/**
+ * Configuration options for JSON-LD serialization.
+ */
 @Value
 @Builder
 public class JsonLdSerializerOptions {
 
+    /** Whether to format the output with indentation. */
     boolean prettyPrint;
 
+    /** Extensions to be registered with ObjectMapper. */
     @Singular
     List<Module> modules;
 }

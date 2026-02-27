@@ -2,6 +2,8 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.converter.Converter;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,6 +11,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
+/**
+ * Abstract base class for converters that transform objects to JsonLdDataType instances.
+ */
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractConverter implements Converter<Object, JsonLdDataType<?>> {
 
     private static final Logger LOG = LoggerFactory.getLogger(AbstractConverter.class);
@@ -28,6 +34,12 @@ public abstract class AbstractConverter implements Converter<Object, JsonLdDataT
         return null;
     }
 
+    /**
+     * Extracts the value from the source object to be used in the conversion.
+     *
+     * @param source the source object
+     * @return the extracted value
+     */
     protected abstract Object getValue(Object source);
 
     private Method getInstanceMethod(Class<JsonLdDataType<?>> jsonLdDataType) {

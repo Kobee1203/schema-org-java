@@ -5,10 +5,17 @@ import com.github.jknack.handlebars.Options;
 
 import java.io.IOException;
 
+/**
+ * Handlebars helper enum for CharSequence transformations.
+ * Each enum constant represents a helper function available in templates.
+ */
 @SuppressWarnings({"java:S115", "java:S6548"})
 // Constant names should comply with a naming convention: we don't because The member's name become the name of the helper
 public enum CharSequenceHelpers implements Helper<Object> {
 
+    /**
+     * Converts camelCase to UPPER_CASE_WITH_UNDERSCORES.
+     */
     capitalizeWithUnderscore {
         @Override
         public CharSequence safeApply(Object value, Options options) {
@@ -34,6 +41,13 @@ public enum CharSequenceHelpers implements Helper<Object> {
      */
     protected abstract CharSequence safeApply(Object context, Options options);
 
+    /**
+     * Converts a camelCase string to UPPER_CASE_WITH_UNDERSCORES.
+     * Handles uppercase sequences, digits, and mixed case patterns.
+     *
+     * @param camelCase the input string in camelCase format
+     * @return the converted string in UPPER_CASE_WITH_UNDERSCORES format
+     */
     public static String camelCaseToUnderScoreUpperCase(String camelCase) {
         StringBuilder sb = new StringBuilder();
 

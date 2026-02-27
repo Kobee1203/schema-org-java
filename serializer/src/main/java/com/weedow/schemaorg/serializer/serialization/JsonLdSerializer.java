@@ -36,6 +36,7 @@ import java.util.List;
  */
 public interface JsonLdSerializer extends Serializer<JsonLdNode> {
 
+    /** Media type for JSON-LD content. */
     String APPLICATION_JSON_LD_TYPE = "application/ld+json";
 
     @Override

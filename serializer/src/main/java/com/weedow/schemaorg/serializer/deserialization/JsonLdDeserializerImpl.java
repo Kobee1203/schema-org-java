@@ -26,24 +26,47 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+/**
+ * Implementation of JsonLdDeserializer that uses Jackson to deserialize JSON-LD to Schema.org objects.
+ * Supports custom type mappings and post-processing of deserialized objects.
+ */
 public class JsonLdDeserializerImpl implements JsonLdDeserializer {
 
     private final PostProcessor postProcessor = new DeserializerPostProcessorImpl();
 
     private final ObjectMapper objectMapper;
 
+    /**
+     * Constructs a JsonLdDeserializerImpl with default options.
+     */
     public JsonLdDeserializerImpl() {
         this(JsonLdDeserializerOptions.builder().build());
     }
 
+    /**
+     * Constructs a JsonLdDeserializerImpl with the specified options.
+     *
+     * @param options deserialization options
+     */
     public JsonLdDeserializerImpl(JsonLdDeserializerOptions options) {
         this(Collections.emptyMap(), options);
     }
 
+    /**
+     * Constructs a JsonLdDeserializerImpl that scans the specified package for Schema.org types.
+     *
+     * @param packageName the package name to scan for types
+     */
     public JsonLdDeserializerImpl(String packageName) {
         this(packageName, JsonLdDeserializerOptions.builder().build());
     }
 
+    /**
+     * Constructs a JsonLdDeserializerImpl that scans the specified package for Schema.org types.
+     *
+     * @param packageName the package name to scan for types
+     * @param options deserialization options
+     */
     public JsonLdDeserializerImpl(String packageName, JsonLdDeserializerOptions options) {
         this(
                 PackageScanner.getClassesIn(packageName)
@@ -60,10 +83,21 @@ public class JsonLdDeserializerImpl implements JsonLdDeserializer {
         );
     }
 
+    /**
+     * Constructs a JsonLdDeserializerImpl with custom type mappings.
+     *
+     * @param otherTypes map of type names to classes
+     */
     public JsonLdDeserializerImpl(Map<String, Class<?>> otherTypes) {
         this(otherTypes, JsonLdDeserializerOptions.builder().build());
     }
 
+    /**
+     * Constructs a JsonLdDeserializerImpl with custom type mappings and options.
+     *
+     * @param otherTypes map of type names to classes
+     * @param options deserialization options
+     */
     public JsonLdDeserializerImpl(Map<String, Class<?>> otherTypes, JsonLdDeserializerOptions options) {
         this.objectMapper = objectMapper(otherTypes, options);
     }

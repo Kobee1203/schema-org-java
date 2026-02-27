@@ -13,12 +13,22 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.function.Consumer;
 
+/**
+ * Custom Jackson TypeFactory that maps Schema.org type names to Java classes.
+ * Loads type mappings from schema-org-java.properties and supports custom type overrides.
+ */
 public class JsonLdTypeFactory extends TypeFactory {
 
     private static final Logger LOG = LoggerFactory.getLogger(JsonLdTypeFactory.class);
 
+    /** Cache of Schema.org type names to Java classes */
     private final Map<String, Class<?>> types = new HashMap<>();
 
+    /**
+     * Constructs a JsonLdTypeFactory with optional custom type mappings.
+     *
+     * @param otherTypes map of type names to classes for custom overrides
+     */
     public JsonLdTypeFactory(Map<String, Class<?>> otherTypes) {
         super(new LRUMap<>(16, DEFAULT_MAX_CACHE_SIZE));
 

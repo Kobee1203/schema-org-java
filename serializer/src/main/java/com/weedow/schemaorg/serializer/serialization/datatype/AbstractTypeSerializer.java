@@ -12,12 +12,29 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 
+/**
+ * Abstract base serializer for Schema.org data types to JSON-LD.
+ * Handles serialization of various Java types to their JSON-LD representations.
+ *
+ * @param <T> the type to serialize
+ */
 public abstract class AbstractTypeSerializer<T> extends StdSerializer<T> {
 
+    /**
+     * Constructs a serializer for the specified class.
+     *
+     * @param clazz the class to serialize
+     */
     protected AbstractTypeSerializer(Class<?> clazz) {
         super(clazz, false);
     }
 
+    /**
+     * Extracts the value to be serialized from the given object.
+     *
+     * @param value the object to extract the value from
+     * @return the extracted value
+     */
     protected abstract Object getValue(T value);
 
     @Override
