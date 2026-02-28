@@ -1,7 +1,5 @@
 package com.weedow.schemaorg.commons.model;
 
-import lombok.NoArgsConstructor;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,12 +10,16 @@ import java.util.StringJoiner;
  *
  * @see <a href="https://json-ld.org/spec/latest/json-ld/#basic-concepts">Basic Concepts</a>)
  */
-@NoArgsConstructor
 public class JsonLdNodeImpl implements JsonLdNode {
 
     private String context;
 
     private String id;
+
+    /** Default Constructor */
+    public JsonLdNodeImpl() {
+        // empty
+    }
 
     @Override
     public String getContext() {
@@ -49,7 +51,7 @@ public class JsonLdNodeImpl implements JsonLdNode {
     /**
      * Adds an item to a list, creating the list if it doesn't exist.
      *
-     * @param <T>  the type of elements in the list
+     * @param <T> the type of elements in the list
      * @param list the list to add to, may be null
      * @param item the item to add
      * @return the list containing the item
@@ -65,7 +67,7 @@ public class JsonLdNodeImpl implements JsonLdNode {
     /**
      * Gets the first element from a list.
      *
-     * @param <T>  the type of elements in the list
+     * @param <T> the type of elements in the list
      * @param list the list to get the first element from
      * @return the first element or null if the list is null or empty
      */

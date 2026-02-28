@@ -1,13 +1,11 @@
 package com.weedow.schemaorg.commons.model;
 
-import lombok.Getter;
-
 /**
  * Enumeration of Schema.org data types.
  *
  * @see <a href="https://schema.org/DataType">https://schema.org/DataType</a>
  */
-@Getter
+@SuppressWarnings("LombokGetterMayBeUsed")
 public enum SchemaDataType {
     /** Boolean data type. */
     BOOLEAN("Boolean"),
@@ -50,5 +48,14 @@ public enum SchemaDataType {
 
     SchemaDataType(String name) {
         this.name = name;
+    }
+
+    /**
+     * Gets the data type name
+     *
+     * @return data type name
+     */
+    public String getName() {
+        return name;
     }
 }
