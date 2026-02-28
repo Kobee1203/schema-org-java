@@ -15,53 +15,33 @@ import java.util.stream.Collectors;
  */
 @Value
 public class BaseType {
-    /** The type identifier. */
-    String id;
-
-    /** The Java interface class. */
-    Class<?> interfaceClass;
-
-    /** The Java implementation class. */
-    Class<?> implementationClass;
-
-    /** The set of method information extracted from the interface. */
-    Set<MethodInfo> methods;
-
     /**
-     * Returns the type identifier.
+     * The type identifier.
      *
      * @return the type identifier
      */
-    public String getId() {
-        return id;
-    }
+    String id;
 
     /**
-     * Returns the Java interface class.
+     * The Java interface class.
      *
      * @return the Java interface class
      */
-    public Class<?> getInterfaceClass() {
-        return interfaceClass;
-    }
+    Class<?> interfaceClass;
 
     /**
-     * Returns the Java implementation class.
+     * The Java implementation class.
      *
      * @return the Java implementation class
      */
-    public Class<?> getImplementationClass() {
-        return implementationClass;
-    }
+    Class<?> implementationClass;
 
     /**
-     * Returns the set of method information extracted from the interface.
+     * The set of method information extracted from the interface.
      *
      * @return the set of method information
      */
-    public Set<MethodInfo> getMethods() {
-        return methods;
-    }
+    Set<MethodInfo> methods;
 
     /**
      * Creates a new BaseType with the specified classes.
@@ -126,13 +106,46 @@ public class BaseType {
         return implementationClass.getName();
     }
 
+    /**
+     * Class with method information.
+     */
     @Value
     @Builder
     public static class MethodInfo {
+        /**
+         * Method name
+         *
+         * @return The method name
+         * @param name The method name
+         */
         String name;
+        /**
+         * Return type of the method
+         *
+         * @return The method return type
+         * @param returnType The method return type
+         */
         String returnType;
+        /**
+         * Access modifier
+         *
+         * @return The access modifier
+         * @param modifiers The access modifier
+         */
         String modifiers;
+        /**
+         * Method parameters
+         *
+         * @return The method parameters
+         * @param parameters The method parameters
+         */
         List<ParameterInfo> parameters;
+        /**
+         * Exceptions thrown by the method
+         *
+         * @return the exceptions thrown by the method
+         * @param exceptions the exceptions thrown by the method
+         */
         List<String> exceptions;
 
         public String getParametersAsString() {
@@ -149,10 +162,25 @@ public class BaseType {
             return "void".equals(returnType);
         }
 
+        /**
+         * Parameter information.
+         */
         @Value
         @Builder
         private static class ParameterInfo {
+            /**
+             * Parameter name
+             *
+             * @return The parameter name
+             * @param name The parameter name
+             */
             String name;
+            /**
+             * Parameter type
+             *
+             * @return The parameter type
+             * @param type The parameter type
+             */
             String type;
         }
     }

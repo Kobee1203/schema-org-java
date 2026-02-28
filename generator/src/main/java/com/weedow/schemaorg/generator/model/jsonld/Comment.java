@@ -9,11 +9,21 @@ import lombok.Data;
 @Data
 public class Comment {
 
-    /** Language of the comment */
+    /**
+     * Language of the comment.
+     *
+     * @return The language of the comment
+     * @param language The language of the comment
+     */
     @JsonProperty("@language")
     private String language;
 
-    /** Comment value */
+    /**
+     * Comment value.
+     *
+     * @return The comment value
+     * @param value The comment value
+     */
     @JsonProperty("@value")
     private String value;
 }

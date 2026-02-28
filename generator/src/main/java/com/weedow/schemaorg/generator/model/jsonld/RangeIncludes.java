@@ -9,7 +9,12 @@ import lombok.Data;
 @Data
 public class RangeIncludes {
 
-    /** Type id */
+    /**
+     * Type id.
+     *
+     * @return The type id
+     * @param id The type id
+     */
     @JsonProperty("@id")
     private String id;
 }

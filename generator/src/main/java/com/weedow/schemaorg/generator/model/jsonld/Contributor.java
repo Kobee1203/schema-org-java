@@ -9,7 +9,12 @@ import lombok.Data;
 @Data
 public class Contributor {
 
-    /** Contributor id */
+    /**
+     * Contributor id.
+     *
+     * @return The contributor id
+     * @param id The contributor id
+     */
     @JsonProperty("@id")
     private String id;
 }

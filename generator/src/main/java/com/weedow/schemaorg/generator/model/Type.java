@@ -28,62 +28,135 @@ public final class Type {
 
     private static final Comparator<Property> PROPERTY_COMPARATOR = Comparator.comparing(Property::getId);
 
-    /** The type identifier (e.g., "schema:Person"). */
+    /**
+     * The type identifier (e.g., "schema:Person").
+     *
+     * @return The type identifier
+     */
     private final String id;
 
-    /** The Java type name to use for this Schema.org type. */
+    /**
+     * The Java type name to use for this Schema.org type.
+     *
+     * @return The Java type name to use for this Schema.org type
+     * @param javaType The Java type name to use for this Schema.org type
+     */
     private String javaType;
 
-    /** Whether this type is mapped to a Java primitive or standard type. */
+    /**
+     * Whether this type is mapped to a Java primitive or standard type.
+     *
+     * @return Whether this type is mapped to a Java primitive or standard type
+     * @param usedJavaType Whether this type is mapped to a Java primitive or standard type
+     */
     private boolean usedJavaType;
 
-    /** Whether this type can be converted to a string representation. */
+    /**
+     * Whether this type can be converted to a string representation.
+     *
+     * @return Whether this type can be converted to a string representation
+     * @param stringifiable Whether this type can be converted to a string representation
+     */
     private boolean stringifiable;
 
-    /** The type name (e.g., "Person"). */
+    /**
+     * The type name (e.g., "Person").
+     *
+     * @return The type name
+     * @param name The type name
+     */
     private String name;
 
-    /** The description of this type. */
+    /**
+     * The description of this type.
+     *
+     * @return The description of this type
+     * @param description The description of this type
+     */
     private String description;
 
-    /** The set of properties defined directly on this type. */
+    /**
+     * The set of properties defined directly on this type.
+     *
+     * @return The set of properties defined directly on this type
+     */
     @Setter(AccessLevel.NONE)
     private final Set<Property> properties = new TreeSet<>(PROPERTY_COMPARATOR);
 
-    /** Cached set of all properties including inherited ones. */
+    /**
+     * Cached set of all properties including inherited ones.
+     *
+     * @return Cached set of all properties including inherited ones
+     */
     @Setter(AccessLevel.NONE)
     @EqualsAndHashCode.Exclude
     private Set<Property> allProperties;
 
-    /** The base parent type category. */
+    /**
+     * The base parent type category.
+     *
+     * @return The base parent type category
+     * @param baseParent The base parent type category
+     */
     private BaseType baseParent;
 
-    /** The list of parent types this type extends. */
+    /**
+     * The list of parent types this type extends.
+     *
+     * @return The list of parent types this type extends
+     */
     @Setter(AccessLevel.NONE)
     @ToString.Exclude
     private final List<Type> parents = new ArrayList<>();
 
-    /** The list of subtypes that extend this type. */
+    /**
+     * The list of subtypes that extend this type.
+     *
+     * @return The list of subtypes that extend this type
+     */
     @Setter(AccessLevel.NONE)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private final List<Type> subTypes = new ArrayList<>();
 
-    /** The partOf identifiers indicating which specifications include this type. */
+    /**
+     * The partOf identifiers indicating which specifications include this type.
+     *
+     * @return The partOf identifiers indicating which specifications include this type
+     * @param partOf The partOf identifiers indicating which specifications include this type
+     */
     private List<String> partOf = new ArrayList<>();
 
-    /** The source identifiers indicating the origin of this type. */
+    /**
+     * The source identifiers indicating the origin of this type.
+     *
+     * @return The source identifiers indicating the origin of this type
+     * @param source The source identifiers indicating the origin of this type
+     */
     private List<String> source = new ArrayList<>();
 
-    /** The contributor identifiers for this type. */
+    /**
+     * The contributor identifiers for this type.
+     *
+     * @return The contributor identifiers for this type
+     * @param contributor The contributor identifiers for this type
+     */
     private List<String> contributor = new ArrayList<>();
 
-    /** Cached flag indicating whether this is an enumeration type. */
+    /**
+     * Cached flag indicating whether this is an enumeration type.
+     *
+     * @return Cached flag indicating whether this is an enumeration type
+     */
     @Getter(AccessLevel.NONE)
     @Setter(AccessLevel.NONE)
     private Boolean enumerationType;
 
-    /** The list of enumeration member values (if this is an enumeration type). */
+    /**
+     * The list of enumeration member values (if this is an enumeration type).
+     *
+     * @return The list of enumeration member values (if this is an enumeration type)
+     */
     @Setter(AccessLevel.NONE)
     private final List<String> enumerationMembers = new ArrayList<>();
 

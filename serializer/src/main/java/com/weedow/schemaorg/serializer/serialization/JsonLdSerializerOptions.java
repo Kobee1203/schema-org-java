@@ -14,10 +14,18 @@ import java.util.List;
 @Builder
 public class JsonLdSerializerOptions {
 
-    /** Whether to format the output with indentation. */
+    /**
+     * Whether to format the output with indentation.
+     *
+     * @return {@code true} or {@code false}
+     */
     boolean prettyPrint;
 
-    /** Extensions to be registered with ObjectMapper. */
+    /**
+     * Jackson modules to add to the object mapper.
+     *
+     * @return List of Modules
+     * */
     @Singular
     List<Module> modules;
 }

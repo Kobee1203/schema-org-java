@@ -25,45 +25,95 @@ public abstract class GraphItem {
 
     private static final Logger LOG = LoggerFactory.getLogger(GraphItem.class);
 
-    /** Item id */
+    /**
+     * Item id.
+     *
+     * @return The item id
+     * @param id The item id
+     */
     @JsonProperty("@id")
     private String id;
 
-    /** Item types */
+    /**
+     * Item types.
+     *
+     * @return The item types
+     * @param types The item types
+     */
     @JsonProperty("@type")
     private List<String> types;
 
-    /** Item-related comment */
+    /**
+     * Item-related comment.
+     *
+     * @return The item-related comment
+     * @param comment The item-related comment
+     */
     @JsonProperty("rdfs:comment")
     private Comment comment;
 
-    /** Item label */
+    /**
+     * Item label.
+     *
+     * @return The item label
+     * @param label The item label
+     */
     @JsonProperty("rdfs:label")
     private Label label;
 
-    /** Indicates what the item is part of */
+    /**
+     * Indicates what the item is part of.
+     *
+     * @return What the item is part of
+     * @param partOf What the item is part of
+     */
     @JsonProperty("schema:isPartOf")
     private List<PartOf> partOf;
 
-    /** References that define the vocabulary's structure */
+    /**
+     * References that define the vocabulary's structure.
+     *
+     * @return The references that define the vocabulary's structure
+     * @param source The references that define the vocabulary's structure
+     */
     @JsonProperty("schema:source")
     private List<Source> source;
 
-    /** Contributors for this item */
+    /**
+     * Contributors for this item.
+     *
+     * @return The contributors for this item
+     * @param contributor The contributors for this item
+     */
     @JsonProperty("schema:contributor")
     private List<Contributor> contributor;
 
     //*** [START] Specific Fields for Property items ***//
 
-    /** Classes that is (one of) the type(s) the property is expected to be used on. */
+    /**
+     * Classes that is (one of) the type(s) the property is expected to be used on.
+     *
+     * @return The classes that is (one of) the type(s) the property is expected to be used on
+     * @param domainIncludes The classes that is (one of) the type(s) the property is expected to be used on
+     */
     @JsonProperty("schema:domainIncludes")
     private List<DomainIncludes> domainIncludes;
 
-    /** Classes that constitutes (one of) the expected type(s) for values of the property. */
+    /**
+     * Classes that constitutes (one of) the expected type(s) for values of the property.
+     *
+     * @return The classes that constitutes (one of) the expected type(s) for values of the property
+     * @param rangeIncludes The classes that constitutes (one of) the expected type(s) for values of the property
+     */
     @JsonProperty("schema:rangeIncludes")
     private List<RangeIncludes> rangeIncludes;
 
-    /** A related resource that is superseded by this item. */
+    /**
+     * A related resource that is superseded by this item.
+     *
+     * @return The related resource that is superseded by this item
+     * @param supersededBy The related resource that is superseded by this item
+     */
     @JsonProperty("schema:supersededBy")
     private SupersededBy supersededBy;
 
@@ -71,7 +121,12 @@ public abstract class GraphItem {
 
     //*** [START] Specific Fields for Class items ***//
 
-    /** Subclasses of this item. */
+    /**
+     * Subclasses of this item.
+     *
+     * @return The subclasses of this item
+     * @param subClassOf The subclasses of this item
+     */
     @JsonProperty("rdfs:subClassOf")
     private List<SubClassOf> subClassOf;
 

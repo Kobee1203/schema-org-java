@@ -26,16 +26,36 @@ import java.util.stream.Collectors;
 @Value
 public class Property {
 
-    /** The property identifier (e.g., "schema:name"). */
+    /**
+     * The property identifier (e.g., "schema:name").
+     *
+     * @return The property identifier
+     */
     String id;
-    /** The field definition containing type information. */
+    /**
+     * The field definition containing type information.
+     *
+     * @return The field definition containing type information
+     */
     Field field;
-    /** The accessor (getter) definition for this property. */
+    /**
+     * The accessor (getter) definition for this property.
+     *
+     * @return The accessor (getter) definition for this property
+     */
     Accessor accessor;
-    /** The list of mutators (setters/adders) for this property. */
+    /**
+     * The list of mutators (setters/adders) for this property.
+     *
+     * @return The list of mutators (setters/adders) for this property
+     */
     List<Mutator> mutators;
 
-    /** The list of types that can be used as values for this property. */
+    /**
+     * The list of types that can be used as values for this property.
+     *
+     * @return The list of types that can be used as values for this property
+     */
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     List<Type> types;

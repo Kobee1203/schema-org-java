@@ -7,7 +7,12 @@ import lombok.Data;
 @Data
 public class SupersededBy {
 
-    /** Type id */
+    /**
+     * Type id.
+     *
+     * @return The type id
+     * @param id The type id
+     */
     @JsonProperty("@id")
     private String id;
 }

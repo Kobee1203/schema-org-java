@@ -11,10 +11,22 @@ import java.util.Set;
 @Value
 public class Context {
 
-    /** Type */
+    /**
+     * Type.
+     *
+     * @return The type
+     */
     Type type;
-    /** Package */
+    /**
+     * Package.
+     *
+     * @return The package
+     */
     String usedPackage;
-    /** Imports */
+    /**
+     * Imports.
+     *
+     * @return The imports
+     */
     Set<String> imports;
 }

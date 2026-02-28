@@ -18,39 +18,95 @@ import static com.weedow.schemaorg.generator.model.field.FieldUtils.supplier;
 @Value
 public class Accessor {
 
-    /** The property name. */
+    /**
+     * The property name.
+     *
+     * @return The property name
+     */
     String name;
-    /** The property description. */
+    /**
+     * The property description.
+     *
+     * @return The property description
+     */
     String description;
-    /** The partOf identifiers indicating which types this property is part of. */
+    /**
+     * The partOf identifiers indicating which types this property is part of.
+     *
+     * @return The partOf identifiers indicating which types this property is part of
+     */
     List<String> partOf;
-    /** The source identifiers indicating the origin of this property. */
+    /**
+     * The source identifiers indicating the origin of this property.
+     *
+     * @return The source identifiers indicating the origin of this property
+     */
     List<String> source;
-    /** The contributor identifiers for this property. */
+    /**
+     * The contributor identifiers for this property.
+     *
+     * @return The contributor identifiers for this property
+     */
     List<String> contributor;
-    /** Supplier for the field type as Javadoc links. */
+    /**
+     * Supplier for the field type as Javadoc links.
+     *
+     * @return Supplier for the field type as Javadoc links
+     */
     @NonNull
     Supplier<String> fieldTypeLinks;
-    /** Supplier for the return field type (single value). */
+    /**
+     * Supplier for the return field type (single value).
+     *
+     * @return Supplier for the return field type (single value)
+     */
     @NonNull
     Supplier<String> returnFieldType;
-    /** Supplier for the return field type as a list. */
+    /**
+     * Supplier for the return field type as a list.
+     *
+     * @return Supplier for the return field type as a list
+     */
     @NonNull
     Supplier<String> returnFieldTypeAsList;
-    /** Supplier for the cast expression for single value. */
+    /**
+     * Supplier for the cast expression for single value.
+     *
+     * @return Supplier for the cast expression for single value
+     */
     @NonNull
     Supplier<String> cast;
-    /** Supplier for the cast expression for list value. */
+    /**
+     * Supplier for the cast expression for list value.
+     *
+     * @return Supplier for the cast expression for list value
+     */
     @NonNull
     Supplier<String> castAsList;
 
-    /** The field name derived from the property name. */
+    /**
+     * The field name derived from the property name.
+     *
+     * @return The field name derived from the property name
+     */
     String fieldName;
-    /** The getter method name for list values. */
+    /**
+     * The getter method name for list values.
+     *
+     * @return The getter method name for list values
+     */
     String getterMethod;
-    /** The getter method name for the first value. */
+    /**
+     * The getter method name for the first value.
+     *
+     * @return The getter method name for the first value
+     */
     String firstGetterMethod;
-    /** The description split into lines for javadoc formatting. */
+    /**
+     * The description split into lines for javadoc formatting.
+     *
+     * @return The description split into lines for javadoc formatting
+     */
     String[] splitDescription;
 
     /**

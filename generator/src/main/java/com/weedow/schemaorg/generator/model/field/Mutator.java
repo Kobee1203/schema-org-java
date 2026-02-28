@@ -12,28 +12,72 @@ import java.util.function.Supplier;
 @Value
 public class Mutator {
 
-    /** The property name. */
+    /**
+     * The property name.
+     *
+     * @return The property name
+     */
     String name;
-    /** The property description. */
+    /**
+     * The property description.
+     *
+     * @return The property description
+     */
     String description;
-    /** The partOf identifiers indicating which types this property is part of. */
+    /**
+     * The partOf identifiers indicating which types this property is part of.
+     *
+     * @return The partOf identifiers indicating which types this property is part of
+     */
     List<String> partOf;
-    /** The source identifiers indicating the origin of this property. */
+    /**
+     * The source identifiers indicating the origin of this property.
+     *
+     * @return The source identifiers indicating the origin of this property
+     */
     List<String> source;
-    /** The contributor identifiers for this property. */
+    /**
+     * The contributor identifiers for this property.
+     *
+     * @return The contributor identifiers for this property
+     */
     List<String> contributor;
-    /** Supplier for the parameter type. */
+    /**
+     * Supplier for the parameter type.
+     *
+     * @return Supplier for the parameter type
+     */
     Supplier<String> paramType;
-    /** Supplier for the parameter value. */
+    /**
+     * Supplier for the parameter value.
+     *
+     * @return Supplier for the parameter value
+     */
     Supplier<String> paramValue;
 
-    /** The field name derived from the property name. */
+    /**
+     * The field name derived from the property name.
+     *
+     * @return The field name derived from the property name
+     */
     String fieldName;
-    /** The setter method name. */
+    /**
+     * The setter method name.
+     *
+     * @return The setter method name
+     */
     String setterMethod;
-    /** The adder method name for collection properties. */
+    /**
+     * The adder method name for collection properties.
+     *
+     * @return The adder method name for collection properties
+     */
     String addMethod;
-    /** The description split into lines for javadoc formatting. */
+    /**
+     * The description split into lines for javadoc formatting.
+     *
+     * @return The description split into lines for javadoc formatting
+     */
     String[] splitDescription;
 
     /**

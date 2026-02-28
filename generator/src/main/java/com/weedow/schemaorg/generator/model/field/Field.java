@@ -17,15 +17,31 @@ import static com.weedow.schemaorg.generator.model.field.FieldUtils.supplier;
 @Value
 public class Field {
 
-    /** The property name. */
+    /**
+     * The property name.
+     *
+     * @return The property name
+     */
     String name;
 
-    /** The field name derived from the property name. */
+    /**
+     * The field name derived from the property name.
+     *
+     * @return The field name derived from the property name
+     */
     String fieldName;
-    /** Supplier for the field type. */
+    /**
+     * Supplier for the field type.
+     *
+     * @return Supplier for the field type
+     */
     @NonNull
     Supplier<String> fieldType;
-    /** Supplier for the field type as a list. */
+    /**
+     * Supplier for the field type as a list.
+     *
+     * @return Supplier for the field type as a list
+     */
     @NonNull
     Supplier<String> fieldTypeAsList;
 

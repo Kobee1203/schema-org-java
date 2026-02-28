@@ -14,7 +14,11 @@ import java.util.List;
 @Builder
 public class JsonLdDeserializerOptions {
 
-    /** Jackson modules to add to the object mapper. */
+    /**
+     * Jackson modules to add to the object mapper.
+     *
+     * @return List of Modules
+     * */
     @Singular
     List<Module> modules;
 }

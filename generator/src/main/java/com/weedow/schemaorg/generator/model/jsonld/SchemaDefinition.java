@@ -21,6 +21,9 @@ public class SchemaDefinition {
      * The JSON-LD context that defines the vocabulary mappings.
      * <p>
      * Maps property names to their corresponding Schema.org URIs.
+     *
+     * @return The JSON-LD context that defines the vocabulary mappings
+     * @param context The JSON-LD context that defines the vocabulary mappings
      */
     @JsonProperty("@context")
     private Map<String, String> context;
@@ -29,6 +32,9 @@ public class SchemaDefinition {
      * The graph containing all Schema.org types and properties definitions.
      * <p>
      * This list contains all classes, properties, data types, and enumerations defined in the Schema.org vocabulary.
+     *
+     * @return The graph containing all Schema.org types and properties definitions
+     * @param graph The graph containing all Schema.org types and properties definitions
      */
     @JsonProperty("@graph")
     private List<GraphItem> graph;

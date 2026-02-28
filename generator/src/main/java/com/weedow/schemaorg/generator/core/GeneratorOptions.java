@@ -31,28 +31,70 @@ public final class GeneratorOptions {
     /** Default package name for data type classes. */
     public static final String DEFAULT_DATE_TYPE_PACKAGE = "org.schema.model.datatype";
 
-    /** Output directory for generated sources. */
+    /**
+     * Output directory for generated sources.
+     *
+     * @return Output directory for generated sources
+     * @param outputFolder Output directory for generated sources
+     */
     private Path outputFolder = DEFAULT_OUTPUT_DIR;
-    /** Package name for model interfaces. */
+    /**
+     * Package name for model interfaces.
+     *
+     * @return Package name for model interfaces
+     * @param modelPackage Package name for model interfaces
+     */
     private String modelPackage = DEFAULT_MODEL_PACKAGE;
-    /** Package name for model implementations. */
+    /**
+     * Package name for model implementations.
+     *
+     * @return Package name for model implementations
+     * @param modelImplPackage Package name for model implementations
+     */
     private String modelImplPackage = DEFAULT_MODEL_IMPL_PACKAGE;
-    /** Package name for data type classes. */
+    /**
+     * Package name for data type classes.
+     *
+     * @return Package name for data type classes
+     * @param dataTypePackage Package name for data type classes
+     */
     private String dataTypePackage = DEFAULT_DATE_TYPE_PACKAGE;
 
-    /** Whether the common models are copied. Default is true. */
+    /**
+     * Whether the common models are copied. Default is true.
+     *
+     * @return Whether the common models are copied
+     * @param copyCommonModels Whether the common models are copied
+     */
     private boolean copyCommonModels = true;
 
-    /** Specific models to generate. */
+    /**
+     * Specific models to generate.
+     *
+     * @return Specific models to generate
+     * @param models Specific models to generate
+     */
     private List<String> models;
 
-    /** Success handlers to be notified when a file is successfully generated. */
+    /**
+     * Success handlers to be notified when a file is successfully generated.
+     *
+     * @return Success handlers to be notified when a file is successfully generated
+     */
     @Setter(AccessLevel.NONE)
     private final List<SuccessHandler> successHandlers = new ArrayList<>();
-    /** Error handlers to be notified when generation fails. */
+    /**
+     * Error handlers to be notified when generation fails.
+     *
+     * @return Error handlers to be notified when generation fails
+     */
     @Setter(AccessLevel.NONE)
     private final List<ErrorHandler> errorHandlers = new ArrayList<>();
-    /** Complete handler to be notified when generation completes. */
+    /**
+     * Complete handler to be notified when generation completes.
+     *
+     * @return Complete handler to be notified when generation completes
+     */
     @Setter(AccessLevel.NONE)
     private final List<CompleteHandler> completeHandlers = new ArrayList<>();
 

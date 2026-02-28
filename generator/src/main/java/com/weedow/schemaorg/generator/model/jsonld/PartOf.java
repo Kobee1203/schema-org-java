@@ -9,7 +9,12 @@ import lombok.Data;
 @Data
 public class PartOf {
 
-    /** Resource id */
+    /**
+     * Resource id.
+     *
+     * @return The resource id
+     * @param id The resource id
+     */
     @JsonProperty("@id")
     private String id;
 }
