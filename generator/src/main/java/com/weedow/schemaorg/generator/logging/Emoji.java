@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
  * <p>The variant selector is appended to ensure consistent emoji rendering
  * across different terminals and prevent spacing issues (especially with Maven output).
  *
- * <p>Use the factory method {@link #of(String)} to create instances.
+ * <p>Use the factory method {@code #of(String)} to create instances.
  */
 @Accessors(fluent = true)
 @Getter(AccessLevel.PACKAGE)
