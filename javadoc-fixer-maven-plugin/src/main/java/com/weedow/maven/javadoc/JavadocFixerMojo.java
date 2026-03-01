@@ -122,7 +122,7 @@ public class JavadocFixerMojo extends AbstractMojo {
         // Match default constructors with @java.lang.SuppressWarnings("all") and @lombok.Generated
         // Pattern matches: (indent)(@java.lang.SuppressWarnings("all")\n@lombok.Generated\n(public|protected) ClassName())
         Pattern pattern = Pattern.compile(
-                "( *)(" + LOMBOK_ANNOTATIONS + "(public|protected) [A-Z]\\w*\\(\\))",
+                "(^[ \\t]*)(" + LOMBOK_ANNOTATIONS + "(public|protected) [A-Z]\\w*\\(\\))",
                 Pattern.MULTILINE
         );
 
@@ -134,11 +134,13 @@ public class JavadocFixerMojo extends AbstractMojo {
             String indent = matcher.group(1);
             String annotationsAndSignature = matcher.group(2);
 
-            // Generate javadoc
-            String javadoc = indent + "/** Default constructor */\n";
+            String replacement = """
+                    $indent/** Default constructor */
+                    $indent$annotationsAndSignature"""
+                    .replace("$indent", indent)
+                    .replace("$annotationsAndSignature", annotationsAndSignature);
 
-            matcher.appendReplacement(result,
-                    Matcher.quoteReplacement(javadoc + annotationsAndSignature));
+            matcher.appendReplacement(result, Matcher.quoteReplacement(replacement));
             count++;
         }
         matcher.appendTail(result);
@@ -151,7 +153,7 @@ public class JavadocFixerMojo extends AbstractMojo {
         // Match canEqual methods with @java.lang.SuppressWarnings("all") and @lombok.Generated
         // Pattern matches: (indent)(@java.lang.SuppressWarnings("all")\n@lombok.Generated\nprotected boolean canEqual(final java.lang.Object other))
         Pattern pattern = Pattern.compile(
-                "( *)(" + LOMBOK_ANNOTATIONS + "protected boolean canEqual\\(final java\\.lang\\.Object other\\))",
+                "(^[ \\t]*)(" + LOMBOK_ANNOTATIONS + "protected boolean canEqual\\(final java\\.lang\\.Object other\\))",
                 Pattern.MULTILINE
         );
 
@@ -163,15 +165,17 @@ public class JavadocFixerMojo extends AbstractMojo {
             String indent = matcher.group(1);
             String annotationsAndSignature = matcher.group(2);
 
-            // Generate javadoc
-            String javadoc = indent + "/**\n" +
-                    indent + " * canEqual method.\n" +
-                    indent + " * @param other Other.\n" +
-                    indent + " * @return true or false\n" +
-                    indent + " */\n";
+            String replacement = """
+                    $indent/**
+                    $indent * canEqual method.
+                    $indent * @param other Other.
+                    $indent * @return true or false
+                    $indent */
+                    $indent$annotationsAndSignature"""
+                    .replace("$indent", indent)
+                    .replace("$annotationsAndSignature", annotationsAndSignature);
 
-            matcher.appendReplacement(result,
-                    Matcher.quoteReplacement(javadoc + annotationsAndSignature));
+            matcher.appendReplacement(result, Matcher.quoteReplacement(replacement));
             count++;
         }
         matcher.appendTail(result);
