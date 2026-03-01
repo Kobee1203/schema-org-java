@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.weedow.schemaorg.generator.model.jsonld.SchemaDefinition;
-import lombok.NoArgsConstructor;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,8 +22,12 @@ import java.util.stream.Collectors;
  * This reader is configured to handle the specific JSON-LD structure of Schema.org vocabulary files,
  * including support for single values as arrays and unknown properties.
  */
-@NoArgsConstructor
 public class SchemaDefinitionReaderImpl implements SchemaDefinitionReader {
+
+    /** Default constructor */
+    public SchemaDefinitionReaderImpl() {
+        // empty
+    }
 
     private final JsonMapper jsonMapper = jsonMapper();
 

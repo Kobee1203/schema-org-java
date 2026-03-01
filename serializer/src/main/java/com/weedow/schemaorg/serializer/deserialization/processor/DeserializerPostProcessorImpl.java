@@ -7,7 +7,7 @@ import com.weedow.schemaorg.serializer.converter.ConversionService;
 import com.weedow.schemaorg.serializer.converter.ConversionServiceImpl;
 import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
 import com.weedow.schemaorg.serializer.utils.SerializerUtils;
-import lombok.NoArgsConstructor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +18,12 @@ import java.util.*;
  * Post-processor implementation that converts raw deserialized values to their proper JsonLdDataType wrappers.
  * Recursively processes nested objects and collections to ensure all Schema.org data types are properly wrapped.
  */
-@NoArgsConstructor
 public class DeserializerPostProcessorImpl implements PostProcessor {
+
+    /** Default constructor */
+    public DeserializerPostProcessorImpl() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(DeserializerPostProcessorImpl.class);
 

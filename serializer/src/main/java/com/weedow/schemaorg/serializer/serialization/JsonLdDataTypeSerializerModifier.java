@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.SerializationConfig;
 import com.fasterxml.jackson.databind.ser.BeanSerializerModifier;
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
-import lombok.NoArgsConstructor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,8 +18,12 @@ import java.util.Map;
  * Jackson BeanSerializerModifier that provides custom serialization for Schema.org JsonLdDataType instances.
  * Looks up and applies the appropriate serializer for each data type.
  */
-@NoArgsConstructor
 public class JsonLdDataTypeSerializerModifier extends BeanSerializerModifier {
+
+    /** Default constructor */
+    public JsonLdDataTypeSerializerModifier() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(JsonLdDataTypeSerializerModifier.class);
 

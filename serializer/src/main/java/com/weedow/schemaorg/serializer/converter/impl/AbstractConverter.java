@@ -2,8 +2,7 @@ package com.weedow.schemaorg.serializer.converter.impl;
 
 import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.converter.Converter;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,8 +13,12 @@ import java.util.Arrays;
 /**
  * Abstract base class for converters that transform objects to JsonLdDataType instances.
  */
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractConverter implements Converter<Object, JsonLdDataType<?>> {
+
+    /** Default constructor */
+    protected AbstractConverter() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(AbstractConverter.class);
 

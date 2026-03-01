@@ -5,7 +5,7 @@ import com.weedow.schemaorg.generator.model.Type;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.NoArgsConstructor;
+
 
 import java.util.List;
 import java.util.Map;
@@ -14,8 +14,12 @@ import java.util.Map;
  * Model handler for Schema.org enumeration member items.
  * Associates enumeration values with their parent enumeration types.
  */
-@NoArgsConstructor
 public class EnumerationMemberModelHandlerImpl implements ModelHandler {
+
+    /** Default constructor */
+    public EnumerationMemberModelHandlerImpl() {
+        // empty
+    }
 
     @Override
     public boolean supports(GraphItem graphItem, ParserOptions options) {

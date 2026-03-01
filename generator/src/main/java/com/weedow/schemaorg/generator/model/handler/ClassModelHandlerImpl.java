@@ -9,7 +9,6 @@ import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
@@ -18,8 +17,12 @@ import java.util.Map;
  * Model handler for Schema.org Class types.
  * Sets up the base parent type for classes (JsonLdNode).
  */
-@NoArgsConstructor
 public class ClassModelHandlerImpl extends AbstractTypeModelHandler {
+
+    /** Default constructor */
+    public ClassModelHandlerImpl() {
+        // empty
+    }
 
     private static final BaseType BASE_TYPE = new BaseType("java:JsonLdNode", JsonLdNode.class, JsonLdNodeImpl.class);
 

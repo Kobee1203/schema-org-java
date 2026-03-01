@@ -7,7 +7,6 @@ import com.github.jknack.handlebars.helper.StringHelpers;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.template.helper.CharSequenceHelpers;
-import lombok.NoArgsConstructor;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -21,8 +20,12 @@ import java.nio.file.Path;
  * This service is configured with various Handlebars helpers for string manipulation,
  * conditional logic, and character sequence operations.
  */
-@NoArgsConstructor
 public class TemplateServiceImpl implements TemplateService {
+
+    /** Default constructor */
+    public TemplateServiceImpl() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(TemplateServiceImpl.class);
 

@@ -13,7 +13,6 @@ import com.weedow.schemaorg.generator.model.jsonld.DomainIncludes;
 import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -40,8 +39,12 @@ import static com.weedow.schemaorg.generator.logging.Emojis.WARNING;
  *   <li>Associates properties with their domain types via domainIncludes</li>
  * </ul>
  */
-@NoArgsConstructor
 public class PropertyModelHandlerImpl implements ModelHandler {
+
+    /** Default constructor */
+    public PropertyModelHandlerImpl() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(PropertyModelHandlerImpl.class);
 

@@ -4,7 +4,7 @@ import com.weedow.schemaorg.generator.SchemaModelGeneratorBuilder;
 import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.NoArgsConstructor;
+
 import org.apache.maven.artifact.Artifact;
 import org.apache.maven.model.Resource;
 import org.apache.maven.plugin.AbstractMojo;
@@ -36,8 +36,12 @@ import static com.weedow.schemaorg.generator.logging.LoggingUtils.msg;
         threadSafe = true,
         requiresDependencyCollection = ResolutionScope.COMPILE
 )
-@NoArgsConstructor
 public class SchemaModelGeneratorMojo extends AbstractMojo {
+
+    /** Default constructor */
+    public SchemaModelGeneratorMojo() {
+        // empty
+    }
 
     private static final String COMMON_MODELS_GROUP_ID = "com.weedow";
     private static final String COMMON_MODELS_ARTIFACT_ID = "schema-org-java-commons";

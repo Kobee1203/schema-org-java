@@ -6,8 +6,6 @@ import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
@@ -15,8 +13,12 @@ import java.util.Map;
 /**
  * Abstract base class for type model handlers that provides common handling logic for Schema.org type definitions.
  */
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractTypeModelHandler implements ModelHandler {
+
+    /** Default constructor */
+    protected AbstractTypeModelHandler() {
+        // empty
+    }
 
     /**
      * Handles the processing of a Schema.org graph item into a type definition.

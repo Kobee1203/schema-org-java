@@ -12,7 +12,7 @@ import com.weedow.schemaorg.commons.model.JsonLdDataType;
 import com.weedow.schemaorg.serializer.deserialization.datatype.EnumDeserializer;
 import com.weedow.schemaorg.serializer.spec.DataTypeSpecificationService;
 import com.weedow.schemaorg.serializer.utils.SerializerUtils;
-import lombok.NoArgsConstructor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,8 +24,12 @@ import java.util.Map;
  * Jackson BeanDeserializerModifier that provides custom deserialization for Schema.org JsonLdDataType instances.
  * Looks up and applies the appropriate deserializer for each data type and enumeration.
  */
-@NoArgsConstructor
 public class JsonLdDataTypeDeserializerModifier extends BeanDeserializerModifier {
+
+    /** Default constructor */
+    public JsonLdDataTypeDeserializerModifier() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(JsonLdDataTypeDeserializerModifier.class);
 

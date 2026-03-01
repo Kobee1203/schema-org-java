@@ -7,7 +7,6 @@ import com.weedow.schemaorg.generator.model.jsonld.GraphItem;
 import com.weedow.schemaorg.generator.model.jsonld.SubClassOf;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
@@ -25,8 +24,12 @@ import java.util.Map;
  *
  * <p>Example: A type like "URL" that extends "Text" would be processed by this handler.
  */
-@NoArgsConstructor
 public class SubDataTypeModelHandlerImpl extends AbstractTypeModelHandler {
+
+    /** Default constructor */
+    public SubDataTypeModelHandlerImpl() {
+        // empty
+    }
 
     @Override
     public boolean supports(GraphItem graphItem, ParserOptions options) {

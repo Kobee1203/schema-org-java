@@ -4,7 +4,6 @@ import com.weedow.schemaorg.generator.SchemaConstants;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.model.Type;
-import lombok.NoArgsConstructor;
 
 import java.util.*;
 import java.util.function.Function;
@@ -24,8 +23,12 @@ import static com.weedow.schemaorg.generator.logging.LogMarkers.WARNING;
  *   <li>Recursively adds all required dependencies to ensure completeness</li>
  * </ul>
  */
-@NoArgsConstructor
 public class SchemaDefinitionFilterImpl implements SchemaDefinitionFilter {
+
+    /** Default constructor */
+    public SchemaDefinitionFilterImpl() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaDefinitionFilterImpl.class);
 

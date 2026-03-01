@@ -5,7 +5,7 @@ import com.weedow.schemaorg.generator.core.SchemaModelGenerator;
 import com.weedow.schemaorg.generator.logging.Logger;
 import com.weedow.schemaorg.generator.logging.LoggerFactory;
 import com.weedow.schemaorg.generator.parser.ParserOptions;
-import lombok.NoArgsConstructor;
+
 import picocli.CommandLine;
 
 import java.nio.file.Path;
@@ -38,7 +38,7 @@ import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
  *   --javatypes
  * </pre>
  */
-@NoArgsConstructor
+
 @picocli.CommandLine.Command(
         name = "java -jar schema-org-generator-{version}-jar-with-dependencies.jar",
         descriptionHeading = "%n",
@@ -54,6 +54,11 @@ import static com.weedow.schemaorg.generator.logging.Emojis.TIMER;
         versionProvider = VersionProvider.class
 )
 public class SchemaModelGeneratorApp implements Callable<Integer> {
+
+    /** Default constructor */
+    public SchemaModelGeneratorApp() {
+        // empty
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(SchemaModelGeneratorApp.class);
 

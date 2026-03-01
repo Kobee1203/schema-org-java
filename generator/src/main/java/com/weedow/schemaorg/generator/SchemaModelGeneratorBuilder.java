@@ -24,7 +24,7 @@ import com.weedow.schemaorg.generator.reader.SchemaDefinitionReader;
 import com.weedow.schemaorg.generator.reader.SchemaDefinitionReaderImpl;
 import com.weedow.schemaorg.generator.template.TemplateService;
 import com.weedow.schemaorg.generator.template.TemplateServiceImpl;
-import lombok.NoArgsConstructor;
+
 
 import java.util.Arrays;
 import java.util.List;
@@ -46,8 +46,12 @@ import java.util.Map;
  *     .build();
  * }</pre>
  */
-@NoArgsConstructor
 public class SchemaModelGeneratorBuilder {
+
+    /** Default constructor */
+    public SchemaModelGeneratorBuilder() {
+        // empty
+    }
 
     private ParserOptions parserOptions;
     private GeneratorOptions generatorOptions;
