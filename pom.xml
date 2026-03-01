@@ -95,6 +95,7 @@
     </properties>
 
     <modules>
+        <module>javadoc-fixer-maven-plugin</module>
         <module>commons</module>
         <module>generator</module>
         <module>maven-plugin</module>
@@ -372,6 +373,22 @@
                                 <id>attach-sources</id>
                                 <goals>
                                     <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <!-- Fix incomplete Javadoc in delomboked sources -->
+                    <plugin>
+                        <groupId>com.weedow</groupId>
+                        <artifactId>javadoc-fixer-maven-plugin</artifactId>
+                        <version>${project.version}</version>
+                        <executions>
+                            <execution>
+                                <id>fix-javadoc</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>fix-javadoc</goal>
                                 </goals>
                             </execution>
                         </executions>
