@@ -117,11 +117,11 @@ public class SchemaModelGeneratorMojo extends AbstractMojo {
     /**
      * Specify the behavior of the plugin with the generated java types and generated resources.
      * <ul>
-     * <li><code>SOURCES_AND_RESOURCES</code>: Add the output directory to the project as a source root</li>
-     * <li><code>TEST_SOURCES_AND_RESOURCES</code>: Add the output directory to the project as a test source root</li>
-     * <li><code>NOTHING</code>: Do nothing</li>
+     * <li>{@code SOURCES_AND_RESOURCES}: Add the output directory to the project as a source root</li>
+     * <li>{@code TEST_SOURCES_AND_RESOURCES}: Add the output directory to the project as a test source root</li>
+     * <li>{@code NOTHING}: Do nothing</li>
      * </ul>
-     * Default is <code>SOURCES_AND_RESOURCES</code>.
+     * Default is {@code SOURCES_AND_RESOURCES}.
      */
     @SuppressWarnings("unused")
     @Parameter(name = "sourcesAndResourcesProcessing", defaultValue = "SOURCES_AND_RESOURCES")
