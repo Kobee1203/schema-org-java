@@ -79,7 +79,7 @@ public class JavadocFixerMojo extends AbstractMojo {
     /**
      * Finds all Java files in the given directory recursively.
      */
-    private List<Path> findJavaFiles(Path directory) throws IOException {
+    List<Path> findJavaFiles(Path directory) throws IOException {
         List<Path> javaFiles = new ArrayList<>();
         try (Stream<Path> stream = Files.walk(directory)) {
             stream.filter(Files::isRegularFile)
@@ -99,14 +99,14 @@ public class JavadocFixerMojo extends AbstractMojo {
         int fixCount = 0;
 
         // Fix default constructors without javadoc
-        JavadocFix constructorFix = fixConstructorsWithoutJavadoc(content);
-        content = constructorFix.content;
-        fixCount += constructorFix.fixCount;
+        JavadocFix constructorFix = applyJavadocFix(content, buildConstructorPattern(), this::buildConstructorJavadoc);
+        content = constructorFix.content();
+        fixCount += constructorFix.fixCount();
 
         // Fix canEqual methods without javadoc
-        JavadocFix canEqualFix = fixCanEqualWithoutJavadoc(content);
-        content = canEqualFix.content;
-        fixCount += canEqualFix.fixCount;
+        JavadocFix canEqualFix = applyJavadocFix(content, buildCanEqualPattern(), this::buildCanEqualJavadoc);
+        content = canEqualFix.content();
+        fixCount += canEqualFix.fixCount();
 
         // Only write if changes were made
         if (!content.equals(originalContent)) {
@@ -117,15 +117,10 @@ public class JavadocFixerMojo extends AbstractMojo {
         return fixCount;
     }
 
-    /** Fixes constructors without javadoc. */
-    private JavadocFix fixConstructorsWithoutJavadoc(String content) {
-        // Match default constructors with @java.lang.SuppressWarnings("all") and @lombok.Generated
-        // Pattern matches: (indent)(@java.lang.SuppressWarnings("all")\n@lombok.Generated\n(public|protected) ClassName())
-        Pattern pattern = Pattern.compile(
-                "(^[ \\t]*)(" + LOMBOK_ANNOTATIONS + "(public|protected) [A-Z]\\w*\\(\\))",
-                Pattern.MULTILINE
-        );
-
+    /**
+     * Generic method to apply a Javadoc fix using a pattern and a Javadoc builder.
+     */
+    private static JavadocFix applyJavadocFix(String content, Pattern pattern, JavadocBuilder javadocBuilder) {
         Matcher matcher = pattern.matcher(content);
         StringBuilder result = new StringBuilder();
         int count = 0;
@@ -133,13 +128,8 @@ public class JavadocFixerMojo extends AbstractMojo {
         while (matcher.find()) {
             String indent = matcher.group(1);
             String annotationsAndSignature = matcher.group(2);
-
-            String replacement = """
-                    $indent/** Default constructor */
-                    $indent$annotationsAndSignature"""
-                    .replace("$indent", indent)
-                    .replace("$annotationsAndSignature", annotationsAndSignature);
-
+            String javadoc = javadocBuilder.build(indent);
+            String replacement = javadoc + indent + annotationsAndSignature;
             matcher.appendReplacement(result, Matcher.quoteReplacement(replacement));
             count++;
         }
@@ -148,44 +138,43 @@ public class JavadocFixerMojo extends AbstractMojo {
         return new JavadocFix(result.toString(), count);
     }
 
-    /** Fixes canEqual methods without javadoc. */
-    private JavadocFix fixCanEqualWithoutJavadoc(String content) {
-        // Match canEqual methods with @java.lang.SuppressWarnings("all") and @lombok.Generated
-        // Pattern matches: (indent)(@java.lang.SuppressWarnings("all")\n@lombok.Generated\nprotected boolean canEqual(final java.lang.Object other))
-        Pattern pattern = Pattern.compile(
+    private static Pattern buildConstructorPattern() {
+        return Pattern.compile(
+                "(^[ \\t]*)(" + LOMBOK_ANNOTATIONS + "(public|protected) [A-Z]\\w*\\(\\))",
+                Pattern.MULTILINE
+        );
+    }
+
+    private static Pattern buildCanEqualPattern() {
+        return Pattern.compile(
                 "(^[ \\t]*)(" + LOMBOK_ANNOTATIONS + "protected boolean canEqual\\(final java\\.lang\\.Object other\\))",
                 Pattern.MULTILINE
         );
+    }
 
-        Matcher matcher = pattern.matcher(content);
-        StringBuilder result = new StringBuilder();
-        int count = 0;
+    private String buildConstructorJavadoc(String indent) {
+        return indent + "/** Default constructor */\n";
+    }
 
-        while (matcher.find()) {
-            String indent = matcher.group(1);
-            String annotationsAndSignature = matcher.group(2);
+    private String buildCanEqualJavadoc(String indent) {
+        return indent + "/**\n" +
+                indent + " * canEqual method.\n" +
+                indent + " * @param other Other.\n" +
+                indent + " * @return true or false\n" +
+                indent + " */\n";
+    }
 
-            String replacement = """
-                    $indent/**
-                    $indent * canEqual method.
-                    $indent * @param other Other.
-                    $indent * @return true or false
-                    $indent */
-                    $indent$annotationsAndSignature"""
-                    .replace("$indent", indent)
-                    .replace("$annotationsAndSignature", annotationsAndSignature);
-
-            matcher.appendReplacement(result, Matcher.quoteReplacement(replacement));
-            count++;
-        }
-        matcher.appendTail(result);
-
-        return new JavadocFix(result.toString(), count);
+    /**
+     * Functional interface for building Javadoc strings given an indentation.
+     */
+    @FunctionalInterface
+    interface JavadocBuilder {
+        String build(String indent);
     }
 
     /**
      * Helper class to return both the modified content and the number of fixes applied.
      */
-    private record JavadocFix(String content, int fixCount) {
+    record JavadocFix(String content, int fixCount) {
     }
 }
