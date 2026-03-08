@@ -3,6 +3,7 @@ package com.weedow.schemaorg.generator.core;
 import com.weedow.schemaorg.commons.model.JsonLdNode;
 import com.weedow.schemaorg.commons.model.JsonLdNodeImpl;
 import com.weedow.schemaorg.commons.model.JsonLdTypeName;
+import com.weedow.schemaorg.generator.core.GeneratorOptions.FilterOption;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.handler.CompleteHandler;
@@ -40,8 +41,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class SchemaModelGeneratorImplTest {
 
+    private static final List<String> MODEL_IDS = List.of("Hotel");
+    private static final List<FilterOption> FILTERS = List.of(FilterOption.parse("Hotel:name"));
+
     @Spy
-    private GeneratorOptions options = new GeneratorOptions();
+    private GeneratorOptions options = new GeneratorOptions().setModels(MODEL_IDS).setFilters(FILTERS);
 
     @Mock
     private TemplateService templateService;
@@ -69,7 +73,7 @@ class SchemaModelGeneratorImplTest {
     @Test
     void generate_without_schema_definitions() {
         try (LogCaptor logCaptor = LogCaptor.forClass(SchemaModelGeneratorImpl.class)) {
-            when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(Collections.emptyMap());
+            when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(Collections.emptyMap());
 
             try (MockedConstruction<ProgressTracker> mockedTracker = mockConstruction(ProgressTracker.class)) {
                 schemaModelGenerator.generate();
@@ -91,7 +95,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getName()).thenReturn("DataType");
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:DataType", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("DataType"));
@@ -116,7 +120,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Boolean", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Boolean"));
@@ -145,7 +149,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:XPathType", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("XPathType"));
@@ -171,7 +175,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:ActionStatusType", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("ActionStatusType"));
@@ -201,7 +205,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Thing"));
@@ -225,7 +229,7 @@ class SchemaModelGeneratorImplTest {
         when(type.isUsedJavaType()).thenReturn(true);
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker ->
@@ -249,7 +253,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         final Path modelFolder = options.getModelFolder();
@@ -286,7 +290,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         final Path modelFolder = options.getModelFolder();
@@ -336,7 +340,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Thing", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         Instant instantStart = Instant.now(Clock.fixed(Instant.parse("2025-03-12T10:36:00Z"), ZoneId.of("UTC")));
@@ -424,7 +428,7 @@ class SchemaModelGeneratorImplTest {
         when(type.getProperties()).thenReturn(Collections.emptySet());
 
         Map<String, Type> filteredSchemaDefinitions = Map.of("schema:Boolean", type);
-        when(schemaDefinitionFilter.filter(schemaDefinitions, null)).thenReturn(filteredSchemaDefinitions);
+        when(schemaDefinitionFilter.filter(schemaDefinitions, MODEL_IDS, FILTERS)).thenReturn(filteredSchemaDefinitions);
         when(streamService.stream(filteredSchemaDefinitions)).thenReturn(filteredSchemaDefinitions.values().stream());
 
         runTestWithMockedTracker(filteredSchemaDefinitions.size(), tracker -> verify(tracker).tick("Boolean"));

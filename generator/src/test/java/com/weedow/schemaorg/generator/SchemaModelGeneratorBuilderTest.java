@@ -36,7 +36,7 @@ class SchemaModelGeneratorBuilderTest {
 
     @Test
     void generate_all() {
-        Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false, null);
+        Map<Path, List<String>> dataMap = generateAndVerify(null, null, null, false, null, null);
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of("org", "schema", "model", "datatype"))).hasSize(13);
@@ -49,7 +49,7 @@ class SchemaModelGeneratorBuilderTest {
         final String packageName = "spec";
         List<String> models = List.of("Thing");
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, null);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, null, null);
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
@@ -66,7 +66,7 @@ class SchemaModelGeneratorBuilderTest {
                 "XPathType", javax.xml.xpath.XPath.class.getName()
         );
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, customDataTypes);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, customDataTypes, null);
 
         Assertions.assertThat(dataMap).hasSize(3);
         Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
@@ -79,14 +79,33 @@ class SchemaModelGeneratorBuilderTest {
         final String packageName = "javatypes";
         List<String> models = List.of("Example");
 
-        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, "classpath:data/example.jsonld", true, null);
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, "classpath:data/example.jsonld", true, null, null);
 
         Assertions.assertThat(dataMap).hasSize(2);
         Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(1);
         Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(1);
     }
 
-    private Map<Path, List<String>> generateAndVerify(List<String> models, String packageName, String schemaResource, boolean usedJavaTypes, Map<String, String> customDataTypes) {
+    @Test
+    void generate_with_filters() {
+        final String packageName = "filters";
+        List<String> models = List.of("WebPage");
+        List<GeneratorOptions.FilterOption> filterOptions = List.of(
+                GeneratorOptions.FilterOption.parse("Thing:exclude:additionalType,alternateName,potentialAction,sameAs,schema:subject*"),
+                GeneratorOptions.FilterOption.parse("Organization:include:*Policy,*award*"),
+                GeneratorOptions.FilterOption.parse("CreativeWork:*")
+                //GeneratorOptions.FilterOption.parse("MediaObject")
+        );
+
+        Map<Path, List<String>> dataMap = generateAndVerify(models, packageName, null, false, null, filterOptions);
+
+        Assertions.assertThat(dataMap).hasSize(3);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "datatype"))).hasSize(11);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model"))).hasSize(229);
+        Assertions.assertThat(dataMap.get(Path.of(packageName, "model", "impl"))).hasSize(229);
+    }
+
+    private Map<Path, List<String>> generateAndVerify(List<String> models, String packageName, String schemaResource, boolean usedJavaTypes, Map<String, String> customDataTypes, List<GeneratorOptions.FilterOption> filters) {
         final Map<Path, List<String>> dataMap = new ConcurrentHashMap<>();
 
         final ParserOptions parserOptions = new ParserOptions()
@@ -97,6 +116,7 @@ class SchemaModelGeneratorBuilderTest {
 
         final GeneratorOptions generatorOptions = new GeneratorOptions();
         generatorOptions.setModels(models);
+        generatorOptions.setFilters(filters);
         if (packageName != null) {
             generatorOptions.setModelPackage(packageName + ".model");
             generatorOptions.setModelImplPackage(packageName + ".model.impl");

@@ -1,6 +1,7 @@
 package com.weedow.schemaorg.generator.core.filter;
 
 import com.weedow.schemaorg.generator.SchemaModelGeneratorConstants;
+import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.model.Property;
 import com.weedow.schemaorg.generator.model.Type;
 import nl.altindag.log.LogCaptor;
@@ -40,7 +41,7 @@ class SchemaDefinitionFilterImplTest {
 
         List<String> modelIds = List.of("schema:DataType", "schema:Thing");
 
-        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, modelIds);
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, modelIds, null);
 
         assertThat(result).containsOnly(
                 entry("schema:String", stringType),
@@ -68,7 +69,7 @@ class SchemaDefinitionFilterImplTest {
             schemaDefinitions.put("schema:ArchivedType", typeWithNullName);
             schemaDefinitions.put("schema:ValidType", validType);
 
-            Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null);
+            Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null, null);
 
             assertThat(result)
                     .doesNotContainKey("schema:ArchivedType")
@@ -96,7 +97,7 @@ class SchemaDefinitionFilterImplTest {
             schemaDefinitions.put("schema:ArchivedType", typeWithEmptyName);
             schemaDefinitions.put("schema:ValidType", validType);
 
-            Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null);
+            Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null, null);
 
             assertThat(result)
                     .doesNotContainKey("schema:ArchivedType")
@@ -123,7 +124,7 @@ class SchemaDefinitionFilterImplTest {
         schemaDefinitions.put("schema:Thing", validType1);
         schemaDefinitions.put("schema:Person", validType2);
 
-        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null);
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null, null);
 
         assertThat(result)
                 .containsKey("schema:Thing")
@@ -163,7 +164,7 @@ class SchemaDefinitionFilterImplTest {
 
         List<String> modelIds = List.of("schema:TestEnumeration");
 
-        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, modelIds);
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, modelIds, null);
 
         assertThat(result).containsOnly(
                 entry("schema:TestEnumeration", enumerationType),
@@ -198,7 +199,7 @@ class SchemaDefinitionFilterImplTest {
 
             List<String> modelIds = List.of("schema:Person");
 
-            schemaDefinitionFilter.filter(schemaDefinitions, modelIds);
+            schemaDefinitionFilter.filter(schemaDefinitions, modelIds, null);
 
             assertThat(logCaptor.getInfoLogs()).containsExactly(
                     "adding type: schema:Person",
@@ -207,6 +208,61 @@ class SchemaDefinitionFilterImplTest {
         } finally {
             SchemaModelGeneratorConstants.setVerbose(backupVerbose);
         }
+    }
+
+    @Test
+    void filter_should_filter_type_properties() {
+        Type thingType = new Type("schema:Thing").setName("Thing");
+        Property prop1 = new Property("schema:name", null, null, null, Collections.emptyList());
+        Property prop2 = new Property("schema:url", null, null, null, Collections.emptyList());
+        thingType.addProperty(prop1).addProperty(prop2);
+
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+        schemaDefinitions.put("schema:Thing", thingType);
+
+        GeneratorOptions.FilterOption filterOption = GeneratorOptions.FilterOption.parse("Thing:EXCLUDE:url");
+
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null, List.of(filterOption));
+
+        assertThat(result).containsKey("schema:Thing");
+        assertThat(result.get("schema:Thing").getProperties()).containsExactly(prop1);
+    }
+
+    @Test
+    void filter_should_filter_type_properties_with_wildcards() {
+        Type thingType = new Type("schema:Thing").setName("Thing");
+        Property prop1 = new Property("schema:name", null, null, null, Collections.emptyList());
+        Property prop2 = new Property("schema:url", null, null, null, Collections.emptyList());
+        thingType.addProperty(prop1).addProperty(prop2);
+
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+        schemaDefinitions.put("schema:Thing", thingType);
+
+        GeneratorOptions.FilterOption filterOption = GeneratorOptions.FilterOption.parse("Thing:INCLUDE:*url");
+
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null, List.of(filterOption));
+
+        assertThat(result).containsKey("schema:Thing");
+        assertThat(result.get("schema:Thing").getProperties()).containsExactly(prop2);
+    }
+
+    @Test
+    void filter_should_exclude_type_when_no_properties_specified() {
+        Type thingType = new Type("schema:Thing").setName("Thing");
+        Type personType = new Type("schema:Person").setName("Person");
+
+        Map<String, Type> schemaDefinitions = new HashMap<>();
+        schemaDefinitions.put("schema:Thing", thingType);
+        schemaDefinitions.put("schema:Person", personType);
+
+        GeneratorOptions.FilterOption filterOption = GeneratorOptions.FilterOption.parse("Person");
+
+        Map<String, Type> result = schemaDefinitionFilter.filter(schemaDefinitions, null, List.of(filterOption));
+
+        assertThat(result)
+                .containsKey("schema:Thing")
+                .doesNotContainKey("schema:Person")
+                .hasSize(1);
     }
 
     private static Type type(String typeId, Set<Property> properties, List<Type> parents) {
