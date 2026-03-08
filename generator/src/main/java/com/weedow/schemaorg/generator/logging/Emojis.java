@@ -30,6 +30,10 @@ public final class Emojis {
     public static final Emoji LABEL = Emoji.of("🏷");
     /** Emoji for Java-related operations. */
     public static final Emoji JAVA = Emoji.of("☕");
+    /** Emoji for filtering operations. */
+    public static final Emoji FILTERS = Emoji.of("🔽");
+    /** Emoji for models-related message. */
+    public static final Emoji MODELS = Emoji.of("🧱");
     /** Emoji for in progress generation operations. */
     public static final Emoji GEAR = Emoji.of("⚙");
     /** Emoji for completed generation operations. */

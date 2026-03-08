@@ -65,7 +65,7 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
     @picocli.CommandLine.Option(names = {"-m", "--models"}, description = "list of models to be generated. If not specified, all models will be generated.", order = 0)
     private List<String> models;
 
-    @picocli.CommandLine.Option(names = {"-o", "--output"}, description = "Location of the output directory (default: target/generated-sources/schemaorg)", order = 1)
+    @picocli.CommandLine.Option(names = {"-o", "--output"}, description = "Location of the output directory \n  Default: target/generated-sources/schemaorg", order = 1)
     private String output;
 
     @picocli.CommandLine.Option(names = {"-r", "--resource"}, description = "Schema resource to be used: either a \"classpath:\" pseudo URL, a \"file:\" URL, an URL or a plain file path.", order = 2)
@@ -89,7 +89,10 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
     @picocli.CommandLine.Option(names = {"-c", "--custom-datatypes"}, description = "Configures Java types to be used for Schema.org data types during code generation (eg. DateTime=java.time.ZonedDateTime)", split = " ", paramLabel = "<TYPE=JAVA_TYPE>", order = 8)
     private Map<String, String> customDataTypes;
 
-    @picocli.CommandLine.Option(names = {"-v", "--verbose"}, description = "Verbose mode. Helpful for troubleshooting.", order = 9)
+    @picocli.CommandLine.Option(names = {"-f", "--filter"}, description = "Filter properties or types. Format: <Type>[:include|exclude][:prop1,prop2]. Default mode is 'exclude'.", converter = FilterOptionConverter.class, paramLabel = "<Type>[:include|exclude][:prop1,prop2]", order = 9)
+    private List<GeneratorOptions.FilterOption> filters;
+
+    @picocli.CommandLine.Option(names = {"-v", "--verbose"}, description = "Verbose mode. Helpful for troubleshooting.", order = 10)
     private boolean verboseMode;
 
     /**
@@ -120,6 +123,7 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
                 .setModelImplPackage(modelImplPackage)
                 .setDataTypePackage(dataTypePackage)
                 .setModels(models)
+                .setFilters(this.filters)
                 .addCompleteHandler(elapsedTime -> LOG.success(TIMER, "Finished:" + " {} s", elapsedTime.toSeconds()));
 
         ParserOptions parserOptions = new ParserOptions()
@@ -136,6 +140,13 @@ public class SchemaModelGeneratorApp implements Callable<Integer> {
         generator.generate();
 
         return 0;
+    }
+}
+
+class FilterOptionConverter implements picocli.CommandLine.ITypeConverter<GeneratorOptions.FilterOption> {
+    @Override
+    public GeneratorOptions.FilterOption convert(String value) {
+        return GeneratorOptions.FilterOption.parse(value);
     }
 }
 

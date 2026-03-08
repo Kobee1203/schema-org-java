@@ -5,11 +5,13 @@ import com.weedow.schemaorg.generator.core.handler.ErrorHandler;
 import com.weedow.schemaorg.generator.core.handler.SuccessHandler;
 import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -75,6 +77,14 @@ public final class GeneratorOptions {
      * @param models Specific models to generate
      */
     private List<String> models;
+
+    /**
+     * Filters to restrict the type properties or the type itself.
+     *
+     * @return List of FilterOption
+     * @param filters to apply
+     */
+    private List<FilterOption> filters;
 
     /**
      * Success handlers to be notified when a file is successfully generated.
@@ -172,5 +182,94 @@ public final class GeneratorOptions {
     public GeneratorOptions addCompleteHandler(CompleteHandler completeHandler) {
         completeHandlers.add(completeHandler);
         return this;
+    }
+
+    /**
+     * Filter Mode.
+     */
+    public enum FilterMode {
+        /** Include the specified type properties or type */
+        INCLUDE,
+        /** Exclude the specified type properties or type */
+        EXCLUDE;
+
+        /**
+         * Whether the given value is a valid FilterMode value.
+         *
+         * @param value value to check
+         * @return {@code true} if the value is valid, {@code false} instead.
+         */
+        public static boolean isFilterMode(String value) {
+            return Arrays.stream(values()).anyMatch(filterMode -> filterMode.name().equalsIgnoreCase(value));
+        }
+    }
+
+    /**
+     * Class representing a filter:
+     * <ul>
+     *     <li>typeName: required</li>
+     *     <li>mode: optional. Default is EXCLUDE</li>
+     *     <li>properties: optional. If empty, it means that the type itself is filtered.</li>
+     * </ul>
+     */
+    @Getter
+    public static class FilterOption {
+        private static final String SEPARATOR = ":";
+        private static final String PROP_SEPARATOR = ",";
+
+        /**
+         * The type name.
+         *
+         * @return the type name
+         */
+        String typeName;
+        /**
+         * The filter mode.
+         *
+         * @return the filter mode. Default is FilterMode#EXCLUDE.
+         */
+        FilterMode mode = FilterMode.EXCLUDE;
+        /**
+         * The properties
+         *
+         * @return the type properties to filter.
+         */
+        List<String> properties = new java.util.ArrayList<>();
+
+        /**
+         * Parses a string with format {@code {typeName}:[mode]:[property1,property2]} and returns the corresponding FilterOption.
+         * <p>
+         * Allowed formats:
+         * <ul>
+         *     <li>{@code {typeName}:{mode}:{property1,*property2*,schema:property3}}</li>
+         *     <li>{@code {typeName}:[property1,*property2*,schema:property3]}</li>
+         *     <li>{@code {typeName}:*}</li>
+         *     <li>{@code {typeName}:{mode}}</li>
+         *     <li>{@code {typeName}}</li>
+         * </ul>
+         *
+         * @param value the value to parse
+         * @return a FilterOption
+         */
+        public static FilterOption parse(String value) {
+            FilterOption filter = new FilterOption();
+            String[] parts = value.split(SEPARATOR, 3);
+
+            filter.typeName = parts[0];
+
+            if (parts.length > 1) {
+                // Case: MyType:(include|exclude) or MyType:(include|exclude):prop1,prop2
+                if (FilterMode.isFilterMode(parts[1])) {
+                    filter.mode = FilterMode.valueOf(parts[1].toUpperCase());
+                    if (parts.length > 2) {
+                        filter.properties = List.of(parts[2].split(PROP_SEPARATOR));
+                    }
+                } else {
+                    // Case : MyType:prop1,prop2 (use default mode 'exclude')
+                    filter.properties = List.of(parts[1].split(PROP_SEPARATOR));
+                }
+            }
+            return filter;
+        }
     }
 }

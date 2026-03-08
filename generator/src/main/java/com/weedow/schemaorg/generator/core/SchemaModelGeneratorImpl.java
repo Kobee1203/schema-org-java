@@ -3,6 +3,7 @@ package com.weedow.schemaorg.generator.core;
 import com.weedow.schemaorg.commons.generator.GeneratorConstants;
 import com.weedow.schemaorg.commons.model.*;
 import com.weedow.schemaorg.generator.SchemaConstants;
+import com.weedow.schemaorg.generator.core.GeneratorOptions.FilterOption;
 import com.weedow.schemaorg.generator.core.copy.CopyService;
 import com.weedow.schemaorg.generator.core.filter.SchemaDefinitionFilter;
 import com.weedow.schemaorg.generator.core.stream.StreamService;
@@ -112,10 +113,11 @@ public class SchemaModelGeneratorImpl implements SchemaModelGenerator {
         final String modelImplPackage = options.getModelImplPackage();
         final String dataTypePackage = options.getDataTypePackage();
         final List<String> models = options.getModels();
+        final List<FilterOption> filters = options.getFilters();
 
         copyPropertyFile(options.getOutputFolder(), modelPackage, modelImplPackage, dataTypePackage);
 
-        Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models);
+        Map<String, Type> filteredSchemaDefinitions = schemaDefinitionFilter.filter(schemaDefinitions, models, filters);
         if (filteredSchemaDefinitions.isEmpty()) {
             LOG.info(LogMarkers.ERROR, GHOST, "No schema models found to generate");
             return;

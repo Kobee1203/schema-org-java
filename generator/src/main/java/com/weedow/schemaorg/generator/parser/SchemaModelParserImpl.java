@@ -67,10 +67,7 @@ public class SchemaModelParserImpl implements SchemaModelParser {
                             .entrySet()
                             .stream()
                             .collect(Collectors.toMap(
-                                    entry -> {
-                                        final String key = entry.getKey();
-                                        return key.contains(":") ? key : SchemaConstants.SCHEMA_PREFIX + key;
-                                    },
+                                    entry -> SchemaConstants.typeName(entry.getKey()),
                                     Map.Entry::getValue
                             ))
             );

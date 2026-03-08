@@ -1,11 +1,13 @@
 package com.weedow.schemaorg.generator.model;
 
 import com.weedow.schemaorg.generator.SchemaConstants;
+import com.weedow.schemaorg.generator.core.GeneratorOptions;
 import com.weedow.schemaorg.generator.model.utils.ModelUtils;
 import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.util.*;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -207,6 +209,35 @@ public final class Type {
     public Type addProperty(Property property) {
         this.properties.add(property);
         return this;
+    }
+
+
+    /**
+     * Returns the properties of this type, optionally filtered by mode and property IDs.
+     *
+     * @param mode the filter mode (INCLUDE or EXCLUDE)
+     * @param propertyIds the list of property IDs to filter
+     */
+    public void filterProperties(GeneratorOptions.FilterMode mode, List<String> propertyIds) {
+        if (propertyIds == null || propertyIds.isEmpty()) {
+            return;
+        }
+
+        final Set<Pattern> normalizedPropertyIds = propertyIds.stream()
+                .map(propertyId -> {
+                    String typeName = propertyId.contains("*") ? propertyId : SchemaConstants.typeName(propertyId);
+                    String regex = Pattern.quote(typeName).replace("*", "\\E.*\\Q");
+                    return Pattern.compile(regex);
+                })
+                .collect(Collectors.toSet());
+
+        if (mode == GeneratorOptions.FilterMode.EXCLUDE) {
+            this.properties.removeIf(property -> normalizedPropertyIds.stream().anyMatch(propertyId -> propertyId.matcher(property.getId()).matches()));
+        } else if (mode == GeneratorOptions.FilterMode.INCLUDE) {
+            this.properties.removeIf(property -> normalizedPropertyIds.stream().noneMatch(propertyId -> propertyId.matcher(property.getId()).matches()));
+        }
+
+        this.allProperties = null;
     }
 
     /**

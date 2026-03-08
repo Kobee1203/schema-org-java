@@ -23,4 +23,15 @@ public final class SchemaConstants {
     /** Schema.org Enumeration identifier. */
     public static final String SCHEMA_ENUMERATION = SCHEMA_PREFIX + "Enumeration";
 
+    /**
+     * Returns the type name.
+     * If the type name does not contain ":", the method adds the prefix SCHEMA_PREFIX.
+     * Otherwise, the method returns the given type name.
+     *
+     * @param typeName type name
+     * @return updated type name
+     */
+    public static String typeName(String typeName) {
+        return typeName.contains(":") ? typeName : SCHEMA_PREFIX + typeName;
+    }
 }
