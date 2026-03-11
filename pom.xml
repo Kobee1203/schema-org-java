@@ -78,7 +78,7 @@
         <mockito-junit-jupiter.version>5.21.0</mockito-junit-jupiter.version>
         <equalsverifier.version>4.4.1</equalsverifier.version>
         <to-string-verifier.version>1.4.8</to-string-verifier.version>
-        <json-unit-assertj.version>5.1.0</json-unit-assertj.version>
+        <json-unit-assertj.version>5.1.1</json-unit-assertj.version>
         <system-stubs-jupiter.version>2.1.8</system-stubs-jupiter.version>
         <logcaptor.version>2.12.5</logcaptor.version>
         <inject-resources-junit-jupiter.version>1.0.0</inject-resources-junit-jupiter.version>
