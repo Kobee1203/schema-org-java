@@ -68,7 +68,7 @@
         <picocli.version>4.7.7</picocli.version>
 
         <!-- Maven Plugin Dependencies -->
-        <maven-plugin.version>3.9.12</maven-plugin.version>
+        <maven-plugin.version>3.9.14</maven-plugin.version>
         <maven-plugin-annotations.version>3.15.2</maven-plugin-annotations.version>
         <maven-project.version>2.2.1</maven-project.version>
 
